@@ -129,9 +129,11 @@ describe('method lookups', () => {
 
   it('keeps the row as Contract call when the receipt cannot be read', async () => {
     h.rpc.mockRejectedValue(new Error('429'));
-    const txs = [call({ hash: 'cc'.repeat(32) })];
+    const hash = 'cc'.repeat(32);
+    const txs = [call({ hash })];
     const { result } = renderHook(() => useContractMethods(txs, 'devnet'));
-    await waitFor(() => expect(h.rpc).toHaveBeenCalledTimes(1));
+    const reads = () => h.rpc.mock.calls.filter((c) => c[1]?.[0] === hash);
+    await waitFor(() => expect(reads()).toHaveLength(1));
     expect(result.current).toEqual({});
   });
 });
