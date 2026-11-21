@@ -1,0 +1,581 @@
+/* The 0xio mascot (src/shared/ui/Mascot.tsx). Keyframes and timings are the canvas boards'
+   (Mascot-FirstOpen, Mascot-Lock, Mascot-Crypt), the same as the app: wake B (startle) and awake
+   loop 3 (look around). Every length is in the 100-unit viewBox, so it scales with the size.
+   Arms move by skewY around their root and never rotate. */
+
+.mascot {
+  color: var(--logo-ink);
+  overflow: visible;
+  flex-shrink: 0;
+}
+
+.mascot * {
+  transform-box: view-box;
+}
+
+.mascot .mascot-wrap {
+  transform-origin: 50px 86px;
+}
+
+.mascot .mascot-arm-l {
+  transform-origin: 18px 50px;
+}
+
+.mascot .mascot-arm-r {
+  transform-origin: 82px 50px;
+}
+
+.mascot .mascot-dial {
+  transform-origin: 50px 50px;
+}
+
+.mascot .mascot-z,
+.mascot .mascot-layer {
+  opacity: 0;
+}
+
+/* Peek: rises over the ledge with a wink, then the awake loop. */
+.mascot-peek .mascot-wrap {
+  animation:
+    mascot-peek 300ms cubic-bezier(0.23, 1, 0.32, 1) both,
+    mascot-lean 5200ms ease 1100ms infinite;
+}
+
+.mascot-peek .mascot-face {
+  animation:
+    mascot-peek-wink 1100ms ease-in-out both,
+    mascot-blink 5200ms linear 1100ms infinite;
+}
+
+.mascot-peek .mascot-dial {
+  animation: mascot-look 5200ms ease 1100ms infinite;
+}
+
+/* Awake: looks around and blinks. */
+.mascot-awake .mascot-wrap {
+  animation: mascot-lean 5200ms ease infinite;
+}
+
+.mascot-awake .mascot-face {
+  animation: mascot-blink 5200ms linear infinite;
+}
+
+.mascot-awake .mascot-dial {
+  animation: mascot-look 5200ms ease infinite;
+}
+
+/* Open: the dial turns to unlock once, then the awake loop. */
+.mascot-open .mascot-wrap {
+  animation:
+    mascot-dial-tick 900ms linear both,
+    mascot-lean 5200ms ease 900ms infinite;
+}
+
+.mascot-open .mascot-face {
+  animation: mascot-blink 5200ms linear 900ms infinite;
+}
+
+.mascot-open .mascot-dial {
+  animation:
+    mascot-dial-turn 900ms both,
+    mascot-look 5200ms ease 900ms infinite;
+}
+
+/* Wake: startled out of a doze once, then the awake loop. */
+.mascot-wake .mascot-wrap {
+  animation:
+    mascot-wake-body 650ms cubic-bezier(0.3, 0.7, 0.4, 1) both,
+    mascot-lean 5200ms ease 650ms infinite;
+}
+
+.mascot-wake .mascot-face {
+  animation:
+    mascot-wake-face 650ms ease-out both,
+    mascot-blink 5200ms linear 650ms infinite;
+}
+
+.mascot-wake .mascot-arm-l {
+  animation: mascot-wake-l 650ms ease-out both;
+}
+
+.mascot-wake .mascot-arm-r {
+  animation: mascot-wake-r 650ms ease-out both;
+}
+
+.mascot-wake .mascot-dial {
+  animation: mascot-look 5200ms ease 650ms infinite;
+}
+
+/* Doze: eyes close, arms droop, a nod, then breathing and drifting z's. */
+.mascot-doze .mascot-face {
+  animation: mascot-sleep-face 1100ms ease-in-out both;
+}
+
+.mascot-doze .mascot-arm-l {
+  animation: mascot-droop-l 900ms ease-in-out 200ms both;
+}
+
+.mascot-doze .mascot-arm-r {
+  animation: mascot-droop-r 900ms ease-in-out 200ms both;
+}
+
+.mascot-doze .mascot-wrap {
+  animation:
+    mascot-nod 1100ms ease-in-out both,
+    mascot-breath 3000ms ease-in-out 1100ms infinite;
+}
+
+.mascot-doze .mascot-z1 {
+  animation: mascot-z 2400ms ease-out 1200ms infinite backwards;
+}
+
+.mascot-doze .mascot-z2 {
+  animation: mascot-z 2400ms ease-out 2000ms infinite backwards;
+}
+
+.mascot-doze .mascot-z3 {
+  animation: mascot-z 2400ms ease-out 2800ms infinite backwards;
+}
+
+/* Loading: the dial turns 90 degrees per click; 180 looks the same as 0, so the loop is seamless. */
+.mascot-loading .mascot-dial {
+  animation: mascot-dial-loop 1100ms infinite;
+}
+
+.mascot-loading .mascot-wrap {
+  animation: mascot-dial-tick-loop 1100ms linear infinite;
+}
+
+/* Layers: encrypt presses two layers into the mark, with a small press on the mark. Decrypt lifts
+   them off and does not press. */
+.mascot-encrypt .mascot-layer-a {
+  animation: mascot-press-a 1600ms infinite;
+}
+
+.mascot-encrypt .mascot-layer-b {
+  animation: mascot-press-b 1600ms infinite;
+}
+
+.mascot-encrypt .mascot-wrap {
+  animation: mascot-press 1600ms infinite;
+}
+
+.mascot-decrypt .mascot-layer-a {
+  animation: mascot-lift-a 1600ms cubic-bezier(0.77, 0, 0.175, 1) infinite;
+}
+
+.mascot-decrypt .mascot-layer-b {
+  animation: mascot-lift-b 1600ms cubic-bezier(0.77, 0, 0.175, 1) infinite;
+}
+
+@keyframes mascot-peek {
+  from {
+    transform: translateY(96px);
+  }
+  to {
+    transform: none;
+  }
+}
+
+@keyframes mascot-peek-wink {
+  0%,
+  62%,
+  100% {
+    stroke-width: 12px;
+  }
+  74% {
+    stroke-width: 3px;
+  }
+  86% {
+    stroke-width: 12px;
+  }
+}
+
+@keyframes mascot-look {
+  0%,
+  8% {
+    transform: none;
+    animation-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
+  }
+  20%,
+  40% {
+    transform: translateX(-5px);
+    animation-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
+  }
+  52%,
+  58% {
+    transform: none;
+    animation-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
+  }
+  70%,
+  88% {
+    transform: translateX(5px);
+    animation-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
+  }
+  100% {
+    transform: none;
+  }
+}
+
+@keyframes mascot-lean {
+  0%,
+  8% {
+    transform: none;
+    animation-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
+  }
+  20%,
+  40% {
+    transform: rotate(-2deg);
+    animation-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
+  }
+  52%,
+  58% {
+    transform: none;
+    animation-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
+  }
+  70%,
+  88% {
+    transform: rotate(2deg);
+    animation-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
+  }
+  100% {
+    transform: none;
+  }
+}
+
+@keyframes mascot-blink {
+  0%,
+  52%,
+  60%,
+  100% {
+    stroke-width: 12px;
+  }
+  55% {
+    stroke-width: 3px;
+  }
+  57% {
+    stroke-width: 12px;
+  }
+}
+
+@keyframes mascot-wake-face {
+  0% {
+    stroke-width: 5px;
+  }
+  15%,
+  60% {
+    stroke-width: 15px;
+  }
+  100% {
+    stroke-width: 12px;
+  }
+}
+
+@keyframes mascot-wake-body {
+  0% {
+    transform: none;
+  }
+  18% {
+    transform: translateY(-10px) scale(0.95, 1.07);
+  }
+  42% {
+    transform: translateY(0) scale(1.06, 0.93);
+  }
+  62% {
+    transform: translateY(-2px) scale(0.99, 1.01);
+  }
+  100% {
+    transform: none;
+  }
+}
+
+@keyframes mascot-wake-l {
+  0% {
+    transform: skewY(-14deg);
+  }
+  18% {
+    transform: translateY(-4px) skewY(55deg);
+  }
+  48% {
+    transform: skewY(20deg);
+  }
+  100% {
+    transform: none;
+  }
+}
+
+@keyframes mascot-wake-r {
+  0% {
+    transform: skewY(14deg);
+  }
+  18% {
+    transform: translateY(-4px) skewY(-55deg);
+  }
+  48% {
+    transform: skewY(-20deg);
+  }
+  100% {
+    transform: none;
+  }
+}
+
+@keyframes mascot-sleep-face {
+  0% {
+    stroke-width: 12px;
+  }
+  30% {
+    stroke-width: 6px;
+  }
+  45% {
+    stroke-width: 11px;
+  }
+  100% {
+    stroke-width: 5px;
+  }
+}
+
+@keyframes mascot-droop-l {
+  from {
+    transform: none;
+  }
+  to {
+    transform: skewY(-14deg);
+  }
+}
+
+@keyframes mascot-droop-r {
+  from {
+    transform: none;
+  }
+  to {
+    transform: skewY(14deg);
+  }
+}
+
+@keyframes mascot-nod {
+  0% {
+    transform: none;
+  }
+  35% {
+    transform: translateY(1px) rotate(-3deg);
+  }
+  55% {
+    transform: rotate(1deg);
+  }
+  75% {
+    transform: translateY(1px) rotate(-2deg);
+  }
+  100% {
+    transform: none;
+  }
+}
+
+@keyframes mascot-breath {
+  0%,
+  100% {
+    transform: none;
+  }
+  50% {
+    transform: scale(1.02, 1.04);
+  }
+}
+
+@keyframes mascot-z {
+  0% {
+    opacity: 0;
+    transform: translate(0, 4px);
+  }
+  20% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(5px, -8px);
+  }
+}
+
+@keyframes mascot-dial-turn {
+  0% {
+    transform: rotate(-240deg);
+    animation-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
+  }
+  38%,
+  52% {
+    transform: rotate(-120deg);
+    animation-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
+  }
+  88% {
+    transform: rotate(3deg);
+    animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+
+@keyframes mascot-dial-tick {
+  0%,
+  37% {
+    transform: none;
+  }
+  40% {
+    transform: translateX(1.2px);
+  }
+  45%,
+  86% {
+    transform: none;
+  }
+  89% {
+    transform: translateX(-1.2px);
+  }
+  94%,
+  100% {
+    transform: none;
+  }
+}
+
+@keyframes mascot-dial-loop {
+  0% {
+    transform: rotate(0);
+    animation-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
+  }
+  40%,
+  50% {
+    transform: rotate(90deg);
+    animation-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
+  }
+  90%,
+  100% {
+    transform: rotate(180deg);
+  }
+}
+
+@keyframes mascot-dial-tick-loop {
+  0%,
+  39% {
+    transform: none;
+  }
+  42% {
+    transform: translateX(1.2px);
+  }
+  46%,
+  89% {
+    transform: none;
+  }
+  92% {
+    transform: translateX(-1.2px);
+  }
+  96%,
+  100% {
+    transform: none;
+  }
+}
+
+@keyframes mascot-press-a {
+  0% {
+    transform: translateY(-24px);
+    opacity: 0;
+    animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  22% {
+    transform: translateY(-16px);
+    opacity: 0.35;
+    animation-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
+  }
+  74% {
+    transform: none;
+    opacity: 0.35;
+  }
+  84%,
+  100% {
+    transform: none;
+    opacity: 0;
+  }
+}
+
+@keyframes mascot-press-b {
+  0% {
+    transform: translateY(-14px);
+    opacity: 0;
+    animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  18% {
+    transform: translateY(-8px);
+    opacity: 0.6;
+    animation-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
+  }
+  70% {
+    transform: none;
+    opacity: 0.6;
+  }
+  80%,
+  100% {
+    transform: none;
+    opacity: 0;
+  }
+}
+
+@keyframes mascot-press {
+  0%,
+  70% {
+    transform: none;
+  }
+  80% {
+    transform: scaleY(0.96);
+  }
+  100% {
+    transform: none;
+  }
+}
+
+@keyframes mascot-lift-a {
+  0% {
+    transform: none;
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.35;
+  }
+  70% {
+    transform: translateY(-16px);
+    opacity: 0.35;
+  }
+  100% {
+    transform: translateY(-24px);
+    opacity: 0;
+  }
+}
+
+@keyframes mascot-lift-b {
+  0% {
+    transform: none;
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  60% {
+    transform: translateY(-8px);
+    opacity: 0.6;
+  }
+  90%,
+  100% {
+    transform: translateY(-12px);
+    opacity: 0;
+  }
+}
+
+/* Reduced motion keeps every mood on the plain mark, except the loading dial, which still turns. */
+@media (prefers-reduced-motion: reduce) {
+  .mascot:not(.mascot-loading) * {
+    animation: none !important;
+  }
+
+  .mascot .mascot-zs,
+  .mascot .mascot-layer {
+    display: none;
+  }
+}

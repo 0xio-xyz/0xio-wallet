@@ -1,0 +1,927 @@
+{
+  "chains": [
+    {
+      "id": 1,
+      "name": "ethereum",
+      "vmType": "evm",
+      "protocol": {
+        "v2": { "chainId": "ethereum", "depository": "0x4cd00e387622c35bddb9b4c962c136462338bc31" }
+      },
+      "contracts": {
+        "erc20Router": "0xb92fe925dc43a0ecde6c8b1a2709c170ec4fff4f",
+        "approvalProxy": "0xccc88a9d1b4ed6b0eaba998850414b24f1c315be"
+      },
+      "solverAddresses": [
+        "0xf70da97812cb96acdf810712aa562db8dfa3dbef",
+        "0x56c262027e0de4aea31d2489529cb25d23e58a8b",
+        "0xabb2acd3be814a80e502575d6c1dc5f789e9cd10",
+        "0xa67d7eb4dc68fa6ce8e34ef8cadaf075b9893fbb",
+        "0xada5bb90d0de0bd1b6f3938708f49295a8d1f7cb",
+        "0xa5a5491bca93dd4c076e4906e79e7673f4a5a142",
+        "0x370a7e2d300c14d79d4a7ee07aaca46c4b3012cf",
+        "0xca7ded7e4f4ba8ab3b10009236ae6d1b95094589",
+        "0x331d9a049d496385998067abf6cbb6371c8d2466",
+        "0x18dd3c14e34c1bc379f7538068c59160d9f68e25"
+      ]
+    },
+    {
+      "id": 10,
+      "name": "optimism",
+      "vmType": "evm",
+      "protocol": {
+        "v2": { "chainId": "optimism", "depository": "0x4cd00e387622c35bddb9b4c962c136462338bc31" }
+      },
+      "contracts": {
+        "erc20Router": "0xb92fe925dc43a0ecde6c8b1a2709c170ec4fff4f",
+        "approvalProxy": "0xccc88a9d1b4ed6b0eaba998850414b24f1c315be"
+      },
+      "solverAddresses": ["0xf70da97812cb96acdf810712aa562db8dfa3dbef"]
+    },
+    {
+      "id": 25,
+      "name": "cronos",
+      "vmType": "evm",
+      "protocol": {
+        "v2": { "chainId": "cronos", "depository": "0x59916da825d2d2ec1bf878d71c88826f6633ecca" }
+      },
+      "contracts": {
+        "erc20Router": "0x9ef6d3c2f60d7b9008d74cab1fc0f899c957c819",
+        "approvalProxy": "0x8754bc615047de01228a7527b712806a71a8dc9a"
+      },
+      "solverAddresses": ["0xf70da97812cb96acdf810712aa562db8dfa3dbef"]
+    },
+    {
+      "id": 56,
+      "name": "bsc",
+      "vmType": "evm",
+      "protocol": {
+        "v2": { "chainId": "bnb", "depository": "0x4cd00e387622c35bddb9b4c962c136462338bc31" }
+      },
+      "contracts": {
+        "erc20Router": "0xb92fe925dc43a0ecde6c8b1a2709c170ec4fff4f",
+        "approvalProxy": "0xccc88a9d1b4ed6b0eaba998850414b24f1c315be"
+      },
+      "solverAddresses": [
+        "0xf70da97812cb96acdf810712aa562db8dfa3dbef",
+        "0xa67d7eb4dc68fa6ce8e34ef8cadaf075b9893fbb",
+        "0x56c262027e0de4aea31d2489529cb25d23e58a8b",
+        "0xabb2acd3be814a80e502575d6c1dc5f789e9cd10",
+        "0xada5bb90d0de0bd1b6f3938708f49295a8d1f7cb",
+        "0xa5a5491bca93dd4c076e4906e79e7673f4a5a142",
+        "0x370a7e2d300c14d79d4a7ee07aaca46c4b3012cf",
+        "0xca7ded7e4f4ba8ab3b10009236ae6d1b95094589",
+        "0x331d9a049d496385998067abf6cbb6371c8d2466",
+        "0x18dd3c14e34c1bc379f7538068c59160d9f68e25",
+        "0x2bb27b73c602643f42471d4751fe4fc4eebefbd1",
+        "0xcc4bc7882d5ec4a3716e589ab3d816b61ae47a1a",
+        "0x0ec4e45f9ce3020024c0418a74cd31fbc487038f"
+      ]
+    },
+    {
+      "id": 100,
+      "name": "gnosis",
+      "vmType": "evm",
+      "protocol": {
+        "v2": { "chainId": "gnosis", "depository": "0x4cd00e387622c35bddb9b4c962c136462338bc31" }
+      },
+      "contracts": {
+        "erc20Router": "0xb92fe925dc43a0ecde6c8b1a2709c170ec4fff4f",
+        "approvalProxy": "0xccc88a9d1b4ed6b0eaba998850414b24f1c315be"
+      },
+      "solverAddresses": ["0xf70da97812cb96acdf810712aa562db8dfa3dbef"]
+    },
+    {
+      "id": 130,
+      "name": "unichain",
+      "vmType": "evm",
+      "protocol": {
+        "v2": { "chainId": "unichain", "depository": "0x4cd00e387622c35bddb9b4c962c136462338bc31" }
+      },
+      "contracts": {
+        "erc20Router": "0xb92fe925dc43a0ecde6c8b1a2709c170ec4fff4f",
+        "approvalProxy": "0xccc88a9d1b4ed6b0eaba998850414b24f1c315be"
+      },
+      "solverAddresses": ["0xf70da97812cb96acdf810712aa562db8dfa3dbef"]
+    },
+    {
+      "id": 137,
+      "name": "polygon",
+      "vmType": "evm",
+      "protocol": {
+        "v2": { "chainId": "polygon", "depository": "0x4cd00e387622c35bddb9b4c962c136462338bc31" }
+      },
+      "contracts": {
+        "erc20Router": "0xb92fe925dc43a0ecde6c8b1a2709c170ec4fff4f",
+        "approvalProxy": "0xccc88a9d1b4ed6b0eaba998850414b24f1c315be"
+      },
+      "solverAddresses": [
+        "0xf70da97812cb96acdf810712aa562db8dfa3dbef",
+        "0xc1a6e71c0f69ad498aa4029bdf9f8cdba79f9678",
+        "0xada5bb90d0de0bd1b6f3938708f49295a8d1f7cb",
+        "0xabb2acd3be814a80e502575d6c1dc5f789e9cd10",
+        "0x56c262027e0de4aea31d2489529cb25d23e58a8b",
+        "0xa5a5491bca93dd4c076e4906e79e7673f4a5a142",
+        "0x370a7e2d300c14d79d4a7ee07aaca46c4b3012cf",
+        "0xca7ded7e4f4ba8ab3b10009236ae6d1b95094589",
+        "0x331d9a049d496385998067abf6cbb6371c8d2466",
+        "0x18dd3c14e34c1bc379f7538068c59160d9f68e25",
+        "0x2bb27b73c602643f42471d4751fe4fc4eebefbd1",
+        "0xa67d7eb4dc68fa6ce8e34ef8cadaf075b9893fbb"
+      ]
+    },
+    {
+      "id": 143,
+      "name": "monad",
+      "vmType": "evm",
+      "protocol": {
+        "v2": { "chainId": "monad", "depository": "0x4cd00e387622c35bddb9b4c962c136462338bc31" }
+      },
+      "contracts": {
+        "erc20Router": "0xb92fe925dc43a0ecde6c8b1a2709c170ec4fff4f",
+        "approvalProxy": "0xccc88a9d1b4ed6b0eaba998850414b24f1c315be"
+      },
+      "solverAddresses": ["0xf70da97812cb96acdf810712aa562db8dfa3dbef"]
+    },
+    {
+      "id": 146,
+      "name": "sonic",
+      "vmType": "evm",
+      "protocol": {
+        "v2": { "chainId": "sonic", "depository": "0x4cd00e387622c35bddb9b4c962c136462338bc31" }
+      },
+      "contracts": {
+        "erc20Router": "0xb92fe925dc43a0ecde6c8b1a2709c170ec4fff4f",
+        "approvalProxy": "0xccc88a9d1b4ed6b0eaba998850414b24f1c315be"
+      },
+      "solverAddresses": ["0xf70da97812cb96acdf810712aa562db8dfa3dbef"]
+    },
+    {
+      "id": 169,
+      "name": "manta-pacific",
+      "vmType": "evm",
+      "protocol": {
+        "v2": { "chainId": "manta", "depository": "0x4cd00e387622c35bddb9b4c962c136462338bc31" }
+      },
+      "contracts": {
+        "erc20Router": "0xb92fe925dc43a0ecde6c8b1a2709c170ec4fff4f",
+        "approvalProxy": "0xccc88a9d1b4ed6b0eaba998850414b24f1c315be"
+      },
+      "solverAddresses": ["0xf70da97812cb96acdf810712aa562db8dfa3dbef"]
+    },
+    {
+      "id": 196,
+      "name": "xlayer",
+      "vmType": "evm",
+      "protocol": {
+        "v2": { "chainId": "xlayer", "depository": "0x4cd00e387622c35bddb9b4c962c136462338bc31" }
+      },
+      "contracts": {
+        "erc20Router": "0xb92fe925dc43a0ecde6c8b1a2709c170ec4fff4f",
+        "approvalProxy": "0xccc88a9d1b4ed6b0eaba998850414b24f1c315be"
+      },
+      "solverAddresses": ["0xf70da97812cb96acdf810712aa562db8dfa3dbef"]
+    },
+    {
+      "id": 288,
+      "name": "boba",
+      "vmType": "evm",
+      "protocol": {
+        "v2": { "chainId": "boba", "depository": "0x4cd00e387622c35bddb9b4c962c136462338bc31" }
+      },
+      "contracts": {
+        "erc20Router": "0xb92fe925dc43a0ecde6c8b1a2709c170ec4fff4f",
+        "approvalProxy": "0xccc88a9d1b4ed6b0eaba998850414b24f1c315be"
+      },
+      "solverAddresses": ["0xf70da97812cb96acdf810712aa562db8dfa3dbef"]
+    },
+    {
+      "id": 324,
+      "name": "zksync",
+      "vmType": "evm",
+      "protocol": {
+        "v2": { "chainId": "zksync", "depository": "0x4cd00e387622c35bddb9b4c962c136462338bc31" }
+      },
+      "contracts": {
+        "erc20Router": "0xb92fe925dc43a0ecde6c8b1a2709c170ec4fff4f",
+        "approvalProxy": "0xccc88a9d1b4ed6b0eaba998850414b24f1c315be"
+      },
+      "solverAddresses": ["0xf70da97812cb96acdf810712aa562db8dfa3dbef"]
+    },
+    {
+      "id": 360,
+      "name": "shape",
+      "vmType": "evm",
+      "protocol": {
+        "v2": { "chainId": "shape", "depository": "0x4cd00e387622c35bddb9b4c962c136462338bc31" }
+      },
+      "contracts": {
+        "erc20Router": "0xb92fe925dc43a0ecde6c8b1a2709c170ec4fff4f",
+        "approvalProxy": "0xccc88a9d1b4ed6b0eaba998850414b24f1c315be"
+      },
+      "solverAddresses": ["0xf70da97812cb96acdf810712aa562db8dfa3dbef"]
+    },
+    {
+      "id": 480,
+      "name": "world-chain",
+      "vmType": "evm",
+      "protocol": {
+        "v2": {
+          "chainId": "worldchain",
+          "depository": "0x4cd00e387622c35bddb9b4c962c136462338bc31"
+        }
+      },
+      "contracts": {
+        "erc20Router": "0xb92fe925dc43a0ecde6c8b1a2709c170ec4fff4f",
+        "approvalProxy": "0xccc88a9d1b4ed6b0eaba998850414b24f1c315be"
+      },
+      "solverAddresses": ["0xf70da97812cb96acdf810712aa562db8dfa3dbef"]
+    },
+    {
+      "id": 747,
+      "name": "flow-evm",
+      "vmType": "evm",
+      "protocol": {
+        "v2": { "chainId": "flow", "depository": "0x4cd00e387622c35bddb9b4c962c136462338bc31" }
+      },
+      "contracts": {
+        "erc20Router": "0xb92fe925dc43a0ecde6c8b1a2709c170ec4fff4f",
+        "approvalProxy": "0xccc88a9d1b4ed6b0eaba998850414b24f1c315be"
+      },
+      "solverAddresses": ["0xf70da97812cb96acdf810712aa562db8dfa3dbef"]
+    },
+    {
+      "id": 988,
+      "name": "stable",
+      "vmType": "evm",
+      "protocol": {
+        "v2": { "chainId": "stable", "depository": "0x4cd00e387622c35bddb9b4c962c136462338bc31" }
+      },
+      "contracts": {
+        "erc20Router": "0xb92fe925dc43a0ecde6c8b1a2709c170ec4fff4f",
+        "approvalProxy": "0xccc88a9d1b4ed6b0eaba998850414b24f1c315be"
+      },
+      "solverAddresses": ["0xf70da97812cb96acdf810712aa562db8dfa3dbef"]
+    },
+    {
+      "id": 999,
+      "name": "hyperevm",
+      "vmType": "evm",
+      "protocol": {
+        "v2": { "chainId": "hyperevm", "depository": "0x4cd00e387622c35bddb9b4c962c136462338bc31" }
+      },
+      "contracts": {
+        "erc20Router": "0xb92fe925dc43a0ecde6c8b1a2709c170ec4fff4f",
+        "approvalProxy": "0xccc88a9d1b4ed6b0eaba998850414b24f1c315be"
+      },
+      "solverAddresses": [
+        "0xf70da97812cb96acdf810712aa562db8dfa3dbef",
+        "0xa67d7eb4dc68fa6ce8e34ef8cadaf075b9893fbb",
+        "0x56c262027e0de4aea31d2489529cb25d23e58a8b",
+        "0xabb2acd3be814a80e502575d6c1dc5f789e9cd10",
+        "0xada5bb90d0de0bd1b6f3938708f49295a8d1f7cb",
+        "0xa5a5491bca93dd4c076e4906e79e7673f4a5a142",
+        "0x370a7e2d300c14d79d4a7ee07aaca46c4b3012cf"
+      ]
+    },
+    {
+      "id": 1088,
+      "name": "metis",
+      "vmType": "evm",
+      "protocol": {
+        "v2": { "chainId": "metis", "depository": "0x59916da825d2d2ec1bf878d71c88826f6633ecca" }
+      },
+      "contracts": {
+        "erc20Router": "0x9ef6d3c2f60d7b9008d74cab1fc0f899c957c819",
+        "approvalProxy": "0x8754bc615047de01228a7527b712806a71a8dc9a"
+      },
+      "solverAddresses": ["0xf70da97812cb96acdf810712aa562db8dfa3dbef"]
+    },
+    {
+      "id": 1135,
+      "name": "lisk",
+      "vmType": "evm",
+      "protocol": {
+        "v2": { "chainId": "lisk", "depository": "0x4cd00e387622c35bddb9b4c962c136462338bc31" }
+      },
+      "contracts": {
+        "erc20Router": "0xb92fe925dc43a0ecde6c8b1a2709c170ec4fff4f",
+        "approvalProxy": "0xccc88a9d1b4ed6b0eaba998850414b24f1c315be"
+      },
+      "solverAddresses": ["0xf70da97812cb96acdf810712aa562db8dfa3dbef"]
+    },
+    {
+      "id": 1337,
+      "name": "hyperliquid",
+      "vmType": "hypevm",
+      "protocol": {
+        "v2": {
+          "chainId": "hyperliquid",
+          "depository": "0x66cf0aace1b4e562593bec10ec7868fba9932224"
+        }
+      },
+      "contracts": { "erc20Router": "", "approvalProxy": "" },
+      "solverAddresses": [
+        "0xf70da97812cb96acdf810712aa562db8dfa3dbef",
+        "0xc1a6e71c0f69ad498aa4029bdf9f8cdba79f9678",
+        "0xbbb119cbf0fee22994fb481eff31ec2977ebac0e"
+      ]
+    },
+    {
+      "id": 1868,
+      "name": "soneium",
+      "vmType": "evm",
+      "protocol": {
+        "v2": { "chainId": "soneium", "depository": "0x4cd00e387622c35bddb9b4c962c136462338bc31" }
+      },
+      "contracts": {
+        "erc20Router": "0xb92fe925dc43a0ecde6c8b1a2709c170ec4fff4f",
+        "approvalProxy": "0xccc88a9d1b4ed6b0eaba998850414b24f1c315be"
+      },
+      "solverAddresses": ["0xf70da97812cb96acdf810712aa562db8dfa3dbef"]
+    },
+    {
+      "id": 2020,
+      "name": "ronin",
+      "vmType": "evm",
+      "protocol": {
+        "v2": { "chainId": "ronin", "depository": "0x4cd00e387622c35bddb9b4c962c136462338bc31" }
+      },
+      "contracts": {
+        "erc20Router": "0xb92fe925dc43a0ecde6c8b1a2709c170ec4fff4f",
+        "approvalProxy": "0xccc88a9d1b4ed6b0eaba998850414b24f1c315be"
+      },
+      "solverAddresses": ["0xf70da97812cb96acdf810712aa562db8dfa3dbef"]
+    },
+    {
+      "id": 2741,
+      "name": "abstract",
+      "vmType": "evm",
+      "protocol": {
+        "v2": { "chainId": "abstract", "depository": "0x4cd00e387622c35bddb9b4c962c136462338bc31" }
+      },
+      "contracts": {
+        "erc20Router": "0xb92fe925dc43a0ecde6c8b1a2709c170ec4fff4f",
+        "approvalProxy": "0xccc88a9d1b4ed6b0eaba998850414b24f1c315be"
+      },
+      "solverAddresses": ["0xf70da97812cb96acdf810712aa562db8dfa3dbef"]
+    },
+    {
+      "id": 2818,
+      "name": "morph",
+      "vmType": "evm",
+      "protocol": {
+        "v2": { "chainId": "morph", "depository": "0x4cd00e387622c35bddb9b4c962c136462338bc31" }
+      },
+      "contracts": {
+        "erc20Router": "0xb92fe925dc43a0ecde6c8b1a2709c170ec4fff4f",
+        "approvalProxy": "0xccc88a9d1b4ed6b0eaba998850414b24f1c315be"
+      },
+      "solverAddresses": ["0xf70da97812cb96acdf810712aa562db8dfa3dbef"]
+    },
+    {
+      "id": 4217,
+      "name": "tempo",
+      "vmType": "evm",
+      "protocol": {
+        "v2": { "chainId": "tempo", "depository": "0x4cd00e387622c35bddb9b4c962c136462338bc31" }
+      },
+      "contracts": {
+        "erc20Router": "0xb92fe925dc43a0ecde6c8b1a2709c170ec4fff4f",
+        "approvalProxy": "0xccc88a9d1b4ed6b0eaba998850414b24f1c315be"
+      },
+      "solverAddresses": ["0xf70da97812cb96acdf810712aa562db8dfa3dbef"]
+    },
+    {
+      "id": 4326,
+      "name": "megaeth",
+      "vmType": "evm",
+      "protocol": {
+        "v2": { "chainId": "megaeth", "depository": "0x4cd00e387622c35bddb9b4c962c136462338bc31" }
+      },
+      "contracts": {
+        "erc20Router": "0xb92fe925dc43a0ecde6c8b1a2709c170ec4fff4f",
+        "approvalProxy": "0xccc88a9d1b4ed6b0eaba998850414b24f1c315be"
+      },
+      "solverAddresses": ["0xf70da97812cb96acdf810712aa562db8dfa3dbef"]
+    },
+    {
+      "id": 4663,
+      "name": "robinhood",
+      "vmType": "evm",
+      "protocol": {
+        "v2": { "chainId": "robinhood", "depository": "0x4cd00e387622c35bddb9b4c962c136462338bc31" }
+      },
+      "contracts": {
+        "erc20Router": "0xb92fe925dc43a0ecde6c8b1a2709c170ec4fff4f",
+        "approvalProxy": "0xccc88a9d1b4ed6b0eaba998850414b24f1c315be"
+      },
+      "solverAddresses": [
+        "0xf70da97812cb96acdf810712aa562db8dfa3dbef",
+        "0xabb2acd3be814a80e502575d6c1dc5f789e9cd10",
+        "0xa5a5491bca93dd4c076e4906e79e7673f4a5a142",
+        "0xca7ded7e4f4ba8ab3b10009236ae6d1b95094589",
+        "0x331d9a049d496385998067abf6cbb6371c8d2466",
+        "0x18dd3c14e34c1bc379f7538068c59160d9f68e25",
+        "0x2bb27b73c602643f42471d4751fe4fc4eebefbd1",
+        "0x0ec4e45f9ce3020024c0418a74cd31fbc487038f",
+        "0xe209e0047731aa494289e1af9a0d03da19c5ef08",
+        "0x344daadde53a81f95bcc46a99d39107a509251a1",
+        "0x698dd6c03b50c3d4af12932a0388338bcdd3aaed",
+        "0xcc4bc7882d5ec4a3716e589ab3d816b61ae47a1a",
+        "0x919968a4238a54b381f022a360260ef5d7e015ac",
+        "0xa67d7eb4dc68fa6ce8e34ef8cadaf075b9893fbb",
+        "0x56c262027e0de4aea31d2489529cb25d23e58a8b",
+        "0x728f51950ff096dc03a48f5e83f45ac8bb75f500",
+        "0xada5bb90d0de0bd1b6f3938708f49295a8d1f7cb",
+        "0x511808449be470efaf4131838b2d4998500a6f72",
+        "0x370a7e2d300c14d79d4a7ee07aaca46c4b3012cf",
+        "0xf42b73d2e4d3912eade2a5f7ab39b54064c2acec",
+        "0xd782268f600403843484b70710daee6846fc0db8",
+        "0xd9497b53abcd6972b6370cb195b6bfd6b280e607",
+        "0x69374f8233a4069d48f8994d84052ecae6277ef5",
+        "0x6085932878d587332419ac976fc13d98eba6fdab",
+        "0x9bc462bce2acd6fbe2ef5470d55b439453451083",
+        "0x059df16bdcf8a6bd20bb4814518ff6a2df3c7b11",
+        "0x4381045063b19a615a272733fa6b5f169b622646",
+        "0x81adf99fcc6073157008e25010967d307875c13c",
+        "0xd460b4182ed80992d498290bcbc6b60e95de181b",
+        "0x67d698a325f29e17a9477f28ba4fe50f1cec60e4",
+        "0x1cd9d560440aab96f7b0a007ced7c2191cac5baf"
+      ]
+    },
+    {
+      "id": 5000,
+      "name": "mantle",
+      "vmType": "evm",
+      "protocol": {
+        "v2": { "chainId": "mantle", "depository": "0x59916da825d2d2ec1bf878d71c88826f6633ecca" }
+      },
+      "contracts": {
+        "erc20Router": "0x9ef6d3c2f60d7b9008d74cab1fc0f899c957c819",
+        "approvalProxy": "0x8754bc615047de01228a7527b712806a71a8dc9a"
+      },
+      "solverAddresses": ["0xf70da97812cb96acdf810712aa562db8dfa3dbef"]
+    },
+    {
+      "id": 5031,
+      "name": "somnia",
+      "vmType": "evm",
+      "protocol": {
+        "v2": { "chainId": "somnia", "depository": "0x4cd00e387622c35bddb9b4c962c136462338bc31" }
+      },
+      "contracts": {
+        "erc20Router": "0xb92fe925dc43a0ecde6c8b1a2709c170ec4fff4f",
+        "approvalProxy": "0xccc88a9d1b4ed6b0eaba998850414b24f1c315be"
+      },
+      "solverAddresses": ["0xf70da97812cb96acdf810712aa562db8dfa3dbef"]
+    },
+    {
+      "id": 5042,
+      "name": "arc",
+      "vmType": "evm",
+      "protocol": {
+        "v2": { "chainId": "arc", "depository": "0x4cD00E387622C35bDDB9b4c962C136462338BC31" }
+      },
+      "contracts": {
+        "erc20Router": "0xb92fe925dc43a0ecde6c8b1a2709c170ec4fff4f",
+        "approvalProxy": "0xccc88a9d1b4ed6b0eaba998850414b24f1c315be"
+      },
+      "solverAddresses": [
+        "0xf70da97812cb96acdf810712aa562db8dfa3dbef",
+        "0xa67d7eb4dc68fa6ce8e34ef8cadaf075b9893fbb",
+        "0x56c262027e0de4aea31d2489529cb25d23e58a8b",
+        "0xabb2acd3be814a80e502575d6c1dc5f789e9cd10",
+        "0xada5bb90d0de0bd1b6f3938708f49295a8d1f7cb",
+        "0xa5a5491bca93dd4c076e4906e79e7673f4a5a142",
+        "0x370a7e2d300c14d79d4a7ee07aaca46c4b3012cf",
+        "0xca7ded7e4f4ba8ab3b10009236ae6d1b95094589",
+        "0x331d9a049d496385998067abf6cbb6371c8d2466",
+        "0x18dd3c14e34c1bc379f7538068c59160d9f68e25",
+        "0x2bb27b73c602643f42471d4751fe4fc4eebefbd1",
+        "0xcc4bc7882d5ec4a3716e589ab3d816b61ae47a1a",
+        "0x0ec4e45f9ce3020024c0418a74cd31fbc487038f",
+        "0xe209e0047731aa494289e1af9a0d03da19c5ef08",
+        "0x919968a4238a54b381f022a360260ef5d7e015ac",
+        "0x344daadde53a81f95bcc46a99d39107a509251a1"
+      ]
+    },
+    {
+      "id": 5330,
+      "name": "superseed",
+      "vmType": "evm",
+      "protocol": {
+        "v2": { "chainId": "superseed", "depository": "0x4cd00e387622c35bddb9b4c962c136462338bc31" }
+      },
+      "contracts": {
+        "erc20Router": "0xb92fe925dc43a0ecde6c8b1a2709c170ec4fff4f",
+        "approvalProxy": "0xccc88a9d1b4ed6b0eaba998850414b24f1c315be"
+      },
+      "solverAddresses": ["0xf70da97812cb96acdf810712aa562db8dfa3dbef"]
+    },
+    {
+      "id": 8453,
+      "name": "base",
+      "vmType": "evm",
+      "protocol": {
+        "v2": { "chainId": "base", "depository": "0x4cd00e387622c35bddb9b4c962c136462338bc31" }
+      },
+      "contracts": {
+        "erc20Router": "0xb92fe925dc43a0ecde6c8b1a2709c170ec4fff4f",
+        "approvalProxy": "0xccc88a9d1b4ed6b0eaba998850414b24f1c315be"
+      },
+      "solverAddresses": [
+        "0xf70da97812cb96acdf810712aa562db8dfa3dbef",
+        "0x56c262027e0de4aea31d2489529cb25d23e58a8b",
+        "0xabb2acd3be814a80e502575d6c1dc5f789e9cd10",
+        "0xa67d7eb4dc68fa6ce8e34ef8cadaf075b9893fbb",
+        "0xf42b73d2e4d3912eade2a5f7ab39b54064c2acec",
+        "0xd782268f600403843484b70710daee6846fc0db8",
+        "0xa5a5491bca93dd4c076e4906e79e7673f4a5a142",
+        "0x370a7e2d300c14d79d4a7ee07aaca46c4b3012cf",
+        "0xca7ded7e4f4ba8ab3b10009236ae6d1b95094589",
+        "0x331d9a049d496385998067abf6cbb6371c8d2466",
+        "0xada5bb90d0de0bd1b6f3938708f49295a8d1f7cb",
+        "0x18dd3c14e34c1bc379f7538068c59160d9f68e25",
+        "0x2bb27b73c602643f42471d4751fe4fc4eebefbd1",
+        "0x6085932878d587332419ac976fc13d98eba6fdab",
+        "0xd9497b53abcd6972b6370cb195b6bfd6b280e607",
+        "0xd460b4182ed80992d498290bcbc6b60e95de181b",
+        "0x1cd9d560440aab96f7b0a007ced7c2191cac5baf",
+        "0x4381045063b19a615a272733fa6b5f169b622646",
+        "0x9bc462bce2acd6fbe2ef5470d55b439453451083",
+        "0xe209e0047731aa494289e1af9a0d03da19c5ef08",
+        "0xcc4bc7882d5ec4a3716e589ab3d816b61ae47a1a",
+        "0x0ec4e45f9ce3020024c0418a74cd31fbc487038f",
+        "0x69374f8233a4069d48f8994d84052ecae6277ef5",
+        "0x67d698a325f29e17a9477f28ba4fe50f1cec60e4",
+        "0x919968a4238a54b381f022a360260ef5d7e015ac",
+        "0x344daadde53a81f95bcc46a99d39107a509251a1",
+        "0x698dd6c03b50c3d4af12932a0388338bcdd3aaed",
+        "0x511808449be470efaf4131838b2d4998500a6f72",
+        "0x728f51950ff096dc03a48f5e83f45ac8bb75f500",
+        "0x8583297605d996da21b5f47d69bf56a0f7fb74f4",
+        "0x53939cb0b8b5d8ebc8f8208273a04a12f21c7346",
+        "0x81adf99fcc6073157008e25010967d307875c13c",
+        "0x059df16bdcf8a6bd20bb4814518ff6a2df3c7b11",
+        "0xf57519ebc17347af5a6eb3df2eab68204b1df4e1",
+        "0x59a2c9bd639226012d59bba67b6990743193af78",
+        "0xfdee58cc140e170d72aba75f29b23d7bcc05da0c",
+        "0x6d0a66df5f4a32be3656f63750e0253eb59d9399",
+        "0x035239dd57a4716e14e4a00f84b8fa7ee03e152e",
+        "0x850ae73e224780aff70d46157e7acc1038d9ceb6",
+        "0xeb81da7ac500267f62d9f93a03a0a5fb86864b2a",
+        "0x744dce9a9e94ac1d124bec9f2a02a9b3ec68507d"
+      ]
+    },
+    {
+      "id": 9745,
+      "name": "plasma",
+      "vmType": "evm",
+      "protocol": {
+        "v2": { "chainId": "plasma", "depository": "0x4cd00e387622c35bddb9b4c962c136462338bc31" }
+      },
+      "contracts": {
+        "erc20Router": "0xb92fe925dc43a0ecde6c8b1a2709c170ec4fff4f",
+        "approvalProxy": "0xccc88a9d1b4ed6b0eaba998850414b24f1c315be"
+      },
+      "solverAddresses": ["0xf70da97812cb96acdf810712aa562db8dfa3dbef"]
+    },
+    {
+      "id": 33139,
+      "name": "apechain",
+      "vmType": "evm",
+      "protocol": {
+        "v2": { "chainId": "apechain", "depository": "0x4cd00e387622c35bddb9b4c962c136462338bc31" }
+      },
+      "contracts": {
+        "erc20Router": "0xb92fe925dc43a0ecde6c8b1a2709c170ec4fff4f",
+        "approvalProxy": "0xccc88a9d1b4ed6b0eaba998850414b24f1c315be"
+      },
+      "solverAddresses": ["0xf70da97812cb96acdf810712aa562db8dfa3dbef"]
+    },
+    {
+      "id": 34443,
+      "name": "mode",
+      "vmType": "evm",
+      "protocol": {
+        "v2": { "chainId": "mode", "depository": "0x4cd00e387622c35bddb9b4c962c136462338bc31" }
+      },
+      "contracts": {
+        "erc20Router": "0xb92fe925dc43a0ecde6c8b1a2709c170ec4fff4f",
+        "approvalProxy": "0xccc88a9d1b4ed6b0eaba998850414b24f1c315be"
+      },
+      "solverAddresses": ["0xf70da97812cb96acdf810712aa562db8dfa3dbef"]
+    },
+    {
+      "id": 42018,
+      "name": "mythos",
+      "vmType": "evm",
+      "protocol": {
+        "v2": { "chainId": "mythos", "depository": "0x4cd00e387622c35bddb9b4c962c136462338bc31" }
+      },
+      "contracts": {
+        "erc20Router": "0xb92fe925dc43a0ecde6c8b1a2709c170ec4fff4f",
+        "approvalProxy": "0xccc88a9d1b4ed6b0eaba998850414b24f1c315be"
+      },
+      "solverAddresses": ["0xf70da97812cb96acdf810712aa562db8dfa3dbef"]
+    },
+    {
+      "id": 42161,
+      "name": "arbitrum",
+      "vmType": "evm",
+      "protocol": {
+        "v2": { "chainId": "arbitrum", "depository": "0x4cd00e387622c35bddb9b4c962c136462338bc31" }
+      },
+      "contracts": {
+        "erc20Router": "0xb92fe925dc43a0ecde6c8b1a2709c170ec4fff4f",
+        "approvalProxy": "0xccc88a9d1b4ed6b0eaba998850414b24f1c315be"
+      },
+      "solverAddresses": ["0xf70da97812cb96acdf810712aa562db8dfa3dbef"]
+    },
+    {
+      "id": 42220,
+      "name": "celo",
+      "vmType": "evm",
+      "protocol": {
+        "v2": { "chainId": "celo", "depository": "0x4cd00e387622c35bddb9b4c962c136462338bc31" }
+      },
+      "contracts": {
+        "erc20Router": "0xb92fe925dc43a0ecde6c8b1a2709c170ec4fff4f",
+        "approvalProxy": "0xccc88a9d1b4ed6b0eaba998850414b24f1c315be"
+      },
+      "solverAddresses": ["0xf70da97812cb96acdf810712aa562db8dfa3dbef"]
+    },
+    {
+      "id": 43114,
+      "name": "avalanche",
+      "vmType": "evm",
+      "protocol": {
+        "v2": { "chainId": "avalanche", "depository": "0x4cd00e387622c35bddb9b4c962c136462338bc31" }
+      },
+      "contracts": {
+        "erc20Router": "0xb92fe925dc43a0ecde6c8b1a2709c170ec4fff4f",
+        "approvalProxy": "0xccc88a9d1b4ed6b0eaba998850414b24f1c315be"
+      },
+      "solverAddresses": ["0xf70da97812cb96acdf810712aa562db8dfa3dbef"]
+    },
+    {
+      "id": 48900,
+      "name": "zircuit",
+      "vmType": "evm",
+      "protocol": {
+        "v2": { "chainId": "zircuit", "depository": "0x4cd00e387622c35bddb9b4c962c136462338bc31" }
+      },
+      "contracts": {
+        "erc20Router": "0xb92fe925dc43a0ecde6c8b1a2709c170ec4fff4f",
+        "approvalProxy": "0xccc88a9d1b4ed6b0eaba998850414b24f1c315be"
+      },
+      "solverAddresses": ["0xf70da97812cb96acdf810712aa562db8dfa3dbef"]
+    },
+    {
+      "id": 57073,
+      "name": "ink",
+      "vmType": "evm",
+      "protocol": {
+        "v2": { "chainId": "ink", "depository": "0x4cd00e387622c35bddb9b4c962c136462338bc31" }
+      },
+      "contracts": {
+        "erc20Router": "0xb92fe925dc43a0ecde6c8b1a2709c170ec4fff4f",
+        "approvalProxy": "0xccc88a9d1b4ed6b0eaba998850414b24f1c315be"
+      },
+      "solverAddresses": ["0xf70da97812cb96acdf810712aa562db8dfa3dbef"]
+    },
+    {
+      "id": 59144,
+      "name": "linea",
+      "vmType": "evm",
+      "protocol": {
+        "v2": { "chainId": "linea", "depository": "0x59916da825d2d2ec1bf878d71c88826f6633ecca" }
+      },
+      "contracts": {
+        "erc20Router": "0x9ef6d3c2f60d7b9008d74cab1fc0f899c957c819",
+        "approvalProxy": "0x8754bc615047de01228a7527b712806a71a8dc9a"
+      },
+      "solverAddresses": ["0xf70da97812cb96acdf810712aa562db8dfa3dbef"]
+    },
+    {
+      "id": 60808,
+      "name": "bob",
+      "vmType": "evm",
+      "protocol": {
+        "v2": { "chainId": "bob", "depository": "0x4cd00e387622c35bddb9b4c962c136462338bc31" }
+      },
+      "contracts": {
+        "erc20Router": "0xb92fe925dc43a0ecde6c8b1a2709c170ec4fff4f",
+        "approvalProxy": "0xccc88a9d1b4ed6b0eaba998850414b24f1c315be"
+      },
+      "solverAddresses": ["0xf70da97812cb96acdf810712aa562db8dfa3dbef"]
+    },
+    {
+      "id": 80094,
+      "name": "berachain",
+      "vmType": "evm",
+      "protocol": {
+        "v2": { "chainId": "berachain", "depository": "0x4cd00e387622c35bddb9b4c962c136462338bc31" }
+      },
+      "contracts": {
+        "erc20Router": "0xb92fe925dc43a0ecde6c8b1a2709c170ec4fff4f",
+        "approvalProxy": "0xccc88a9d1b4ed6b0eaba998850414b24f1c315be"
+      },
+      "solverAddresses": ["0xf70da97812cb96acdf810712aa562db8dfa3dbef"]
+    },
+    {
+      "id": 81457,
+      "name": "blast",
+      "vmType": "evm",
+      "protocol": {
+        "v2": { "chainId": "blast", "depository": "0x4cd00e387622c35bddb9b4c962c136462338bc31" }
+      },
+      "contracts": {
+        "erc20Router": "0xb92fe925dc43a0ecde6c8b1a2709c170ec4fff4f",
+        "approvalProxy": "0xccc88a9d1b4ed6b0eaba998850414b24f1c315be"
+      },
+      "solverAddresses": ["0xf70da97812cb96acdf810712aa562db8dfa3dbef"]
+    },
+    {
+      "id": 97477,
+      "name": "doma",
+      "vmType": "evm",
+      "protocol": {
+        "v2": { "chainId": "doma", "depository": "0x4cd00e387622c35bddb9b4c962c136462338bc31" }
+      },
+      "contracts": {
+        "erc20Router": "0xb92fe925dc43a0ecde6c8b1a2709c170ec4fff4f",
+        "approvalProxy": "0xccc88a9d1b4ed6b0eaba998850414b24f1c315be"
+      },
+      "solverAddresses": ["0xf70da97812cb96acdf810712aa562db8dfa3dbef"]
+    },
+    {
+      "id": 98866,
+      "name": "plume",
+      "vmType": "evm",
+      "protocol": {
+        "v2": { "chainId": "plume", "depository": "0x4cd00e387622c35bddb9b4c962c136462338bc31" }
+      },
+      "contracts": {
+        "erc20Router": "0xb92fe925dc43a0ecde6c8b1a2709c170ec4fff4f",
+        "approvalProxy": "0xccc88a9d1b4ed6b0eaba998850414b24f1c315be"
+      },
+      "solverAddresses": ["0xf70da97812cb96acdf810712aa562db8dfa3dbef"]
+    },
+    {
+      "id": 534352,
+      "name": "scroll",
+      "vmType": "evm",
+      "protocol": {
+        "v2": { "chainId": "scroll", "depository": "0x4cd00e387622c35bddb9b4c962c136462338bc31" }
+      },
+      "contracts": {
+        "erc20Router": "0xb92fe925dc43a0ecde6c8b1a2709c170ec4fff4f",
+        "approvalProxy": "0xccc88a9d1b4ed6b0eaba998850414b24f1c315be"
+      },
+      "solverAddresses": ["0xf70da97812cb96acdf810712aa562db8dfa3dbef"]
+    },
+    {
+      "id": 537724,
+      "name": "xrp",
+      "vmType": "xrpvm",
+      "protocol": {
+        "v2": { "chainId": "xrp", "depository": "rJBdWA9p5KwBoqSQTyMdg3UHLsJVzGVu5m" }
+      },
+      "contracts": { "erc20Router": "", "approvalProxy": "" },
+      "solverAddresses": ["rE6xRr2GbS31KPoL9RaLgfiarJ4vqXj8Si"]
+    },
+    {
+      "id": 685689,
+      "name": "gensyn",
+      "vmType": "evm",
+      "protocol": {
+        "v2": { "chainId": "gensyn", "depository": "0x4cd00e387622c35bddb9b4c962c136462338bc31" }
+      },
+      "contracts": {
+        "erc20Router": "0xb92fe925dc43a0ecde6c8b1a2709c170ec4fff4f",
+        "approvalProxy": "0xccc88a9d1b4ed6b0eaba998850414b24f1c315be"
+      },
+      "solverAddresses": ["0xf70da97812cb96acdf810712aa562db8dfa3dbef"]
+    },
+    {
+      "id": 747474,
+      "name": "katana",
+      "vmType": "evm",
+      "protocol": {
+        "v2": { "chainId": "katana", "depository": "0x4cd00e387622c35bddb9b4c962c136462338bc31" }
+      },
+      "contracts": {
+        "erc20Router": "0xb92fe925dc43a0ecde6c8b1a2709c170ec4fff4f",
+        "approvalProxy": "0xccc88a9d1b4ed6b0eaba998850414b24f1c315be"
+      },
+      "solverAddresses": ["0xf70da97812cb96acdf810712aa562db8dfa3dbef"]
+    },
+    {
+      "id": 3586256,
+      "name": "lighter",
+      "vmType": "lvm",
+      "protocol": { "v2": { "chainId": "lighter", "depository": "731033" } },
+      "contracts": { "erc20Router": "", "approvalProxy": "" },
+      "solverAddresses": ["508431"]
+    },
+    {
+      "id": 5064014,
+      "name": "ethereal",
+      "vmType": "evm",
+      "protocol": {
+        "v2": { "chainId": "ethereal", "depository": "0x4cd00e387622c35bddb9b4c962c136462338bc31" }
+      },
+      "contracts": {
+        "erc20Router": "0xb92fe925dc43a0ecde6c8b1a2709c170ec4fff4f",
+        "approvalProxy": "0xccc88a9d1b4ed6b0eaba998850414b24f1c315be"
+      },
+      "solverAddresses": ["0xf70da97812cb96acdf810712aa562db8dfa3dbef"]
+    },
+    {
+      "id": 7777777,
+      "name": "zora",
+      "vmType": "evm",
+      "protocol": {
+        "v2": { "chainId": "zora", "depository": "0x4cd00e387622c35bddb9b4c962c136462338bc31" }
+      },
+      "contracts": {
+        "erc20Router": "0xb92fe925dc43a0ecde6c8b1a2709c170ec4fff4f",
+        "approvalProxy": "0xccc88a9d1b4ed6b0eaba998850414b24f1c315be"
+      },
+      "solverAddresses": ["0xf70da97812cb96acdf810712aa562db8dfa3dbef"]
+    },
+    {
+      "id": 8253038,
+      "name": "bitcoin",
+      "vmType": "bvm",
+      "protocol": {
+        "v2": { "chainId": "bitcoin", "depository": "bc1qzmtn0q92ayejt2hpffvlktcpmyy7vvsd06sefu" }
+      },
+      "contracts": { "erc20Router": "", "approvalProxy": "" },
+      "solverAddresses": ["bc1qq2mvrp4g3ugd424dw4xv53rgsf8szkrv853jrc"]
+    },
+    {
+      "id": 9286185,
+      "name": "eclipse",
+      "vmType": "svm",
+      "protocol": {
+        "v2": {
+          "chainId": "eclipse",
+          "depository": "99vQwtBwYtrqqD9YSXbdum3KBdxPAVxYTaQ3cfnJSrN2",
+          "depositoryVault": "7uTT8Xi5RWXzy7h9XL244GRgEycDYDhLjr3ZyNdXi8pZ"
+        }
+      },
+      "contracts": { "erc20Router": "", "approvalProxy": "" },
+      "solverAddresses": [
+        "F7p3dFrjRTbtRp8FRF6qHLomXbKRBzpvBLjtQcfcgmNe",
+        "DNLbQ4t95LLPevvLdcFzN8RHNN83ntQJLt26E8VTnE7p"
+      ]
+    },
+    {
+      "id": 224235520,
+      "name": "ton",
+      "vmType": "tonvm",
+      "protocol": {
+        "v2": { "chainId": "ton", "depository": "EQCrdGsDTqA2t6xRR4N6V4J705F7w_VQbUdHnofsh-8lVIPs" }
+      },
+      "contracts": { "erc20Router": "", "approvalProxy": "" },
+      "solverAddresses": ["UQDBrIuXWeqPGbjyyNsUjqiTRTBWhlJkjoURNtVvNjYssR87"]
+    },
+    {
+      "id": 548123634,
+      "name": "robinhood-lighter",
+      "vmType": "lvm",
+      "protocol": { "v2": { "chainId": "robinhood-lighter", "depository": "33627" } },
+      "contracts": { "erc20Router": "", "approvalProxy": "" },
+      "solverAddresses": ["37979"]
+    },
+    {
+      "id": 728126428,
+      "name": "tron",
+      "vmType": "tvm",
+      "protocol": {
+        "v2": { "chainId": "tron", "depository": "TXtEs6t2oUWQsNos7m68gbHdE9Q5n6x2oN" }
+      },
+      "contracts": { "erc20Router": "", "approvalProxy": "" },
+      "solverAddresses": ["TYVWGh8XkmU49Hi9PkGAZXiiJPB3J5zJZy"]
+    },
+    {
+      "id": 792703809,
+      "name": "solana",
+      "vmType": "svm",
+      "protocol": {
+        "v2": {
+          "chainId": "solana",
+          "depository": "99vQwtBwYtrqqD9YSXbdum3KBdxPAVxYTaQ3cfnJSrN2",
+          "depositoryVault": "7uTT8Xi5RWXzy7h9XL244GRgEycDYDhLjr3ZyNdXi8pZ"
+        }
+      },
+      "contracts": { "erc20Router": "", "approvalProxy": "" },
+      "solverAddresses": [
+        "F7p3dFrjRTbtRp8FRF6qHLomXbKRBzpvBLjtQcfcgmNe",
+        "DNLbQ4t95LLPevvLdcFzN8RHNN83ntQJLt26E8VTnE7p"
+      ]
+    }
+  ]
+}

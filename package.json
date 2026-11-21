@@ -1,0 +1,80 @@
+{
+  "name": "0xio-extension",
+  "private": true,
+  "version": "3.0.6",
+  "license": "GPL-3.0-only",
+  "type": "module",
+  "scripts": {
+    "setup": "npm install && npm exec allow-scripts",
+    "dev": "npm exec allow-scripts && vite",
+    "build": "npm exec allow-scripts && npm run clean && vite build",
+    "clean": "rm -rf dist",
+    "build:firefox": "npm exec allow-scripts && npm run clean:firefox && vite build -c vite.config.firefox.js",
+    "build:firefox:debug": "DEBUG=1 npm run build:firefox",
+    "build:all": "npm run build && npm run build:firefox",
+    "clean:firefox": "rm -rf dist-firefox",
+    "manifest:firefox": "node build/firefox-manifest.mjs",
+    "wasm:firefox:sync": "node build/sync-firefox-wasm.mjs",
+    "ff:run": "web-ext run -s dist-firefox",
+    "ff:lint": "web-ext lint -s dist-firefox",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:conformance": "vitest run -c vitest.conformance.config.ts",
+    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css}\"",
+    "format:check": "prettier --check \"src/**/*.{js,jsx,ts,tsx,json,css}\"",
+    "preview": "vite preview",
+    "lavamoat:check": "allow-scripts list"
+  },
+  "dependencies": {
+    "@noble/curves": "2.4.0",
+    "@noble/hashes": "2.4.0",
+    "@scure/bip32": "2.4.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "tweetnacl": "1.0.3"
+  },
+  "devDependencies": {
+    "@crxjs/vite-plugin": "2.6.1",
+    "@lavamoat/allow-scripts": "3.4.3",
+    "@lavamoat/preinstall-always-fail": "2.1.1",
+    "@tailwindcss/postcss": "4.2.1",
+    "@testing-library/jest-dom": "6.9.1",
+    "@testing-library/react": "16.3.2",
+    "@types/chrome": "0.0.263",
+    "@types/node": "25.5.0",
+    "@types/react": "18.3.28",
+    "@types/react-dom": "18.3.7",
+    "@typescript-eslint/eslint-plugin": "8.73.0",
+    "@typescript-eslint/parser": "8.73.0",
+    "@vitejs/plugin-react": "4.7.0",
+    "autoprefixer": "10.4.27",
+    "eslint": "8.57.1",
+    "eslint-config-prettier": "10.1.8",
+    "eslint-plugin-react": "7.37.5",
+    "eslint-plugin-react-hooks": "4.6.2",
+    "eslint-plugin-react-refresh": "0.4.26",
+    "jsdom": "28.1.0",
+    "postcss": "8.5.29",
+    "prettier": "3.8.1",
+    "tailwindcss": "4.2.1",
+    "typescript": "5.9.3",
+    "vite": "6.4.5",
+    "vitest": "4.1.12",
+    "web-ext": "10.8.0"
+  },
+  "overrides": {
+    "@crxjs/vite-plugin": {
+      "rollup": "4.59.0"
+    },
+    "shell-quote": "^1.11.0"
+  },
+  "lavamoat": {
+    "allowScripts": {
+      "@lavamoat/preinstall-always-fail": false,
+      "vite>esbuild": true,
+      "vitest>vite>esbuild": true
+    }
+  }
+}

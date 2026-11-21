@@ -1,0 +1,557 @@
+@import 'tailwindcss';
+
+/* TAILWIND THEME TOKENS */
+@theme {
+  /* Z-Index ladder. One ordered scale for every stacking surface - components use the
+     generated utilities (z-sheet, z-modal, ...) instead of ad-hoc numbers. Ordered by what
+     can open on top of what: a picker opens from a nested surface, which opens from a
+     sheet/modal; confirm and toast must clear all of them; critical clears everything. */
+  --z-index-raised: 10;
+  --z-index-sticky: 20;
+  --z-index-scrim: 30;
+  --z-index-dropdown: 40;
+  --z-index-sheet: 50;
+  --z-index-modal: 60;
+  --z-index-nested: 70;
+  --z-index-picker: 80;
+  --z-index-blocking: 90;
+  --z-index-confirm: 100;
+  --z-index-toast: 110;
+  --z-index-critical: 120;
+
+  /* Surfaces */
+  --color-surface: var(--bg);
+  --color-surface-card: var(--bg-1);
+  --color-surface-input: var(--bg-2);
+  --color-surface-highlight: var(--bg-2);
+  --color-surface-overlay: var(--overlay);
+  --color-surface-token: var(--bg-1);
+  --color-surface-deep: var(--bg-3);
+
+  /* Text */
+  --color-content: var(--fg);
+  --color-content-secondary: var(--fg-2);
+  --color-content-muted: var(--fg-3);
+  --color-content-inverse: var(--accent-fg);
+
+  /* Brand / Accent */
+  --color-accent: var(--accent);
+  --color-accent-fill: var(--accent-2);
+  --color-accent-hover: color-mix(in oklab, var(--accent) 80%, black);
+  --color-accent-pressed: var(--accent-2);
+  --color-accent-fg: var(--accent-fg);
+
+  /* Functional */
+  --color-danger: var(--neg);
+  --color-positive: var(--pos);
+  --color-caution: var(--fg-2);
+  --color-info: var(--accent);
+  --color-connected: var(--pos);
+
+  /* Borders */
+  --color-edge: var(--line);
+  --color-edge-active: var(--line-2);
+
+  /* Asset types - derived from accent / pos via color-mix */
+  --color-asset-private: var(--accent);
+  --color-asset-private-light: color-mix(in oklab, var(--accent) 70%, white);
+  --color-asset-private-bg: color-mix(in oklab, var(--accent) 12%, transparent);
+  --color-asset-private-border: color-mix(in oklab, var(--accent) 20%, transparent);
+  --color-asset-public: var(--pos);
+  --color-asset-public-light: color-mix(in oklab, var(--pos) 70%, white);
+  --color-asset-public-bg: color-mix(in oklab, var(--pos) 12%, transparent);
+  --color-asset-public-border: color-mix(in oklab, var(--pos) 20%, transparent);
+
+  /* Widget - derived */
+  --color-widget-bg: color-mix(in oklab, var(--bg-1) 60%, transparent);
+  --color-widget-text: var(--fg-3);
+  --color-widget-hover: color-mix(in oklab, var(--bg-2) 60%, transparent);
+  --color-widget-border: color-mix(in oklab, var(--line) 60%, transparent);
+  --color-widget-icon-task: var(--accent);
+  --color-widget-icon-task-bg: color-mix(in oklab, var(--accent) 10%, transparent);
+  --color-widget-icon-privacy: var(--accent);
+  --color-widget-icon-privacy-bg: color-mix(in oklab, var(--accent) 10%, transparent);
+
+  /* Action grid */
+  --color-action-grid: var(--bg-1);
+}
+
+/* DESIGN TOKENS */
+@layer base {
+  :root {
+    /* Dim theme (default): black and white, pure neutral greys, the white key is the accent */
+    --bg: #090909;
+    --bg-1: #131313;
+    --bg-2: #1b1b1b;
+    --bg-3: #262626;
+    --line: #1f1f1f;
+    --line-2: #2e2e2e;
+    --fg: #f5f5f5;
+    --fg-2: #bdbdbd;
+    --fg-3: #8f8f8f;
+    --accent: #f5f5f5;
+    --switch-on: #f5f5f5;
+    --switch-off: #3a3a3a;
+    --switch-knob-on: #090909;
+    --accent-2: #ffffff;
+    --accent-fg: #090909;
+    --pos: #5dd39e;
+    --neg: #ef6b6b;
+
+    /* Depth: a lit top edge and a long soft shadow, never a border */
+    --key-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 10px 24px -10px rgba(255, 255, 255, 0.16),
+      0 2px 6px rgba(0, 0, 0, 0.5);
+    --raise-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 18px 40px -18px rgba(0, 0, 0, 0.9),
+      0 2px 6px rgba(0, 0, 0, 0.45);
+
+    /* Derived */
+    --overlay: rgba(9, 9, 9, 0.75);
+
+    /* Logo and mascot ink: the mark is white on the dark themes and black on Day, never tinted. */
+    --logo-ink: #ffffff;
+
+    /* Backwards-compatible aliases */
+    --bg-main: var(--bg);
+    --bg-card: var(--bg-1);
+    --bg-input: var(--bg-2);
+    --bg-highlight: var(--bg-2);
+    --bg-overlay: var(--overlay);
+    --text-main: var(--fg);
+    --text-secondary: var(--fg-2);
+    --text-muted: var(--fg-3);
+    --text-inverse: var(--accent-fg);
+    --text-address: var(--fg-2);
+    --bg-address: var(--bg);
+    --primary: var(--accent);
+    --primary-hover: color-mix(in oklab, var(--accent) 80%, black);
+    --primary-fg: var(--accent-fg);
+    --primary-glow: color-mix(in oklab, var(--accent) 20%, transparent);
+    --octra: var(--accent);
+    --octra-text: var(--fg);
+    --tokenbg: var(--bg);
+    --success: var(--pos);
+    --error: var(--neg);
+    --warning: var(--fg-2);
+    --info: var(--accent);
+    --connected: var(--pos);
+    --border-color: var(--line);
+    --border-active: var(--line-2);
+
+    /* Widget aliases */
+    --bg-Widget: color-mix(in oklab, var(--bg-1) 60%, transparent);
+    --bg-hover-Widget: color-mix(in oklab, var(--bg-2) 60%, transparent);
+    --Widget-Text: var(--fg-3);
+    --border-widget: color-mix(in oklab, var(--line) 60%, transparent);
+    --icon-widgetT: var(--accent);
+    --bg-icon-widgetT: color-mix(in oklab, var(--accent) 10%, transparent);
+    --icon-widgetE: var(--accent);
+    --bg-icon-widgetE: color-mix(in oklab, var(--accent) 10%, transparent);
+    --border-hover-WidgetE: color-mix(in oklab, var(--accent) 30%, transparent);
+    --border-hover-WidgetT: color-mix(in oklab, var(--accent) 30%, transparent);
+
+    /* Action grid aliases */
+    --action-grid-bg: var(--bg-1);
+    --action-icon-bg: var(--bg-1);
+    --action-icon-fg: var(--fg);
+    --action-icon-border: var(--line);
+
+    /* Glass - derived */
+    --glass-bg: color-mix(in oklab, var(--bg-1) 70%, transparent);
+    --glass-bg-strong: color-mix(in oklab, var(--bg-1) 85%, transparent);
+    --glass-border: color-mix(in oklab, var(--line) 40%, transparent);
+    --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+
+    /* Asset aliases - derived from accent / pos */
+    --private-asset: var(--accent);
+    --private-asset-dark: color-mix(in oklab, var(--accent) 70%, white);
+    --private-asset-bg: color-mix(in oklab, var(--accent) 12%, transparent);
+    --private-asset-border: color-mix(in oklab, var(--accent) 20%, transparent);
+    --private-asset-hover: color-mix(in oklab, var(--accent) 35%, transparent);
+    --private-glow: color-mix(in oklab, var(--accent) 12%, transparent);
+    --public-asset: var(--pos);
+    --public-asset-dark: color-mix(in oklab, var(--pos) 70%, white);
+    --public-asset-bg: color-mix(in oklab, var(--pos) 12%, transparent);
+    --public-asset-border: color-mix(in oklab, var(--pos) 20%, transparent);
+    --public-asset-hover: color-mix(in oklab, var(--pos) 35%, transparent);
+    --public-glow: color-mix(in oklab, var(--pos) 12%, transparent);
+
+    /* Layout */
+    --app-width: 400px;
+    --app-height: 600px;
+    --header-height: 52px;
+    --gutter: 16px;
+    --icon-btn-size: 32px;
+    --balance-font: 32px;
+    --radius-sm: 0.375rem;
+    --radius-md: 0.75rem;
+    --radius-lg: 1rem;
+    --radius-full: 9999px;
+
+    /* Effects */
+    --shadow-hard: 1px 1px 0px 0px rgba(0, 0, 0, 0.4);
+    --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Spacing */
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+    --space-2xl: 48px;
+
+    /* Typography */
+    --font-mono: 'SF Mono', 'Consolas', 'Courier New', monospace;
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+    /* Transitions */
+    --transition-fast: 0.1s ease;
+    --transition-normal: 0.2s ease;
+    --transition-bounce: 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+
+    /* Aliases for the plain-CSS files; the ladder itself lives in @theme above. */
+    --z-header: var(--z-index-sticky);
+    --z-modal: var(--z-index-modal);
+    --z-toast: var(--z-index-toast);
+  }
+
+  /* Day theme */
+  [data-theme='light'] {
+    --bg: #f6f7fb;
+    --bg-1: #ffffff;
+    --bg-2: #f0f1f6;
+    --bg-3: #e6e8ef;
+    --line: #dfe1ea;
+    --line-2: #c4c7d2;
+    --fg: #161821;
+    --fg-2: #585c69;
+    --fg-3: #696c77;
+    --accent: #2c4ce0;
+    --switch-on: var(--accent);
+    --switch-off: #8d91a0;
+    --switch-knob-on: #ffffff;
+    --key-shadow: 0 8px 18px -10px rgba(0, 0, 0, 0.18);
+    --raise-shadow: 0 12px 30px -16px rgba(0, 0, 0, 0.18), 0 1px 3px rgba(0, 0, 0, 0.06);
+    --accent-2: #1c36c8;
+    --accent-fg: #ffffff;
+    --pos: #1a8a5c;
+    --neg: #c8392b;
+
+    --overlay: rgba(22, 24, 33, 0.45);
+
+    --logo-ink: #000000;
+
+    /* Action grid icons - light theme */
+    --action-icon-bg: var(--accent);
+    --action-icon-fg: var(--accent-fg);
+    --action-icon-border: color-mix(in oklab, var(--accent) 80%, black);
+
+    --shadow-hard: 0 2px 8px rgba(0, 0, 0, 0.06);
+    --shadow-soft: 0 1px 3px rgba(0, 0, 0, 0.04);
+
+    /* Glass - opaque in light mode */
+    --glass-bg: var(--bg-1);
+    --glass-bg-strong: var(--bg-1);
+    --glass-border: var(--line);
+    --glass-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+
+    /* Widget - solid surfaces in light mode */
+    --bg-Widget: var(--bg-1);
+    --bg-hover-Widget: var(--bg-2);
+  }
+
+  /* Octra theme */
+  [data-theme='octra'] {
+    --bg: #0e0f3e;
+    --bg-1: #161858;
+    --bg-2: #1f2070;
+    --bg-3: #292a86;
+    --line: #2e308a;
+    --line-2: #4144ab;
+    --fg: #f6f8fc;
+    --fg-2: #bcc4d6;
+    --fg-3: #8f97b3;
+    --accent: #0000db;
+    --switch-on: #7aa2ff;
+    --switch-off: #6b72c8;
+    --switch-knob-on: #ffffff;
+    --key-shadow: 0 8px 18px -10px rgba(0, 0, 0, 0.5);
+    --raise-shadow: 0 12px 30px -16px rgba(0, 0, 0, 0.5), 0 1px 3px rgba(0, 0, 0, 0.06);
+    --accent-2: #1313ff;
+    --accent-fg: #ffffff;
+    --pos: #6ed8a4;
+    --neg: #f08070;
+
+    --overlay: rgba(14, 15, 62, 0.85);
+
+    --logo-ink: #ffffff;
+
+    /* Action icons: accent is too dark against bg-1/bg-2 -> use accent-2 tint */
+    --action-icon-bg: color-mix(in oklab, var(--accent-2) 20%, var(--bg-2));
+    --action-icon-fg: var(--fg);
+    --action-icon-border: color-mix(in oklab, var(--accent-2) 32%, var(--line));
+
+    --shadow-hard: 0 2px 8px rgba(0, 0, 0, 0.4);
+    --shadow-soft: 0 1px 3px rgba(0, 0, 0, 0.3);
+
+    /* Navy glass - border bumped to line-2 for visibility */
+    --glass-border: var(--line-2);
+    --glass-shadow: 0 8px 24px rgba(0, 0, 40, 0.8);
+
+    /* --accent is fills-only dark blue; text/icons use --accent-text (#7aa2ff) */
+    --accent-text: #7aa2ff;
+
+    /* Tailwind token overrides - text/icons -> accent-text, fills -> accent/accent-2 */
+    --color-accent: var(--accent-text);
+    --color-accent-hover: var(--accent-2);
+    --color-accent-pressed: var(--accent);
+    --color-info: var(--accent-text);
+    --color-widget-icon-task: var(--accent-text);
+    --color-widget-icon-task-bg: color-mix(in oklab, var(--accent-2) 18%, transparent);
+    --color-widget-icon-privacy: var(--accent-text);
+    --color-widget-icon-privacy-bg: color-mix(in oklab, var(--accent-2) 18%, transparent);
+
+    /* Private-asset tints: bump opacity so they're visible on deep-blue bg */
+    --color-asset-private: var(--accent-text);
+    --color-asset-private-light: oklch(0.85 0.14 260);
+    --color-asset-private-bg: color-mix(in oklab, var(--accent-2) 20%, var(--bg-2));
+    --color-asset-private-border: color-mix(in oklab, var(--accent-2) 32%, var(--line));
+    --private-asset-dark: oklch(0.85 0.14 260);
+
+    /* Backward-compat aliases - --primary stays dark for TSX fill buttons */
+    --primary: var(--accent-2);
+    --primary-hover: var(--accent);
+    --primary-glow: color-mix(in oklab, var(--accent-text) 20%, transparent);
+    --octra: var(--accent-text);
+    --info: var(--accent-text);
+    --private-asset: var(--accent-text);
+    --private-asset-bg: color-mix(in oklab, var(--accent-2) 20%, var(--bg-2));
+    --private-asset-border: color-mix(in oklab, var(--accent-2) 32%, var(--line));
+    --private-asset-hover: color-mix(in oklab, var(--accent-2) 40%, var(--bg-2));
+    --private-glow: color-mix(in oklab, var(--accent-text) 18%, transparent);
+    --icon-widgetT: var(--accent-text);
+    --bg-icon-widgetT: color-mix(in oklab, var(--accent-2) 18%, transparent);
+    --icon-widgetE: var(--accent-text);
+    --bg-icon-widgetE: color-mix(in oklab, var(--accent-2) 18%, transparent);
+    --border-hover-WidgetE: color-mix(in oklab, var(--accent-2) 30%, transparent);
+    --border-hover-WidgetT: color-mix(in oklab, var(--accent-2) 30%, transparent);
+  }
+
+  /* Octra component overrides */
+  [data-theme='octra'] .btn-primary:hover:not(:disabled) {
+    filter: none;
+    background: var(--accent-2);
+  }
+
+  [data-theme='octra'] .wallet-card.active {
+    border-color: var(--accent-text);
+    box-shadow: none;
+  }
+
+  [data-theme='octra'] .token-logo-img {
+    filter: brightness(0) invert(1);
+  }
+
+  /* Action grid: use icon token set */
+  [data-theme='octra'] .action-button {
+    background-color: var(--action-icon-bg);
+    border-color: var(--action-icon-border);
+    color: var(--action-icon-fg);
+  }
+  [data-theme='octra'] .btn-icon {
+    color: var(--action-icon-fg);
+  }
+
+  /* btn-danger: Octra --neg is pastel salmon - white text fails */
+  [data-theme='octra'] .btn-danger {
+    color: var(--bg);
+  }
+
+  /* Loading spinner: ring and segment are near-identical dark blues -> use fg */
+  [data-theme='octra'] .loading-spinner {
+    border-top-color: var(--fg);
+  }
+
+  /* Refresh btn disabled: accent is invisible on dark navy -> use fg-3 */
+  [data-theme='octra'] .refresh-btn:disabled {
+    color: var(--fg-3);
+  }
+
+  /* pos/neg are pastel in Octra - darken for fills that need white text */
+  [data-theme='octra'] .bg-positive,
+  [data-theme='octra'] .bg-positive\! {
+    --color-positive: color-mix(in oklab, var(--pos) 50%, black);
+  }
+  [data-theme='octra'] .bg-danger,
+  [data-theme='octra'] .bg-danger\! {
+    --color-danger: color-mix(in oklab, var(--neg) 55%, black);
+  }
+
+  /* Hover/focus borders: --primary invisible on dark navy -> accent-text */
+  [data-theme='octra'] .card-hoverable:hover {
+    border-color: var(--accent-text);
+  }
+  [data-theme='octra'] .action-card:hover {
+    border-color: var(--accent-text);
+  }
+  [data-theme='octra'] .settings-select:focus {
+    border-color: var(--accent-text);
+  }
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    border-color: var(--line);
+  }
+
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    width: var(--app-width);
+    height: var(--app-height);
+    overflow: hidden;
+    font-family:
+      'Inter',
+      -apple-system,
+      BlinkMacSystemFont,
+      'Segoe UI',
+      Roboto,
+      sans-serif;
+    background-color: var(--bg);
+    color: var(--fg);
+    -webkit-font-smoothing: antialiased;
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
+  }
+
+  input,
+  textarea,
+  select {
+    background-color: var(--bg-2);
+    color: var(--fg);
+    border-color: var(--line);
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: var(--fg-3);
+  }
+
+  /* Tailwind v4 ships buttons with the default arrow cursor - restore the pointer
+     so anything clickable reads as clickable, and show not-allowed when disabled. */
+  button:not(:disabled),
+  [role='button']:not([aria-disabled='true']),
+  label[for],
+  summary {
+    cursor: pointer;
+  }
+
+  button:disabled,
+  [role='button'][aria-disabled='true'] {
+    cursor: not-allowed;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--bg-2);
+    border-radius: var(--radius-full);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--fg-3);
+  }
+
+  /* Light theme: scrollbar thumb - bg-2 is near-invisible on white, use line */
+  [data-theme='light'] ::-webkit-scrollbar-thumb {
+    background: var(--line);
+  }
+
+  [data-theme='light'] ::-webkit-scrollbar-thumb:hover {
+    background: var(--line-2);
+  }
+
+  /* Hide number input arrows (Chrome, Safari, Edge, Opera) */
+  input[type='number']::-webkit-outer-spin-button,
+  input[type='number']::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Hide number input arrows (Firefox) */
+  input[type='number'] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+  }
+}
+
+@layer utilities {
+  .text-gradient-accent {
+    background: linear-gradient(
+      to right,
+      var(--color-accent),
+      color-mix(in oklab, var(--color-accent) 80%, black)
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Keep old name as alias */
+  .text-gradient-gold {
+    background: linear-gradient(
+      to right,
+      var(--color-accent),
+      color-mix(in oklab, var(--color-accent) 80%, black)
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar,
+  .scrollbar-hide\!::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+  }
+
+  .scrollbar-hide,
+  .scrollbar-hide\! {
+    -ms-overflow-style: none !important;
+    scrollbar-width: none !important;
+  }
+
+  .border-theme {
+    border: 1px solid var(--line);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+[data-sheet] {
+  --field-bg: var(--bg-2);
+  --list-bg: var(--bg-2);
+  --list-shadow: none;
+  --row-hover: var(--bg-3);
+}

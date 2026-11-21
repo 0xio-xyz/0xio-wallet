@@ -1,0 +1,565 @@
+{
+  "wallets": [
+    {
+      "seed_hex": "0102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f20",
+      "address": "oct7r3ANFFNoFyQJAtiK7JdF65mT62dXLPas7d1CEDmNvEB",
+      "view_pub": "SjgH0GTQdxgcwHCYnnaJHSDcpVWVSNwsd8GlAnOIKzg=",
+      "outputs": [
+        {
+          "case": "match",
+          "id": 1,
+          "eph_pub": "J7AfqEeI6u2jmFJG3FJ5oMjEnpLNiPjCJXEAW2GI2Us=",
+          "stealth_tag": "40ee6b29045253b6195969a337654bd4",
+          "enc_amount": "lzPpuZsCnua6y6Lm0b+yd8OAfJ5H7yej/10zXlXUY0FHvmYtEZqtOSSj/PtHLS43KZycWJxakCzIN1p6udHLZPDcl38=",
+          "expect": {
+            "amount": "1",
+            "legacy_amount": 1,
+            "blinding": "YGOu/hHzSsJtU9k1uTvgdJbGjTH+U6nV29DaUzMGejI=",
+            "claim_secret": "5672b265628b4be4064ae84d54eeaa0660d65faf8162bf97878b4249e8abe134",
+            "claim_pub": "e6543dd209844efcd71b75ff1e7790dc7af80f863b9999196e17078c4e4b88bf"
+          }
+        },
+        {
+          "case": "match with a zero blinding",
+          "id": 2,
+          "eph_pub": "F8mlJNXFg8JziMSs8Ex66vtaLr7lXHkmgDXDFzxsVX4=",
+          "stealth_tag": "795f2b8f79447766339e1ab913d0b6e5",
+          "enc_amount": "f3zmEmxXDKMcMH2dDnJk11fwZDlJqV/Rob6chhKTBK8MI5t6CNw0yjzOnvRa6oHA4qykZS8YLlPg13oaPkhLA+u+zuI=",
+          "expect": {
+            "amount": "5000000",
+            "legacy_amount": 5000000,
+            "blinding": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
+            "claim_secret": "dfb69fbced63a5182d5f060a3e75d0d50151701a47a7d5296e7914aabe01b023",
+            "claim_pub": "9df564621ebe01a001a1d3a762d512f120a0e84704b56222d3acb5ca587f9600"
+          }
+        },
+        {
+          "case": "match of a whole supply",
+          "id": 3,
+          "eph_pub": "nk0yh4lS4v23b8O+Ibzox2gkJX2Jj8l0n1zqSEsweBU=",
+          "stealth_tag": "5927a5e0bd2ab73bcfbae2365ab8821a",
+          "enc_amount": "Cw9Bq3H5pv47GQPMf6VejsfYLh0Qw3gdbN5l8IcWXAtCByk6h6PECjZnErdycGoD712aoZV9V6kMprntn0cJ3aH4g4g=",
+          "expect": {
+            "amount": "1000000000000000",
+            "legacy_amount": 1000000000000000,
+            "blinding": "JWZYhQ3GPTFg8pY/IUrP9iAIBirMy06n6kJqTYEYJ1Q=",
+            "claim_secret": "445a7d75f1e2ca2f75a5cbb744c47d74b91dfcbaea09d448cf320ccb690740c8",
+            "claim_pub": "c818198db4835ccc3cd495ea2edb969cd7fce86a51af950a8080a0360a6fb767"
+          }
+        },
+        {
+          "case": "match at 2^53 - 1",
+          "id": 4,
+          "eph_pub": "9VKHNP6gP9Viu2c4roZHz4eGkcudw23vkoaNgXMorC8=",
+          "stealth_tag": "aafd9896055656bc8f6d961f580b8acd",
+          "enc_amount": "DWFc5gH94lrge4LVVsEs2ZoA4GTkQBbKgdzofxVVOGDHIQQq4GOk1+2XWu47QnqU5fkgb+YA5kEXrF1rHM4b+0vcQz8=",
+          "expect": {
+            "amount": "9007199254740991",
+            "legacy_amount": 9007199254740991,
+            "blinding": "C7GPRFa6pIDrVP9EchuzcQvNyec2v3Yzo8Rjz1w/734=",
+            "claim_secret": "8e4d7f3c85fe7ee70b5befe3dcaa18f1076b0e8442ae0a8ab2c7e180aed8957d",
+            "claim_pub": "7879ae72e9bbfc08f880846d85274ea798f88f620b8394d54eefbd3444f80813"
+          }
+        },
+        {
+          "case": "match at 2^53",
+          "id": 5,
+          "eph_pub": "/jjMJTh5NaDzOSs/eiA+pOIEw2mYwxDXZFl9i+abDis=",
+          "stealth_tag": "3dd3eb60c4d30ba23d238b1a74dd8861",
+          "enc_amount": "snt2kySAiyl10ClwhMKkEDMDfpSJEIA3rcLFZ6J7ljBcl4/wDD5DPbSFioHcTYZwS/0heVC/DTA/PGppH6Oo7Xf1+vo=",
+          "expect": {
+            "amount": "9007199254740992",
+            "legacy_amount": 9007199254740992,
+            "blinding": "nKCvDxV/zrpLUkiS/xpUFd/VFjXlVEkEF2F1ziunZUw=",
+            "claim_secret": "8bc952487532d9e1bb019e083e23a1f47a089e76d87da18ff8141d9efb5e9a58",
+            "claim_pub": "95cadf13c8584c193fb29f295fca1439c5a6b42b627af644294e32c1832c9737"
+          }
+        },
+        {
+          "case": "match at 2^53 + 1",
+          "id": 6,
+          "eph_pub": "ZHCY/p5clKL/v/ItnmC8jXpS2Yx4E8RPVcdynOthE2c=",
+          "stealth_tag": "773ed7c3125feed663cfb03098f43048",
+          "enc_amount": "R0FODjDJz4xnnTXncXrXpIhWTtQbk/mzepTAayjJT93mO8dIuRBurEAIq93tu6WK5NrU/AdLShX47mJQjEpSAXVoC6Q=",
+          "expect": {
+            "amount": "9007199254740993",
+            "legacy_amount": 9007199254740992,
+            "blinding": "q8+fQf6jd2ZEZalTe93BS3sSdt4RpQ5rAgOSY70ybqk=",
+            "claim_secret": "f1aea2aa6163b49ba6653af4874cfc71c7b98b1efa6cdbde4c09fb436a04f4c0",
+            "claim_pub": "978db1726ff7724bb2be74b30a65ff87a278c68fd15796312b0385388c80c822"
+          }
+        },
+        {
+          "case": "match above 2^53 where the old number differs",
+          "id": 7,
+          "eph_pub": "muu49MhzN8c9YpAB/KAAHGVomQPavNfcpUlFWRZbR0o=",
+          "stealth_tag": "66a14edb096a38d7b6213a176e26e154",
+          "enc_amount": "BaqZBHv2m3GYT6j1cpE3CWFPN7L0eNr9sKMTapVABO1sC1rXcpsRrjjg4Po1TJ34khoEoXzt5SP3Xbr3IPKGAFtLZgI=",
+          "expect": {
+            "amount": "2842611830637863251",
+            "legacy_amount": 2842611830637863000,
+            "blinding": "fsZqx9bmldmRYliPL1pgb+hlackV5/Z+GMCGhLdmBn4=",
+            "claim_secret": "f4f5c0cb34dfd1ae6bcc0781e179cef67d1eccfab24e4c090a29ad582e64d41a",
+            "claim_pub": "ac45fb59b6caf302f7bf0cbcf55aa7297a1d965cc6c5e078fe0f74381fd493b5"
+          }
+        },
+        {
+          "case": "match at 2^64 - 1",
+          "id": 8,
+          "eph_pub": "67wnaywlTDWfgcOw+lp1AxilTTskCK+aE5f2KldQuCI=",
+          "stealth_tag": "91c18cad3d0038258c2e6fabfcbcd5ca",
+          "enc_amount": "Qb3NDtKy0gZL2G5P2Rs6BQtWwdmMgfHtmMhnrVz9C2fGQOb/wOCZQGhen1k/3J+HjNOvz5oBP1RWp2dg8ptEfdwx27k=",
+          "expect": {
+            "amount": "18446744073709551615",
+            "legacy_amount": 18446744073709552000,
+            "blinding": "rt6ocYqjieCjzVOGynj7ddPQJ715x7clBz6X4/wqxpA=",
+            "claim_secret": "bc648d0be1f3f2431f0593f75cefeaa4ffd5524d8f8258e0ffb61637d72dc8ea",
+            "claim_pub": "64b9b65bab8ad757964ccf77fa8edb632720b559dd6799b02cd331decd843f45"
+          }
+        },
+        {
+          "case": "zero amount",
+          "id": 9,
+          "eph_pub": "QoEREKXh0JYbkjdlIUUDxjj4/FSYxtrrqtclZVEEjAU=",
+          "stealth_tag": "3b3dc4e1799a5f4a6e5e8f4aec7672af",
+          "enc_amount": "rIGSVVroEb/w3rYoy7INIOfH0alql6kaJMmkNmGDN/bzUA5XHwWO3OkvdsyY11V+/ZEhE5HJBMnh+WrEEu+IByO5/7M=",
+          "expect": null
+        },
+        {
+          "case": "tag of another wallet",
+          "id": 10,
+          "eph_pub": "q8nOkTx0WIT7E0vfnYHHHv33UE6RkJHD6YyPIfzBEGA=",
+          "stealth_tag": "8caac8fcf11c3f0ba0b91a72caa9d005",
+          "enc_amount": "6GXYvSbARIA5DhGOWrw7PHMbP/bRp9fQonn3wrvBb2aOtn0UKpmt49tkRrdx3KjikdEkUrI9ftal/EsGogfgagMqC9k=",
+          "expect": null
+        },
+        {
+          "case": "wrong authentication tag",
+          "id": 11,
+          "eph_pub": "y8LLzFCneR9xzwBBNncV4M1mmvdS2pOvbMGF1p+jGm0=",
+          "stealth_tag": "706d21c56c0fc98d257a5f8b81100ebb",
+          "enc_amount": "EF/OO7a/xInrT4zJ7Fn4JGqXYWNQaM8TWnrZwTr+wRX21QquBxSAI+lnZ77VR3B9tTkUsnDkin0BfSrjpuWujwa6Big=",
+          "expect": null
+        },
+        {
+          "case": "changed ciphertext byte",
+          "id": 12,
+          "eph_pub": "T+0ZIIsGzKVR6dz6Tzm8bRzKPKkd19elMfNEp8C/218=",
+          "stealth_tag": "53fbab32de2c635b67c190dad9d92427",
+          "enc_amount": "YW1Szsa8BLJHnam9dEjAeTP9JXAYtv1hCz0tPfDgtgVKcNQ7FfDyubGYrhSN9ONYI7hKkgeUTKyD1fxHBE6Haig66wE=",
+          "expect": null
+        },
+        {
+          "case": "encrypted amount one byte short",
+          "id": 13,
+          "eph_pub": "956US98wiV/6rY9Ekn13EYi8yw15epQ3W/6WmwmM+Ws=",
+          "stealth_tag": "10ab61e44475aea5163ddc8d8dd9b7bc",
+          "enc_amount": "j3Zo44rnIXFF3rPdmQeCXlDi0A4VRkccnaBcV3YMi7LHSHu5CyRILbc8BMKD6OYLH3AztxEHFO/c63SwU5YyXw6b+w==",
+          "expect": null
+        },
+        {
+          "case": "encrypted amount one byte long",
+          "id": 14,
+          "eph_pub": "pbDMWsHTSOjBIdmGmKc35H3VkVGKa4o5aGdeeCMAGkI=",
+          "stealth_tag": "cb3153b40580da70b17f6d8f62e11d28",
+          "enc_amount": "iwWqA3pKPsTQ2PEFvZeVwIgfAlN1iMPyreFCoeThQRU+mM+NN/Xt2dVadpjM3an4USUg2B380LkzTkmArYUh3sH1oGkA",
+          "expect": null
+        },
+        {
+          "case": "ephemeral key with the high bit set",
+          "id": 15,
+          "eph_pub": "VK/BqB3Dr+YssFbuxSH/i0mqEJjgUlplATx2Lm15HdY=",
+          "stealth_tag": "ed738935635595c6e99b6f7aa16c2fc8",
+          "enc_amount": "+1AaU5/JA7AnzMcSDjzc1P22DCXWdnUqSrkMx1lLlDTr8qujCld5RMoqeSEdsFu8AnIbW+8AdfkvucNBya69RtdoKnY=",
+          "expect": {
+            "amount": "9000",
+            "legacy_amount": 9000,
+            "blinding": "jUMTcgRKu6jZVeVKJRqapCnxoHzG3rlW6QyVKTevtUI=",
+            "claim_secret": "b60fdc027faa371b7c75c49616217d2ac9cdd0a32e5dfe4284e9573680f63e7e",
+            "claim_pub": "a547804c124f6cbeb0c113eadefbd9bde6491cb8ff4e53b17cd9f0ba0b2900a1"
+          }
+        },
+        {
+          "case": "ephemeral key not reduced (p + 9)",
+          "id": 16,
+          "eph_pub": "9v///////////////////////////////////////38=",
+          "stealth_tag": "a2662a1fc8b13d6fa8166e5f0baa1508",
+          "enc_amount": "wPVGGioqL2Bx6gvnSd4eOrR+fW79X+YolOv1uzZivHX2E8QwYML9mZdFQxZMx3W7/PZYfx4CICae5Bp565agZr0TNMw=",
+          "expect": {
+            "amount": "31337",
+            "legacy_amount": 31337,
+            "blinding": "My1hLhbrEyDSVw+oe9EMU0xQ3OwFKdvrt3c+vpAXmZ4=",
+            "claim_secret": "9d9977032b5f9f4fed6749e3e1ca2f42bdf2685441692008d8fa3b4baefe96a7",
+            "claim_pub": "90f0dd63241a44d7f555180e2c2aeef3950273e81b3f31e90f094ef555d624c6"
+          }
+        },
+        {
+          "case": "low-order ephemeral point (zero)",
+          "id": 17,
+          "eph_pub": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
+          "stealth_tag": "92ad317549068380f95bdc73f70816d5",
+          "enc_amount": "F42h882bsp9CzS5852H2ZS3FstDkAVeyjbO7RECPWFd44xB0zxhrBUdIbnFvK/i8C3VFRLcBTQrQyZmSK9mqsgGXnoQ=",
+          "expect": null
+        },
+        {
+          "case": "low-order ephemeral point (one)",
+          "id": 18,
+          "eph_pub": "AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
+          "stealth_tag": "92ad317549068380f95bdc73f70816d5",
+          "enc_amount": "vUCC5YMUGaozBdxfD1MR/Dfhtgtg0BJzHc7g1nwa03Czy/aFg5pRymtNeP/WTRq8s9dJ0ChmOzlPmQcU0Y9iuiVZM/s=",
+          "expect": null
+        },
+        {
+          "case": "low-order ephemeral point (order 8)",
+          "id": 19,
+          "eph_pub": "4Ot6fDtBuK4WVuP68Z/EatoJjeucMrH9hmIFFl9JuAA=",
+          "stealth_tag": "92ad317549068380f95bdc73f70816d5",
+          "enc_amount": "K1UOajzQtVcqUUL9+V6pq/qMhUcbB5OIRhGnhmkEEtpdUrGZFcTwidues9Hf0EaRyd3UU5/9sVSGqrhjn83fbRE0JZE=",
+          "expect": null
+        },
+        {
+          "case": "low-order ephemeral point (p - 1)",
+          "id": 20,
+          "eph_pub": "7P///////////////////////////////////////38=",
+          "stealth_tag": "92ad317549068380f95bdc73f70816d5",
+          "enc_amount": "23FakcJuThUtFG/Iaf0PZhZN4nufGD9yigGXeLkjsfI00x3QdJ3edMn5ExBuReBGqq6YCLh3rqWixUMs4npT8nRN2M4=",
+          "expect": null
+        },
+        {
+          "case": "low-order ephemeral point (p)",
+          "id": 21,
+          "eph_pub": "7f///////////////////////////////////////38=",
+          "stealth_tag": "92ad317549068380f95bdc73f70816d5",
+          "enc_amount": "7q24UPfv4QfMxoC2lnbOs0z9oGyp2BefT0qd+wkuFxu69jw7Ee3Y8TGfcSKDRq/YkM1Bvw4Z6EU7ZzD9BwYW9O29s1k=",
+          "expect": null
+        },
+        {
+          "case": "low-order ephemeral point, other tag",
+          "id": 22,
+          "eph_pub": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
+          "stealth_tag": "dc3cd20bbaacf62a70b84957847c87d9",
+          "enc_amount": "bLDVjBnAC375o/LVAFFSlYpb8bCNTNTBUOXF/EDQ5mfA/bS+n5DBdui779SMeAdGupAx3+peDmA04y9nm7KnD7cXg34=",
+          "expect": null
+        },
+        {
+          "case": "uppercase tag",
+          "id": 23,
+          "eph_pub": "d6vvU6XDKe0irr31oTZkTDbAnnS+x6uCcpcU9So3GDM=",
+          "stealth_tag": "31424CBDEE570C98D17F23FE436E8DA1",
+          "enc_amount": "bFo6dBXrfM/fLRyLx8BzVrhpBaZV0WHrLacY9sb/Gsy8OyRjqNX/e0nZgcx8L2OvTIScDJtw/zvoSumZM67TozrnRXQ=",
+          "expect": null
+        },
+        {
+          "case": "tag cut short",
+          "id": 24,
+          "eph_pub": "NIjIG4+kJoPfsblNVmfAXg4hQGCNPBTkDS5PKfS7QxI=",
+          "stealth_tag": "774a9f277d4356fcd7ed37d2a4cd4e",
+          "enc_amount": "U97Hzw2bHLaCErlx9jniRBwoNxsoas+aeppVORPmjhWJ9cwXFX7czTfYr1O6zrhUCkGN6yW9fpIpxi+S+lrvopj/CGE=",
+          "expect": null
+        },
+        {
+          "case": "ephemeral key of 31 bytes",
+          "id": 25,
+          "eph_pub": "ZDEBHxCtYHB04GhfZU5cfzA3WVRYMCm5awC5GmQlAA==",
+          "stealth_tag": "ad116eb783fd8cc78b7788a158de7193",
+          "enc_amount": "TQeC/sP2UGc9DClpB+IA13Un9Ng03YGeLhSXkmBP+19kf8PV/q4BhVdCufPiDGpxY1iLUGh/aBK1dQ+WFWi58rC3CCA=",
+          "expect": null
+        },
+        {
+          "case": "ephemeral key of 33 bytes",
+          "id": 26,
+          "eph_pub": "uZPqJKqEKCotxSv1cl+zeEY9dHVJaQChkhv5nA9Wo1MA",
+          "stealth_tag": "61e49698533afd39cb31cdd5b666530b",
+          "enc_amount": "7SSHFyaqd578YTgmQ8t+VQhSiveSUwjY/ggXSVDFs11OmxXb4gPSwuBQx6Vvrg2UOU02gTikUnjlVqA688TJr0j1FjI=",
+          "expect": null
+        },
+        {
+          "case": "ephemeral key not base64",
+          "id": 27,
+          "eph_pub": "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",
+          "stealth_tag": "1e5effb9abac5b0807c706abaf87c46e",
+          "enc_amount": "muky8HkcQzeWj5Z6WA9uqwYuKe1wnPHC85GXHWop+B+Fqmljo8B8EzybxcOMHXK8kVJxUK5rg7Z7Rt+iNTygFA3LrGw=",
+          "expect": null
+        },
+        {
+          "case": "ephemeral key empty",
+          "id": 28,
+          "eph_pub": "",
+          "stealth_tag": "e0eeebcc3d9f6e8221e0a5d91a35082a",
+          "enc_amount": "UtU883tXu0DzYGZmtkFRYsyvkShuBVcFk90gCMSv4VaogfxZcgFReeFg2GfBRx0JehVJeTJJpZ4avE8xKUaT8SuOY68=",
+          "expect": null
+        },
+        {
+          "case": "ephemeral key in url-safe base64",
+          "id": 30,
+          "eph_pub": "1tNQ32kMI4p6HZFdmIX1_HukLTQRZZI5TeasTKl4qRA=",
+          "stealth_tag": "6fd73db1880d6233171511dc380873df",
+          "enc_amount": "pF6ZroBTL7NT6teQfPtTwp24UfmOP1iaVV+KZE1/3f8FT9usrTd8phJDltEHY55FVZgQW9bRPCo8/X+WBOjOdjFDItM=",
+          "expect": null
+        },
+        {
+          "case": "base64 without padding",
+          "id": 31,
+          "eph_pub": "pcOvpDs8nb3CaWEeFf3nq2n7suiGP0Tm66HYWxQz/nc",
+          "stealth_tag": "18a2dacedde542698a964ee5115b396b",
+          "enc_amount": "pO5LZCe053cfTQ1Z8NcNKAk6q1U8rQPoaEXafrsNxBGoa2qba798XNPy3RxugK1wjbYA9uFefmstVM8UGr/MQSnhsh8",
+          "expect": {
+            "amount": "11",
+            "legacy_amount": 11,
+            "blinding": "MBxeh6etGSYT1FdZvQXBMKravoGvA3ziOJTzFs2L6y8=",
+            "claim_secret": "0c3ca46c99d8611d8a873044ae60ec85ba2bad87b2256908ad4ce0d915b420bf",
+            "claim_pub": "dab9af1f9a636c78aaa1ce0539460d0730956d95a75f8a849d79fff5c5465af0"
+          }
+        },
+        {
+          "case": "base64 with whitespace",
+          "id": 32,
+          "eph_pub": " Zk07CMR5G/8G0xyhQLvS\n76mIXwzI/6Q+2kGfQ4tV9mM=\t",
+          "stealth_tag": "2103da14cdacdb5e8f485ef418871186",
+          "enc_amount": "S7hjTRnELQ9RLztulnQ7Mulv2jwN72QrpHQ0aZ2O\r\n9m6qYwEcrZuw9YdQfE1BjBrQFs4prL7BI9P1ZvxniYxa6+hD4pY=",
+          "expect": {
+            "amount": "12",
+            "legacy_amount": 12,
+            "blinding": "9gO7wSIBDt5NwxN2IGwKQXYUCR0skTNlStpfMD+cYC4=",
+            "claim_secret": "6345ab094c0f1427dde5d947710b24c27e72930b3a058c70c31fd194a58df60b",
+            "claim_pub": "872f48a7ead6b0a1fc08d35dcd7ea5ac3d4c9622212259f2d6b8e7472a41b7e5"
+          }
+        },
+        {
+          "case": "base64 padded in the middle",
+          "id": 33,
+          "eph_pub": "oxZI7MTdietu6FzxpbxD=sixL0oaPRu9y1oyDqPHDjCk=",
+          "stealth_tag": "ed5a866da5d56547db4140a6cab9c292",
+          "enc_amount": "NGBPjuSDhV18o/m2c/KP5LYWvWdalvPUqwd+txJ8yo55/U0a+Rj+0WLhXk2iDuucwW/KGbOe9sLssfsurDn/IAs1K6I=",
+          "expect": null
+        },
+        {
+          "case": "base64 with one pad too many",
+          "id": 34,
+          "eph_pub": "PQ3gjnFH9BrR4Kf9+C9dLXCfUOR3Kl9H4x4a3mj3X3M==",
+          "stealth_tag": "2aadb57c4ef79b6afa799d7d6942d6d1",
+          "enc_amount": "toGZ6qhvUvg7z/KblQFdrCK+YPva3L69P9NGTwpwmuiDE5AA0WMA59jQw8o5QjOFfrSldoGo2YH4STqMpMjhUx/vBqY=",
+          "expect": null
+        },
+        {
+          "case": "base64 with loose trailing bits",
+          "id": 35,
+          "eph_pub": "x7r6/MMgxZcqkS5F/smFruYhHwh+zzjSgYI124IBq0J=",
+          "stealth_tag": "243a58d56a07b3e10c30857629e5d07e",
+          "enc_amount": "jr5BY0EaHIJv6Lf+3wvrXqWwQl7qNz1ngNRTAiqsN7zlNk5WDqz8dFPF/mOMl48/poYywra7GJnlWdqCaSbxOsFd4Hs=",
+          "expect": {
+            "amount": "13",
+            "legacy_amount": 13,
+            "blinding": "Qum21qUHEwY4dZGPiwleyfiuBwuRl+8K3jznltlX4NY=",
+            "claim_secret": "983ed90737c0659247c1d0c9c25db45d2b4d96fe77de69842e6cace49552c427",
+            "claim_pub": "782ab5ef562a863c974ea3d058afa5ea3504081c9e3f067764a1bd8574bb59b9"
+          }
+        }
+      ]
+    },
+    {
+      "seed_hex": "2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a2a",
+      "address": "octDFTNMvdkiZdHBP5S2yezoFhFntdkSt5kSZkiVo1aXLCh",
+      "view_pub": "VcBQbHAjPwHDJjO6aDuQmcTUrbIJoEbDRwt4eI7DwT8=",
+      "outputs": [
+        {
+          "case": "wallet 2 match",
+          "id": 36,
+          "eph_pub": "H8xXxLOEeMPW9ssHrbtircbeyoxIUT77+NLEX6mcUGM=",
+          "stealth_tag": "2222c216c56aa31846b009f12c8296d5",
+          "enc_amount": "4TqWQWI4HaK+82QAMj/T8mNhghiJEY0em0hGUpNfw3G9aK+MuvIzydk6YKsWoMeE2KM7ZKl1EB933PxlUwxVTMne5dI=",
+          "expect": {
+            "amount": "2000000",
+            "legacy_amount": 2000000,
+            "blinding": "ZFa8sf+/0L2GZI4u5PcWcinOL/HEIb8MsYmURFGyoP0=",
+            "claim_secret": "7d0d1d11f6decd0335a21db2d623220dd1e466b6d5bd3d72f8bb279ef08381eb",
+            "claim_pub": "faa642e7690505de03711226648f27ae1ef1a3074aacb778fae180142ca25fb5"
+          }
+        },
+        {
+          "case": "wallet 2 second match",
+          "id": 37,
+          "eph_pub": "bFAhkiVOAgwedYNF5MohpW+P9az2VecZU3FCjezTFgc=",
+          "stealth_tag": "47e4970b4a9f839e871d24389f4d5888",
+          "enc_amount": "lP/xuWxN85ucG2gILyfk9pmbTFDAo72n/E8nFfXlQVnNYAp1H+FuUiRfHdMAKDi74A8WYMHmHJMJjgP1A1wSUTn+Zv8=",
+          "expect": {
+            "amount": "123456790",
+            "legacy_amount": 123456790,
+            "blinding": "dJfOXy2VqUJ7bHaJ8r6rw7LqExEyyf8Q8kDekZdG5bo=",
+            "claim_secret": "086823dba0da0e9694fed05260cd82aa21e9d55a9e89d9737d28740f6583d258",
+            "claim_pub": "6bf51718387cf429ce528028c68cddc56d540634f058304dcd341ed000cf3453"
+          }
+        },
+        {
+          "case": "wallet 2 tag of another wallet",
+          "id": 38,
+          "eph_pub": "v583P0dLNiTTUmkiNShYKuM6Wr523Ibjz0Po2kPerho=",
+          "stealth_tag": "0b9daa931289832c98bdc4e9e325d159",
+          "enc_amount": "AB/cd9hAhMQgirKmSyfdtcwyhStv1cEiHy4V9+QI6Tt0qEHlZhC3/DfvXlGcz9hfqan5KoAI+ZrYtJMt+5bEHYKh0LQ=",
+          "expect": null
+        },
+        {
+          "case": "wallet 2 low-order ephemeral point",
+          "id": 39,
+          "eph_pub": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
+          "stealth_tag": "92ad317549068380f95bdc73f70816d5",
+          "enc_amount": "d25KZtDvgzJQ4TxPDk2LqeuvINTxMyj6sV0DEk7dJs4I0xKl7zvYOnzPSYDaPltS7M/Wx19rvM0QesmJwVsDtnKez+I=",
+          "expect": null
+        }
+      ]
+    },
+    {
+      "seed_hex": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "address": "octCp7TqDswR3H7uXSr1MufUcfj7EDpj1zhoprHGtGoQNe1",
+      "view_pub": "0fo/AYJr2LeOBXwIbHsix61DWMqRgJnNe35dOs1+KFs=",
+      "outputs": [
+        {
+          "case": "wallet 3 match",
+          "id": 40,
+          "eph_pub": "dWN9mwdnOeoF+wXPY/FCw7Fyz1XDWNIO1aakdjQ+alU=",
+          "stealth_tag": "3731404b597812c2f3401d29c09a33fe",
+          "enc_amount": "DM7DIIFenRzhG2H+IDxmz7EyWIm0Nrf71pdzYETWR9MX8OP3ZrmJwykLH28rBXRvxQO5YWfM4KlfjfN158DhOOcDplg=",
+          "expect": {
+            "amount": "3000000",
+            "legacy_amount": 3000000,
+            "blinding": "J5dJ07zh66Sl26NSVau8Us4Ajswy4+tYbPj47ICvuZE=",
+            "claim_secret": "ccde80ce3b953982a18919df089c9975678a3cf621cebcfd63538cb2007868f9",
+            "claim_pub": "eacf493fc0d297f4e4f659979f43148907c6f047030dabb8b7e1e33b8657a614"
+          }
+        },
+        {
+          "case": "wallet 3 second match",
+          "id": 41,
+          "eph_pub": "jmrGoTRN+hx0fK77NDB982KQY/DYfa38lY1SlpjEcgQ=",
+          "stealth_tag": "f31f9016e74f3c655992a1d8c93d261c",
+          "enc_amount": "s7blhdsHxaaRT8W5DgpSW4BOuh/0+oFXOEGL7iE+dPI0jgKAWoSMBaF6/bJ12P+zoDrUkLM9iKjGTYyBe6fjEtKnaBo=",
+          "expect": {
+            "amount": "123456791",
+            "legacy_amount": 123456791,
+            "blinding": "ShMW/5Eh/MyNTIgrsFg8/V9h6b9n6sONUfmtqZ55MC8=",
+            "claim_secret": "e8e0b6cc0098f2708de39c2f13cd90c2dc9c9c7180708756d00b116e928ab0fa",
+            "claim_pub": "96442655c6c6a2749c7659f949b16f3ef1a673262d0049035d6ac4592c366bb1"
+          }
+        },
+        {
+          "case": "wallet 3 tag of another wallet",
+          "id": 42,
+          "eph_pub": "Q2JqsqxYLK/A7k9zeuFy/b+diz4CPoRa+ZV0H7k3iGg=",
+          "stealth_tag": "c5047036653759c0e51b2c34243edac5",
+          "enc_amount": "cN5cQHjb8akB/ngHnYBygTwPsQkrShDXKcbUd7IYkDT2E/JLZN4Tvi2TIsBH2DQ8aOXqAhoMdRkTNKUnsxt3MiSM93s=",
+          "expect": null
+        },
+        {
+          "case": "wallet 3 low-order ephemeral point",
+          "id": 43,
+          "eph_pub": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
+          "stealth_tag": "92ad317549068380f95bdc73f70816d5",
+          "enc_amount": "3PQMyTXrqtZPB5xIVtOvJBUkroClXgS52nGrCLRNmpncWBX9Fqz1DQmBOv1+fX6hybrn0o1pactyvgtHbMmNXUejJIo=",
+          "expect": null
+        }
+      ]
+    },
+    {
+      "seed_hex": "0000000000000000000000000000000000000000000000000000000000000000",
+      "address": "oct2KagShR4Usj2uARXJeDw7XJEKvQ3XDr84dC47hUB3Uyd",
+      "view_pub": "W/Vcc7guviK+gPNDBmevVw+uJVamQV5rMNQGUwCqlH0=",
+      "outputs": [
+        {
+          "case": "wallet 4 match",
+          "id": 44,
+          "eph_pub": "0fzFGcKuZ7R3GwTiIbpsKjfZ4D2o5zUrJHhLITVkhW8=",
+          "stealth_tag": "c3fd11a43f43c48444e7b7f27d40b132",
+          "enc_amount": "ZRvygeJW/XskqWYNelbMGICRgkmvZGIzSCmRDWtYpSMUtKvYiN3MNR+C4ZchevtZVZBJzm5SfFPvNWwwMFKVf25e6Ok=",
+          "expect": {
+            "amount": "4000000",
+            "legacy_amount": 4000000,
+            "blinding": "guA2EGTgCw0/SfI58iUG2o08/MPyEwREyOHrZyD5mW4=",
+            "claim_secret": "b06cc818a451b0595d7ceb775b2d10acf7382496746550f21b0f5e6646e361b7",
+            "claim_pub": "377b074a3315ad0bf081b87fff76abd9b66b5b85bba9b2fe4cc05048cb870f37"
+          }
+        },
+        {
+          "case": "wallet 4 second match",
+          "id": 45,
+          "eph_pub": "XIl/jckodnJPYjjlUZXH8/57YZnlEgI0fQOApSD4Rhs=",
+          "stealth_tag": "88ffc5e2631a87d0270b849c42343f5a",
+          "enc_amount": "aNsiY+9ZQ3V6BcaOnvz5rNtALm9t/GXR60tMvFkI7mgqtOMqSWNiNOP4or36fyR91xN15z7vmtMGq5S0CpM/JfMUphw=",
+          "expect": {
+            "amount": "123456792",
+            "legacy_amount": 123456792,
+            "blinding": "HWCzHPrJndaDmAfAX6FXmvLosrM4WzxZ0kesEBvNnhw=",
+            "claim_secret": "1dc5b7af88d048df73781a725e181b5b8c822cd77fcf8543f000c80e1fc77c22",
+            "claim_pub": "3ee6a88bd2f525115bc079eb39621d6c11ceaedcdfe971819d16545997ae96e2"
+          }
+        },
+        {
+          "case": "wallet 4 tag of another wallet",
+          "id": 46,
+          "eph_pub": "i2PnDphyIMDibsiTaeDrAKFtOsKrE8kgpFpoUSXc/TI=",
+          "stealth_tag": "9465111c72e4611b09853a73d92700f5",
+          "enc_amount": "uunPl8JKprzCSDq1R5k7a+0gT6XPe81nKLjTF+XIgUkHGW05vGb6t1xeJ9b2Av32TADsMbPsUc54VNwwwvjtpW3fSOE=",
+          "expect": null
+        },
+        {
+          "case": "wallet 4 low-order ephemeral point",
+          "id": 47,
+          "eph_pub": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
+          "stealth_tag": "92ad317549068380f95bdc73f70816d5",
+          "enc_amount": "G0BZZMzQ3+oKJitwrex7o4QgsV9h7WUI290IgnnSDlTBvCPr9/eaQJo7OVZ7lKnLnpQNSmE65+RNEOhPyIr3olXJpjs=",
+          "expect": null
+        }
+      ]
+    },
+    {
+      "seed_hex": "7ec28b850a6492b8a5ec1b86cb6519f486ca0ac1f39896fd32a79090e19a3282",
+      "address": "octDfNZVKKXZCWLE9JcTG1DmBxpTPrBJRUzaMxYz1sunxcr",
+      "view_pub": "KN9pn06mGEdz5Mj1Ww15vo/mq6lTUI4KK02iw+Efwm4=",
+      "outputs": [
+        {
+          "case": "wallet 5 match",
+          "id": 48,
+          "eph_pub": "KzxSq5oXfiQlOFuBi0BuUOsLX/+N7iS34CdgQq0Zpz0=",
+          "stealth_tag": "66a12584983fcc4b2f1e02b2fb2f12d4",
+          "enc_amount": "MnqiUrRBapo5Sm3jtuLsfSZUO2KDBLgX07JwV2FXen3MfDOh1WF7ZILA9n+NyZbBZJmn9AEpnkcD9UfrSk69nh7NX3w=",
+          "expect": {
+            "amount": "5000000",
+            "legacy_amount": 5000000,
+            "blinding": "aMbEpsE+p6C7r1cZtYOcQRbALgKJuM52ANO/9epDvMg=",
+            "claim_secret": "3e68a77fd007429d009c88163be58e758955f3c5c206c6a56c5aae638c455ad6",
+            "claim_pub": "df84bc27a2236f5bafd1268a7200b60b14a55a46794d96193b71d928ffe43906"
+          }
+        },
+        {
+          "case": "wallet 5 second match",
+          "id": 49,
+          "eph_pub": "neibCqZVHbkp4FM/MWOjVR11S8hhzq3pidRQ1xGkmEY=",
+          "stealth_tag": "51b867f50d3dc811f53e53679a36fc9d",
+          "enc_amount": "Sj9Ug4KJ8IpYAN2KbH5SJfzQjT/1J+kEBBYroFPzkmEwgXtocjgvhCbeGul7uVNL1N5dOpL9447hnIoVNfZVaWCSAdU=",
+          "expect": {
+            "amount": "123456793",
+            "legacy_amount": 123456793,
+            "blinding": "TP99y1oYvwGVl6G/z04rCJL8SdkiPki3hJ/ZLfI/KMA=",
+            "claim_secret": "36b78ccbf35c4c97a18e3e5252045b954d1ad7e04aaec7706f9b4d584f5ec9e1",
+            "claim_pub": "7d9b6c8a65225a8de8e5afbe4f3f4da9bee33c0c70c1b5a22bb034e845073bff"
+          }
+        },
+        {
+          "case": "wallet 5 tag of another wallet",
+          "id": 50,
+          "eph_pub": "RlZSrw9okt2mFtjN80e6Ki7NFerboaVa12P7fxuPZnk=",
+          "stealth_tag": "ccc967f172dad1131f98e4410ea49c9c",
+          "enc_amount": "4Xi8jb/RycfoCWWWv7Xe0mgv0WE2MNfX+9gPR0nAoG0BIhhQE+oyNdw12nKBrbhrwqet/p78oNCJfoFUPh8FazTDUtQ=",
+          "expect": null
+        },
+        {
+          "case": "wallet 5 low-order ephemeral point",
+          "id": 51,
+          "eph_pub": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
+          "stealth_tag": "92ad317549068380f95bdc73f70816d5",
+          "enc_amount": "j0Hm3Sp3Gmk37fjJHVFtv53dljtUG2Gak+3oHTPvyH2SW4ZzdqgExqM79TodBV9ZzV2iv81QYSRmQkCzzRRL2aCepo8=",
+          "expect": null
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+export const fixture = {
+  en: {
+    'common.close': 'Close',
+    greet: 'Hello {{name}}',
+    spaced: 'A {{ name }} B {{- raw}} C',
+    path: '{{user.name}} has {{user.n}}',
+    items_one: '{{count}} item',
+    items_other: '{{count}} items',
+    cart_zero: 'Empty cart',
+    cart_one: 'One thing',
+    cart_other: '{{count}} things',
+    onlyEn: 'English only {{name}}',
+    empty: '',
+    terms: 'Agree to the <terms>Terms</terms> and <privacy>Privacy</privacy>.',
+    deep: { inner: { leaf: 'Leaf {{x}}' }, 'dotted.key': 'Dotted' },
+  },
+  ja: {
+    'common.close': '閉じる',
+    greet: 'こんにちは {{name}}',
+    items_one: '{{count}} 個 (one)',
+    items_other: '{{count}} 個',
+    cart_other: '{{count}} 点',
+    terms: '<terms>利用規約</terms>と<privacy>プライバシー</privacy>に同意',
+  },
+  ar: {
+    items_zero: 'zero {{count}}',
+    items_one: 'one {{count}}',
+    items_two: 'two {{count}}',
+    items_few: 'few {{count}}',
+    items_many: 'many {{count}}',
+    items_other: 'other {{count}}',
+  },
+};

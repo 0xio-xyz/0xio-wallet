@@ -1,0 +1,178 @@
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.form-label {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  position: absolute;
+  left: var(--space-md);
+  color: var(--text-muted);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: var(--space-sm) var(--space-md);
+  background-color: var(--bg-input);
+  border: var(--border-width) solid var(--border-color);
+  border-radius: var(--radius-md);
+  color: var(--text-main);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  transition: all var(--transition-fast);
+  align-content: center;
+
+  resize: none;
+  height: 44px;
+}
+
+.input-with-icon {
+  padding-left: 44px;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--border-focus);
+  box-shadow: var(--shadow-hover);
+}
+
+/* Accent-highlighted field (e.g. the unlock password): full accent border at all times, a soft
+   glow ring on focus, and the sans UI font instead of mono. Higher specificity than .form-input. */
+.pw-highlight .form-input {
+  border-color: transparent;
+  background: var(--bg-1);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  height: 48px;
+  border-radius: 12px;
+}
+.pw-highlight .form-input:focus {
+  border-color: var(--accent);
+  box-shadow: none;
+}
+
+/* Error wins over the accent highlight, focused or not: .pw-highlight .form-input:focus is more
+   specific than the shared .form-input.input-error, so without these the field kept its accent
+   border while showing a validation message. */
+.pw-highlight .form-input.input-error,
+.pw-highlight .form-input.input-error:focus {
+  border-color: var(--error) !important;
+  box-shadow: 0 0 0 2px var(--error) !important;
+}
+
+/* A disabled field has to look disabled: during a lockout the unlock field was only unusable. */
+.pw-highlight .form-input:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* Caps Lock notice: the same slot as the error message, which wins when both apply. Muted rather
+   than the warning colour, which is too faint on the light theme at this size. */
+.lock-caps-hint {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 4px;
+  font-size: 12px;
+  color: var(--fg-2);
+  pointer-events: none;
+}
+
+/* The message is taken out of flow so it cannot push the button or resize the sheet: it hangs
+   under the field, which has fixed height, so nothing below it moves when validation appears. */
+.pw-highlight {
+  position: relative;
+}
+.pw-highlight .input-error-message {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 4px;
+  pointer-events: none;
+}
+
+.input-error-message {
+  color: var(--error);
+  font-size: 12px;
+  margin-top: var(--space-xs);
+  font-weight: 600;
+}
+
+.form-input.input-error {
+  border-color: var(--error);
+}
+
+/* Disable Spin Buttons (Increment/Decrement) */
+
+/* Chrome, Safari, Edge, Opera */
+.form-input::-webkit-outer-spin-button,
+.form-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+.form-input[type='number'] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+/* Checkboxes never draw a tick: checked is a filled square inside the box. */
+input[type='checkbox'] {
+  -webkit-appearance: none;
+  appearance: none;
+  display: inline-grid;
+  place-content: center;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  border: 1.5px solid var(--line-2);
+  border-radius: 4px;
+  background: transparent;
+  transition: border-color 150ms ease-out;
+}
+
+input[type='checkbox']::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  background: var(--accent);
+  transform: scale(0);
+  transition: transform 150ms ease-out;
+}
+
+input[type='checkbox']:checked {
+  border-color: var(--accent);
+}
+
+input[type='checkbox']:checked::before {
+  transform: scale(1);
+}
+
+input[type='checkbox']:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+input[type='checkbox']:disabled {
+  cursor: not-allowed;
+}

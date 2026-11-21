@@ -1,0 +1,52 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+dist-firefox
+# packaged build artifact - dist/ is ignored but the zip was not, so a git add -A could commit 1MB of build output
+dist.zip
+wasm-firefox/
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# misc
+.env
+.env.test
+.env.production
+.env.local
+.env.*.local
+coverage
+.cache
+.next
+output
+.build
+
+*.md
+!README.md
+!CONTRIBUTING.md
+!SECURITY.md
+!CHANGELOG.md
+!THIRD_PARTY_NOTICES.md
+docs/
+
+
+# AMO packaging output (web-ext build)
+web-ext-artifacts/

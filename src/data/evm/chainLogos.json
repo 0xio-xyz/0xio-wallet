@@ -1,0 +1,968 @@
+{
+  "meta": {
+    "source": "chainlist.org/rpcs.json + icons.llamao.fi",
+    "generated": "2026-10-15",
+    "size": 64,
+    "path": "chains/evm/{slug}.webp"
+  },
+  "chains": {
+    "1": "ethereum",
+    "9": "quai",
+    "10": "optimism",
+    "14": "flare",
+    "19": "songbird",
+    "20": "elastos",
+    "25": "cronos",
+    "30": "rootstock",
+    "40": "telos",
+    "42": "lukso",
+    "46": "darwinia",
+    "50": "xdc",
+    "56": "binance",
+    "58": "ontology",
+    "60": "gochain",
+    "61": "ethereumclassic",
+    "66": "okexchain",
+    "81": "joc",
+    "82": "meter",
+    "88": "tomochain",
+    "96": "kub",
+    "100": "gnosis",
+    "106": "velas",
+    "122": "fuse",
+    "130": "unichain",
+    "137": "polygon",
+    "143": "monad",
+    "146": "sonic",
+    "151": "redbelly",
+    "169": "manta",
+    "173": "eni",
+    "199": "bittorrent",
+    "204": "op_bnb",
+    "207": "vinuchain",
+    "232": "lens",
+    "239": "tac",
+    "246": "energyweb",
+    "248": "oasys",
+    "250": "fantom",
+    "252": "fraxtal",
+    "254": "swan",
+    "274": "lachain-network",
+    "288": "boba",
+    "295": "hedera",
+    "314": "filecoin",
+    "321": "kucoin",
+    "324": "zksync-era",
+    "329": "virbicoin",
+    "336": "shiden",
+    "360": "shape",
+    "361": "theta",
+    "369": "pulsechain",
+    "388": "zkcro",
+    "484": "camp",
+    "570": "rollux",
+    "592": "astar",
+    "648": "endurance",
+    "698": "matchain",
+    "714": "eden",
+    "747": "flow",
+    "888": "wanchain",
+    "964": "bittensor",
+    "988": "stable",
+    "996": "bifrost",
+    "1030": "conflux",
+    "1088": "metis",
+    "1100": "dymension",
+    "1116": "core",
+    "1135": "lisk",
+    "1231": "ultron",
+    "1329": "sei",
+    "1514": "story",
+    "1672": "pharos",
+    "1729": "reya",
+    "1868": "soneium",
+    "1890": "lightlink",
+    "1907": "bitcichain",
+    "1990": "qie",
+    "2020": "ronin",
+    "2222": "kava",
+    "2345": "goat",
+    "2410": "k2",
+    "2649": "ailayer",
+    "2741": "abstract",
+    "2818": "morph",
+    "3030": "bchyper",
+    "3338": "peaq",
+    "4114": "citrea",
+    "4217": "tempo",
+    "4326": "megaeth",
+    "4337": "beam",
+    "4488": "hydra",
+    "4663": "robinhood",
+    "4689": "iotex",
+    "5000": "mantle",
+    "5031": "somnia",
+    "5042": "arc",
+    "5330": "superseed",
+    "6900": "nibiru",
+    "7000": "zetachain",
+    "7200": "exsat",
+    "7560": "cyber",
+    "8217": "klaytn",
+    "8453": "base",
+    "8668": "hela",
+    "9745": "plasma",
+    "9790": "carbon",
+    "10000": "smartbch",
+    "10088": "gatelayer",
+    "11235": "haqq",
+    "13371": "imx",
+    "16661": "kasplex",
+    "23294": "oasis",
+    "25363": "fluent",
+    "31612": "mezo",
+    "32520": "bitgert",
+    "32769": "zilliqa",
+    "33139": "apechain",
+    "34443": "mode",
+    "36900": "adi",
+    "38833": "igra",
+    "39797": "energi",
+    "41923": "edu-chain",
+    "42161": "arbitrum",
+    "42220": "celo",
+    "42262": "oasis",
+    "42766": "zkfair",
+    "42793": "etherlink",
+    "43111": "hemi",
+    "43114": "avalanche",
+    "48900": "zircuit",
+    "50104": "sophon",
+    "52014": "electroneum",
+    "57073": "ink",
+    "59144": "linea",
+    "60808": "bob",
+    "61803": "etica",
+    "72957": "rayls",
+    "80094": "berachain",
+    "81457": "blast",
+    "88888": "chiliz",
+    "97477": "doma",
+    "97741": "pepu",
+    "98866": "plume",
+    "105105": "stratis",
+    "167000": "taiko",
+    "200901": "bitlayer",
+    "222222": "hydration",
+    "432204": "dexalot",
+    "534352": "scroll",
+    "747474": "katana",
+    "2121217": "ggchain",
+    "5064014": "ethereal",
+    "7777777": "zora",
+    "20250217": "xphere",
+    "420420418": "kusama",
+    "420420419": "polkadot",
+    "1313161554": "aurora",
+    "11297108109": "palm",
+    "383414847825": "zeniq"
+  },
+  "files": {
+    "abstract": {
+      "bytes": 612,
+      "sha256": "819f63b29e34c195",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_abstract.jpg"
+    },
+    "adi": {
+      "bytes": 710,
+      "sha256": "656a8315555ade60",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_adi.jpg"
+    },
+    "ailayer": {
+      "bytes": 1718,
+      "sha256": "93450c3fa549d0d3",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_ailayer.jpg"
+    },
+    "apechain": {
+      "bytes": 1508,
+      "sha256": "72dceea5e42a20fe",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_apechain.jpg"
+    },
+    "arbitrum": {
+      "bytes": 1326,
+      "sha256": "93efa0993ca68267",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_arbitrum.jpg"
+    },
+    "arc": {
+      "bytes": 792,
+      "sha256": "5d10c73afb207017",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_arc.jpg"
+    },
+    "astar": {
+      "bytes": 1332,
+      "sha256": "f9b054310d27e490",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_astar.jpg"
+    },
+    "aurora": {
+      "bytes": 630,
+      "sha256": "e143982d5650554c",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_aurora.jpg"
+    },
+    "avalanche": {
+      "bytes": 596,
+      "sha256": "16a9fa7bf904630d",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_avalanche.jpg"
+    },
+    "base": {
+      "bytes": 194,
+      "sha256": "76bb57617e0e2aef",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_base.jpg"
+    },
+    "bchyper": {
+      "bytes": 1606,
+      "sha256": "5fa2efee1bbc6ee4",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_bchyper.jpg"
+    },
+    "beam": {
+      "bytes": 356,
+      "sha256": "60aa3cbd8313a1bc",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_beam.jpg"
+    },
+    "berachain": {
+      "bytes": 1322,
+      "sha256": "eeb93a7426c86b89",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_berachain.jpg"
+    },
+    "bifrost": {
+      "bytes": 786,
+      "sha256": "86652a9e49d48bc6",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_bifrost.jpg"
+    },
+    "binance": {
+      "bytes": 1120,
+      "sha256": "0b69adf59bfd03f3",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_binance.jpg"
+    },
+    "bitcichain": {
+      "bytes": 1142,
+      "sha256": "8666f353381f77f4",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_bitcichain.jpg"
+    },
+    "bitgert": {
+      "bytes": 842,
+      "sha256": "8c7e0185a14203e9",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_bitgert.jpg"
+    },
+    "bitlayer": {
+      "bytes": 1254,
+      "sha256": "134f34b2fd4bf348",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_bitlayer.jpg"
+    },
+    "bittensor": {
+      "bytes": 230,
+      "sha256": "6fce350d68296db7",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_bittensor.jpg"
+    },
+    "bittorrent": {
+      "bytes": 878,
+      "sha256": "82205d02e9ae616d",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_bittorrent.jpg"
+    },
+    "blast": {
+      "bytes": 692,
+      "sha256": "d28b7acf6de71d2b",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_blast.jpg"
+    },
+    "bob": {
+      "bytes": 1254,
+      "sha256": "b14c5fcd8c27736c",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_bob.jpg"
+    },
+    "boba": {
+      "bytes": 530,
+      "sha256": "9b8d9bccd300a01d",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_boba.jpg"
+    },
+    "camp": {
+      "bytes": 992,
+      "sha256": "262c1ea79c8dfbaa",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_camp.jpg"
+    },
+    "carbon": {
+      "bytes": 830,
+      "sha256": "4a869e0294054da2",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_carbon.jpg"
+    },
+    "celo": {
+      "bytes": 444,
+      "sha256": "2290b02a79986cce",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_celo.jpg"
+    },
+    "chiliz": {
+      "bytes": 702,
+      "sha256": "f029f5c5aa7705ca",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_chiliz.jpg"
+    },
+    "citrea": {
+      "bytes": 726,
+      "sha256": "bf5726cc13237aa4",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_citrea.jpg"
+    },
+    "conflux": {
+      "bytes": 1280,
+      "sha256": "c4385320e6285680",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_conflux.jpg"
+    },
+    "core": {
+      "bytes": 1138,
+      "sha256": "a310e29216e2b4e3",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_core.jpg"
+    },
+    "cronos": {
+      "bytes": 906,
+      "sha256": "3f180bf9fc7c0a53",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_cronos.jpg"
+    },
+    "cyber": {
+      "bytes": 810,
+      "sha256": "e8c629df31c49570",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_cyber.jpg"
+    },
+    "darwinia": {
+      "bytes": 822,
+      "sha256": "a2437c56be5d9472",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_darwinia.jpg"
+    },
+    "dexalot": {
+      "bytes": 516,
+      "sha256": "d9104ab8f967a8fa",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_dexalot.jpg"
+    },
+    "doma": {
+      "bytes": 1080,
+      "sha256": "c164e10de32f5538",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_doma.jpg"
+    },
+    "dymension": {
+      "bytes": 836,
+      "sha256": "0340a0372e911c56",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_dymension.jpg"
+    },
+    "eden": {
+      "bytes": 1080,
+      "sha256": "aedb53fd8617d4f4",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_eden.jpg"
+    },
+    "edu-chain": {
+      "bytes": 446,
+      "sha256": "36c3270679991554",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_edu-chain.jpg"
+    },
+    "elastos": {
+      "bytes": 428,
+      "sha256": "fde6b5bcd6d6f901",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_elastos.jpg"
+    },
+    "electroneum": {
+      "bytes": 1832,
+      "sha256": "118bdc02ed14829a",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_electroneum.jpg"
+    },
+    "endurance": {
+      "bytes": 1150,
+      "sha256": "f739321afe8fde32",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_endurance.jpg"
+    },
+    "energi": {
+      "bytes": 1122,
+      "sha256": "84d55334c51968fb",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_energi.jpg"
+    },
+    "energyweb": {
+      "bytes": 760,
+      "sha256": "33628d2158806d75",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_energyweb.jpg"
+    },
+    "eni": {
+      "bytes": 614,
+      "sha256": "141706f126b24b04",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_eni.jpg"
+    },
+    "ethereal": {
+      "bytes": 1348,
+      "sha256": "d772ab9424ff227d",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_ethereal.jpg"
+    },
+    "ethereum": {
+      "bytes": 414,
+      "sha256": "54f023bb98b6e994",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_ethereum.jpg"
+    },
+    "ethereumclassic": {
+      "bytes": 1294,
+      "sha256": "9af9daa5c7e27fa6",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_ethereumclassic.jpg"
+    },
+    "etherlink": {
+      "bytes": 1876,
+      "sha256": "afc9e8eecbdf5304",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_etherlink.jpg"
+    },
+    "etica": {
+      "bytes": 1066,
+      "sha256": "dd9db70a71c39262",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_etica.jpg"
+    },
+    "exsat": {
+      "bytes": 632,
+      "sha256": "46d8aad725587b95",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_exsat.jpg"
+    },
+    "fantom": {
+      "bytes": 1034,
+      "sha256": "a0fb13b71b9d9327",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_fantom.jpg"
+    },
+    "filecoin": {
+      "bytes": 1154,
+      "sha256": "6b5c48c8ed1a00ee",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_filecoin.jpg"
+    },
+    "flare": {
+      "bytes": 1062,
+      "sha256": "6378459bf76deeb9",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_flare.jpg"
+    },
+    "flow": {
+      "bytes": 966,
+      "sha256": "12a868b8b5a74157",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_flow.jpg"
+    },
+    "fluent": {
+      "bytes": 598,
+      "sha256": "9328e25c9ee9ea7a",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_fluent.jpg"
+    },
+    "fraxtal": {
+      "bytes": 1154,
+      "sha256": "89f35675924bc6f2",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_fraxtal.jpg"
+    },
+    "fuse": {
+      "bytes": 794,
+      "sha256": "16facad34a8532f6",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_fuse.jpg"
+    },
+    "gatelayer": {
+      "bytes": 828,
+      "sha256": "fb0ca620fabfb25c",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_gatelayer.jpg"
+    },
+    "ggchain": {
+      "bytes": 2184,
+      "sha256": "695e4939c92774df",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_ggchain.jpg"
+    },
+    "gnosis": {
+      "bytes": 1008,
+      "sha256": "45ea8eef2f44922a",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_gnosis.jpg"
+    },
+    "goat": {
+      "bytes": 816,
+      "sha256": "5b6e99ceec5186d8",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_goat.jpg"
+    },
+    "gochain": {
+      "bytes": 1112,
+      "sha256": "42d457212ab3446d",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_gochain.jpg"
+    },
+    "haqq": {
+      "bytes": 752,
+      "sha256": "5420bd8fdd57bfd4",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_haqq.jpg"
+    },
+    "hedera": {
+      "bytes": 718,
+      "sha256": "6889cd1914d44491",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_hedera.jpg"
+    },
+    "hela": {
+      "bytes": 724,
+      "sha256": "9a73f1e7d1000a72",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_hela.jpg"
+    },
+    "hemi": {
+      "bytes": 940,
+      "sha256": "a5b25523da50ed62",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_hemi.jpg"
+    },
+    "hydra": {
+      "bytes": 1392,
+      "sha256": "22e5e30b828ded96",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_hydra.jpg"
+    },
+    "hydration": {
+      "bytes": 1376,
+      "sha256": "2edc2281611ce4a1",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_hydration.jpg"
+    },
+    "igra": {
+      "bytes": 906,
+      "sha256": "b5b0dcc1f1c874bc",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_igra.jpg"
+    },
+    "imx": {
+      "bytes": 978,
+      "sha256": "6e90cb63b6df1188",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_imx.jpg"
+    },
+    "ink": {
+      "bytes": 942,
+      "sha256": "5c74239a08708d79",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_ink.jpg"
+    },
+    "iotex": {
+      "bytes": 686,
+      "sha256": "0882cb32a6723c04",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_iotex.jpg"
+    },
+    "joc": {
+      "bytes": 928,
+      "sha256": "c7f0d1732f17ff5d",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_joc.jpg"
+    },
+    "k2": {
+      "bytes": 814,
+      "sha256": "0da60236d89fa0ea",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_k2.jpg"
+    },
+    "kasplex": {
+      "bytes": 658,
+      "sha256": "9e3e6fe92b751780",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_kasplex.jpg"
+    },
+    "katana": {
+      "bytes": 998,
+      "sha256": "0bdb13d6a494145e",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_katana.jpg"
+    },
+    "kava": {
+      "bytes": 982,
+      "sha256": "864d4acb49ff81be",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_kava.jpg"
+    },
+    "klaytn": {
+      "bytes": 594,
+      "sha256": "e24e88b739a3d8a1",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_klaytn.jpg"
+    },
+    "kub": {
+      "bytes": 1212,
+      "sha256": "ee5f4b45a2556233",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_kub.jpg"
+    },
+    "kucoin": {
+      "bytes": 1342,
+      "sha256": "9fa3e6e0f1d15869",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_kucoin.jpg"
+    },
+    "kusama": {
+      "bytes": 316,
+      "sha256": "395e3d4d6a708693",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_kusama.jpg"
+    },
+    "lachain-network": {
+      "bytes": 548,
+      "sha256": "77f0869f798e26bf",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_lachain-network.jpg"
+    },
+    "lens": {
+      "bytes": 714,
+      "sha256": "5d65c0827591334d",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_lens.jpg"
+    },
+    "lightlink": {
+      "bytes": 650,
+      "sha256": "b79b1e00b37f83bf",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_lightlink.jpg"
+    },
+    "linea": {
+      "bytes": 740,
+      "sha256": "f90c997a5f9c4445",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_linea.jpg"
+    },
+    "lisk": {
+      "bytes": 546,
+      "sha256": "54b5cb2dab835b7b",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_lisk.jpg"
+    },
+    "lukso": {
+      "bytes": 510,
+      "sha256": "fdf12596603ed2c7",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_lukso.jpg"
+    },
+    "manta": {
+      "bytes": 1464,
+      "sha256": "0849ced325281b81",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_manta.jpg"
+    },
+    "mantle": {
+      "bytes": 1350,
+      "sha256": "0a22e0edfef0cdc8",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_mantle.jpg"
+    },
+    "matchain": {
+      "bytes": 602,
+      "sha256": "9ff91dd00faf21d5",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_matchain.jpg"
+    },
+    "megaeth": {
+      "bytes": 1312,
+      "sha256": "85595db2d8c8c125",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_megaeth.jpg"
+    },
+    "meter": {
+      "bytes": 1180,
+      "sha256": "8aa31106816f4798",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_meter.jpg"
+    },
+    "metis": {
+      "bytes": 872,
+      "sha256": "82a688588cc92c25",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_metis.jpg"
+    },
+    "mezo": {
+      "bytes": 1196,
+      "sha256": "47bb64040d5faa86",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_mezo.jpg"
+    },
+    "mode": {
+      "bytes": 814,
+      "sha256": "e20619923c3fe12e",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_mode.jpg"
+    },
+    "monad": {
+      "bytes": 736,
+      "sha256": "5d9e359961db994c",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_monad.jpg"
+    },
+    "morph": {
+      "bytes": 448,
+      "sha256": "3c46708f8d5db314",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_morph.jpg"
+    },
+    "nibiru": {
+      "bytes": 852,
+      "sha256": "b06ae259f2244e97",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_nibiru.jpg"
+    },
+    "oasis": {
+      "bytes": 1530,
+      "sha256": "efca8b2783cf2138",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_oasis.jpg"
+    },
+    "oasys": {
+      "bytes": 664,
+      "sha256": "d398919862c709d5",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_oasys.jpg"
+    },
+    "okexchain": {
+      "bytes": 362,
+      "sha256": "730d2d7ae47dbaa0",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_okexchain.jpg"
+    },
+    "ontology": {
+      "bytes": 502,
+      "sha256": "56a5c9c8ffbb5d72",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_ontology.jpg"
+    },
+    "op_bnb": {
+      "bytes": 1518,
+      "sha256": "a148389fff21dbc1",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_op_bnb.jpg"
+    },
+    "optimism": {
+      "bytes": 1618,
+      "sha256": "c2db87140f0397e4",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_optimism.jpg"
+    },
+    "palm": {
+      "bytes": 862,
+      "sha256": "50680a03b7f2783a",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_palm.jpg"
+    },
+    "peaq": {
+      "bytes": 766,
+      "sha256": "5d67217afa59e512",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_peaq.jpg"
+    },
+    "pepu": {
+      "bytes": 1960,
+      "sha256": "893f3de02890fbfd",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_pepu.jpg"
+    },
+    "pharos": {
+      "bytes": 756,
+      "sha256": "814166622abda900",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_pharos.jpg"
+    },
+    "plasma": {
+      "bytes": 1188,
+      "sha256": "3c94391d6e8c50cd",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_plasma.jpg"
+    },
+    "plume": {
+      "bytes": 548,
+      "sha256": "cf0cafc6611bfa82",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_plume.jpg"
+    },
+    "polkadot": {
+      "bytes": 1044,
+      "sha256": "a5f15fc7ea649ba3",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_polkadot.jpg"
+    },
+    "polygon": {
+      "bytes": 754,
+      "sha256": "786eab94336c2098",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_polygon.jpg"
+    },
+    "pulsechain": {
+      "bytes": 1464,
+      "sha256": "3eb832075b4aa519",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_pulsechain.jpg"
+    },
+    "qie": {
+      "bytes": 1070,
+      "sha256": "684127508d8ef72c",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_qie.jpg"
+    },
+    "quai": {
+      "bytes": 758,
+      "sha256": "53bd551fe7f07242",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_quai.jpg"
+    },
+    "rayls": {
+      "bytes": 808,
+      "sha256": "627eff85b0f006df",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_rayls.jpg"
+    },
+    "redbelly": {
+      "bytes": 1086,
+      "sha256": "53d2834761e11b94",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_redbelly.jpg"
+    },
+    "reya": {
+      "bytes": 404,
+      "sha256": "83eacdde18ad2cbc",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_reya.jpg"
+    },
+    "robinhood": {
+      "bytes": 684,
+      "sha256": "2a0fabaf595a6eb1",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_robinhood.jpg"
+    },
+    "rollux": {
+      "bytes": 766,
+      "sha256": "efb2c01be51863fa",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_rollux.jpg"
+    },
+    "ronin": {
+      "bytes": 958,
+      "sha256": "30e701a9282e5eaf",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_ronin.jpg"
+    },
+    "rootstock": {
+      "bytes": 1010,
+      "sha256": "fc5ea7363b581bf5",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_rootstock.jpg"
+    },
+    "scroll": {
+      "bytes": 678,
+      "sha256": "408409ea8d4dc057",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_scroll.jpg"
+    },
+    "sei": {
+      "bytes": 1316,
+      "sha256": "2d4c9c35bdc71d53",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_sei.jpg"
+    },
+    "shape": {
+      "bytes": 1078,
+      "sha256": "0c20c2b2052cc43a",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_shape.jpg"
+    },
+    "shiden": {
+      "bytes": 570,
+      "sha256": "b9afa3e36df2d2de",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_shiden.jpg"
+    },
+    "smartbch": {
+      "bytes": 816,
+      "sha256": "635d2543c032a241",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_smartbch.jpg"
+    },
+    "somnia": {
+      "bytes": 1366,
+      "sha256": "a5aa5ef27bfa0b55",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_somnia.jpg"
+    },
+    "soneium": {
+      "bytes": 1030,
+      "sha256": "27491839970930bf",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_soneium.jpg"
+    },
+    "songbird": {
+      "bytes": 430,
+      "sha256": "a930aaef127bbf80",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_songbird.jpg"
+    },
+    "sonic": {
+      "bytes": 1582,
+      "sha256": "a972aad82c10aa8c",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_sonic.jpg"
+    },
+    "sophon": {
+      "bytes": 546,
+      "sha256": "d468c08442f1f3e1",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_sophon.jpg"
+    },
+    "stable": {
+      "bytes": 644,
+      "sha256": "d7f5c5bfed35492b",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_stable.jpg"
+    },
+    "story": {
+      "bytes": 816,
+      "sha256": "5a453c8078eb95a9",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_story.jpg"
+    },
+    "stratis": {
+      "bytes": 1098,
+      "sha256": "bf3c485be61e80ef",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_stratis.jpg"
+    },
+    "superseed": {
+      "bytes": 516,
+      "sha256": "447ee96587bd3c77",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_superseed.jpg"
+    },
+    "swan": {
+      "bytes": 652,
+      "sha256": "98072ac86fb2829c",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_swan.jpg"
+    },
+    "tac": {
+      "bytes": 620,
+      "sha256": "0b7eb9fbd4af31ba",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_tac.jpg"
+    },
+    "taiko": {
+      "bytes": 770,
+      "sha256": "dd6f716d8c930986",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_taiko.jpg"
+    },
+    "telos": {
+      "bytes": 614,
+      "sha256": "d1a141a480eceaa0",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_telos.jpg"
+    },
+    "tempo": {
+      "bytes": 288,
+      "sha256": "fa0f5a713703340c",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_tempo.jpg"
+    },
+    "theta": {
+      "bytes": 616,
+      "sha256": "4d836dd4d92b84ba",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_theta.jpg"
+    },
+    "tomochain": {
+      "bytes": 406,
+      "sha256": "161bacfd44e9c5af",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_tomochain.jpg"
+    },
+    "ultron": {
+      "bytes": 642,
+      "sha256": "1125dc13181d9c47",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_ultron.jpg"
+    },
+    "unichain": {
+      "bytes": 738,
+      "sha256": "8a5a86fe28d5c63f",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_unichain.jpg"
+    },
+    "velas": {
+      "bytes": 684,
+      "sha256": "d12de5927bd100b6",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_velas.jpg"
+    },
+    "vinuchain": {
+      "bytes": 812,
+      "sha256": "15a4791849fa1748",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_vinuchain.jpg"
+    },
+    "virbicoin": {
+      "bytes": 1954,
+      "sha256": "dd3966fff3e026de",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_virbicoin.jpg"
+    },
+    "wanchain": {
+      "bytes": 978,
+      "sha256": "311423cfbfe1f30a",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_wanchain.jpg"
+    },
+    "xdc": {
+      "bytes": 1252,
+      "sha256": "a1b481b035be4593",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_xdc.jpg"
+    },
+    "xphere": {
+      "bytes": 1564,
+      "sha256": "612b043241a92145",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_xphere.jpg"
+    },
+    "zeniq": {
+      "bytes": 340,
+      "sha256": "0d44fb12545d072a",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_zeniq.jpg"
+    },
+    "zetachain": {
+      "bytes": 500,
+      "sha256": "aabec2cdada0a561",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_zetachain.jpg"
+    },
+    "zilliqa": {
+      "bytes": 650,
+      "sha256": "97717bd6ec1d739c",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_zilliqa.jpg"
+    },
+    "zircuit": {
+      "bytes": 1464,
+      "sha256": "e62eae2da5179fa3",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_zircuit.jpg"
+    },
+    "zkcro": {
+      "bytes": 1194,
+      "sha256": "a5a744bbd3cfefe5",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_zkcro.jpg"
+    },
+    "zkfair": {
+      "bytes": 670,
+      "sha256": "d71748f2a7de1c87",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_zkfair.jpg"
+    },
+    "zksync-era": {
+      "bytes": 396,
+      "sha256": "5811c0aac76f31ac",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_zksync-era.jpg"
+    },
+    "zora": {
+      "bytes": 690,
+      "sha256": "10d6c78bd7ef102b",
+      "from": "https://icons.llamao.fi/icons/chains/rsz_zora.jpg"
+    }
+  },
+  "missing": [196, 1110, 1130, 2355, 2372, 8822, 35441, 42170, 47763, 1440000]
+}

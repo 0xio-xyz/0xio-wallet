@@ -1,0 +1,2947 @@
+{
+  "version": 2,
+  "contracts": {
+    "devnet": "oct91H1swTpzRnN91cW5EdMtcBBL4mPQADsKZcNWihowjLN",
+    "mainnet": null
+  },
+  "nameList": {
+    "url": "https://raw.githubusercontent.com/0xio-xyz/Token-lists/main/octra.namelist.json",
+    "listedAs": {
+      "mainnet": "mainnet",
+      "devnet": "devnet",
+      "devnet2": "devnet",
+      "custom_1": null,
+      "constructor": null
+    },
+    "interfaces": ["6"],
+    "parse": [
+      {
+        "list": {
+          "services": [
+            {
+              "network": "devnet",
+              "address": "oct91H1swTpzRnN91cW5EdMtcBBL4mPQADsKZcNWihowjLN",
+              "name": "Octra Name System",
+              "symbol": "ONS",
+              "suffix": ".oct"
+            }
+          ]
+        },
+        "expect": {
+          "devnet": "oct91H1swTpzRnN91cW5EdMtcBBL4mPQADsKZcNWihowjLN"
+        }
+      },
+      {
+        "list": {
+          "name": "0xio name services",
+          "services": [
+            {
+              "network": "devnet",
+              "address": "oct91H1swTpzRnN91cW5EdMtcBBL4mPQADsKZcNWihowjLN",
+              "name": "Octra Name System",
+              "symbol": "ONS",
+              "suffix": ".oct"
+            },
+            {
+              "network": "mainnet",
+              "address": "oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS",
+              "name": "Octra Name System",
+              "symbol": "ONS",
+              "suffix": ".oct"
+            }
+          ]
+        },
+        "expect": {
+          "devnet": "oct91H1swTpzRnN91cW5EdMtcBBL4mPQADsKZcNWihowjLN",
+          "mainnet": "oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS"
+        }
+      },
+      {
+        "list": {
+          "services": []
+        },
+        "expect": {}
+      },
+      {
+        "list": {
+          "services": [
+            {
+              "network": "mainnet",
+              "address": "oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS",
+              "name": "Octra Name System",
+              "symbol": "ONS",
+              "suffix": ".oct"
+            }
+          ]
+        },
+        "expect": {
+          "mainnet": "oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS"
+        }
+      },
+      {
+        "list": {
+          "services": [
+            {
+              "network": "devnet",
+              "address": "oct91H1swTpzRnN91cW5EdMtcBBL4mPQADsKZcNWihowjLN",
+              "name": "Octra Name System",
+              "symbol": "ONS",
+              "suffix": ".oct"
+            },
+            {
+              "network": "devnet",
+              "address": "oct91H1swTpzRnN91cW5EdMtcBBL4mPQADsKZcNWihowjLN",
+              "name": "Octra Name System",
+              "symbol": "ONS",
+              "suffix": ".oct"
+            }
+          ]
+        },
+        "expect": {}
+      },
+      {
+        "list": {
+          "services": [
+            {
+              "network": "devnet",
+              "address": "oct91H1swTpzRnN91cW5EdMtcBBL4mPQADsKZcNWihowjLN",
+              "name": "Octra Name System",
+              "symbol": "ONS",
+              "suffix": ".oct"
+            },
+            {
+              "network": "devnet",
+              "address": "oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS",
+              "name": "Octra Name System",
+              "symbol": "ONS",
+              "suffix": ".oct"
+            }
+          ]
+        },
+        "expect": {}
+      },
+      {
+        "list": {
+          "services": [
+            {
+              "network": "devnet",
+              "address": "oct123",
+              "name": "Octra Name System",
+              "symbol": "ONS",
+              "suffix": ".oct"
+            },
+            {
+              "network": "devnet",
+              "address": "oct91H1swTpzRnN91cW5EdMtcBBL4mPQADsKZcNWihowjLN",
+              "name": "Octra Name System",
+              "symbol": "ONS",
+              "suffix": ".oct"
+            }
+          ]
+        },
+        "expect": {}
+      },
+      {
+        "list": {
+          "services": [
+            {
+              "network": "devnet",
+              "address": "oct91H1swTpzRnN91cW5EdMtcBBL4mPQADsKZcNWihowjLN",
+              "name": "Octra Name System",
+              "symbol": "ONS",
+              "suffix": ".oct"
+            },
+            {
+              "network": "devnet",
+              "address": "oct91H1swTpzRnN91cW5EdMtcBBL4mPQADsKZcNWihowjLN",
+              "name": "Octra Name System",
+              "symbol": "ONS",
+              "suffix": ".oct"
+            },
+            {
+              "network": "devnet",
+              "address": "oct91H1swTpzRnN91cW5EdMtcBBL4mPQADsKZcNWihowjLN",
+              "name": "Octra Name System",
+              "symbol": "ONS",
+              "suffix": ".oct"
+            }
+          ]
+        },
+        "expect": {}
+      },
+      {
+        "list": {
+          "services": [
+            {
+              "network": "devnet",
+              "address": "oct123",
+              "name": "Octra Name System",
+              "symbol": "ONS",
+              "suffix": ".oct"
+            }
+          ]
+        },
+        "expect": {}
+      },
+      {
+        "list": {
+          "services": [
+            {
+              "network": "devnet",
+              "address": "oct91H1swTpzRnN91cW5EdMtcBBL4mPQADsKZcNWihowjLN ",
+              "name": "Octra Name System",
+              "symbol": "ONS",
+              "suffix": ".oct"
+            }
+          ]
+        },
+        "expect": {}
+      },
+      {
+        "list": {
+          "services": [
+            {
+              "network": "devnet",
+              "address": 7,
+              "name": "Octra Name System",
+              "symbol": "ONS",
+              "suffix": ".oct"
+            }
+          ]
+        },
+        "expect": {}
+      },
+      {
+        "list": {
+          "services": [
+            {
+              "network": "devnet",
+              "address": "oct91H1swTpzRnN91cW5EdMtcBBL4mPQADsKZcNWihowjLN",
+              "name": "Octra Name System",
+              "symbol": "ONS",
+              "suffix": ".eth"
+            }
+          ]
+        },
+        "expect": {}
+      },
+      {
+        "list": {
+          "services": [
+            {
+              "network": "devnet",
+              "address": "oct91H1swTpzRnN91cW5EdMtcBBL4mPQADsKZcNWihowjLN",
+              "name": "Octra Name System",
+              "symbol": "ONS",
+              "suffix": "oct"
+            }
+          ]
+        },
+        "expect": {}
+      },
+      {
+        "list": {
+          "services": [
+            {
+              "network": "devnet",
+              "address": "oct91H1swTpzRnN91cW5EdMtcBBL4mPQADsKZcNWihowjLN"
+            }
+          ]
+        },
+        "expect": {}
+      },
+      {
+        "list": {
+          "services": [
+            {
+              "network": "devnet",
+              "address": "oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS",
+              "name": "Octra Name System",
+              "symbol": "ONS",
+              "suffix": ".eth"
+            },
+            {
+              "network": "devnet",
+              "address": "oct91H1swTpzRnN91cW5EdMtcBBL4mPQADsKZcNWihowjLN",
+              "name": "Octra Name System",
+              "symbol": "ONS",
+              "suffix": ".oct"
+            }
+          ]
+        },
+        "expect": {
+          "devnet": "oct91H1swTpzRnN91cW5EdMtcBBL4mPQADsKZcNWihowjLN"
+        }
+      },
+      {
+        "list": {
+          "services": [
+            {
+              "network": "Devnet",
+              "address": "oct91H1swTpzRnN91cW5EdMtcBBL4mPQADsKZcNWihowjLN",
+              "name": "Octra Name System",
+              "symbol": "ONS",
+              "suffix": ".oct"
+            }
+          ]
+        },
+        "expect": {}
+      },
+      {
+        "list": {
+          "services": [
+            {
+              "network": "__proto__",
+              "address": "oct91H1swTpzRnN91cW5EdMtcBBL4mPQADsKZcNWihowjLN",
+              "name": "Octra Name System",
+              "symbol": "ONS",
+              "suffix": ".oct"
+            },
+            {
+              "network": "constructor",
+              "address": "oct91H1swTpzRnN91cW5EdMtcBBL4mPQADsKZcNWihowjLN",
+              "name": "Octra Name System",
+              "symbol": "ONS",
+              "suffix": ".oct"
+            }
+          ]
+        },
+        "expect": {
+          "constructor": "oct91H1swTpzRnN91cW5EdMtcBBL4mPQADsKZcNWihowjLN"
+        }
+      },
+      {
+        "list": {
+          "services": [
+            null,
+            "devnet",
+            7,
+            {
+              "network": "devnet",
+              "address": "oct91H1swTpzRnN91cW5EdMtcBBL4mPQADsKZcNWihowjLN",
+              "name": "Octra Name System",
+              "symbol": "ONS",
+              "suffix": ".oct"
+            }
+          ]
+        },
+        "expect": {
+          "devnet": "oct91H1swTpzRnN91cW5EdMtcBBL4mPQADsKZcNWihowjLN"
+        }
+      },
+      {
+        "list": {
+          "services": {
+            "devnet": "oct91H1swTpzRnN91cW5EdMtcBBL4mPQADsKZcNWihowjLN"
+          }
+        },
+        "expect": null
+      },
+      {
+        "list": {
+          "collections": [
+            {
+              "network": "devnet",
+              "address": "oct91H1swTpzRnN91cW5EdMtcBBL4mPQADsKZcNWihowjLN",
+              "name": "Octra Name System",
+              "symbol": "ONS",
+              "suffix": ".oct"
+            }
+          ]
+        },
+        "expect": null
+      },
+      {
+        "list": [
+          {
+            "network": "devnet",
+            "address": "oct91H1swTpzRnN91cW5EdMtcBBL4mPQADsKZcNWihowjLN",
+            "name": "Octra Name System",
+            "symbol": "ONS",
+            "suffix": ".oct"
+          }
+        ],
+        "expect": null
+      },
+      {
+        "list": null,
+        "expect": null
+      },
+      {
+        "list": "not json",
+        "expect": null
+      }
+    ]
+  },
+  "limits": {
+    "nameMax": 32,
+    "pageSize": 50,
+    "yearsMin": 1,
+    "yearsMax": 5,
+    "forwardTtlMs": 60000,
+    "primaryTtlMs": 600000,
+    "busyRetryDelaysMs": [1000, 2000],
+    "busyCode": -32005
+  },
+  "normalize": [
+    {
+      "input": "0xio",
+      "name": "0xio"
+    },
+    {
+      "input": "0xio.oct",
+      "name": "0xio"
+    },
+    {
+      "input": "0XIO.OCT",
+      "name": "0xio"
+    },
+    {
+      "input": "0Xio.Oct",
+      "name": "0xio"
+    },
+    {
+      "input": "  0xio.oct  ",
+      "name": "0xio"
+    },
+    {
+      "input": "\t0xio.oct\r\n",
+      "name": "0xio"
+    },
+    {
+      "input": "a",
+      "name": "a"
+    },
+    {
+      "input": "a.oct",
+      "name": "a"
+    },
+    {
+      "input": "7",
+      "name": "7"
+    },
+    {
+      "input": "123.oct",
+      "name": "123"
+    },
+    {
+      "input": "a-b.oct",
+      "name": "a-b"
+    },
+    {
+      "input": "a--b.oct",
+      "name": "a--b"
+    },
+    {
+      "input": "xn--abc.oct",
+      "name": "xn--abc"
+    },
+    {
+      "input": "xn--80ak6aa92e.oct",
+      "name": "xn--80ak6aa92e"
+    },
+    {
+      "input": "oct",
+      "name": "oct"
+    },
+    {
+      "input": "oct.oct",
+      "name": "oct"
+    },
+    {
+      "input": "abcdefghijklmnopqrstuvwxyz012345",
+      "name": "abcdefghijklmnopqrstuvwxyz012345"
+    },
+    {
+      "input": "abcdefghijklmnopqrstuvwxyz012345.oct",
+      "name": "abcdefghijklmnopqrstuvwxyz012345"
+    },
+    {
+      "input": "ABCDEFGHIJKLMNOPQRSTUVWXYZ012345.OCT",
+      "name": "abcdefghijklmnopqrstuvwxyz012345"
+    },
+    {
+      "input": "",
+      "invalid": "empty"
+    },
+    {
+      "input": "   ",
+      "invalid": "empty"
+    },
+    {
+      "input": ".oct",
+      "invalid": "empty"
+    },
+    {
+      "input": " .OCT ",
+      "invalid": "empty"
+    },
+    {
+      "input": "abcdefghijklmnopqrstuvwxyz0123456",
+      "invalid": "too_long"
+    },
+    {
+      "input": "abcdefghijklmnopqrstuvwxyz0123456.oct",
+      "invalid": "too_long"
+    },
+    {
+      "input": "-abcdefghijklmnopqrstuvwxyz012345.oct",
+      "invalid": "too_long"
+    },
+    {
+      "input": "oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS",
+      "invalid": "too_long"
+    },
+    {
+      "input": "oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS.oct",
+      "invalid": "too_long"
+    },
+    {
+      "input": "-0xio.oct",
+      "invalid": "hyphen_edge"
+    },
+    {
+      "input": "0xio-.oct",
+      "invalid": "hyphen_edge"
+    },
+    {
+      "input": "-",
+      "invalid": "hyphen_edge"
+    },
+    {
+      "input": "-.oct",
+      "invalid": "hyphen_edge"
+    },
+    {
+      "input": "0xio.oct.oct",
+      "invalid": "bad_character"
+    },
+    {
+      "input": "0x io.oct",
+      "invalid": "bad_character"
+    },
+    {
+      "input": "0xio .oct",
+      "invalid": "bad_character"
+    },
+    {
+      "input": "0x_io.oct",
+      "invalid": "bad_character"
+    },
+    {
+      "input": "0xio.eth",
+      "invalid": "bad_character"
+    },
+    {
+      "input": "a.b.oct",
+      "invalid": "bad_character"
+    },
+    {
+      "input": "0x!o.oct",
+      "invalid": "bad_character"
+    },
+    {
+      "input": "0xio.",
+      "invalid": "bad_character"
+    },
+    {
+      "input": "oct://0xio.oct",
+      "invalid": "bad_character"
+    },
+    {
+      "input": "0x\nio.oct",
+      "invalid": "bad_character"
+    },
+    {
+      "input": "!abcdefghijklmnopqrstuvwxyz0123456.oct",
+      "invalid": "bad_character"
+    },
+    {
+      "input": "0xi\u00f3.oct",
+      "invalid": "bad_character"
+    },
+    {
+      "input": "0xi\u043e.oct",
+      "invalid": "bad_character"
+    },
+    {
+      "input": "0xi\uff4f.oct",
+      "invalid": "bad_character"
+    },
+    {
+      "input": "\u212aing.oct",
+      "invalid": "bad_character"
+    },
+    {
+      "input": "\u0130stanbul.oct",
+      "invalid": "bad_character"
+    },
+    {
+      "input": "stra\u00dfe.oct",
+      "invalid": "bad_character"
+    },
+    {
+      "input": "0x\u200bio.oct",
+      "invalid": "bad_character"
+    },
+    {
+      "input": "\u00a00xio.oct",
+      "invalid": "bad_character"
+    },
+    {
+      "input": "0xio\ud83d\ude00.oct",
+      "invalid": "bad_character"
+    },
+    {
+      "input": "0xio\uff0eoct",
+      "invalid": "bad_character"
+    }
+  ],
+  "isNameInput": [
+    {
+      "input": "0xio.oct",
+      "expect": true
+    },
+    {
+      "input": "0XIO.OCT",
+      "expect": true
+    },
+    {
+      "input": " 0xio.oct ",
+      "expect": true
+    },
+    {
+      "input": "0xio.oct\n",
+      "expect": true
+    },
+    {
+      "input": ".oct",
+      "expect": true
+    },
+    {
+      "input": "\u212aing.oct",
+      "expect": true
+    },
+    {
+      "input": "oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS.oct",
+      "expect": true
+    },
+    {
+      "input": "0xio",
+      "expect": false
+    },
+    {
+      "input": "",
+      "expect": false
+    },
+    {
+      "input": "oct",
+      "expect": false
+    },
+    {
+      "input": "oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS",
+      "expect": false
+    },
+    {
+      "input": "0xio.octo",
+      "expect": false
+    },
+    {
+      "input": "0xio.oc",
+      "expect": false
+    },
+    {
+      "input": "0xio.oct.eth",
+      "expect": false
+    },
+    {
+      "input": "0xio.oct\u00a0",
+      "expect": false
+    },
+    {
+      "input": "0xio\uff0eoct",
+      "expect": false
+    },
+    {
+      "input": "0xio oct",
+      "expect": false
+    }
+  ],
+  "parse": {
+    "status": [
+      {
+        "raw": "0",
+        "expect": "available"
+      },
+      {
+        "raw": "1",
+        "expect": "active"
+      },
+      {
+        "raw": "2",
+        "expect": "grace"
+      },
+      {
+        "raw": "3",
+        "expect": "reserved"
+      },
+      {
+        "raw": "4",
+        "expect": "invalid"
+      },
+      {
+        "raw": "5",
+        "expect": null
+      },
+      {
+        "raw": "",
+        "expect": null
+      },
+      {
+        "raw": "01",
+        "expect": null
+      },
+      {
+        "raw": " 1",
+        "expect": null
+      },
+      {
+        "raw": "active",
+        "expect": null
+      }
+    ],
+    "kind": [
+      {
+        "raw": "0",
+        "expect": "none"
+      },
+      {
+        "raw": "1",
+        "expect": "circle"
+      },
+      {
+        "raw": "2",
+        "expect": "wallet"
+      },
+      {
+        "raw": "3",
+        "expect": null
+      },
+      {
+        "raw": "",
+        "expect": null
+      }
+    ],
+    "target": [
+      {
+        "raw": "",
+        "expect": ""
+      },
+      {
+        "raw": "oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS",
+        "expect": "oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS"
+      },
+      {
+        "raw": "oct9pMw4JtXc7VnEa2RhKy5ZsGd8LbQf3UgTiWoN6BrHuCe",
+        "expect": "oct9pMw4JtXc7VnEa2RhKy5ZsGd8LbQf3UgTiWoN6BrHuCe"
+      },
+      {
+        "raw": "oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS ",
+        "expect": null
+      },
+      {
+        "raw": "oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEa",
+        "expect": null
+      },
+      {
+        "raw": "OCT7xkq3mvbt9fwc2znhs5rdygpj8luae4gtnwb6crxheas",
+        "expect": null
+      },
+      {
+        "raw": "0xio",
+        "expect": null
+      },
+      {
+        "raw": "0",
+        "expect": null
+      }
+    ],
+    "name": [
+      {
+        "raw": "",
+        "expect": ""
+      },
+      {
+        "raw": "0xio",
+        "expect": "0xio"
+      },
+      {
+        "raw": "xn--abc",
+        "expect": "xn--abc"
+      },
+      {
+        "raw": "abcdefghijklmnopqrstuvwxyz012345",
+        "expect": "abcdefghijklmnopqrstuvwxyz012345"
+      },
+      {
+        "raw": "0xio.oct",
+        "expect": null
+      },
+      {
+        "raw": "0Xio",
+        "expect": null
+      },
+      {
+        "raw": " 0xio",
+        "expect": null
+      },
+      {
+        "raw": "-0xio",
+        "expect": null
+      },
+      {
+        "raw": "abcdefghijklmnopqrstuvwxyz0123456",
+        "expect": null
+      },
+      {
+        "raw": "0xi\u043e",
+        "expect": null
+      }
+    ],
+    "nameInfo": [
+      {
+        "raw": "4|0xio|oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS|1825920325|2||oct2Zd8FhWq5TnYc9RmJv4KsXb7PgLe3AuNtC6GwHyBiQo1|0",
+        "expect": {
+          "tokenId": "4",
+          "name": "0xio",
+          "owner": "oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS",
+          "expires": 1825920325,
+          "kind": "wallet",
+          "circle": null,
+          "wallet": "oct2Zd8FhWq5TnYc9RmJv4KsXb7PgLe3AuNtC6GwHyBiQo1",
+          "circleStatus": "none"
+        }
+      },
+      {
+        "raw": "9|0xio-labs|oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS|1825920325|1|oct9pMw4JtXc7VnEa2RhKy5ZsGd8LbQf3UgTiWoN6BrHuCe||2",
+        "expect": {
+          "tokenId": "9",
+          "name": "0xio-labs",
+          "owner": "oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS",
+          "expires": 1825920325,
+          "kind": "circle",
+          "circle": "oct9pMw4JtXc7VnEa2RhKy5ZsGd8LbQf3UgTiWoN6BrHuCe",
+          "wallet": null,
+          "circleStatus": "confirmed"
+        }
+      },
+      {
+        "raw": "1|ons|oct6CFmnQeSPLv2FhfkyB3QrYHRLtVHad8vhyZda9TZMn6y|1826095818|1|octnKTk3f1wRkC8Q4qa8gzouwcPkd3gW8DQAMbGobpyEu6n||1",
+        "expect": {
+          "tokenId": "1",
+          "name": "ons",
+          "owner": "oct6CFmnQeSPLv2FhfkyB3QrYHRLtVHad8vhyZda9TZMn6y",
+          "expires": 1826095818,
+          "kind": "circle",
+          "circle": "octnKTk3f1wRkC8Q4qa8gzouwcPkd3gW8DQAMbGobpyEu6n",
+          "wallet": null,
+          "circleStatus": "waiting"
+        }
+      },
+      {
+        "raw": "0|0xio|oct2qyupyPfAof4kJ8LcTdN7fyQkLxiKhfemLCz94NNoxio|1826095818|0|||0",
+        "expect": {
+          "tokenId": "0",
+          "name": "0xio",
+          "owner": "oct2qyupyPfAof4kJ8LcTdN7fyQkLxiKhfemLCz94NNoxio",
+          "expires": 1826095818,
+          "kind": "none",
+          "circle": null,
+          "wallet": null,
+          "circleStatus": "none"
+        }
+      },
+      {
+        "raw": "",
+        "expect": null
+      },
+      {
+        "raw": "0xio|oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS|1825920325|2||oct2Zd8FhWq5TnYc9RmJv4KsXb7PgLe3AuNtC6GwHyBiQo1",
+        "expect": null
+      },
+      {
+        "raw": "4|0xio|oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS|1825920325|2||oct2Zd8FhWq5TnYc9RmJv4KsXb7PgLe3AuNtC6GwHyBiQo1",
+        "expect": null
+      },
+      {
+        "raw": "4|0xio|oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS|1825920325|2||oct2Zd8FhWq5TnYc9RmJv4KsXb7PgLe3AuNtC6GwHyBiQo1|0|x",
+        "expect": null
+      },
+      {
+        "raw": "4|0xio|oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS|1825920325|2||oct2Zd8FhWq5TnYc9RmJv4KsXb7PgLe3AuNtC6GwHyBiQo1|0|",
+        "expect": null
+      },
+      {
+        "raw": "|0xio|oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS|1825920325|2||oct2Zd8FhWq5TnYc9RmJv4KsXb7PgLe3AuNtC6GwHyBiQo1|0",
+        "expect": null
+      },
+      {
+        "raw": "x|0xio|oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS|1825920325|2||oct2Zd8FhWq5TnYc9RmJv4KsXb7PgLe3AuNtC6GwHyBiQo1|0",
+        "expect": null
+      },
+      {
+        "raw": "-1|0xio|oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS|1825920325|2||oct2Zd8FhWq5TnYc9RmJv4KsXb7PgLe3AuNtC6GwHyBiQo1|0",
+        "expect": null
+      },
+      {
+        "raw": "4|0xio|oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS|soon|2||oct2Zd8FhWq5TnYc9RmJv4KsXb7PgLe3AuNtC6GwHyBiQo1|0",
+        "expect": null
+      },
+      {
+        "raw": "4|0xio|oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS|1825920325.5|2||oct2Zd8FhWq5TnYc9RmJv4KsXb7PgLe3AuNtC6GwHyBiQo1|0",
+        "expect": null
+      },
+      {
+        "raw": "4|0xio|nobody|1825920325|2||oct2Zd8FhWq5TnYc9RmJv4KsXb7PgLe3AuNtC6GwHyBiQo1|0",
+        "expect": null
+      },
+      {
+        "raw": "4|0xio|oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS|1825920325|9||oct2Zd8FhWq5TnYc9RmJv4KsXb7PgLe3AuNtC6GwHyBiQo1|0",
+        "expect": null
+      },
+      {
+        "raw": "4|0xio|oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS|1825920325|2||not-an-address|0",
+        "expect": null
+      },
+      {
+        "raw": "4|0xio|oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS|1825920325|1|not-an-address||2",
+        "expect": null
+      },
+      {
+        "raw": "4|0Xio|oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS|1825920325|2||oct2Zd8FhWq5TnYc9RmJv4KsXb7PgLe3AuNtC6GwHyBiQo1|0",
+        "expect": null
+      },
+      {
+        "raw": "4||oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS|1825920325|2||oct2Zd8FhWq5TnYc9RmJv4KsXb7PgLe3AuNtC6GwHyBiQo1|0",
+        "expect": null
+      },
+      {
+        "raw": "4|0xio|oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS|1825920325|2||oct2Zd8FhWq5TnYc9RmJv4KsXb7PgLe3AuNtC6GwHyBiQo1|3",
+        "expect": null
+      },
+      {
+        "raw": "4|0xio|oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS|1825920325|2||oct2Zd8FhWq5TnYc9RmJv4KsXb7PgLe3AuNtC6GwHyBiQo1|",
+        "expect": null
+      },
+      {
+        "raw": "4|0xio|oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS|1825920325|2||oct2Zd8FhWq5TnYc9RmJv4KsXb7PgLe3AuNtC6GwHyBiQo1|waiting",
+        "expect": null
+      }
+    ],
+    "count": [
+      {
+        "raw": "0",
+        "expect": 0
+      },
+      {
+        "raw": "3",
+        "expect": 3
+      },
+      {
+        "raw": "",
+        "expect": null
+      },
+      {
+        "raw": "x",
+        "expect": null
+      },
+      {
+        "raw": "-1",
+        "expect": null
+      },
+      {
+        "raw": "1.5",
+        "expect": null
+      }
+    ],
+    "price": [
+      {
+        "raw": "556096",
+        "expect": "556096"
+      },
+      {
+        "raw": "0",
+        "expect": "0"
+      },
+      {
+        "raw": "123456789012345678901234567890",
+        "expect": "123456789012345678901234567890"
+      },
+      {
+        "raw": "",
+        "expect": null
+      },
+      {
+        "raw": "-1",
+        "expect": null
+      },
+      {
+        "raw": "1.5",
+        "expect": null
+      },
+      {
+        "raw": "12abc",
+        "expect": null
+      }
+    ],
+    "feed": [
+      {
+        "raw": "1794384581|55609671|1826081",
+        "expect": {
+          "clock": 1794384581,
+          "microOctPerUsd": "55609671",
+          "feedEpoch": 1826081
+        }
+      },
+      {
+        "raw": "",
+        "expect": null
+      },
+      {
+        "raw": "1794384581|55609671",
+        "expect": null
+      },
+      {
+        "raw": "1794384581|55609671|1826081|0",
+        "expect": null
+      },
+      {
+        "raw": "a|b|c",
+        "expect": null
+      }
+    ],
+    "names": [
+      {
+        "raw": "",
+        "expect": []
+      },
+      {
+        "raw": "0xio",
+        "expect": ["0xio"]
+      },
+      {
+        "raw": "0xio,0xio-labs,1",
+        "expect": ["0xio", "0xio-labs", "1"]
+      },
+      {
+        "raw": "0xio,,ons",
+        "expect": null
+      },
+      {
+        "raw": "0xio,",
+        "expect": null
+      },
+      {
+        "raw": ",0xio",
+        "expect": null
+      },
+      {
+        "raw": "0xio, ons",
+        "expect": null
+      },
+      {
+        "raw": "0xio.oct",
+        "expect": null
+      },
+      {
+        "raw": "0Xio",
+        "expect": null
+      },
+      {
+        "raw": "0xio|ons",
+        "expect": null
+      },
+      {
+        "raw": "-0xio",
+        "expect": null
+      },
+      {
+        "raw": "4,9",
+        "expect": ["4", "9"]
+      }
+    ],
+    "resolve": [
+      {
+        "raw": "0|",
+        "expect": {
+          "kind": "none",
+          "target": null
+        }
+      },
+      {
+        "raw": "1|oct9pMw4JtXc7VnEa2RhKy5ZsGd8LbQf3UgTiWoN6BrHuCe",
+        "expect": {
+          "kind": "circle",
+          "target": "oct9pMw4JtXc7VnEa2RhKy5ZsGd8LbQf3UgTiWoN6BrHuCe"
+        }
+      },
+      {
+        "raw": "2|oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS",
+        "expect": {
+          "kind": "wallet",
+          "target": "oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS"
+        }
+      },
+      {
+        "raw": "1|",
+        "expect": {
+          "kind": "circle",
+          "target": null
+        }
+      },
+      {
+        "raw": "2|",
+        "expect": {
+          "kind": "wallet",
+          "target": null
+        }
+      },
+      {
+        "raw": "",
+        "expect": null
+      },
+      {
+        "raw": "0",
+        "expect": null
+      },
+      {
+        "raw": "|",
+        "expect": null
+      },
+      {
+        "raw": "|oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS",
+        "expect": null
+      },
+      {
+        "raw": "0|oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS",
+        "expect": null
+      },
+      {
+        "raw": "3|oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS",
+        "expect": null
+      },
+      {
+        "raw": "02|oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS",
+        "expect": null
+      },
+      {
+        "raw": "2|oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS|",
+        "expect": null
+      },
+      {
+        "raw": "2|oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS|0",
+        "expect": null
+      },
+      {
+        "raw": "2| oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS",
+        "expect": null
+      },
+      {
+        "raw": "2|oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEa",
+        "expect": null
+      },
+      {
+        "raw": "2|0xio",
+        "expect": null
+      },
+      {
+        "raw": "oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS",
+        "expect": null
+      },
+      {
+        "raw": "wallet|oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS",
+        "expect": null
+      }
+    ],
+    "nameService": [
+      {
+        "raw": "Octra Name System|ONS|2|oct6CFmnQeSPLv2FhfkyB3QrYHRLtVHad8vhyZda9TZMn6y|6",
+        "expect": true
+      },
+      {
+        "raw": "Octra Name System|ONS|0||6",
+        "expect": true
+      },
+      {
+        "raw": "Octra Name System|ONS|2|oct6CFmnQeSPLv2FhfkyB3QrYHRLtVHad8vhyZda9TZMn6y|5",
+        "expect": false
+      },
+      {
+        "raw": "Octra Name System|ONS|2|oct6CFmnQeSPLv2FhfkyB3QrYHRLtVHad8vhyZda9TZMn6y|7",
+        "expect": false
+      },
+      {
+        "raw": "Octra Name System|ONS|2|oct6CFmnQeSPLv2FhfkyB3QrYHRLtVHad8vhyZda9TZMn6y|06",
+        "expect": false
+      },
+      {
+        "raw": "Octra Name System|ONS|2|oct6CFmnQeSPLv2FhfkyB3QrYHRLtVHad8vhyZda9TZMn6y|",
+        "expect": false
+      },
+      {
+        "raw": "Octra Name System|ONS|2|oct6CFmnQeSPLv2FhfkyB3QrYHRLtVHad8vhyZda9TZMn6y",
+        "expect": false
+      },
+      {
+        "raw": "Octra Name System|ONS|2|oct6CFmnQeSPLv2FhfkyB3QrYHRLtVHad8vhyZda9TZMn6y|6|x",
+        "expect": false
+      },
+      {
+        "raw": "Other Name System|ONS|2|oct6CFmnQeSPLv2FhfkyB3QrYHRLtVHad8vhyZda9TZMn6y|6",
+        "expect": false
+      },
+      {
+        "raw": "octra name system|ONS|2|oct6CFmnQeSPLv2FhfkyB3QrYHRLtVHad8vhyZda9TZMn6y|6",
+        "expect": false
+      },
+      {
+        "raw": "Octra Name System|ONX|2|oct6CFmnQeSPLv2FhfkyB3QrYHRLtVHad8vhyZda9TZMn6y|6",
+        "expect": false
+      },
+      {
+        "raw": "ONS|Octra Name System|2|oct6CFmnQeSPLv2FhfkyB3QrYHRLtVHad8vhyZda9TZMn6y|6",
+        "expect": false
+      },
+      {
+        "raw": "6",
+        "expect": false
+      },
+      {
+        "raw": "",
+        "expect": false
+      }
+    ]
+  },
+  "emptyTargetReason": [
+    {
+      "target": "wallet",
+      "status": "0",
+      "kind": null,
+      "expect": "not_registered"
+    },
+    {
+      "target": "wallet",
+      "status": "1",
+      "kind": "none",
+      "expect": "not_set"
+    },
+    {
+      "target": "wallet",
+      "status": "1",
+      "kind": "circle",
+      "expect": "points_to_circle"
+    },
+    {
+      "target": "wallet",
+      "status": "1",
+      "kind": "wallet",
+      "expect": "bad_reply"
+    },
+    {
+      "target": "wallet",
+      "status": "2",
+      "kind": null,
+      "expect": "expired"
+    },
+    {
+      "target": "wallet",
+      "status": "3",
+      "kind": null,
+      "expect": "reserved"
+    },
+    {
+      "target": "wallet",
+      "status": "4",
+      "kind": null,
+      "expect": "invalid"
+    },
+    {
+      "target": "wallet",
+      "status": "",
+      "kind": null,
+      "expect": "bad_reply"
+    },
+    {
+      "target": "wallet",
+      "status": "9",
+      "kind": null,
+      "expect": "bad_reply"
+    },
+    {
+      "target": "circle",
+      "status": "0",
+      "kind": null,
+      "expect": "not_registered"
+    },
+    {
+      "target": "circle",
+      "status": "1",
+      "kind": "none",
+      "expect": "not_set"
+    },
+    {
+      "target": "circle",
+      "status": "1",
+      "kind": "wallet",
+      "expect": "points_to_wallet"
+    },
+    {
+      "target": "circle",
+      "status": "1",
+      "kind": "circle",
+      "expect": "bad_reply"
+    },
+    {
+      "target": "circle",
+      "status": "2",
+      "kind": null,
+      "expect": "expired"
+    },
+    {
+      "target": "circle",
+      "status": "3",
+      "kind": null,
+      "expect": "reserved"
+    },
+    {
+      "target": "circle",
+      "status": "4",
+      "kind": null,
+      "expect": "invalid"
+    },
+    {
+      "target": "circle",
+      "status": "x",
+      "kind": null,
+      "expect": "bad_reply"
+    },
+    {
+      "target": "wallet",
+      "status": "0",
+      "kind": "none",
+      "expect": "not_registered"
+    },
+    {
+      "target": "wallet",
+      "status": "2",
+      "kind": "wallet",
+      "expect": "expired"
+    },
+    {
+      "target": "wallet",
+      "status": "3",
+      "kind": "none",
+      "expect": "reserved"
+    },
+    {
+      "target": "wallet",
+      "status": "4",
+      "kind": "none",
+      "expect": "invalid"
+    },
+    {
+      "target": "wallet",
+      "status": "1",
+      "kind": null,
+      "expect": "bad_reply"
+    },
+    {
+      "target": "circle",
+      "status": "2",
+      "kind": "circle",
+      "expect": "expired"
+    }
+  ],
+  "errors": [
+    {
+      "message": "Program view busy",
+      "code": -32005,
+      "expect": "busy"
+    },
+    {
+      "message": "Program view busy",
+      "expect": "busy"
+    },
+    {
+      "message": "program view busy",
+      "expect": "busy"
+    },
+    {
+      "message": "node error",
+      "code": -32005,
+      "expect": "busy"
+    },
+    {
+      "message": "execution reverted",
+      "code": -32000,
+      "expect": "reverted"
+    },
+    {
+      "message": "execution reverted [ons: name not registered]",
+      "expect": "name_not_registered"
+    },
+    {
+      "message": "execution reverted [ons: name lapsed]",
+      "expect": "name_lapsed"
+    },
+    {
+      "message": "execution reverted [ons: bad name]",
+      "expect": "bad_name"
+    },
+    {
+      "message": "execution reverted [ons: name reserved]",
+      "expect": "name_reserved"
+    },
+    {
+      "message": "execution reverted [ons: name taken]",
+      "expect": "name_taken"
+    },
+    {
+      "message": "execution reverted [ons: not enough sent]",
+      "expect": "not_enough_sent"
+    },
+    {
+      "message": "execution reverted [ons: feed is stale]",
+      "expect": "feed_stale"
+    },
+    {
+      "message": "execution reverted [ons: paused]",
+      "expect": "paused"
+    },
+    {
+      "message": "execution reverted [ons: not owner]",
+      "expect": "not_owner"
+    },
+    {
+      "message": "execution reverted [ons: name expired]",
+      "expect": "name_expired"
+    },
+    {
+      "message": "execution reverted [ons: name points elsewhere]",
+      "expect": "name_points_elsewhere"
+    },
+    {
+      "message": "execution reverted [ons: not authorized]",
+      "expect": "not_authorized"
+    },
+    {
+      "message": "ons: paused",
+      "expect": "paused"
+    },
+    {
+      "message": "program_exec_failed: execution reverted [ons: not owner]",
+      "expect": "not_owner"
+    },
+    {
+      "message": "execution reverted [ons: wallet not on the allowlist]",
+      "expect": "reverted"
+    },
+    {
+      "message": "execution reverted [ons: something new]",
+      "expect": "reverted"
+    },
+    {
+      "message": "execution reverted [xns: not owner]",
+      "expect": "reverted"
+    },
+    {
+      "message": "execution reverted [icons: paused]",
+      "expect": "reverted"
+    },
+    {
+      "message": "RPC HTTP error: 502",
+      "expect": "unavailable"
+    },
+    {
+      "message": "RPC HTTP error: 429",
+      "expect": "unavailable"
+    },
+    {
+      "message": "Failed to fetch",
+      "expect": "unavailable"
+    },
+    {
+      "message": "bytecode not found",
+      "expect": "unavailable"
+    },
+    {
+      "message": "",
+      "expect": "unavailable"
+    }
+  ],
+  "scenarios": [
+    {
+      "name": "wallet name resolves",
+      "call": "resolveWallet",
+      "network": "devnet",
+      "args": ["0Xio.oct"],
+      "replies": [
+        {
+          "method": "resolve",
+          "params": ["0xio"],
+          "result": "2|oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS"
+        }
+      ],
+      "expect": {
+        "ok": true,
+        "name": "0xio",
+        "address": "oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS",
+        "contract": "oct91H1swTpzRnN91cW5EdMtcBBL4mPQADsKZcNWihowjLN"
+      }
+    },
+    {
+      "name": "not registered",
+      "call": "resolveWallet",
+      "network": "devnet",
+      "args": ["0xio.oct"],
+      "replies": [
+        {
+          "method": "resolve",
+          "params": ["0xio"],
+          "result": "0|"
+        },
+        {
+          "method": "status_of",
+          "params": ["0xio"],
+          "result": "0"
+        }
+      ],
+      "expect": {
+        "ok": false,
+        "reason": "not_registered"
+      }
+    },
+    {
+      "name": "active with no target",
+      "call": "resolveWallet",
+      "network": "devnet",
+      "args": ["0xio.oct"],
+      "replies": [
+        {
+          "method": "resolve",
+          "params": ["0xio"],
+          "result": "0|"
+        },
+        {
+          "method": "status_of",
+          "params": ["0xio"],
+          "result": "1"
+        }
+      ],
+      "expect": {
+        "ok": false,
+        "reason": "not_set"
+      }
+    },
+    {
+      "name": "wallet lookup of a Circle name",
+      "call": "resolveWallet",
+      "network": "devnet",
+      "args": ["0xio-labs.oct"],
+      "replies": [
+        {
+          "method": "resolve",
+          "params": ["0xio-labs"],
+          "result": "1|oct9pMw4JtXc7VnEa2RhKy5ZsGd8LbQf3UgTiWoN6BrHuCe"
+        },
+        {
+          "method": "status_of",
+          "params": ["0xio-labs"],
+          "result": "1"
+        }
+      ],
+      "expect": {
+        "ok": false,
+        "reason": "points_to_circle"
+      }
+    },
+    {
+      "name": "wallet lookup of a name whose Circle is waiting",
+      "call": "resolveWallet",
+      "network": "devnet",
+      "args": ["ons.oct"],
+      "replies": [
+        {
+          "method": "resolve",
+          "params": ["ons"],
+          "result": "0|"
+        },
+        {
+          "method": "status_of",
+          "params": ["ons"],
+          "result": "1"
+        }
+      ],
+      "expect": {
+        "ok": false,
+        "reason": "not_set"
+      }
+    },
+    {
+      "name": "expired name",
+      "call": "resolveWallet",
+      "network": "devnet",
+      "args": ["0xio-old.oct"],
+      "replies": [
+        {
+          "method": "resolve",
+          "params": ["0xio-old"],
+          "result": "0|"
+        },
+        {
+          "method": "status_of",
+          "params": ["0xio-old"],
+          "result": "2"
+        }
+      ],
+      "expect": {
+        "ok": false,
+        "reason": "expired"
+      }
+    },
+    {
+      "name": "expired name that still names its kind",
+      "call": "resolveWallet",
+      "network": "devnet",
+      "args": ["0xio-old.oct"],
+      "replies": [
+        {
+          "method": "resolve",
+          "params": ["0xio-old"],
+          "result": "2|"
+        },
+        {
+          "method": "status_of",
+          "params": ["0xio-old"],
+          "result": "2"
+        }
+      ],
+      "expect": {
+        "ok": false,
+        "reason": "expired"
+      }
+    },
+    {
+      "name": "reserved name",
+      "call": "resolveWallet",
+      "network": "devnet",
+      "args": ["1.oct"],
+      "replies": [
+        {
+          "method": "resolve",
+          "params": ["1"],
+          "result": "0|"
+        },
+        {
+          "method": "status_of",
+          "params": ["1"],
+          "result": "3"
+        }
+      ],
+      "expect": {
+        "ok": false,
+        "reason": "reserved"
+      }
+    },
+    {
+      "name": "a name the contract calls invalid",
+      "call": "resolveWallet",
+      "network": "devnet",
+      "args": ["0xio--labs.oct"],
+      "replies": [
+        {
+          "method": "resolve",
+          "params": ["0xio--labs"],
+          "result": "0|"
+        },
+        {
+          "method": "status_of",
+          "params": ["0xio--labs"],
+          "result": "4"
+        }
+      ],
+      "expect": {
+        "ok": false,
+        "reason": "invalid"
+      }
+    },
+    {
+      "name": "invalid input makes no call",
+      "call": "resolveWallet",
+      "network": "devnet",
+      "args": ["0xi\u043e.oct"],
+      "replies": [],
+      "expect": {
+        "ok": false,
+        "reason": "invalid"
+      }
+    },
+    {
+      "name": "no contract on mainnet makes no call",
+      "call": "resolveWallet",
+      "network": "mainnet",
+      "args": ["0xio.oct"],
+      "replies": [],
+      "expect": {
+        "ok": false,
+        "reason": "not_available"
+      }
+    },
+    {
+      "name": "not available wins over invalid input",
+      "call": "resolveWallet",
+      "network": "mainnet",
+      "args": ["not a name"],
+      "replies": [],
+      "expect": {
+        "ok": false,
+        "reason": "not_available"
+      }
+    },
+    {
+      "name": "busy is asked again and then answers",
+      "call": "resolveWallet",
+      "network": "devnet",
+      "args": ["0xio.oct"],
+      "replies": [
+        {
+          "method": "resolve",
+          "params": ["0xio"],
+          "error": {
+            "code": -32005,
+            "message": "Program view busy"
+          }
+        },
+        {
+          "method": "resolve",
+          "params": ["0xio"],
+          "result": "2|oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS"
+        }
+      ],
+      "expect": {
+        "ok": true,
+        "name": "0xio",
+        "address": "oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS",
+        "contract": "oct91H1swTpzRnN91cW5EdMtcBBL4mPQADsKZcNWihowjLN"
+      }
+    },
+    {
+      "name": "busy on the reason read is never not registered",
+      "call": "resolveWallet",
+      "network": "devnet",
+      "args": ["0xio.oct"],
+      "replies": [
+        {
+          "method": "resolve",
+          "params": ["0xio"],
+          "result": "0|"
+        },
+        {
+          "method": "status_of",
+          "params": ["0xio"],
+          "error": {
+            "code": -32005,
+            "message": "Program view busy"
+          }
+        },
+        {
+          "method": "status_of",
+          "params": ["0xio"],
+          "error": {
+            "code": -32005,
+            "message": "Program view busy"
+          }
+        },
+        {
+          "method": "status_of",
+          "params": ["0xio"],
+          "error": {
+            "code": -32005,
+            "message": "Program view busy"
+          }
+        }
+      ],
+      "expect": {
+        "ok": false,
+        "reason": "busy"
+      }
+    },
+    {
+      "name": "busy three times gives up as busy",
+      "call": "resolveWallet",
+      "network": "devnet",
+      "args": ["0xio.oct"],
+      "replies": [
+        {
+          "method": "resolve",
+          "params": ["0xio"],
+          "error": {
+            "code": -32005,
+            "message": "Program view busy"
+          }
+        },
+        {
+          "method": "resolve",
+          "params": ["0xio"],
+          "error": {
+            "code": -32005,
+            "message": "Program view busy"
+          }
+        },
+        {
+          "method": "resolve",
+          "params": ["0xio"],
+          "error": {
+            "code": -32005,
+            "message": "Program view busy"
+          }
+        }
+      ],
+      "expect": {
+        "ok": false,
+        "reason": "busy"
+      }
+    },
+    {
+      "name": "node failure is unavailable",
+      "call": "resolveWallet",
+      "network": "devnet",
+      "args": ["0xio.oct"],
+      "replies": [
+        {
+          "method": "resolve",
+          "params": ["0xio"],
+          "error": {
+            "message": "RPC HTTP error: 502"
+          }
+        }
+      ],
+      "expect": {
+        "ok": false,
+        "reason": "unavailable"
+      }
+    },
+    {
+      "name": "a reverted view is unavailable",
+      "call": "resolveWallet",
+      "network": "devnet",
+      "args": ["0xio.oct"],
+      "replies": [
+        {
+          "method": "resolve",
+          "params": ["0xio"],
+          "error": {
+            "code": -32000,
+            "message": "execution reverted"
+          }
+        }
+      ],
+      "expect": {
+        "ok": false,
+        "reason": "unavailable"
+      }
+    },
+    {
+      "name": "a reply that is not an address is never used",
+      "call": "resolveWallet",
+      "network": "devnet",
+      "args": ["0xio.oct"],
+      "replies": [
+        {
+          "method": "resolve",
+          "params": ["0xio"],
+          "result": "2|0xio"
+        }
+      ],
+      "expect": {
+        "ok": false,
+        "reason": "bad_reply"
+      }
+    },
+    {
+      "name": "a bare address in place of a resolve reply is never used",
+      "call": "resolveWallet",
+      "network": "devnet",
+      "args": ["0xio.oct"],
+      "replies": [
+        {
+          "method": "resolve",
+          "params": ["0xio"],
+          "result": "oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS"
+        }
+      ],
+      "expect": {
+        "ok": false,
+        "reason": "bad_reply"
+      }
+    },
+    {
+      "name": "a resolve reply of an unknown kind is never used",
+      "call": "resolveWallet",
+      "network": "devnet",
+      "args": ["0xio.oct"],
+      "replies": [
+        {
+          "method": "resolve",
+          "params": ["0xio"],
+          "result": "3|oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS"
+        }
+      ],
+      "expect": {
+        "ok": false,
+        "reason": "bad_reply"
+      }
+    },
+    {
+      "name": "a resolve reply with a target and no kind is never used",
+      "call": "resolveWallet",
+      "network": "devnet",
+      "args": ["0xio.oct"],
+      "replies": [
+        {
+          "method": "resolve",
+          "params": ["0xio"],
+          "result": "0|oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS"
+        }
+      ],
+      "expect": {
+        "ok": false,
+        "reason": "bad_reply"
+      }
+    },
+    {
+      "name": "a resolve reply with a third field is never used",
+      "call": "resolveWallet",
+      "network": "devnet",
+      "args": ["0xio.oct"],
+      "replies": [
+        {
+          "method": "resolve",
+          "params": ["0xio"],
+          "result": "2|oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS|0"
+        }
+      ],
+      "expect": {
+        "ok": false,
+        "reason": "bad_reply"
+      }
+    },
+    {
+      "name": "an empty resolve reply is never not registered",
+      "call": "resolveWallet",
+      "network": "devnet",
+      "args": ["0xio.oct"],
+      "replies": [
+        {
+          "method": "resolve",
+          "params": ["0xio"],
+          "result": ""
+        }
+      ],
+      "expect": {
+        "ok": false,
+        "reason": "bad_reply"
+      }
+    },
+    {
+      "name": "an unknown status is never a reason",
+      "call": "resolveWallet",
+      "network": "devnet",
+      "args": ["0xio.oct"],
+      "replies": [
+        {
+          "method": "resolve",
+          "params": ["0xio"],
+          "result": "0|"
+        },
+        {
+          "method": "status_of",
+          "params": ["0xio"],
+          "result": "5"
+        }
+      ],
+      "expect": {
+        "ok": false,
+        "reason": "bad_reply"
+      }
+    },
+    {
+      "name": "an active wallet name with no address is unreadable",
+      "call": "resolveWallet",
+      "network": "devnet",
+      "args": ["0xio.oct"],
+      "replies": [
+        {
+          "method": "resolve",
+          "params": ["0xio"],
+          "result": "2|"
+        },
+        {
+          "method": "status_of",
+          "params": ["0xio"],
+          "result": "1"
+        }
+      ],
+      "expect": {
+        "ok": false,
+        "reason": "bad_reply"
+      }
+    },
+    {
+      "name": "circle name resolves",
+      "call": "resolveCircle",
+      "network": "devnet",
+      "args": ["0xio-labs.oct"],
+      "replies": [
+        {
+          "method": "resolve",
+          "params": ["0xio-labs"],
+          "result": "1|oct9pMw4JtXc7VnEa2RhKy5ZsGd8LbQf3UgTiWoN6BrHuCe"
+        }
+      ],
+      "expect": {
+        "ok": true,
+        "name": "0xio-labs",
+        "circleId": "oct9pMw4JtXc7VnEa2RhKy5ZsGd8LbQf3UgTiWoN6BrHuCe",
+        "contract": "oct91H1swTpzRnN91cW5EdMtcBBL4mPQADsKZcNWihowjLN"
+      }
+    },
+    {
+      "name": "circle lookup of a wallet name",
+      "call": "resolveCircle",
+      "network": "devnet",
+      "args": ["0xio.oct"],
+      "replies": [
+        {
+          "method": "resolve",
+          "params": ["0xio"],
+          "result": "2|oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS"
+        },
+        {
+          "method": "status_of",
+          "params": ["0xio"],
+          "result": "1"
+        }
+      ],
+      "expect": {
+        "ok": false,
+        "reason": "points_to_wallet"
+      }
+    },
+    {
+      "name": "a Circle that is waiting opens nothing",
+      "call": "resolveCircle",
+      "network": "devnet",
+      "args": ["ons.oct"],
+      "replies": [
+        {
+          "method": "resolve",
+          "params": ["ons"],
+          "result": "0|"
+        },
+        {
+          "method": "status_of",
+          "params": ["ons"],
+          "result": "1"
+        }
+      ],
+      "expect": {
+        "ok": false,
+        "reason": "not_set"
+      }
+    },
+    {
+      "name": "an active Circle name with no Circle is unreadable",
+      "call": "resolveCircle",
+      "network": "devnet",
+      "args": ["ons.oct"],
+      "replies": [
+        {
+          "method": "resolve",
+          "params": ["ons"],
+          "result": "1|"
+        },
+        {
+          "method": "status_of",
+          "params": ["ons"],
+          "result": "1"
+        }
+      ],
+      "expect": {
+        "ok": false,
+        "reason": "bad_reply"
+      }
+    },
+    {
+      "name": "circle lookup of a reserved name",
+      "call": "resolveCircle",
+      "network": "devnet",
+      "args": ["1.oct"],
+      "replies": [
+        {
+          "method": "resolve",
+          "params": ["1"],
+          "result": "0|"
+        },
+        {
+          "method": "status_of",
+          "params": ["1"],
+          "result": "3"
+        }
+      ],
+      "expect": {
+        "ok": false,
+        "reason": "reserved"
+      }
+    },
+    {
+      "name": "primary name",
+      "call": "primaryName",
+      "network": "devnet",
+      "args": ["oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS"],
+      "replies": [
+        {
+          "method": "primary_of",
+          "params": ["oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS"],
+          "result": "0xio"
+        }
+      ],
+      "expect": {
+        "ok": true,
+        "name": "0xio"
+      }
+    },
+    {
+      "name": "no primary name",
+      "call": "primaryName",
+      "network": "devnet",
+      "args": ["oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS"],
+      "replies": [
+        {
+          "method": "primary_of",
+          "params": ["oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS"],
+          "result": ""
+        }
+      ],
+      "expect": {
+        "ok": true,
+        "name": null
+      }
+    },
+    {
+      "name": "primary name of text that is not an address makes no call",
+      "call": "primaryName",
+      "network": "devnet",
+      "args": ["0xio.oct"],
+      "replies": [],
+      "expect": {
+        "ok": false,
+        "reason": "invalid"
+      }
+    },
+    {
+      "name": "primary name reply that is not a name",
+      "call": "primaryName",
+      "network": "devnet",
+      "args": ["oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS"],
+      "replies": [
+        {
+          "method": "primary_of",
+          "params": ["oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS"],
+          "result": "0xi\u043e"
+        }
+      ],
+      "expect": {
+        "ok": false,
+        "reason": "bad_reply"
+      }
+    },
+    {
+      "name": "primary name busy is never no name",
+      "call": "primaryName",
+      "network": "devnet",
+      "args": ["oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS"],
+      "replies": [
+        {
+          "method": "primary_of",
+          "params": ["oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS"],
+          "error": {
+            "code": -32005,
+            "message": "Program view busy"
+          }
+        },
+        {
+          "method": "primary_of",
+          "params": ["oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS"],
+          "error": {
+            "code": -32005,
+            "message": "Program view busy"
+          }
+        },
+        {
+          "method": "primary_of",
+          "params": ["oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS"],
+          "error": {
+            "code": -32005,
+            "message": "Program view busy"
+          }
+        }
+      ],
+      "expect": {
+        "ok": false,
+        "reason": "busy"
+      }
+    },
+    {
+      "name": "price",
+      "call": "priceOf",
+      "network": "devnet",
+      "args": ["0xio.oct", 1],
+      "replies": [
+        {
+          "method": "price_of",
+          "params": ["0xio", "1"],
+          "result": "556096"
+        }
+      ],
+      "expect": {
+        "ok": true,
+        "name": "0xio",
+        "years": 1,
+        "microOct": "556096"
+      }
+    },
+    {
+      "name": "price for five years",
+      "call": "priceOf",
+      "network": "devnet",
+      "args": ["0xio.oct", 5],
+      "replies": [
+        {
+          "method": "price_of",
+          "params": ["0xio", "5"],
+          "result": "2224384"
+        }
+      ],
+      "expect": {
+        "ok": true,
+        "name": "0xio",
+        "years": 5,
+        "microOct": "2224384"
+      }
+    },
+    {
+      "name": "price for six years makes no call",
+      "call": "priceOf",
+      "network": "devnet",
+      "args": ["0xio.oct", 6],
+      "replies": [],
+      "expect": {
+        "ok": false,
+        "reason": "invalid"
+      }
+    },
+    {
+      "name": "price for no years makes no call",
+      "call": "priceOf",
+      "network": "devnet",
+      "args": ["0xio.oct", 0],
+      "replies": [],
+      "expect": {
+        "ok": false,
+        "reason": "invalid"
+      }
+    },
+    {
+      "name": "price for half a year makes no call",
+      "call": "priceOf",
+      "network": "devnet",
+      "args": ["0xio.oct", 1.5],
+      "replies": [],
+      "expect": {
+        "ok": false,
+        "reason": "invalid"
+      }
+    },
+    {
+      "name": "price reply that is not a number",
+      "call": "priceOf",
+      "network": "devnet",
+      "args": ["0xio.oct", 2],
+      "replies": [
+        {
+          "method": "price_of",
+          "params": ["0xio", "2"],
+          "result": ""
+        }
+      ],
+      "expect": {
+        "ok": false,
+        "reason": "bad_reply"
+      }
+    },
+    {
+      "name": "no names",
+      "call": "namesOf",
+      "network": "devnet",
+      "args": ["oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS"],
+      "replies": [
+        {
+          "method": "balance_of",
+          "params": ["oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS"],
+          "result": "0"
+        }
+      ],
+      "expect": {
+        "ok": true,
+        "names": []
+      }
+    },
+    {
+      "name": "a count with an empty list of names is no names",
+      "call": "namesOf",
+      "network": "devnet",
+      "args": ["oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS"],
+      "replies": [
+        {
+          "method": "balance_of",
+          "params": ["oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS"],
+          "result": "1"
+        },
+        {
+          "method": "names_of",
+          "params": ["oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS", "0", "50"],
+          "result": ""
+        }
+      ],
+      "expect": {
+        "ok": true,
+        "names": []
+      }
+    },
+    {
+      "name": "two names, one in grace",
+      "call": "namesOf",
+      "network": "devnet",
+      "args": ["oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS"],
+      "replies": [
+        {
+          "method": "balance_of",
+          "params": ["oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS"],
+          "result": "2"
+        },
+        {
+          "method": "names_of",
+          "params": ["oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS", "0", "50"],
+          "result": "0xio,0xio-labs"
+        },
+        {
+          "method": "get_name_info",
+          "params": ["0xio"],
+          "result": "4|0xio|oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS|1825920325|2||oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS|0"
+        },
+        {
+          "method": "status_of",
+          "params": ["0xio"],
+          "result": "1"
+        },
+        {
+          "method": "get_name_info",
+          "params": ["0xio-labs"],
+          "result": "9|0xio-labs|oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS|1794000000|1|oct9pMw4JtXc7VnEa2RhKy5ZsGd8LbQf3UgTiWoN6BrHuCe||2"
+        },
+        {
+          "method": "status_of",
+          "params": ["0xio-labs"],
+          "result": "2"
+        }
+      ],
+      "expect": {
+        "ok": true,
+        "names": [
+          {
+            "tokenId": "4",
+            "name": "0xio",
+            "owner": "oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS",
+            "expires": 1825920325,
+            "kind": "wallet",
+            "circle": null,
+            "wallet": "oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS",
+            "circleStatus": "none",
+            "status": "active"
+          },
+          {
+            "tokenId": "9",
+            "name": "0xio-labs",
+            "owner": "oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS",
+            "expires": 1794000000,
+            "kind": "circle",
+            "circle": "oct9pMw4JtXc7VnEa2RhKy5ZsGd8LbQf3UgTiWoN6BrHuCe",
+            "wallet": null,
+            "circleStatus": "confirmed",
+            "status": "grace"
+          }
+        ]
+      }
+    },
+    {
+      "name": "a name whose Circle is waiting is listed as waiting",
+      "call": "namesOf",
+      "network": "devnet",
+      "args": ["oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS"],
+      "replies": [
+        {
+          "method": "balance_of",
+          "params": ["oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS"],
+          "result": "1"
+        },
+        {
+          "method": "names_of",
+          "params": ["oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS", "0", "50"],
+          "result": "ons"
+        },
+        {
+          "method": "get_name_info",
+          "params": ["ons"],
+          "result": "1|ons|oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS|1826095818|1|octnKTk3f1wRkC8Q4qa8gzouwcPkd3gW8DQAMbGobpyEu6n||1"
+        },
+        {
+          "method": "status_of",
+          "params": ["ons"],
+          "result": "1"
+        }
+      ],
+      "expect": {
+        "ok": true,
+        "names": [
+          {
+            "tokenId": "1",
+            "name": "ons",
+            "owner": "oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS",
+            "expires": 1826095818,
+            "kind": "circle",
+            "circle": "octnKTk3f1wRkC8Q4qa8gzouwcPkd3gW8DQAMbGobpyEu6n",
+            "wallet": null,
+            "circleStatus": "waiting",
+            "status": "active"
+          }
+        ]
+      }
+    },
+    {
+      "name": "a name that reverts or moved away is left out",
+      "call": "namesOf",
+      "network": "devnet",
+      "args": ["oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS"],
+      "replies": [
+        {
+          "method": "balance_of",
+          "params": ["oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS"],
+          "result": "3"
+        },
+        {
+          "method": "names_of",
+          "params": ["oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS", "0", "50"],
+          "result": "0xio-gone,0xio-sold,0xio-kept"
+        },
+        {
+          "method": "get_name_info",
+          "params": ["0xio-gone"],
+          "error": {
+            "code": -32000,
+            "message": "execution reverted"
+          }
+        },
+        {
+          "method": "get_name_info",
+          "params": ["0xio-sold"],
+          "result": "5|0xio-sold|oct2Zd8FhWq5TnYc9RmJv4KsXb7PgLe3AuNtC6GwHyBiQo1|1825920325|0|||0"
+        },
+        {
+          "method": "get_name_info",
+          "params": ["0xio-kept"],
+          "result": "6|0xio-kept|oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS|1825920325|0|||0"
+        },
+        {
+          "method": "status_of",
+          "params": ["0xio-kept"],
+          "result": "1"
+        }
+      ],
+      "expect": {
+        "ok": true,
+        "names": [
+          {
+            "tokenId": "6",
+            "name": "0xio-kept",
+            "owner": "oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS",
+            "expires": 1825920325,
+            "kind": "none",
+            "circle": null,
+            "wallet": null,
+            "circleStatus": "none",
+            "status": "active"
+          }
+        ]
+      }
+    },
+    {
+      "name": "one lapsed name among several is left out, with or without ons text",
+      "call": "namesOf",
+      "network": "devnet",
+      "args": ["oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS"],
+      "replies": [
+        {
+          "method": "balance_of",
+          "params": ["oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS"],
+          "result": "5"
+        },
+        {
+          "method": "names_of",
+          "params": ["oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS", "0", "50"],
+          "result": "0xio,0xio-lapsed,0xio-gone,0xio-late,0xio-labs"
+        },
+        {
+          "method": "get_name_info",
+          "params": ["0xio"],
+          "result": "4|0xio|oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS|1825920325|2||oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS|0"
+        },
+        {
+          "method": "status_of",
+          "params": ["0xio"],
+          "result": "1"
+        },
+        {
+          "method": "get_name_info",
+          "params": ["0xio-lapsed"],
+          "error": {
+            "code": -32000,
+            "message": "execution reverted [ons: name lapsed]"
+          }
+        },
+        {
+          "method": "get_name_info",
+          "params": ["0xio-gone"],
+          "error": {
+            "code": -32000,
+            "message": "execution reverted"
+          }
+        },
+        {
+          "method": "get_name_info",
+          "params": ["0xio-late"],
+          "result": "7|0xio-late|oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS|1825920325|0|||0"
+        },
+        {
+          "method": "status_of",
+          "params": ["0xio-late"],
+          "error": {
+            "message": "execution reverted [ons: name not registered]"
+          }
+        },
+        {
+          "method": "get_name_info",
+          "params": ["0xio-labs"],
+          "result": "9|0xio-labs|oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS|1794000000|1|oct9pMw4JtXc7VnEa2RhKy5ZsGd8LbQf3UgTiWoN6BrHuCe||2"
+        },
+        {
+          "method": "status_of",
+          "params": ["0xio-labs"],
+          "result": "2"
+        }
+      ],
+      "expect": {
+        "ok": true,
+        "names": [
+          {
+            "tokenId": "4",
+            "name": "0xio",
+            "owner": "oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS",
+            "expires": 1825920325,
+            "kind": "wallet",
+            "circle": null,
+            "wallet": "oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS",
+            "circleStatus": "none",
+            "status": "active"
+          },
+          {
+            "tokenId": "9",
+            "name": "0xio-labs",
+            "owner": "oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS",
+            "expires": 1794000000,
+            "kind": "circle",
+            "circle": "oct9pMw4JtXc7VnEa2RhKy5ZsGd8LbQf3UgTiWoN6BrHuCe",
+            "wallet": null,
+            "circleStatus": "confirmed",
+            "status": "grace"
+          }
+        ]
+      }
+    },
+    {
+      "name": "every name lapsed is an empty list",
+      "call": "namesOf",
+      "network": "devnet",
+      "args": ["oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS"],
+      "replies": [
+        {
+          "method": "balance_of",
+          "params": ["oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS"],
+          "result": "2"
+        },
+        {
+          "method": "names_of",
+          "params": ["oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS", "0", "50"],
+          "result": "0xio-gone,0xio-lapsed"
+        },
+        {
+          "method": "get_name_info",
+          "params": ["0xio-gone"],
+          "error": {
+            "code": -32000,
+            "message": "execution reverted"
+          }
+        },
+        {
+          "method": "get_name_info",
+          "params": ["0xio-lapsed"],
+          "error": {
+            "code": -32000,
+            "message": "execution reverted [ons: name lapsed]"
+          }
+        }
+      ],
+      "expect": {
+        "ok": true,
+        "names": []
+      }
+    },
+    {
+      "name": "a busy node in the middle of the list fails the whole list",
+      "call": "namesOf",
+      "network": "devnet",
+      "args": ["oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS"],
+      "replies": [
+        {
+          "method": "balance_of",
+          "params": ["oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS"],
+          "result": "3"
+        },
+        {
+          "method": "names_of",
+          "params": ["oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS", "0", "50"],
+          "result": "0xio,0xio-labs,0xio-kept"
+        },
+        {
+          "method": "get_name_info",
+          "params": ["0xio"],
+          "result": "4|0xio|oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS|1825920325|2||oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS|0"
+        },
+        {
+          "method": "status_of",
+          "params": ["0xio"],
+          "result": "1"
+        },
+        {
+          "method": "get_name_info",
+          "params": ["0xio-labs"],
+          "error": {
+            "code": -32005,
+            "message": "Program view busy"
+          }
+        },
+        {
+          "method": "get_name_info",
+          "params": ["0xio-labs"],
+          "error": {
+            "code": -32005,
+            "message": "Program view busy"
+          }
+        },
+        {
+          "method": "get_name_info",
+          "params": ["0xio-labs"],
+          "error": {
+            "code": -32005,
+            "message": "Program view busy"
+          }
+        }
+      ],
+      "expect": {
+        "ok": false,
+        "reason": "busy"
+      }
+    },
+    {
+      "name": "a node failure in the middle of the list fails the whole list",
+      "call": "namesOf",
+      "network": "devnet",
+      "args": ["oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS"],
+      "replies": [
+        {
+          "method": "balance_of",
+          "params": ["oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS"],
+          "result": "3"
+        },
+        {
+          "method": "names_of",
+          "params": ["oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS", "0", "50"],
+          "result": "0xio,0xio-labs,0xio-kept"
+        },
+        {
+          "method": "get_name_info",
+          "params": ["0xio"],
+          "result": "4|0xio|oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS|1825920325|2||oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS|0"
+        },
+        {
+          "method": "status_of",
+          "params": ["0xio"],
+          "result": "1"
+        },
+        {
+          "method": "get_name_info",
+          "params": ["0xio-labs"],
+          "error": {
+            "message": "RPC HTTP error: 502"
+          }
+        }
+      ],
+      "expect": {
+        "ok": false,
+        "reason": "unavailable"
+      }
+    },
+    {
+      "name": "an unreadable reply in the middle of the list fails the whole list",
+      "call": "namesOf",
+      "network": "devnet",
+      "args": ["oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS"],
+      "replies": [
+        {
+          "method": "balance_of",
+          "params": ["oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS"],
+          "result": "2"
+        },
+        {
+          "method": "names_of",
+          "params": ["oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS", "0", "50"],
+          "result": "0xio-gone,0xio-labs"
+        },
+        {
+          "method": "get_name_info",
+          "params": ["0xio-gone"],
+          "error": {
+            "code": -32000,
+            "message": "execution reverted"
+          }
+        },
+        {
+          "method": "get_name_info",
+          "params": ["0xio-labs"],
+          "result": "9|0xio-labs|"
+        }
+      ],
+      "expect": {
+        "ok": false,
+        "reason": "bad_reply"
+      }
+    },
+    {
+      "name": "name info with the six fields of the old contract fails the whole list",
+      "call": "namesOf",
+      "network": "devnet",
+      "args": ["oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS"],
+      "replies": [
+        {
+          "method": "balance_of",
+          "params": ["oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS"],
+          "result": "1"
+        },
+        {
+          "method": "names_of",
+          "params": ["oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS", "0", "50"],
+          "result": "0xio"
+        },
+        {
+          "method": "get_name_info",
+          "params": ["0xio"],
+          "result": "0xio|oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS|1825920325|2||oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS"
+        }
+      ],
+      "expect": {
+        "ok": false,
+        "reason": "bad_reply"
+      }
+    },
+    {
+      "name": "name info for another name fails the whole list",
+      "call": "namesOf",
+      "network": "devnet",
+      "args": ["oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS"],
+      "replies": [
+        {
+          "method": "balance_of",
+          "params": ["oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS"],
+          "result": "1"
+        },
+        {
+          "method": "names_of",
+          "params": ["oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS", "0", "50"],
+          "result": "0xio"
+        },
+        {
+          "method": "get_name_info",
+          "params": ["0xio"],
+          "result": "9|0xio-labs|oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS|1825920325|0|||0"
+        }
+      ],
+      "expect": {
+        "ok": false,
+        "reason": "bad_reply"
+      }
+    },
+    {
+      "name": "a list of names that is not names fails the whole list",
+      "call": "namesOf",
+      "network": "devnet",
+      "args": ["oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS"],
+      "replies": [
+        {
+          "method": "balance_of",
+          "params": ["oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS"],
+          "result": "2"
+        },
+        {
+          "method": "names_of",
+          "params": ["oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS", "0", "50"],
+          "result": "0xio,,0xio-labs"
+        }
+      ],
+      "expect": {
+        "ok": false,
+        "reason": "bad_reply"
+      }
+    },
+    {
+      "name": "a list of token ids in place of names is read as names and checked",
+      "call": "namesOf",
+      "network": "devnet",
+      "args": ["oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS"],
+      "replies": [
+        {
+          "method": "balance_of",
+          "params": ["oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS"],
+          "result": "1"
+        },
+        {
+          "method": "names_of",
+          "params": ["oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS", "0", "50"],
+          "result": "4"
+        },
+        {
+          "method": "get_name_info",
+          "params": ["4"],
+          "result": "4|0xio|oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS|1825920325|0|||0"
+        }
+      ],
+      "expect": {
+        "ok": false,
+        "reason": "bad_reply"
+      }
+    },
+    {
+      "name": "an unknown status in the list fails the whole list",
+      "call": "namesOf",
+      "network": "devnet",
+      "args": ["oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS"],
+      "replies": [
+        {
+          "method": "balance_of",
+          "params": ["oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS"],
+          "result": "1"
+        },
+        {
+          "method": "names_of",
+          "params": ["oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS", "0", "50"],
+          "result": "0xio"
+        },
+        {
+          "method": "get_name_info",
+          "params": ["0xio"],
+          "result": "4|0xio|oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS|1825920325|0|||0"
+        },
+        {
+          "method": "status_of",
+          "params": ["0xio"],
+          "result": "7"
+        }
+      ],
+      "expect": {
+        "ok": false,
+        "reason": "bad_reply"
+      }
+    },
+    {
+      "name": "a busy node is never an empty list",
+      "call": "namesOf",
+      "network": "devnet",
+      "args": ["oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS"],
+      "replies": [
+        {
+          "method": "balance_of",
+          "params": ["oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS"],
+          "result": "1"
+        },
+        {
+          "method": "names_of",
+          "params": ["oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS", "0", "50"],
+          "error": {
+            "code": -32005,
+            "message": "Program view busy"
+          }
+        },
+        {
+          "method": "names_of",
+          "params": ["oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS", "0", "50"],
+          "error": {
+            "code": -32005,
+            "message": "Program view busy"
+          }
+        },
+        {
+          "method": "names_of",
+          "params": ["oct7xKq3mVbT9fWc2ZnHs5RdYgPj8LuAe4GtNwB6CrXhEaS", "0", "50"],
+          "error": {
+            "code": -32005,
+            "message": "Program view busy"
+          }
+        }
+      ],
+      "expect": {
+        "ok": false,
+        "reason": "busy"
+      }
+    },
+    {
+      "name": "names of text that is not an address makes no call",
+      "call": "namesOf",
+      "network": "devnet",
+      "args": ["0xio"],
+      "replies": [],
+      "expect": {
+        "ok": false,
+        "reason": "invalid"
+      }
+    }
+  ]
+}

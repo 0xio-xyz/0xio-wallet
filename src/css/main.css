@@ -1,0 +1,150 @@
+@import 'globals.css';
+
+@import 'components/buttons.css';
+@import 'components/forms.css';
+@import 'components/cards.css';
+@import 'layout/screens.css';
+@import 'utilities/helpers.css';
+@import 'utilities/animations.css';
+@import 'components/balance.css';
+@import 'components/toast.css';
+@import 'components/mascot.css';
+@import 'components/nft.css';
+
+/* Layered so Tailwind utilities can override it. Unlayered, this universal reset beat every
+   p-* and m-* utility in the app (unlayered author CSS wins over ALL @layer rules) - the reason
+   the codebase grew p-3!/flex! important suffixes. Tailwind preflight already does this reset;
+   this stays only as a belt-and-braces for non-tailwind pages. */
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg);
+  overflow: hidden;
+  color: var(--fg);
+  font-family: var(--font-sans);
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg);
+  overflow: hidden;
+}
+
+/* RESPONSIVE MODES
+   Compact (320×480)  - crowded toolbars fallback
+   Standard (400×600) - default popup
+   Full tab           - chrome-extension tab, no border-radius */
+
+/* MODE 1: STANDARD POPUP (Default - 400×600) */
+/* Firefox sizes the popup from the document root's *preferred* width (capped 800×600), not from a
+   fixed box like Chrome. Without a width + min-width floor on <html>, Firefox collapses the popup to
+   the content's min-content width - and its narrow initial viewport makes the compact @media below
+   self-trigger, locking it at 320px. Pinning html+body with min-width gives a hard 400px floor and
+   stops that feedback loop. No-op in Chrome (it already sized to the 400px body). */
+html:not(.is-fullscreen) {
+  width: 400px;
+  min-width: 400px;
+  height: 600px;
+}
+
+body:not(.is-fullscreen) {
+  width: 400px;
+  min-width: 400px;
+  height: 600px;
+  --header-height: 52px;
+  --gutter: 16px;
+  --flow-gutter: 20px;
+  --icon-btn-size: 32px;
+  --balance-font: 32px;
+}
+
+/* MODE 1a: COMPACT POPUP (320×480) - fallback for crowded toolbars */
+@media (max-width: 360px), (max-height: 520px) {
+  body:not(.is-fullscreen) {
+    width: 320px;
+    height: 480px;
+    --header-height: 44px;
+    --gutter: 12px;
+    --flow-gutter: 16px;
+    --icon-btn-size: 28px;
+    --balance-font: 26px;
+  }
+
+  /* Hide the sparkline in compact mode */
+  body:not(.is-fullscreen) .balance-sparkline {
+    display: none !important;
+  }
+}
+
+/* MODE 2: FULL TAB MODE
+   Opens at chrome-extension://…/popup.html?fullscreen
+   100% width, no border-radius, larger spacing
+*/
+html.is-fullscreen {
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+}
+
+body.is-fullscreen {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: radial-gradient(circle at center, var(--bg-1) 0%, var(--bg) 100%);
+  --header-height: 60px;
+  --gutter: 24px;
+  --flow-gutter: 24px;
+  --icon-btn-size: 40px;
+  --balance-font: 40px;
+}
+
+body.is-fullscreen #root {
+  width: 100%;
+  max-width: 480px;
+  height: 100%;
+  max-height: 800px;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+/* Mobile responsive tweak for fullscreen mode (if window is small) */
+@media (max-width: 500px) {
+  body.is-fullscreen #root {
+    max-width: 100%;
+    max-height: 100%;
+    border: none;
+    border-radius: 0;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent);
+}

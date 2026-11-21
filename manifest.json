@@ -1,0 +1,74 @@
+{
+  "manifest_version": 3,
+  "name": "0xio Wallet",
+  "version": "3.0.6",
+  "description": "Private wallet for Octra Network with EVM support",
+  "minimum_chrome_version": "111",
+  "permissions": [
+    "storage",
+    "alarms",
+    "offscreen",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "https://octra.network/*",
+    "https://devnet.octrascan.io/*",
+    "https://rpc-proxy.0xio.xyz/*",
+    "https://oracle.0xio.xyz/*",
+    "http://127.0.0.1/*"
+  ],
+  "optional_host_permissions": ["http://*/*", "https://*/*"],
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": {
+      "16": "icon16.png",
+      "32": "icon32.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icon16.png",
+    "32": "icon32.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "background": {
+    "service_worker": "src/background/index.ts",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "src/content/index.ts"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "src/content/injected.ts"
+      ],
+      "run_at": "document_start",
+      "world": "MAIN"
+    }
+  ],
+  "sandbox": {
+    "pages": [
+      "renderer.html"
+    ]
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'",
+    "sandbox": "sandbox allow-scripts; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'unsafe-inline' 'self'; img-src data: blob:; media-src data: blob:; font-src data:; child-src 'self' data: blob:; frame-src 'self' data: blob:; connect-src https://octra.network/rpc https://devnet.octrascan.io/rpc"
+  },
+  "cross_origin_embedder_policy": { "value": "require-corp" },
+  "cross_origin_opener_policy": { "value": "same-origin" }
+}

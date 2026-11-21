@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <!--
+      Document-level CSP for the renderer shell. On Chrome this page is a manifest `sandbox` page and
+      already gets this permissive policy from manifest.content_security_policy.sandbox; this <meta>
+      mirrors it exactly, so Chrome is unaffected. On Firefox there is no manifest `sandbox` key, so
+      this <meta> is what grants the shell - and the inline scripts in the nested #geode srcdoc, which
+      inherit this document's policy - the 'unsafe-inline'/'unsafe-eval' the untrusted NFT program
+      needs. The shell still runs in an opaque-origin allow-scripts iframe (set by LivingNftFrame), so
+      it has no chrome.*/browser.* access regardless of this policy.
+      connect-src names the mainnet and devnet RPC endpoints only. Each program document also gets
+      a policy of its own (src/renderer/index.ts) that narrows it to its token's network.
+    -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'unsafe-inline' 'self'; img-src data: blob:; media-src data: blob:; font-src data:; child-src 'self' data: blob:; frame-src 'self' data: blob:; connect-src https://octra.network/rpc https://devnet.octrascan.io/rpc"
+    />
+    <title>0xio Living NFT</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        background: #0d0d10;
+        overflow: hidden;
+      }
+      #geode {
+        display: block;
+        width: 100vw;
+        height: 100vh;
+        border: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- The untrusted NFT program is nested in #geode (an allow-scripts iframe) by the
+         bootstrap below; this shell only relays read-only bridge calls. -->
+    <script type="module" src="/src/renderer/index.ts"></script>
+  </body>
+</html>

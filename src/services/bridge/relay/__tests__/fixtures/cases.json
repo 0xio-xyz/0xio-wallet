@@ -1,0 +1,4225 @@
+{
+  "generatedBy": "original 0xio-bridge quoteCheck.ts (ethers 6.16.0)",
+  "nowSec": 1792097300,
+  "fixtures": {
+    "eth-native": {
+      "file": "quote-eth-native.json",
+      "chainId": 1,
+      "token": {
+        "address": "0x0000000000000000000000000000000000000000",
+        "symbol": "ETH",
+        "name": "Ether",
+        "decimals": 18,
+        "logo": null
+      },
+      "maxPayRaw": "10000000000000000"
+    },
+    "eth-usdc": {
+      "file": "quote-eth-usdc.json",
+      "chainId": 1,
+      "token": {
+        "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "symbol": "USDC",
+        "name": "USD Coin",
+        "decimals": 6,
+        "logo": "https://coin-images.coingecko.com/coins/images/6319/large/usdc.png?1696506694"
+      },
+      "maxPayRaw": "50000000"
+    },
+    "base-native": {
+      "file": "quote-base-native.json",
+      "chainId": 8453,
+      "token": {
+        "address": "0x0000000000000000000000000000000000000000",
+        "symbol": "ETH",
+        "name": "Ether",
+        "decimals": 18,
+        "logo": null
+      },
+      "maxPayRaw": "10000000000000000"
+    },
+    "base-usdc": {
+      "file": "quote-base-usdc.json",
+      "chainId": 8453,
+      "token": {
+        "address": "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913",
+        "symbol": "USDC",
+        "name": "USD Coin",
+        "decimals": 6,
+        "logo": "https://coin-images.coingecko.com/coins/images/6319/large/usdc.png?1696506694"
+      },
+      "maxPayRaw": "20000000"
+    },
+    "arb-usdc": {
+      "file": "quote-arb-usdc.json",
+      "chainId": 42161,
+      "token": {
+        "address": "0xaf88d065e77c8cc2239327c5edb3a432268e5831",
+        "symbol": "USDC",
+        "name": "USD Coin",
+        "decimals": 6,
+        "logo": "https://ethereum-optimism.github.io/data/USDC/logo.png"
+      },
+      "maxPayRaw": "20000000"
+    }
+  },
+  "orderIds": {
+    "base-native": "0x4ce3eb4e0a2b93f472eb84df73696458e1582cedfb65bb6cdea993548abc1903",
+    "base-usdc": "0x796292db79b7679e9271f1b7009c97ce28d8cf0e2bfb3ba78e1744d1a7edf3db",
+    "arb-usdc": "0xaf888b95d620b3c5499db344f327a9b69c659ccad5c8c8b4c4335cdcc59095d5"
+  },
+  "cases": [
+    { "fixture": "base-native", "name": "ok", "patches": [], "expect": { "ok": true } },
+    {
+      "fixture": "base-native",
+      "name": "deposit-target",
+      "patches": [
+        [
+          ["input", "quote", "steps", 0, "items", 0, "data", "to"],
+          "0x1111111111111111111111111111111111111111"
+        ]
+      ],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "the payment does not go to Relay's depository"
+      }
+    },
+    {
+      "fixture": "base-native",
+      "name": "burn-recipient-id-kept",
+      "patches": [
+        [
+          ["input", "quote", "protocol", "v2", "orderData", "output", "calls", 0],
+          {
+            "$words": [
+              [
+                9,
+                2,
+                [
+                  "6f63743855596f6b764d31445232517045564d376f434c764a4c50764a717676",
+                  "764b6b3250765858367871455a624e0000000000000000000000000000000000"
+                ]
+              ]
+            ]
+          }
+        ]
+      ],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "the order id does not match the order"
+      }
+    },
+    {
+      "fixture": "base-native",
+      "name": "burn-recipient-rehashed",
+      "patches": [
+        [
+          ["input", "quote", "steps", 0, "items", 0, "data", "data"],
+          "0x49290c1c0000000000000000000000009858effd232b4033e47d90003d41ec34ecaeda9446c0c098e604793b28f97fa2e94dddcaf225d59ec2289049b6e4e7ae4e573153"
+        ],
+        [
+          ["input", "quote", "protocol", "v2", "orderId"],
+          "0x46c0c098e604793b28f97fa2e94dddcaf225d59ec2289049b6e4e7ae4e573153"
+        ],
+        [
+          ["input", "quote", "protocol", "v2", "orderData", "output", "calls", 0],
+          {
+            "$words": [
+              [
+                9,
+                2,
+                [
+                  "6f63743855596f6b764d31445232517045564d376f434c764a4c50764a717676",
+                  "764b6b3250765858367871455a624e0000000000000000000000000000000000"
+                ]
+              ]
+            ]
+          }
+        ]
+      ],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "the burn does not go to your Octra address"
+      }
+    },
+    {
+      "fixture": "base-native",
+      "name": "burn-amount-rehashed",
+      "patches": [
+        [
+          ["input", "quote", "steps", 0, "items", 0, "data", "data"],
+          "0x49290c1c0000000000000000000000009858effd232b4033e47d90003d41ec34ecaeda94a4fc8e24e2b22916313cea013b6c8ac759cfbe8bfac82b7870b137af8595451d"
+        ],
+        [
+          ["input", "quote", "protocol", "v2", "orderId"],
+          "0xa4fc8e24e2b22916313cea013b6c8ac759cfbe8bfac82b7870b137af8595451d"
+        ],
+        [
+          ["input", "quote", "protocol", "v2", "orderData", "output", "calls", 0],
+          {
+            "$words": [[7, 1, ["0000000000000000000000000000000000000000000000000000000025a6abc0"]]]
+          }
+        ]
+      ],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "the burn does not go to your Octra address"
+      }
+    },
+    {
+      "fixture": "base-native",
+      "name": "confirmed-other-octra",
+      "patches": [[["input", "octraRecipient"], "oct8UYokvM1DR2QpEVM7oCLvJLPvJqvvvKk2PvXX6xqEZbN"]],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "the burn does not go to your Octra address"
+      }
+    },
+    {
+      "fixture": "base-native",
+      "name": "input-above-max-rehashed",
+      "patches": [
+        [
+          ["input", "quote", "steps", 0, "items", 0, "data", "data"],
+          "0x49290c1c0000000000000000000000009858effd232b4033e47d90003d41ec34ecaeda94919230b2893d06f8d1c828cba5114e04c941764063499dc6927f6b89864fea68"
+        ],
+        [["input", "quote", "steps", 0, "items", 0, "data", "value"], "10000000000000001"],
+        [
+          ["input", "quote", "protocol", "v2", "orderId"],
+          "0x919230b2893d06f8d1c828cba5114e04c941764063499dc6927f6b89864fea68"
+        ],
+        [
+          ["input", "quote", "protocol", "v2", "orderData", "inputs", 0, "payment", "amount"],
+          "10000000000000001"
+        ]
+      ],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "the order takes more than you entered"
+      }
+    },
+    {
+      "fixture": "base-native",
+      "name": "maxpay-below-input",
+      "patches": [[["input", "maxPayRaw"], "9983810170223650"]],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "the order takes more than you entered"
+      }
+    },
+    {
+      "fixture": "base-native",
+      "name": "solver-id-kept",
+      "patches": [
+        [
+          ["input", "quote", "protocol", "v2", "orderData", "solver"],
+          "0x1111111111111111111111111111111111111111"
+        ]
+      ],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "the order id does not match the order"
+      }
+    },
+    {
+      "fixture": "base-native",
+      "name": "solver-rehashed",
+      "patches": [
+        [
+          ["input", "quote", "steps", 0, "items", 0, "data", "data"],
+          "0x49290c1c0000000000000000000000009858effd232b4033e47d90003d41ec34ecaeda94ee0a56e887302caff6d1f2a7547c38dbb8f43f083a073b3ded379f1de0dafe6f"
+        ],
+        [
+          ["input", "quote", "protocol", "v2", "orderId"],
+          "0xee0a56e887302caff6d1f2a7547c38dbb8f43f083a073b3ded379f1de0dafe6f"
+        ],
+        [
+          ["input", "quote", "protocol", "v2", "orderData", "solver"],
+          "0x1111111111111111111111111111111111111111"
+        ]
+      ],
+      "expect": { "ok": true }
+    },
+    {
+      "fixture": "base-native",
+      "name": "solver-bad-checksum",
+      "patches": [
+        [
+          ["input", "quote", "protocol", "v2", "orderData", "solver"],
+          "0xF70da97812cb96acdf810712aa562db8dfa3dbef"
+        ]
+      ],
+      "expect": { "ok": false, "quoteCheckError": false }
+    },
+    {
+      "fixture": "base-native",
+      "name": "solver-checksummed",
+      "patches": [
+        [
+          ["input", "quote", "protocol", "v2", "orderData", "solver"],
+          "0xf70da97812CB96acDF810712Aa562db8dfA3dbEF"
+        ]
+      ],
+      "expect": { "ok": true }
+    },
+    {
+      "fixture": "base-native",
+      "name": "order-id-changed",
+      "patches": [
+        [
+          ["input", "quote", "protocol", "v2", "orderId"],
+          "0x1111111111111111111111111111111111111111111111111111111111111111"
+        ]
+      ],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "the order id does not match the order"
+      }
+    },
+    {
+      "fixture": "base-native",
+      "name": "order-id-changed-deposit-follows",
+      "patches": [
+        [
+          ["input", "quote", "steps", 0, "items", 0, "data", "data"],
+          "0x49290c1c0000000000000000000000009858effd232b4033e47d90003d41ec34ecaeda941111111111111111111111111111111111111111111111111111111111111111"
+        ],
+        [
+          ["input", "quote", "protocol", "v2", "orderId"],
+          "0x1111111111111111111111111111111111111111111111111111111111111111"
+        ]
+      ],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "the order id does not match the order"
+      }
+    },
+    {
+      "fixture": "base-native",
+      "name": "deposit-other-id",
+      "patches": [
+        [
+          ["input", "quote", "steps", 0, "items", 0, "data", "data"],
+          "0x49290c1c0000000000000000000000009858effd232b4033e47d90003d41ec34ecaeda942222222222222222222222222222222222222222222222222222222222222222"
+        ]
+      ],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "the deposit is not tied to this order"
+      }
+    },
+    {
+      "fixture": "base-native",
+      "name": "depositor-changed",
+      "patches": [
+        [
+          ["input", "quote", "steps", 0, "items", 0, "data", "data"],
+          "0x49290c1c00000000000000000000000011111111111111111111111111111111111111114ce3eb4e0a2b93f472eb84df73696458e1582cedfb65bb6cdea993548abc1903"
+        ]
+      ],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "the deposit is not tied to this order"
+      }
+    },
+    {
+      "fixture": "base-native",
+      "name": "deposit-amount-lower",
+      "patches": [
+        [["input", "quote", "steps", 0, "items", 0, "data", "value"], "9983810170223650"]
+      ],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "the deposit amount differs from the order"
+      }
+    },
+    {
+      "fixture": "base-native",
+      "name": "deposit-truncated",
+      "patches": [
+        [
+          ["input", "quote", "steps", 0, "items", 0, "data", "data"],
+          "0x49290c1c0000000000000000000000009858effd232b4033e47d90003d41ec34ecaeda94"
+        ]
+      ],
+      "expect": { "ok": false, "quoteCheckError": false }
+    },
+    {
+      "fixture": "base-native",
+      "name": "deposit-odd-hex",
+      "patches": [
+        [
+          ["input", "quote", "steps", 0, "items", 0, "data", "data"],
+          "0x49290c1c0000000000000000000000009858effd232b4033e47d90003d41ec34ecaeda944ce3eb4e0a2b93f472eb84df73696458e1582cedfb65bb6cdea993548abc19030"
+        ]
+      ],
+      "expect": { "ok": false, "quoteCheckError": false }
+    },
+    {
+      "fixture": "base-native",
+      "name": "refund-recipient-rehashed",
+      "patches": [
+        [
+          ["input", "quote", "steps", 0, "items", 0, "data", "data"],
+          "0x49290c1c0000000000000000000000009858effd232b4033e47d90003d41ec34ecaeda94a611b17067792ec4a1cd1a9cc3f1a8aeb7d22437a969f8042fd6d7052f95af92"
+        ],
+        [
+          ["input", "quote", "protocol", "v2", "orderId"],
+          "0xa611b17067792ec4a1cd1a9cc3f1a8aeb7d22437a969f8042fd6d7052f95af92"
+        ],
+        [
+          ["input", "quote", "protocol", "v2", "orderData", "inputs", 0, "refunds", 0, "recipient"],
+          "0x1111111111111111111111111111111111111111"
+        ]
+      ],
+      "expect": { "ok": false, "quoteCheckError": true, "message": "refunds go to another address" }
+    },
+    {
+      "fixture": "base-native",
+      "name": "payout-recipient-rehashed",
+      "patches": [
+        [
+          ["input", "quote", "steps", 0, "items", 0, "data", "data"],
+          "0x49290c1c0000000000000000000000009858effd232b4033e47d90003d41ec34ecaeda9430da3d5ceea31bf18188df41de694ce164a40ee95a3aefe4bc1957ad232c77fd"
+        ],
+        [
+          ["input", "quote", "protocol", "v2", "orderId"],
+          "0x30da3d5ceea31bf18188df41de694ce164a40ee95a3aefe4bc1957ad232c77fd"
+        ],
+        [
+          ["input", "quote", "protocol", "v2", "orderData", "output", "payments", 0, "recipient"],
+          "0x1111111111111111111111111111111111111111"
+        ]
+      ],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "the payout is not the shown wOCT to Relay's router"
+      }
+    },
+    {
+      "fixture": "base-native",
+      "name": "payout-currency-rehashed",
+      "patches": [
+        [
+          ["input", "quote", "steps", 0, "items", 0, "data", "data"],
+          "0x49290c1c0000000000000000000000009858effd232b4033e47d90003d41ec34ecaeda94c83d187223eb61e3f58d60d194c5bb00bf8e5cd3cd639c21db923e3d8d6c8905"
+        ],
+        [
+          ["input", "quote", "protocol", "v2", "orderId"],
+          "0xc83d187223eb61e3f58d60d194c5bb00bf8e5cd3cd639c21db923e3d8d6c8905"
+        ],
+        [
+          ["input", "quote", "protocol", "v2", "orderData", "output", "payments", 0, "currency"],
+          "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913"
+        ]
+      ],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "the payout is not the shown wOCT to Relay's router"
+      }
+    },
+    {
+      "fixture": "base-native",
+      "name": "payout-min-rehashed",
+      "patches": [
+        [
+          ["input", "quote", "steps", 0, "items", 0, "data", "data"],
+          "0x49290c1c0000000000000000000000009858effd232b4033e47d90003d41ec34ecaeda94feeec0262c1f69cca9fe0c11bb7589950737b645bcaed97e929a39992a8e33d9"
+        ],
+        [
+          ["input", "quote", "protocol", "v2", "orderId"],
+          "0xfeeec0262c1f69cca9fe0c11bb7589950737b645bcaed97e929a39992a8e33d9"
+        ],
+        [
+          [
+            "input",
+            "quote",
+            "protocol",
+            "v2",
+            "orderData",
+            "output",
+            "payments",
+            0,
+            "minimumAmount"
+          ],
+          "1"
+        ]
+      ],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "the payout is not the shown wOCT to Relay's router"
+      }
+    },
+    {
+      "fixture": "base-native",
+      "name": "expired",
+      "patches": [[["input", "nowSec"], 1792701861]],
+      "expect": { "ok": false, "quoteCheckError": true, "message": "the order has expired" }
+    },
+    {
+      "fixture": "base-native",
+      "name": "refund-unknown-chain-rehashed",
+      "patches": [
+        [
+          ["input", "quote", "steps", 0, "items", 0, "data", "data"],
+          "0x49290c1c0000000000000000000000009858effd232b4033e47d90003d41ec34ecaeda94259e868605dbaddd467fb1e791cf3d700f2a389e5271ca0f52782dffaa7ada71"
+        ],
+        [
+          ["input", "quote", "protocol", "v2", "orderId"],
+          "0x259e868605dbaddd467fb1e791cf3d700f2a389e5271ca0f52782dffaa7ada71"
+        ],
+        [
+          ["input", "quote", "protocol", "v2", "orderData", "inputs", 0, "refunds", 0, "chainId"],
+          "solana"
+        ]
+      ],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "the order involves a chain the bridge cannot check"
+      }
+    },
+    {
+      "fixture": "base-native",
+      "name": "extra-fee-rehashed",
+      "patches": [
+        [
+          ["input", "quote", "steps", 0, "items", 0, "data", "data"],
+          "0x49290c1c0000000000000000000000009858effd232b4033e47d90003d41ec34ecaeda94e8eff619e45f8941743c82c2f572ab39a08c3dc26d468180ee0464b2680d3fee"
+        ],
+        [
+          ["input", "quote", "protocol", "v2", "orderId"],
+          "0xe8eff619e45f8941743c82c2f572ab39a08c3dc26d468180ee0464b2680d3fee"
+        ],
+        [
+          ["input", "quote", "protocol", "v2", "orderData", "fees"],
+          [
+            {
+              "recipientChainId": "ethereum",
+              "recipient": "0x1111111111111111111111111111111111111111",
+              "currencyChainId": "ethereum",
+              "currency": "0x4647e1fe715c9e23959022c2416c71867f5a6e80",
+              "amount": "1"
+            }
+          ]
+        ]
+      ],
+      "expect": { "ok": true }
+    },
+    {
+      "fixture": "base-native",
+      "name": "order-call-dirty-address-rehashed",
+      "patches": [
+        [
+          ["input", "quote", "steps", 0, "items", 0, "data", "data"],
+          "0x49290c1c0000000000000000000000009858effd232b4033e47d90003d41ec34ecaeda94ed992e5b9efe3341bd79d20b6c57087346b589a55e6055f24a686a42616e5aed"
+        ],
+        [
+          ["input", "quote", "protocol", "v2", "orderId"],
+          "0xed992e5b9efe3341bd79d20b6c57087346b589a55e6055f24a686a42616e5aed"
+        ],
+        [
+          ["input", "quote", "protocol", "v2", "orderData", "output", "calls", 0],
+          {
+            "$words": [
+              [
+                0,
+                2,
+                ["0xffffffff", "ffffffffffffffffe7ed69b852fd2a1406080b26a37e8e04e7da4cae00000000"]
+              ]
+            ]
+          }
+        ]
+      ],
+      "expect": { "ok": false, "quoteCheckError": false }
+    },
+    {
+      "fixture": "base-native",
+      "name": "order-call-garbage-rehashed",
+      "patches": [
+        [
+          ["input", "quote", "steps", 0, "items", 0, "data", "data"],
+          "0x49290c1c0000000000000000000000009858effd232b4033e47d90003d41ec34ecaeda94b2e2417283e93f3697f8f4aa4273e2a5a5d14533957f0729bf87928eee8503a5"
+        ],
+        [
+          ["input", "quote", "protocol", "v2", "orderId"],
+          "0xb2e2417283e93f3697f8f4aa4273e2a5a5d14533957f0729bf87928eee8503a5"
+        ],
+        [
+          ["input", "quote", "protocol", "v2", "orderData", "output", "calls", 0],
+          { "$words": [[0, 12, ["0x1234"]]] }
+        ]
+      ],
+      "expect": { "ok": false, "quoteCheckError": true, "message": "an unreadable order call" }
+    },
+    {
+      "fixture": "base-native",
+      "name": "item-other-chain",
+      "patches": [[["input", "quote", "steps", 0, "items", 0, "data", "chainId"], 10]],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "a transaction on another chain"
+      }
+    },
+    {
+      "fixture": "base-native",
+      "name": "two-payments",
+      "patches": [
+        [
+          ["input", "quote", "steps", 0, "items"],
+          [
+            {
+              "status": "incomplete",
+              "data": {
+                "from": "0x9858EfFD232B4033E47d90003D41EC34EcaEda94",
+                "to": "0x4cd00e387622c35bddb9b4c962c136462338bc31",
+                "data": "0x49290c1c0000000000000000000000009858effd232b4033e47d90003d41ec34ecaeda944ce3eb4e0a2b93f472eb84df73696458e1582cedfb65bb6cdea993548abc1903",
+                "value": "9983810170223651",
+                "chainId": 8453,
+                "gas": "32697",
+                "maxFeePerGas": "6500000",
+                "maxPriorityFeePerGas": "1000000"
+              },
+              "check": {
+                "endpoint": "/intents/status?requestId=0x179209706123e77a6416a337fe1aa9d91565ba3e3ece6487ec1764d796c2b0ce",
+                "method": "GET"
+              }
+            },
+            {
+              "status": "incomplete",
+              "data": {
+                "from": "0x9858EfFD232B4033E47d90003D41EC34EcaEda94",
+                "to": "0x4cd00e387622c35bddb9b4c962c136462338bc31",
+                "data": "0x49290c1c0000000000000000000000009858effd232b4033e47d90003d41ec34ecaeda944ce3eb4e0a2b93f472eb84df73696458e1582cedfb65bb6cdea993548abc1903",
+                "value": "9983810170223651",
+                "chainId": 8453,
+                "gas": "32697",
+                "maxFeePerGas": "6500000",
+                "maxPriorityFeePerGas": "1000000"
+              },
+              "check": {
+                "endpoint": "/intents/status?requestId=0x179209706123e77a6416a337fe1aa9d91565ba3e3ece6487ec1764d796c2b0ce",
+                "method": "GET"
+              }
+            }
+          ]
+        ]
+      ],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "not exactly one payment transaction"
+      }
+    },
+    {
+      "fixture": "base-native",
+      "name": "signature-step",
+      "patches": [
+        [
+          ["input", "quote", "steps"],
+          [
+            {
+              "id": "deposit",
+              "action": "Confirm transaction in your wallet",
+              "description": "Depositing funds to the relayer to execute the swap for wOCT",
+              "kind": "transaction",
+              "items": [
+                {
+                  "status": "incomplete",
+                  "data": {
+                    "from": "0x9858EfFD232B4033E47d90003D41EC34EcaEda94",
+                    "to": "0x4cd00e387622c35bddb9b4c962c136462338bc31",
+                    "data": "0x49290c1c0000000000000000000000009858effd232b4033e47d90003d41ec34ecaeda944ce3eb4e0a2b93f472eb84df73696458e1582cedfb65bb6cdea993548abc1903",
+                    "value": "9983810170223651",
+                    "chainId": 8453,
+                    "gas": "32697",
+                    "maxFeePerGas": "6500000",
+                    "maxPriorityFeePerGas": "1000000"
+                  },
+                  "check": {
+                    "endpoint": "/intents/status?requestId=0x179209706123e77a6416a337fe1aa9d91565ba3e3ece6487ec1764d796c2b0ce",
+                    "method": "GET"
+                  }
+                }
+              ],
+              "requestId": "0x179209706123e77a6416a337fe1aa9d91565ba3e3ece6487ec1764d796c2b0ce",
+              "depositAddress": ""
+            },
+            { "id": "authorize", "kind": "signature", "items": [] }
+          ]
+        ]
+      ],
+      "expect": { "ok": false, "quoteCheckError": true, "message": "unsupported authorize step" }
+    },
+    {
+      "fixture": "base-native",
+      "name": "order-data-missing",
+      "patches": [[["input", "quote", "protocol", "v2", "orderData"], { "$delete": true }]],
+      "expect": { "ok": false, "quoteCheckError": true, "message": "the order data is missing" }
+    },
+    {
+      "fixture": "base-native",
+      "name": "outraw-zero",
+      "patches": [[["input", "outRaw"], "0"]],
+      "expect": { "ok": false, "quoteCheckError": true, "message": "nothing to burn" }
+    },
+    {
+      "fixture": "base-native",
+      "name": "outraw-garbage",
+      "patches": [[["input", "outRaw"], "abc"]],
+      "expect": { "ok": false, "quoteCheckError": true, "message": "unreadable amount" }
+    },
+    {
+      "fixture": "base-native",
+      "name": "outraw-differs",
+      "patches": [[["input", "outRaw"], "631679938"]],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "the payout is not the shown wOCT to Relay's router"
+      }
+    },
+    {
+      "fixture": "base-native",
+      "name": "no-ethereum-router",
+      "patches": [[["relayChains", 0, "contracts", "erc20Router"], { "$delete": true }]],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "Relay does not list this chain"
+      }
+    },
+    {
+      "fixture": "base-native",
+      "name": "source-not-evm",
+      "patches": [[["relayChains", 32, "vmType"], "svm"]],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "Relay does not list this chain"
+      }
+    },
+    { "fixture": "base-usdc", "name": "ok", "patches": [], "expect": { "ok": true } },
+    {
+      "fixture": "base-usdc",
+      "name": "deposit-target",
+      "patches": [
+        [
+          ["input", "quote", "steps", 1, "items", 0, "data", "to"],
+          "0x1111111111111111111111111111111111111111"
+        ]
+      ],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "the payment does not go to Relay's depository"
+      }
+    },
+    {
+      "fixture": "base-usdc",
+      "name": "burn-recipient-id-kept",
+      "patches": [
+        [
+          ["input", "quote", "protocol", "v2", "orderData", "output", "calls", 0],
+          {
+            "$words": [
+              [
+                9,
+                2,
+                [
+                  "6f63743855596f6b764d31445232517045564d376f434c764a4c50764a717676",
+                  "764b6b3250765858367871455a624e0000000000000000000000000000000000"
+                ]
+              ]
+            ]
+          }
+        ]
+      ],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "the order id does not match the order"
+      }
+    },
+    {
+      "fixture": "base-usdc",
+      "name": "burn-recipient-rehashed",
+      "patches": [
+        [
+          ["input", "quote", "steps", 1, "items", 0, "data", "data"],
+          "0xe80179520000000000000000000000009858effd232b4033e47d90003d41ec34ecaeda94000000000000000000000000833589fcd6edb6e08f4c7c32d4f71b54bda029130000000000000000000000000000000000000000000000000000000001302663e46950e2405870d5204e02b0155109a114dd5671f97930dbc5a1b5247abfd768"
+        ],
+        [
+          ["input", "quote", "protocol", "v2", "orderId"],
+          "0xe46950e2405870d5204e02b0155109a114dd5671f97930dbc5a1b5247abfd768"
+        ],
+        [
+          ["input", "quote", "protocol", "v2", "orderData", "output", "calls", 0],
+          {
+            "$words": [
+              [
+                9,
+                2,
+                [
+                  "6f63743855596f6b764d31445232517045564d376f434c764a4c50764a717676",
+                  "764b6b3250765858367871455a624e0000000000000000000000000000000000"
+                ]
+              ]
+            ]
+          }
+        ]
+      ],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "the burn does not go to your Octra address"
+      }
+    },
+    {
+      "fixture": "base-usdc",
+      "name": "burn-amount-rehashed",
+      "patches": [
+        [
+          ["input", "quote", "steps", 1, "items", 0, "data", "data"],
+          "0xe80179520000000000000000000000009858effd232b4033e47d90003d41ec34ecaeda94000000000000000000000000833589fcd6edb6e08f4c7c32d4f71b54bda0291300000000000000000000000000000000000000000000000000000000013026638970f8ccef8431e4844181aa76ff1ee91afd2c241284d92bb5403c1bbb7b43db"
+        ],
+        [
+          ["input", "quote", "protocol", "v2", "orderId"],
+          "0x8970f8ccef8431e4844181aa76ff1ee91afd2c241284d92bb5403c1bbb7b43db"
+        ],
+        [
+          ["input", "quote", "protocol", "v2", "orderData", "output", "calls", 0],
+          {
+            "$words": [[7, 1, ["000000000000000000000000000000000000000000000000000000001e5dc031"]]]
+          }
+        ]
+      ],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "the burn does not go to your Octra address"
+      }
+    },
+    {
+      "fixture": "base-usdc",
+      "name": "confirmed-other-octra",
+      "patches": [[["input", "octraRecipient"], "oct8UYokvM1DR2QpEVM7oCLvJLPvJqvvvKk2PvXX6xqEZbN"]],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "the burn does not go to your Octra address"
+      }
+    },
+    {
+      "fixture": "base-usdc",
+      "name": "input-above-max-rehashed",
+      "patches": [
+        [
+          ["input", "quote", "steps", 1, "items", 0, "data", "data"],
+          "0xe80179520000000000000000000000009858effd232b4033e47d90003d41ec34ecaeda94000000000000000000000000833589fcd6edb6e08f4c7c32d4f71b54bda029130000000000000000000000000000000000000000000000000000000001312d01c4ed77e003fddb2729786c3f7de3ee75a1197af48c76de2fa156f3b65bf66980"
+        ],
+        [
+          ["input", "quote", "protocol", "v2", "orderId"],
+          "0xc4ed77e003fddb2729786c3f7de3ee75a1197af48c76de2fa156f3b65bf66980"
+        ],
+        [
+          ["input", "quote", "protocol", "v2", "orderData", "inputs", 0, "payment", "amount"],
+          "20000001"
+        ]
+      ],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "the order takes more than you entered"
+      }
+    },
+    {
+      "fixture": "base-usdc",
+      "name": "maxpay-below-input",
+      "patches": [[["input", "maxPayRaw"], "19932770"]],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "an approval above what you entered"
+      }
+    },
+    {
+      "fixture": "base-usdc",
+      "name": "solver-id-kept",
+      "patches": [
+        [
+          ["input", "quote", "protocol", "v2", "orderData", "solver"],
+          "0x1111111111111111111111111111111111111111"
+        ]
+      ],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "the order id does not match the order"
+      }
+    },
+    {
+      "fixture": "base-usdc",
+      "name": "solver-rehashed",
+      "patches": [
+        [
+          ["input", "quote", "steps", 1, "items", 0, "data", "data"],
+          "0xe80179520000000000000000000000009858effd232b4033e47d90003d41ec34ecaeda94000000000000000000000000833589fcd6edb6e08f4c7c32d4f71b54bda0291300000000000000000000000000000000000000000000000000000000013026631e1336025a689a8269370b1813459e46d0ada4125930038db1aacdb9c15de052"
+        ],
+        [
+          ["input", "quote", "protocol", "v2", "orderId"],
+          "0x1e1336025a689a8269370b1813459e46d0ada4125930038db1aacdb9c15de052"
+        ],
+        [
+          ["input", "quote", "protocol", "v2", "orderData", "solver"],
+          "0x1111111111111111111111111111111111111111"
+        ]
+      ],
+      "expect": { "ok": true }
+    },
+    {
+      "fixture": "base-usdc",
+      "name": "solver-bad-checksum",
+      "patches": [
+        [
+          ["input", "quote", "protocol", "v2", "orderData", "solver"],
+          "0xF70da97812cb96acdf810712aa562db8dfa3dbef"
+        ]
+      ],
+      "expect": { "ok": false, "quoteCheckError": false }
+    },
+    {
+      "fixture": "base-usdc",
+      "name": "solver-checksummed",
+      "patches": [
+        [
+          ["input", "quote", "protocol", "v2", "orderData", "solver"],
+          "0xf70da97812CB96acDF810712Aa562db8dfA3dbEF"
+        ]
+      ],
+      "expect": { "ok": true }
+    },
+    {
+      "fixture": "base-usdc",
+      "name": "order-id-changed",
+      "patches": [
+        [
+          ["input", "quote", "protocol", "v2", "orderId"],
+          "0x1111111111111111111111111111111111111111111111111111111111111111"
+        ]
+      ],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "the order id does not match the order"
+      }
+    },
+    {
+      "fixture": "base-usdc",
+      "name": "order-id-changed-deposit-follows",
+      "patches": [
+        [
+          ["input", "quote", "steps", 1, "items", 0, "data", "data"],
+          "0xe80179520000000000000000000000009858effd232b4033e47d90003d41ec34ecaeda94000000000000000000000000833589fcd6edb6e08f4c7c32d4f71b54bda0291300000000000000000000000000000000000000000000000000000000013026631111111111111111111111111111111111111111111111111111111111111111"
+        ],
+        [
+          ["input", "quote", "protocol", "v2", "orderId"],
+          "0x1111111111111111111111111111111111111111111111111111111111111111"
+        ]
+      ],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "the order id does not match the order"
+      }
+    },
+    {
+      "fixture": "base-usdc",
+      "name": "deposit-other-id",
+      "patches": [
+        [
+          ["input", "quote", "steps", 1, "items", 0, "data", "data"],
+          "0xe80179520000000000000000000000009858effd232b4033e47d90003d41ec34ecaeda94000000000000000000000000833589fcd6edb6e08f4c7c32d4f71b54bda0291300000000000000000000000000000000000000000000000000000000013026632222222222222222222222222222222222222222222222222222222222222222"
+        ]
+      ],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "the deposit is not tied to this order"
+      }
+    },
+    {
+      "fixture": "base-usdc",
+      "name": "depositor-changed",
+      "patches": [
+        [
+          ["input", "quote", "steps", 1, "items", 0, "data", "data"],
+          "0xe80179520000000000000000000000001111111111111111111111111111111111111111000000000000000000000000833589fcd6edb6e08f4c7c32d4f71b54bda029130000000000000000000000000000000000000000000000000000000001302663796292db79b7679e9271f1b7009c97ce28d8cf0e2bfb3ba78e1744d1a7edf3db"
+        ]
+      ],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "the deposit is not tied to this order"
+      }
+    },
+    {
+      "fixture": "base-usdc",
+      "name": "deposit-amount-lower",
+      "patches": [
+        [
+          ["input", "quote", "steps", 1, "items", 0, "data", "data"],
+          "0xe80179520000000000000000000000009858effd232b4033e47d90003d41ec34ecaeda94000000000000000000000000833589fcd6edb6e08f4c7c32d4f71b54bda029130000000000000000000000000000000000000000000000000000000001302662796292db79b7679e9271f1b7009c97ce28d8cf0e2bfb3ba78e1744d1a7edf3db"
+        ]
+      ],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "the deposit amount differs from the order"
+      }
+    },
+    {
+      "fixture": "base-usdc",
+      "name": "deposit-truncated",
+      "patches": [
+        [
+          ["input", "quote", "steps", 1, "items", 0, "data", "data"],
+          "0xe80179520000000000000000000000009858effd232b4033e47d90003d41ec34ecaeda94000000000000000000000000833589fcd6edb6e08f4c7c32d4f71b54bda029130000000000000000000000000000000000000000000000000000000001302663"
+        ]
+      ],
+      "expect": { "ok": false, "quoteCheckError": false }
+    },
+    {
+      "fixture": "base-usdc",
+      "name": "deposit-odd-hex",
+      "patches": [
+        [
+          ["input", "quote", "steps", 1, "items", 0, "data", "data"],
+          "0xe80179520000000000000000000000009858effd232b4033e47d90003d41ec34ecaeda94000000000000000000000000833589fcd6edb6e08f4c7c32d4f71b54bda029130000000000000000000000000000000000000000000000000000000001302663796292db79b7679e9271f1b7009c97ce28d8cf0e2bfb3ba78e1744d1a7edf3db0"
+        ]
+      ],
+      "expect": { "ok": false, "quoteCheckError": false }
+    },
+    {
+      "fixture": "base-usdc",
+      "name": "refund-recipient-rehashed",
+      "patches": [
+        [
+          ["input", "quote", "steps", 1, "items", 0, "data", "data"],
+          "0xe80179520000000000000000000000009858effd232b4033e47d90003d41ec34ecaeda94000000000000000000000000833589fcd6edb6e08f4c7c32d4f71b54bda029130000000000000000000000000000000000000000000000000000000001302663a8a7e84e3c4e8ca55c62ebe6b0f7353a7cad957773a3e44197f9b4c74e7a1652"
+        ],
+        [
+          ["input", "quote", "protocol", "v2", "orderId"],
+          "0xa8a7e84e3c4e8ca55c62ebe6b0f7353a7cad957773a3e44197f9b4c74e7a1652"
+        ],
+        [
+          ["input", "quote", "protocol", "v2", "orderData", "inputs", 0, "refunds", 0, "recipient"],
+          "0x1111111111111111111111111111111111111111"
+        ]
+      ],
+      "expect": { "ok": false, "quoteCheckError": true, "message": "refunds go to another address" }
+    },
+    {
+      "fixture": "base-usdc",
+      "name": "payout-recipient-rehashed",
+      "patches": [
+        [
+          ["input", "quote", "steps", 1, "items", 0, "data", "data"],
+          "0xe80179520000000000000000000000009858effd232b4033e47d90003d41ec34ecaeda94000000000000000000000000833589fcd6edb6e08f4c7c32d4f71b54bda0291300000000000000000000000000000000000000000000000000000000013026639a6b0a51c4942f4dcd88fbc0c269e84e941b96733d59315e8316097d91ab1e3b"
+        ],
+        [
+          ["input", "quote", "protocol", "v2", "orderId"],
+          "0x9a6b0a51c4942f4dcd88fbc0c269e84e941b96733d59315e8316097d91ab1e3b"
+        ],
+        [
+          ["input", "quote", "protocol", "v2", "orderData", "output", "payments", 0, "recipient"],
+          "0x1111111111111111111111111111111111111111"
+        ]
+      ],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "the payout is not the shown wOCT to Relay's router"
+      }
+    },
+    {
+      "fixture": "base-usdc",
+      "name": "payout-currency-rehashed",
+      "patches": [
+        [
+          ["input", "quote", "steps", 1, "items", 0, "data", "data"],
+          "0xe80179520000000000000000000000009858effd232b4033e47d90003d41ec34ecaeda94000000000000000000000000833589fcd6edb6e08f4c7c32d4f71b54bda0291300000000000000000000000000000000000000000000000000000000013026633ae6360389867a11556ab75fa0488847fd8c55ffa6f7baa37c0b8bc632dc6192"
+        ],
+        [
+          ["input", "quote", "protocol", "v2", "orderId"],
+          "0x3ae6360389867a11556ab75fa0488847fd8c55ffa6f7baa37c0b8bc632dc6192"
+        ],
+        [
+          ["input", "quote", "protocol", "v2", "orderData", "output", "payments", 0, "currency"],
+          "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913"
+        ]
+      ],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "the payout is not the shown wOCT to Relay's router"
+      }
+    },
+    {
+      "fixture": "base-usdc",
+      "name": "payout-min-rehashed",
+      "patches": [
+        [
+          ["input", "quote", "steps", 1, "items", 0, "data", "data"],
+          "0xe80179520000000000000000000000009858effd232b4033e47d90003d41ec34ecaeda94000000000000000000000000833589fcd6edb6e08f4c7c32d4f71b54bda029130000000000000000000000000000000000000000000000000000000001302663c1cc34f4824bbde45393610bfa8bd4e2baa57e48b61640cdc921843c0c840f61"
+        ],
+        [
+          ["input", "quote", "protocol", "v2", "orderId"],
+          "0xc1cc34f4824bbde45393610bfa8bd4e2baa57e48b61640cdc921843c0c840f61"
+        ],
+        [
+          [
+            "input",
+            "quote",
+            "protocol",
+            "v2",
+            "orderData",
+            "output",
+            "payments",
+            0,
+            "minimumAmount"
+          ],
+          "1"
+        ]
+      ],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "the payout is not the shown wOCT to Relay's router"
+      }
+    },
+    {
+      "fixture": "base-usdc",
+      "name": "expired",
+      "patches": [[["input", "nowSec"], 1792701865]],
+      "expect": { "ok": false, "quoteCheckError": true, "message": "the order has expired" }
+    },
+    {
+      "fixture": "base-usdc",
+      "name": "refund-unknown-chain-rehashed",
+      "patches": [
+        [
+          ["input", "quote", "steps", 1, "items", 0, "data", "data"],
+          "0xe80179520000000000000000000000009858effd232b4033e47d90003d41ec34ecaeda94000000000000000000000000833589fcd6edb6e08f4c7c32d4f71b54bda029130000000000000000000000000000000000000000000000000000000001302663d8bf4a940aa9583ec141b9600be1205dfa0d19c184e383a3006e5de57ea48a46"
+        ],
+        [
+          ["input", "quote", "protocol", "v2", "orderId"],
+          "0xd8bf4a940aa9583ec141b9600be1205dfa0d19c184e383a3006e5de57ea48a46"
+        ],
+        [
+          ["input", "quote", "protocol", "v2", "orderData", "inputs", 0, "refunds", 0, "chainId"],
+          "solana"
+        ]
+      ],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "the order involves a chain the bridge cannot check"
+      }
+    },
+    {
+      "fixture": "base-usdc",
+      "name": "extra-fee-rehashed",
+      "patches": [
+        [
+          ["input", "quote", "steps", 1, "items", 0, "data", "data"],
+          "0xe80179520000000000000000000000009858effd232b4033e47d90003d41ec34ecaeda94000000000000000000000000833589fcd6edb6e08f4c7c32d4f71b54bda0291300000000000000000000000000000000000000000000000000000000013026639ec611e0dc970a973347ddebad65b704063186bb9b53914ca60e0ffb91745f09"
+        ],
+        [
+          ["input", "quote", "protocol", "v2", "orderId"],
+          "0x9ec611e0dc970a973347ddebad65b704063186bb9b53914ca60e0ffb91745f09"
+        ],
+        [
+          ["input", "quote", "protocol", "v2", "orderData", "fees"],
+          [
+            {
+              "recipientChainId": "ethereum",
+              "recipient": "0x1111111111111111111111111111111111111111",
+              "currencyChainId": "ethereum",
+              "currency": "0x4647e1fe715c9e23959022c2416c71867f5a6e80",
+              "amount": "1"
+            }
+          ]
+        ]
+      ],
+      "expect": { "ok": true }
+    },
+    {
+      "fixture": "base-usdc",
+      "name": "order-call-dirty-address-rehashed",
+      "patches": [
+        [
+          ["input", "quote", "steps", 1, "items", 0, "data", "data"],
+          "0xe80179520000000000000000000000009858effd232b4033e47d90003d41ec34ecaeda94000000000000000000000000833589fcd6edb6e08f4c7c32d4f71b54bda0291300000000000000000000000000000000000000000000000000000000013026638e58b8467dd3625dbba4763c32dec2181a41e7d525695cbb92cacba941dbe784"
+        ],
+        [
+          ["input", "quote", "protocol", "v2", "orderId"],
+          "0x8e58b8467dd3625dbba4763c32dec2181a41e7d525695cbb92cacba941dbe784"
+        ],
+        [
+          ["input", "quote", "protocol", "v2", "orderData", "output", "calls", 0],
+          {
+            "$words": [
+              [
+                0,
+                2,
+                ["0xffffffff", "ffffffffffffffffe7ed69b852fd2a1406080b26a37e8e04e7da4cae00000000"]
+              ]
+            ]
+          }
+        ]
+      ],
+      "expect": { "ok": false, "quoteCheckError": false }
+    },
+    {
+      "fixture": "base-usdc",
+      "name": "order-call-garbage-rehashed",
+      "patches": [
+        [
+          ["input", "quote", "steps", 1, "items", 0, "data", "data"],
+          "0xe80179520000000000000000000000009858effd232b4033e47d90003d41ec34ecaeda94000000000000000000000000833589fcd6edb6e08f4c7c32d4f71b54bda029130000000000000000000000000000000000000000000000000000000001302663915061514096c58d45dbe3d5cbf165af49bb9880e8e54e992c6508e98237171c"
+        ],
+        [
+          ["input", "quote", "protocol", "v2", "orderId"],
+          "0x915061514096c58d45dbe3d5cbf165af49bb9880e8e54e992c6508e98237171c"
+        ],
+        [
+          ["input", "quote", "protocol", "v2", "orderData", "output", "calls", 0],
+          { "$words": [[0, 12, ["0x1234"]]] }
+        ]
+      ],
+      "expect": { "ok": false, "quoteCheckError": true, "message": "an unreadable order call" }
+    },
+    {
+      "fixture": "base-usdc",
+      "name": "item-other-chain",
+      "patches": [[["input", "quote", "steps", 1, "items", 0, "data", "chainId"], 10]],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "a transaction on another chain"
+      }
+    },
+    {
+      "fixture": "base-usdc",
+      "name": "two-payments",
+      "patches": [
+        [
+          ["input", "quote", "steps", 1, "items"],
+          [
+            {
+              "status": "incomplete",
+              "data": {
+                "from": "0x9858EfFD232B4033E47d90003D41EC34EcaEda94",
+                "to": "0x4cd00e387622c35bddb9b4c962c136462338bc31",
+                "data": "0xe80179520000000000000000000000009858effd232b4033e47d90003d41ec34ecaeda94000000000000000000000000833589fcd6edb6e08f4c7c32d4f71b54bda029130000000000000000000000000000000000000000000000000000000001302663796292db79b7679e9271f1b7009c97ce28d8cf0e2bfb3ba78e1744d1a7edf3db",
+                "value": "0",
+                "chainId": 8453,
+                "gas": "76194",
+                "maxFeePerGas": "6500000",
+                "maxPriorityFeePerGas": "1000000"
+              },
+              "check": {
+                "endpoint": "/intents/status?requestId=0x17920970646f42b338e8f27bd17ef8b20c987da90975af4f63204d2d2a9bd2ee",
+                "method": "GET"
+              }
+            },
+            {
+              "status": "incomplete",
+              "data": {
+                "from": "0x9858EfFD232B4033E47d90003D41EC34EcaEda94",
+                "to": "0x4cd00e387622c35bddb9b4c962c136462338bc31",
+                "data": "0xe80179520000000000000000000000009858effd232b4033e47d90003d41ec34ecaeda94000000000000000000000000833589fcd6edb6e08f4c7c32d4f71b54bda029130000000000000000000000000000000000000000000000000000000001302663796292db79b7679e9271f1b7009c97ce28d8cf0e2bfb3ba78e1744d1a7edf3db",
+                "value": "0",
+                "chainId": 8453,
+                "gas": "76194",
+                "maxFeePerGas": "6500000",
+                "maxPriorityFeePerGas": "1000000"
+              },
+              "check": {
+                "endpoint": "/intents/status?requestId=0x17920970646f42b338e8f27bd17ef8b20c987da90975af4f63204d2d2a9bd2ee",
+                "method": "GET"
+              }
+            }
+          ]
+        ]
+      ],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "not exactly one payment transaction"
+      }
+    },
+    {
+      "fixture": "base-usdc",
+      "name": "signature-step",
+      "patches": [
+        [
+          ["input", "quote", "steps"],
+          [
+            {
+              "id": "approve",
+              "action": "Confirm transaction in your wallet",
+              "description": "Sign an approval for USDC",
+              "kind": "transaction",
+              "items": [
+                {
+                  "status": "incomplete",
+                  "data": {
+                    "from": "0x9858EfFD232B4033E47d90003D41EC34EcaEda94",
+                    "to": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+                    "data": "0x095ea7b30000000000000000000000004cd00e387622c35bddb9b4c962c136462338bc310000000000000000000000000000000000000000000000000000000001302663",
+                    "value": "0",
+                    "chainId": 8453,
+                    "gas": "73127",
+                    "maxFeePerGas": "6500000",
+                    "maxPriorityFeePerGas": "1000000"
+                  }
+                }
+              ],
+              "requestId": "0x17920970646f42b338e8f27bd17ef8b20c987da90975af4f63204d2d2a9bd2ee"
+            },
+            {
+              "id": "deposit",
+              "action": "Confirm transaction in your wallet",
+              "description": "Depositing funds to the relayer to execute the swap for wOCT",
+              "kind": "transaction",
+              "items": [
+                {
+                  "status": "incomplete",
+                  "data": {
+                    "from": "0x9858EfFD232B4033E47d90003D41EC34EcaEda94",
+                    "to": "0x4cd00e387622c35bddb9b4c962c136462338bc31",
+                    "data": "0xe80179520000000000000000000000009858effd232b4033e47d90003d41ec34ecaeda94000000000000000000000000833589fcd6edb6e08f4c7c32d4f71b54bda029130000000000000000000000000000000000000000000000000000000001302663796292db79b7679e9271f1b7009c97ce28d8cf0e2bfb3ba78e1744d1a7edf3db",
+                    "value": "0",
+                    "chainId": 8453,
+                    "gas": "76194",
+                    "maxFeePerGas": "6500000",
+                    "maxPriorityFeePerGas": "1000000"
+                  },
+                  "check": {
+                    "endpoint": "/intents/status?requestId=0x17920970646f42b338e8f27bd17ef8b20c987da90975af4f63204d2d2a9bd2ee",
+                    "method": "GET"
+                  }
+                }
+              ],
+              "requestId": "0x17920970646f42b338e8f27bd17ef8b20c987da90975af4f63204d2d2a9bd2ee",
+              "depositAddress": ""
+            },
+            { "id": "authorize", "kind": "signature", "items": [] }
+          ]
+        ]
+      ],
+      "expect": { "ok": false, "quoteCheckError": true, "message": "unsupported authorize step" }
+    },
+    {
+      "fixture": "base-usdc",
+      "name": "order-data-missing",
+      "patches": [[["input", "quote", "protocol", "v2", "orderData"], { "$delete": true }]],
+      "expect": { "ok": false, "quoteCheckError": true, "message": "the order data is missing" }
+    },
+    {
+      "fixture": "base-usdc",
+      "name": "outraw-zero",
+      "patches": [[["input", "outRaw"], "0"]],
+      "expect": { "ok": false, "quoteCheckError": true, "message": "nothing to burn" }
+    },
+    {
+      "fixture": "base-usdc",
+      "name": "outraw-garbage",
+      "patches": [[["input", "outRaw"], "abc"]],
+      "expect": { "ok": false, "quoteCheckError": true, "message": "unreadable amount" }
+    },
+    {
+      "fixture": "base-usdc",
+      "name": "outraw-differs",
+      "patches": [[["input", "outRaw"], "509460531"]],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "the payout is not the shown wOCT to Relay's router"
+      }
+    },
+    {
+      "fixture": "base-usdc",
+      "name": "no-ethereum-router",
+      "patches": [[["relayChains", 0, "contracts", "erc20Router"], { "$delete": true }]],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "Relay does not list this chain"
+      }
+    },
+    {
+      "fixture": "base-usdc",
+      "name": "source-not-evm",
+      "patches": [[["relayChains", 32, "vmType"], "svm"]],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "Relay does not list this chain"
+      }
+    },
+    {
+      "fixture": "base-usdc",
+      "name": "approve-spender",
+      "patches": [
+        [
+          ["input", "quote", "steps", 0, "items", 0, "data", "data"],
+          "0x095ea7b300000000000000000000000011111111111111111111111111111111111111110000000000000000000000000000000000000000000000000000000001312d00"
+        ]
+      ],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "an approval for a contract that is not Relay's"
+      }
+    },
+    {
+      "fixture": "base-usdc",
+      "name": "approve-proxy-spender",
+      "patches": [
+        [
+          ["input", "quote", "steps", 0, "items", 0, "data", "data"],
+          "0x095ea7b3000000000000000000000000ccc88a9d1b4ed6b0eaba998850414b24f1c315be0000000000000000000000000000000000000000000000000000000001312d00"
+        ]
+      ],
+      "expect": { "ok": true }
+    },
+    {
+      "fixture": "base-usdc",
+      "name": "approve-above-max",
+      "patches": [
+        [
+          ["input", "quote", "steps", 0, "items", 0, "data", "data"],
+          "0x095ea7b30000000000000000000000004cd00e387622c35bddb9b4c962c136462338bc310000000000000000000000000000000000000000000000000000000001312d01"
+        ]
+      ],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "an approval above what you entered"
+      }
+    },
+    {
+      "fixture": "base-usdc",
+      "name": "approve-value",
+      "patches": [[["input", "quote", "steps", 0, "items", 0, "data", "value"], "1"]],
+      "expect": { "ok": false, "quoteCheckError": true, "message": "an approval that sends coins" }
+    },
+    {
+      "fixture": "base-usdc",
+      "name": "approve-other-token",
+      "patches": [
+        [
+          ["input", "quote", "steps", 0, "items", 0, "data", "to"],
+          "0x1111111111111111111111111111111111111111"
+        ]
+      ],
+      "expect": { "ok": false, "quoteCheckError": true, "message": "an approval for another token" }
+    },
+    {
+      "fixture": "base-usdc",
+      "name": "approve-is-transfer",
+      "patches": [
+        [
+          ["input", "quote", "steps", 0, "items", 0, "data", "data"],
+          "0xa9059cbb00000000000000000000000011111111111111111111111111111111111111110000000000000000000000000000000000000000000000000000000000000001"
+        ]
+      ],
+      "expect": { "ok": false, "quoteCheckError": true, "message": "an unexpected token call" }
+    },
+    { "fixture": "arb-usdc", "name": "ok", "patches": [], "expect": { "ok": true } },
+    {
+      "fixture": "arb-usdc",
+      "name": "deposit-target",
+      "patches": [
+        [
+          ["input", "quote", "steps", 1, "items", 0, "data", "to"],
+          "0x1111111111111111111111111111111111111111"
+        ]
+      ],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "the payment does not go to Relay's depository"
+      }
+    },
+    {
+      "fixture": "arb-usdc",
+      "name": "burn-recipient-id-kept",
+      "patches": [
+        [
+          ["input", "quote", "protocol", "v2", "orderData", "output", "calls", 0],
+          {
+            "$words": [
+              [
+                9,
+                2,
+                [
+                  "6f63743855596f6b764d31445232517045564d376f434c764a4c50764a717676",
+                  "764b6b3250765858367871455a624e0000000000000000000000000000000000"
+                ]
+              ]
+            ]
+          }
+        ]
+      ],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "the order id does not match the order"
+      }
+    },
+    {
+      "fixture": "arb-usdc",
+      "name": "burn-recipient-rehashed",
+      "patches": [
+        [
+          ["input", "quote", "steps", 1, "items", 0, "data", "data"],
+          "0xe80179520000000000000000000000009858effd232b4033e47d90003d41ec34ecaeda94000000000000000000000000af88d065e77c8cc2239327c5edb3a432268e58310000000000000000000000000000000000000000000000000000000001301e05824eb6ab267e865d2453521b1388abbda238c762e5b8765444b2b01e580bcfb5"
+        ],
+        [
+          ["input", "quote", "protocol", "v2", "orderId"],
+          "0x824eb6ab267e865d2453521b1388abbda238c762e5b8765444b2b01e580bcfb5"
+        ],
+        [
+          ["input", "quote", "protocol", "v2", "orderData", "output", "calls", 0],
+          {
+            "$words": [
+              [
+                9,
+                2,
+                [
+                  "6f63743855596f6b764d31445232517045564d376f434c764a4c50764a717676",
+                  "764b6b3250765858367871455a624e0000000000000000000000000000000000"
+                ]
+              ]
+            ]
+          }
+        ]
+      ],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "the burn does not go to your Octra address"
+      }
+    },
+    {
+      "fixture": "arb-usdc",
+      "name": "burn-amount-rehashed",
+      "patches": [
+        [
+          ["input", "quote", "steps", 1, "items", 0, "data", "data"],
+          "0xe80179520000000000000000000000009858effd232b4033e47d90003d41ec34ecaeda94000000000000000000000000af88d065e77c8cc2239327c5edb3a432268e58310000000000000000000000000000000000000000000000000000000001301e0539310dc9f22960fb62fed537460a44a81890675870a9a9599349aee02d3f3e63"
+        ],
+        [
+          ["input", "quote", "protocol", "v2", "orderId"],
+          "0x39310dc9f22960fb62fed537460a44a81890675870a9a9599349aee02d3f3e63"
+        ],
+        [
+          ["input", "quote", "protocol", "v2", "orderData", "output", "calls", 0],
+          {
+            "$words": [[7, 1, ["000000000000000000000000000000000000000000000000000000001e47e1b4"]]]
+          }
+        ]
+      ],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "the burn does not go to your Octra address"
+      }
+    },
+    {
+      "fixture": "arb-usdc",
+      "name": "confirmed-other-octra",
+      "patches": [[["input", "octraRecipient"], "oct8UYokvM1DR2QpEVM7oCLvJLPvJqvvvKk2PvXX6xqEZbN"]],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "the burn does not go to your Octra address"
+      }
+    },
+    {
+      "fixture": "arb-usdc",
+      "name": "input-above-max-rehashed",
+      "patches": [
+        [
+          ["input", "quote", "steps", 1, "items", 0, "data", "data"],
+          "0xe80179520000000000000000000000009858effd232b4033e47d90003d41ec34ecaeda94000000000000000000000000af88d065e77c8cc2239327c5edb3a432268e58310000000000000000000000000000000000000000000000000000000001312d01af3ea7dadcb3be34fd73323b8d713fe549433af53d1a9bc34bd962f84458347f"
+        ],
+        [
+          ["input", "quote", "protocol", "v2", "orderId"],
+          "0xaf3ea7dadcb3be34fd73323b8d713fe549433af53d1a9bc34bd962f84458347f"
+        ],
+        [
+          ["input", "quote", "protocol", "v2", "orderData", "inputs", 0, "payment", "amount"],
+          "20000001"
+        ]
+      ],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "the order takes more than you entered"
+      }
+    },
+    {
+      "fixture": "arb-usdc",
+      "name": "maxpay-below-input",
+      "patches": [[["input", "maxPayRaw"], "19930628"]],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "an approval above what you entered"
+      }
+    },
+    {
+      "fixture": "arb-usdc",
+      "name": "solver-id-kept",
+      "patches": [
+        [
+          ["input", "quote", "protocol", "v2", "orderData", "solver"],
+          "0x1111111111111111111111111111111111111111"
+        ]
+      ],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "the order id does not match the order"
+      }
+    },
+    {
+      "fixture": "arb-usdc",
+      "name": "solver-rehashed",
+      "patches": [
+        [
+          ["input", "quote", "steps", 1, "items", 0, "data", "data"],
+          "0xe80179520000000000000000000000009858effd232b4033e47d90003d41ec34ecaeda94000000000000000000000000af88d065e77c8cc2239327c5edb3a432268e58310000000000000000000000000000000000000000000000000000000001301e059708069ba97fa0002ab6108c9e006879ac3bc2098a23929621cc0b3759b1da77"
+        ],
+        [
+          ["input", "quote", "protocol", "v2", "orderId"],
+          "0x9708069ba97fa0002ab6108c9e006879ac3bc2098a23929621cc0b3759b1da77"
+        ],
+        [
+          ["input", "quote", "protocol", "v2", "orderData", "solver"],
+          "0x1111111111111111111111111111111111111111"
+        ]
+      ],
+      "expect": { "ok": true }
+    },
+    {
+      "fixture": "arb-usdc",
+      "name": "solver-bad-checksum",
+      "patches": [
+        [
+          ["input", "quote", "protocol", "v2", "orderData", "solver"],
+          "0xF70da97812cb96acdf810712aa562db8dfa3dbef"
+        ]
+      ],
+      "expect": { "ok": false, "quoteCheckError": false }
+    },
+    {
+      "fixture": "arb-usdc",
+      "name": "solver-checksummed",
+      "patches": [
+        [
+          ["input", "quote", "protocol", "v2", "orderData", "solver"],
+          "0xf70da97812CB96acDF810712Aa562db8dfA3dbEF"
+        ]
+      ],
+      "expect": { "ok": true }
+    },
+    {
+      "fixture": "arb-usdc",
+      "name": "order-id-changed",
+      "patches": [
+        [
+          ["input", "quote", "protocol", "v2", "orderId"],
+          "0x1111111111111111111111111111111111111111111111111111111111111111"
+        ]
+      ],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "the order id does not match the order"
+      }
+    },
+    {
+      "fixture": "arb-usdc",
+      "name": "order-id-changed-deposit-follows",
+      "patches": [
+        [
+          ["input", "quote", "steps", 1, "items", 0, "data", "data"],
+          "0xe80179520000000000000000000000009858effd232b4033e47d90003d41ec34ecaeda94000000000000000000000000af88d065e77c8cc2239327c5edb3a432268e58310000000000000000000000000000000000000000000000000000000001301e051111111111111111111111111111111111111111111111111111111111111111"
+        ],
+        [
+          ["input", "quote", "protocol", "v2", "orderId"],
+          "0x1111111111111111111111111111111111111111111111111111111111111111"
+        ]
+      ],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "the order id does not match the order"
+      }
+    },
+    {
+      "fixture": "arb-usdc",
+      "name": "deposit-other-id",
+      "patches": [
+        [
+          ["input", "quote", "steps", 1, "items", 0, "data", "data"],
+          "0xe80179520000000000000000000000009858effd232b4033e47d90003d41ec34ecaeda94000000000000000000000000af88d065e77c8cc2239327c5edb3a432268e58310000000000000000000000000000000000000000000000000000000001301e052222222222222222222222222222222222222222222222222222222222222222"
+        ]
+      ],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "the deposit is not tied to this order"
+      }
+    },
+    {
+      "fixture": "arb-usdc",
+      "name": "depositor-changed",
+      "patches": [
+        [
+          ["input", "quote", "steps", 1, "items", 0, "data", "data"],
+          "0xe80179520000000000000000000000001111111111111111111111111111111111111111000000000000000000000000af88d065e77c8cc2239327c5edb3a432268e58310000000000000000000000000000000000000000000000000000000001301e05af888b95d620b3c5499db344f327a9b69c659ccad5c8c8b4c4335cdcc59095d5"
+        ]
+      ],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "the deposit is not tied to this order"
+      }
+    },
+    {
+      "fixture": "arb-usdc",
+      "name": "deposit-amount-lower",
+      "patches": [
+        [
+          ["input", "quote", "steps", 1, "items", 0, "data", "data"],
+          "0xe80179520000000000000000000000009858effd232b4033e47d90003d41ec34ecaeda94000000000000000000000000af88d065e77c8cc2239327c5edb3a432268e58310000000000000000000000000000000000000000000000000000000001301e04af888b95d620b3c5499db344f327a9b69c659ccad5c8c8b4c4335cdcc59095d5"
+        ]
+      ],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "the deposit amount differs from the order"
+      }
+    },
+    {
+      "fixture": "arb-usdc",
+      "name": "deposit-truncated",
+      "patches": [
+        [
+          ["input", "quote", "steps", 1, "items", 0, "data", "data"],
+          "0xe80179520000000000000000000000009858effd232b4033e47d90003d41ec34ecaeda94000000000000000000000000af88d065e77c8cc2239327c5edb3a432268e58310000000000000000000000000000000000000000000000000000000001301e05"
+        ]
+      ],
+      "expect": { "ok": false, "quoteCheckError": false }
+    },
+    {
+      "fixture": "arb-usdc",
+      "name": "deposit-odd-hex",
+      "patches": [
+        [
+          ["input", "quote", "steps", 1, "items", 0, "data", "data"],
+          "0xe80179520000000000000000000000009858effd232b4033e47d90003d41ec34ecaeda94000000000000000000000000af88d065e77c8cc2239327c5edb3a432268e58310000000000000000000000000000000000000000000000000000000001301e05af888b95d620b3c5499db344f327a9b69c659ccad5c8c8b4c4335cdcc59095d50"
+        ]
+      ],
+      "expect": { "ok": false, "quoteCheckError": false }
+    },
+    {
+      "fixture": "arb-usdc",
+      "name": "refund-recipient-rehashed",
+      "patches": [
+        [
+          ["input", "quote", "steps", 1, "items", 0, "data", "data"],
+          "0xe80179520000000000000000000000009858effd232b4033e47d90003d41ec34ecaeda94000000000000000000000000af88d065e77c8cc2239327c5edb3a432268e58310000000000000000000000000000000000000000000000000000000001301e0556b2726e4e4e9866f1dd27a8cf0fe1ba240670e2e9e0856fde3d82d8fe722ccc"
+        ],
+        [
+          ["input", "quote", "protocol", "v2", "orderId"],
+          "0x56b2726e4e4e9866f1dd27a8cf0fe1ba240670e2e9e0856fde3d82d8fe722ccc"
+        ],
+        [
+          ["input", "quote", "protocol", "v2", "orderData", "inputs", 0, "refunds", 0, "recipient"],
+          "0x1111111111111111111111111111111111111111"
+        ]
+      ],
+      "expect": { "ok": false, "quoteCheckError": true, "message": "refunds go to another address" }
+    },
+    {
+      "fixture": "arb-usdc",
+      "name": "payout-recipient-rehashed",
+      "patches": [
+        [
+          ["input", "quote", "steps", 1, "items", 0, "data", "data"],
+          "0xe80179520000000000000000000000009858effd232b4033e47d90003d41ec34ecaeda94000000000000000000000000af88d065e77c8cc2239327c5edb3a432268e58310000000000000000000000000000000000000000000000000000000001301e0556bfba018ccafeb76f3211111df7c6aef6425379c8129d7a94d7c680ae791195"
+        ],
+        [
+          ["input", "quote", "protocol", "v2", "orderId"],
+          "0x56bfba018ccafeb76f3211111df7c6aef6425379c8129d7a94d7c680ae791195"
+        ],
+        [
+          ["input", "quote", "protocol", "v2", "orderData", "output", "payments", 0, "recipient"],
+          "0x1111111111111111111111111111111111111111"
+        ]
+      ],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "the payout is not the shown wOCT to Relay's router"
+      }
+    },
+    {
+      "fixture": "arb-usdc",
+      "name": "payout-currency-rehashed",
+      "patches": [
+        [
+          ["input", "quote", "steps", 1, "items", 0, "data", "data"],
+          "0xe80179520000000000000000000000009858effd232b4033e47d90003d41ec34ecaeda94000000000000000000000000af88d065e77c8cc2239327c5edb3a432268e58310000000000000000000000000000000000000000000000000000000001301e05c47089e7d898417426e0393125b85fd2dedf5648419291abe5a6d4fc1df04d8d"
+        ],
+        [
+          ["input", "quote", "protocol", "v2", "orderId"],
+          "0xc47089e7d898417426e0393125b85fd2dedf5648419291abe5a6d4fc1df04d8d"
+        ],
+        [
+          ["input", "quote", "protocol", "v2", "orderData", "output", "payments", 0, "currency"],
+          "0x833589fcd6edb6e08f4c7c32d4f71b54bda02913"
+        ]
+      ],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "the payout is not the shown wOCT to Relay's router"
+      }
+    },
+    {
+      "fixture": "arb-usdc",
+      "name": "payout-min-rehashed",
+      "patches": [
+        [
+          ["input", "quote", "steps", 1, "items", 0, "data", "data"],
+          "0xe80179520000000000000000000000009858effd232b4033e47d90003d41ec34ecaeda94000000000000000000000000af88d065e77c8cc2239327c5edb3a432268e58310000000000000000000000000000000000000000000000000000000001301e05df18153240d0b184578b96495f6d664a8c1ed4fa1087b7a7da3cc0f68621994d"
+        ],
+        [
+          ["input", "quote", "protocol", "v2", "orderId"],
+          "0xdf18153240d0b184578b96495f6d664a8c1ed4fa1087b7a7da3cc0f68621994d"
+        ],
+        [
+          [
+            "input",
+            "quote",
+            "protocol",
+            "v2",
+            "orderData",
+            "output",
+            "payments",
+            0,
+            "minimumAmount"
+          ],
+          "1"
+        ]
+      ],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "the payout is not the shown wOCT to Relay's router"
+      }
+    },
+    {
+      "fixture": "arb-usdc",
+      "name": "expired",
+      "patches": [[["input", "nowSec"], 1792702062]],
+      "expect": { "ok": false, "quoteCheckError": true, "message": "the order has expired" }
+    },
+    {
+      "fixture": "arb-usdc",
+      "name": "refund-unknown-chain-rehashed",
+      "patches": [
+        [
+          ["input", "quote", "steps", 1, "items", 0, "data", "data"],
+          "0xe80179520000000000000000000000009858effd232b4033e47d90003d41ec34ecaeda94000000000000000000000000af88d065e77c8cc2239327c5edb3a432268e58310000000000000000000000000000000000000000000000000000000001301e05a201c6f6820ef135c740576e1e582cc14723436bcf476653b5afae3eee3d0e66"
+        ],
+        [
+          ["input", "quote", "protocol", "v2", "orderId"],
+          "0xa201c6f6820ef135c740576e1e582cc14723436bcf476653b5afae3eee3d0e66"
+        ],
+        [
+          ["input", "quote", "protocol", "v2", "orderData", "inputs", 0, "refunds", 0, "chainId"],
+          "solana"
+        ]
+      ],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "the order involves a chain the bridge cannot check"
+      }
+    },
+    {
+      "fixture": "arb-usdc",
+      "name": "extra-fee-rehashed",
+      "patches": [
+        [
+          ["input", "quote", "steps", 1, "items", 0, "data", "data"],
+          "0xe80179520000000000000000000000009858effd232b4033e47d90003d41ec34ecaeda94000000000000000000000000af88d065e77c8cc2239327c5edb3a432268e58310000000000000000000000000000000000000000000000000000000001301e05345c59587fe716eeaad9ae88059678133198671eb4d7506d9b0e08469fda9ea1"
+        ],
+        [
+          ["input", "quote", "protocol", "v2", "orderId"],
+          "0x345c59587fe716eeaad9ae88059678133198671eb4d7506d9b0e08469fda9ea1"
+        ],
+        [
+          ["input", "quote", "protocol", "v2", "orderData", "fees"],
+          [
+            {
+              "recipientChainId": "ethereum",
+              "recipient": "0x1111111111111111111111111111111111111111",
+              "currencyChainId": "ethereum",
+              "currency": "0x4647e1fe715c9e23959022c2416c71867f5a6e80",
+              "amount": "1"
+            }
+          ]
+        ]
+      ],
+      "expect": { "ok": true }
+    },
+    {
+      "fixture": "arb-usdc",
+      "name": "order-call-dirty-address-rehashed",
+      "patches": [
+        [
+          ["input", "quote", "steps", 1, "items", 0, "data", "data"],
+          "0xe80179520000000000000000000000009858effd232b4033e47d90003d41ec34ecaeda94000000000000000000000000af88d065e77c8cc2239327c5edb3a432268e58310000000000000000000000000000000000000000000000000000000001301e0571cbed51ccdbc748bafdd07b798fea21cc4fd5168a475dcd059997a1c5b3cf9f"
+        ],
+        [
+          ["input", "quote", "protocol", "v2", "orderId"],
+          "0x71cbed51ccdbc748bafdd07b798fea21cc4fd5168a475dcd059997a1c5b3cf9f"
+        ],
+        [
+          ["input", "quote", "protocol", "v2", "orderData", "output", "calls", 0],
+          {
+            "$words": [
+              [
+                0,
+                2,
+                ["0xffffffff", "ffffffffffffffffe7ed69b852fd2a1406080b26a37e8e04e7da4cae00000000"]
+              ]
+            ]
+          }
+        ]
+      ],
+      "expect": { "ok": false, "quoteCheckError": false }
+    },
+    {
+      "fixture": "arb-usdc",
+      "name": "order-call-garbage-rehashed",
+      "patches": [
+        [
+          ["input", "quote", "steps", 1, "items", 0, "data", "data"],
+          "0xe80179520000000000000000000000009858effd232b4033e47d90003d41ec34ecaeda94000000000000000000000000af88d065e77c8cc2239327c5edb3a432268e58310000000000000000000000000000000000000000000000000000000001301e054366a03eb5792d4032615f26e3441e9a391de55c4a7a75b8c27b76cadb13ae20"
+        ],
+        [
+          ["input", "quote", "protocol", "v2", "orderId"],
+          "0x4366a03eb5792d4032615f26e3441e9a391de55c4a7a75b8c27b76cadb13ae20"
+        ],
+        [
+          ["input", "quote", "protocol", "v2", "orderData", "output", "calls", 0],
+          { "$words": [[0, 12, ["0x1234"]]] }
+        ]
+      ],
+      "expect": { "ok": false, "quoteCheckError": true, "message": "an unreadable order call" }
+    },
+    {
+      "fixture": "arb-usdc",
+      "name": "item-other-chain",
+      "patches": [[["input", "quote", "steps", 1, "items", 0, "data", "chainId"], 10]],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "a transaction on another chain"
+      }
+    },
+    {
+      "fixture": "arb-usdc",
+      "name": "two-payments",
+      "patches": [
+        [
+          ["input", "quote", "steps", 1, "items"],
+          [
+            {
+              "status": "incomplete",
+              "data": {
+                "from": "0x9858EfFD232B4033E47d90003D41EC34EcaEda94",
+                "to": "0x4cd00e387622c35bddb9b4c962c136462338bc31",
+                "data": "0xe80179520000000000000000000000009858effd232b4033e47d90003d41ec34ecaeda94000000000000000000000000af88d065e77c8cc2239327c5edb3a432268e58310000000000000000000000000000000000000000000000000000000001301e05af888b95d620b3c5499db344f327a9b69c659ccad5c8c8b4c4335cdcc59095d5",
+                "value": "0",
+                "chainId": 42161,
+                "gas": "77207",
+                "maxFeePerGas": "22000000",
+                "maxPriorityFeePerGas": "0"
+              },
+              "check": {
+                "endpoint": "/intents/status?requestId=0x1792097262d2ff44e6fa23351b3d93c1369fb55f3a2f94076d08b1862fd6ffb0",
+                "method": "GET"
+              }
+            },
+            {
+              "status": "incomplete",
+              "data": {
+                "from": "0x9858EfFD232B4033E47d90003D41EC34EcaEda94",
+                "to": "0x4cd00e387622c35bddb9b4c962c136462338bc31",
+                "data": "0xe80179520000000000000000000000009858effd232b4033e47d90003d41ec34ecaeda94000000000000000000000000af88d065e77c8cc2239327c5edb3a432268e58310000000000000000000000000000000000000000000000000000000001301e05af888b95d620b3c5499db344f327a9b69c659ccad5c8c8b4c4335cdcc59095d5",
+                "value": "0",
+                "chainId": 42161,
+                "gas": "77207",
+                "maxFeePerGas": "22000000",
+                "maxPriorityFeePerGas": "0"
+              },
+              "check": {
+                "endpoint": "/intents/status?requestId=0x1792097262d2ff44e6fa23351b3d93c1369fb55f3a2f94076d08b1862fd6ffb0",
+                "method": "GET"
+              }
+            }
+          ]
+        ]
+      ],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "not exactly one payment transaction"
+      }
+    },
+    {
+      "fixture": "arb-usdc",
+      "name": "signature-step",
+      "patches": [
+        [
+          ["input", "quote", "steps"],
+          [
+            {
+              "id": "approve",
+              "action": "Confirm transaction in your wallet",
+              "description": "Sign an approval for USDC",
+              "kind": "transaction",
+              "items": [
+                {
+                  "status": "incomplete",
+                  "data": {
+                    "from": "0x9858EfFD232B4033E47d90003D41EC34EcaEda94",
+                    "to": "0xaf88d065e77c8cc2239327c5edb3a432268e5831",
+                    "data": "0x095ea7b30000000000000000000000004cd00e387622c35bddb9b4c962c136462338bc310000000000000000000000000000000000000000000000000000000001301e05",
+                    "value": "0",
+                    "chainId": 42161,
+                    "gas": "73897",
+                    "maxFeePerGas": "22000000",
+                    "maxPriorityFeePerGas": "0"
+                  }
+                }
+              ],
+              "requestId": "0x1792097262d2ff44e6fa23351b3d93c1369fb55f3a2f94076d08b1862fd6ffb0"
+            },
+            {
+              "id": "deposit",
+              "action": "Confirm transaction in your wallet",
+              "description": "Depositing funds to the relayer to execute the swap for wOCT",
+              "kind": "transaction",
+              "items": [
+                {
+                  "status": "incomplete",
+                  "data": {
+                    "from": "0x9858EfFD232B4033E47d90003D41EC34EcaEda94",
+                    "to": "0x4cd00e387622c35bddb9b4c962c136462338bc31",
+                    "data": "0xe80179520000000000000000000000009858effd232b4033e47d90003d41ec34ecaeda94000000000000000000000000af88d065e77c8cc2239327c5edb3a432268e58310000000000000000000000000000000000000000000000000000000001301e05af888b95d620b3c5499db344f327a9b69c659ccad5c8c8b4c4335cdcc59095d5",
+                    "value": "0",
+                    "chainId": 42161,
+                    "gas": "77207",
+                    "maxFeePerGas": "22000000",
+                    "maxPriorityFeePerGas": "0"
+                  },
+                  "check": {
+                    "endpoint": "/intents/status?requestId=0x1792097262d2ff44e6fa23351b3d93c1369fb55f3a2f94076d08b1862fd6ffb0",
+                    "method": "GET"
+                  }
+                }
+              ],
+              "requestId": "0x1792097262d2ff44e6fa23351b3d93c1369fb55f3a2f94076d08b1862fd6ffb0",
+              "depositAddress": ""
+            },
+            { "id": "authorize", "kind": "signature", "items": [] }
+          ]
+        ]
+      ],
+      "expect": { "ok": false, "quoteCheckError": true, "message": "unsupported authorize step" }
+    },
+    {
+      "fixture": "arb-usdc",
+      "name": "order-data-missing",
+      "patches": [[["input", "quote", "protocol", "v2", "orderData"], { "$delete": true }]],
+      "expect": { "ok": false, "quoteCheckError": true, "message": "the order data is missing" }
+    },
+    {
+      "fixture": "arb-usdc",
+      "name": "outraw-zero",
+      "patches": [[["input", "outRaw"], "0"]],
+      "expect": { "ok": false, "quoteCheckError": true, "message": "nothing to burn" }
+    },
+    {
+      "fixture": "arb-usdc",
+      "name": "outraw-garbage",
+      "patches": [[["input", "outRaw"], "abc"]],
+      "expect": { "ok": false, "quoteCheckError": true, "message": "unreadable amount" }
+    },
+    {
+      "fixture": "arb-usdc",
+      "name": "outraw-differs",
+      "patches": [[["input", "outRaw"], "508027318"]],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "the payout is not the shown wOCT to Relay's router"
+      }
+    },
+    {
+      "fixture": "arb-usdc",
+      "name": "no-ethereum-router",
+      "patches": [[["relayChains", 0, "contracts", "erc20Router"], { "$delete": true }]],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "Relay does not list this chain"
+      }
+    },
+    {
+      "fixture": "arb-usdc",
+      "name": "source-not-evm",
+      "patches": [[["relayChains", 37, "vmType"], "svm"]],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "Relay does not list this chain"
+      }
+    },
+    {
+      "fixture": "arb-usdc",
+      "name": "approve-spender",
+      "patches": [
+        [
+          ["input", "quote", "steps", 0, "items", 0, "data", "data"],
+          "0x095ea7b300000000000000000000000011111111111111111111111111111111111111110000000000000000000000000000000000000000000000000000000001312d00"
+        ]
+      ],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "an approval for a contract that is not Relay's"
+      }
+    },
+    {
+      "fixture": "arb-usdc",
+      "name": "approve-proxy-spender",
+      "patches": [
+        [
+          ["input", "quote", "steps", 0, "items", 0, "data", "data"],
+          "0x095ea7b3000000000000000000000000ccc88a9d1b4ed6b0eaba998850414b24f1c315be0000000000000000000000000000000000000000000000000000000001312d00"
+        ]
+      ],
+      "expect": { "ok": true }
+    },
+    {
+      "fixture": "arb-usdc",
+      "name": "approve-above-max",
+      "patches": [
+        [
+          ["input", "quote", "steps", 0, "items", 0, "data", "data"],
+          "0x095ea7b30000000000000000000000004cd00e387622c35bddb9b4c962c136462338bc310000000000000000000000000000000000000000000000000000000001312d01"
+        ]
+      ],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "an approval above what you entered"
+      }
+    },
+    {
+      "fixture": "arb-usdc",
+      "name": "approve-value",
+      "patches": [[["input", "quote", "steps", 0, "items", 0, "data", "value"], "1"]],
+      "expect": { "ok": false, "quoteCheckError": true, "message": "an approval that sends coins" }
+    },
+    {
+      "fixture": "arb-usdc",
+      "name": "approve-other-token",
+      "patches": [
+        [
+          ["input", "quote", "steps", 0, "items", 0, "data", "to"],
+          "0x1111111111111111111111111111111111111111"
+        ]
+      ],
+      "expect": { "ok": false, "quoteCheckError": true, "message": "an approval for another token" }
+    },
+    {
+      "fixture": "arb-usdc",
+      "name": "approve-is-transfer",
+      "patches": [
+        [
+          ["input", "quote", "steps", 0, "items", 0, "data", "data"],
+          "0xa9059cbb00000000000000000000000011111111111111111111111111111111111111110000000000000000000000000000000000000000000000000000000000000001"
+        ]
+      ],
+      "expect": { "ok": false, "quoteCheckError": true, "message": "an unexpected token call" }
+    },
+    { "fixture": "eth-native", "name": "ok", "patches": [], "expect": { "ok": true } },
+    {
+      "fixture": "eth-native",
+      "name": "tx-target",
+      "patches": [
+        [
+          ["input", "quote", "steps", 0, "items", 0, "data", "to"],
+          "0x1111111111111111111111111111111111111111"
+        ]
+      ],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "the payment does not go to Relay's router"
+      }
+    },
+    {
+      "fixture": "eth-native",
+      "name": "burn-recipient",
+      "patches": [
+        [
+          ["input", "quote", "steps", 0, "items", 0, "data", "data"],
+          {
+            "$words": [
+              [
+                99,
+                2,
+                [
+                  "0000002f6f63743855596f6b764d31445232517045564d376f434c764a4c5076",
+                  "4a717676764b6b3250765858367871455a624e00000000000000000000000000"
+                ]
+              ],
+              [124, 1, []]
+            ]
+          }
+        ]
+      ],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "the burn does not go to your Octra address"
+      }
+    },
+    {
+      "fixture": "eth-native",
+      "name": "confirmed-other-octra",
+      "patches": [[["input", "octraRecipient"], "oct8UYokvM1DR2QpEVM7oCLvJLPvJqvvvKk2PvXX6xqEZbN"]],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "the burn does not go to your Octra address"
+      }
+    },
+    {
+      "fixture": "eth-native",
+      "name": "burn-value",
+      "patches": [
+        [
+          ["input", "quote", "steps", 0, "items", 0, "data", "data"],
+          {
+            "$words": [
+              [93, 1, ["0000000000000000000000000000000000000000000000000000000000000001"]],
+              [124, 1, []]
+            ]
+          }
+        ]
+      ],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "the burn does not go to your Octra address"
+      }
+    },
+    {
+      "fixture": "eth-native",
+      "name": "burn-allow-failure",
+      "patches": [
+        [
+          ["input", "quote", "steps", 0, "items", 0, "data", "data"],
+          {
+            "$words": [
+              [92, 0, ["0000000000000000000000000000000000000000000000000000000000000001"]],
+              [93, 1, []],
+              [124, 1, []]
+            ]
+          }
+        ]
+      ],
+      "expect": { "ok": false, "quoteCheckError": true, "message": "a call is allowed to fail" }
+    },
+    {
+      "fixture": "eth-native",
+      "name": "burn-removed",
+      "patches": [
+        [
+          ["input", "quote", "steps", 0, "items", 0, "data", "data"],
+          {
+            "$words": [
+              [
+                4,
+                6,
+                [
+                  "0000000000000000000000000000000000000000000000000000000000000d80",
+                  "0000000000000000000000000000000000000000000000000000000000000003",
+                  "0000000000000000000000000000000000000000000000000000000000000060",
+                  "00000000000000000000000000000000000000000000000000000000000001e0",
+                  "0000000000000000000000000000000000000000000000000000000000000a80"
+                ]
+              ],
+              [91, 11, []],
+              [124, 1, []]
+            ]
+          }
+        ]
+      ],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "the transaction does not burn exactly once to your Octra address"
+      }
+    },
+    {
+      "fixture": "eth-native",
+      "name": "burn-twice",
+      "patches": [
+        [
+          ["input", "quote", "steps", 0, "items", 0, "data", "data"],
+          {
+            "$words": [
+              [
+                4,
+                6,
+                [
+                  "0000000000000000000000000000000000000000000000000000000000001080",
+                  "0000000000000000000000000000000000000000000000000000000000000005",
+                  "00000000000000000000000000000000000000000000000000000000000000a0",
+                  "0000000000000000000000000000000000000000000000000000000000000220",
+                  "0000000000000000000000000000000000000000000000000000000000000ac0",
+                  "0000000000000000000000000000000000000000000000000000000000000c20",
+                  "0000000000000000000000000000000000000000000000000000000000000e80"
+                ]
+              ],
+              [
+                121,
+                0,
+                [
+                  "000000000000000000000000e7ed69b852fd2a1406080b26a37e8e04e7da4cae",
+                  "0000000000000000000000000000000000000000000000000000000000000000",
+                  "0000000000000000000000000000000000000000000000000000000000000000",
+                  "0000000000000000000000000000000000000000000000000000000000000080",
+                  "00000000000000000000000000000000000000000000000000000000000000a4",
+                  "e3e3aed000000000000000000000000000000000000000000000000000000000",
+                  "0000004000000000000000000000000000000000000000000000000000000000",
+                  "26ef351100000000000000000000000000000000000000000000000000000000",
+                  "0000002f6f6374354d724e666a6958464e52444c77736f646e385a6d3968444b",
+                  "4e47415974336551444351353262537043487100000000000000000000000000",
+                  "0000000000000000000000000000000000000000000000000000000000000000"
+                ]
+              ],
+              [124, 1, []]
+            ]
+          }
+        ]
+      ],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "the transaction does not burn exactly once to your Octra address"
+      }
+    },
+    {
+      "fixture": "eth-native",
+      "name": "burn-to-other-bridge",
+      "patches": [
+        [
+          ["input", "quote", "steps", 0, "items", 0, "data", "data"],
+          {
+            "$words": [
+              [91, 1, ["0000000000000000000000001111111111111111111111111111111111111111"]],
+              [124, 1, []]
+            ]
+          }
+        ]
+      ],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "the transaction does not burn exactly once to your Octra address"
+      }
+    },
+    {
+      "fixture": "eth-native",
+      "name": "maxpay-lowered",
+      "patches": [[["input", "maxPayRaw"], "1000"]],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "the transaction pays more than you entered"
+      }
+    },
+    {
+      "fixture": "eth-native",
+      "name": "refund-to-attacker",
+      "patches": [
+        [
+          ["input", "quote", "steps", 0, "items", 0, "data", "data"],
+          {
+            "$words": [
+              [2, 0, ["0000000000000000000000001111111111111111111111111111111111111111"]],
+              [3, 1, []],
+              [124, 1, []]
+            ]
+          }
+        ]
+      ],
+      "expect": { "ok": false, "quoteCheckError": true, "message": "refunds go to another address" }
+    },
+    {
+      "fixture": "eth-native",
+      "name": "refund-to-zero",
+      "patches": [
+        [["input", "quote", "steps", 0, "items", 0, "data", "data"], { "$words": [[124, 1, []]] }]
+      ],
+      "expect": { "ok": true }
+    },
+    {
+      "fixture": "eth-native",
+      "name": "cleanup-native-attacker",
+      "patches": [
+        [
+          ["input", "quote", "steps", 0, "items", 0, "data", "data"],
+          {
+            "$words": [
+              [
+                4,
+                6,
+                [
+                  "0000000000000000000000000000000000000000000000000000000000001060",
+                  "0000000000000000000000000000000000000000000000000000000000000005",
+                  "00000000000000000000000000000000000000000000000000000000000000a0",
+                  "0000000000000000000000000000000000000000000000000000000000000220",
+                  "0000000000000000000000000000000000000000000000000000000000000ac0",
+                  "0000000000000000000000000000000000000000000000000000000000000c20",
+                  "0000000000000000000000000000000000000000000000000000000000000e80"
+                ]
+              ],
+              [
+                121,
+                0,
+                [
+                  "000000000000000000000000b92fe925dc43a0ecde6c8b1a2709c170ec4fff4f",
+                  "0000000000000000000000000000000000000000000000000000000000000000",
+                  "0000000000000000000000000000000000000000000000000000000000000000",
+                  "0000000000000000000000000000000000000000000000000000000000000080",
+                  "0000000000000000000000000000000000000000000000000000000000000084",
+                  "a6bd8c9600000000000000000000000000000000000000000000000000000000",
+                  "0000000000000000000000000000000011111111111111111111111111111111",
+                  "1111111100000000000000000000000000000000000000000000000000000000",
+                  "0000006000000000000000000000000000000000000000000000000000000000",
+                  "0000000000000000000000000000000000000000000000000000000000000000"
+                ]
+              ],
+              [124, 1, []]
+            ]
+          }
+        ]
+      ],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "leftovers go to another address"
+      }
+    },
+    {
+      "fixture": "eth-native",
+      "name": "cleanup-native-solver",
+      "patches": [
+        [
+          ["input", "quote", "steps", 0, "items", 0, "data", "data"],
+          {
+            "$words": [
+              [
+                4,
+                6,
+                [
+                  "0000000000000000000000000000000000000000000000000000000000001060",
+                  "0000000000000000000000000000000000000000000000000000000000000005",
+                  "00000000000000000000000000000000000000000000000000000000000000a0",
+                  "0000000000000000000000000000000000000000000000000000000000000220",
+                  "0000000000000000000000000000000000000000000000000000000000000ac0",
+                  "0000000000000000000000000000000000000000000000000000000000000c20",
+                  "0000000000000000000000000000000000000000000000000000000000000e80"
+                ]
+              ],
+              [
+                121,
+                0,
+                [
+                  "000000000000000000000000b92fe925dc43a0ecde6c8b1a2709c170ec4fff4f",
+                  "0000000000000000000000000000000000000000000000000000000000000000",
+                  "0000000000000000000000000000000000000000000000000000000000000000",
+                  "0000000000000000000000000000000000000000000000000000000000000080",
+                  "0000000000000000000000000000000000000000000000000000000000000084",
+                  "a6bd8c9600000000000000000000000000000000000000000000000000000000",
+                  "00000000000000000000000000000000f70da97812cb96acdf810712aa562db8",
+                  "dfa3dbef00000000000000000000000000000000000000000000000000000000",
+                  "0000006000000000000000000000000000000000000000000000000000000000",
+                  "0000000000000000000000000000000000000000000000000000000000000000"
+                ]
+              ],
+              [124, 1, []]
+            ]
+          }
+        ]
+      ],
+      "expect": { "ok": true }
+    },
+    {
+      "fixture": "eth-native",
+      "name": "cleanup-woct-solver",
+      "patches": [
+        [
+          ["input", "quote", "steps", 0, "items", 0, "data", "data"],
+          {
+            "$words": [
+              [
+                4,
+                6,
+                [
+                  "0000000000000000000000000000000000000000000000000000000000001140",
+                  "0000000000000000000000000000000000000000000000000000000000000005",
+                  "00000000000000000000000000000000000000000000000000000000000000a0",
+                  "0000000000000000000000000000000000000000000000000000000000000220",
+                  "0000000000000000000000000000000000000000000000000000000000000ac0",
+                  "0000000000000000000000000000000000000000000000000000000000000c20",
+                  "0000000000000000000000000000000000000000000000000000000000000e80"
+                ]
+              ],
+              [
+                121,
+                0,
+                [
+                  "000000000000000000000000b92fe925dc43a0ecde6c8b1a2709c170ec4fff4f",
+                  "0000000000000000000000000000000000000000000000000000000000000000",
+                  "0000000000000000000000000000000000000000000000000000000000000000",
+                  "0000000000000000000000000000000000000000000000000000000000000080",
+                  "0000000000000000000000000000000000000000000000000000000000000164",
+                  "9bb4371800000000000000000000000000000000000000000000000000000000",
+                  "0000008000000000000000000000000000000000000000000000000000000000",
+                  "000000c000000000000000000000000000000000000000000000000000000000",
+                  "0000010000000000000000000000000000000000000000000000000000000000",
+                  "0000014000000000000000000000000000000000000000000000000000000000",
+                  "000000010000000000000000000000004647e1fe715c9e23959022c2416c7186",
+                  "7f5a6e8000000000000000000000000000000000000000000000000000000000",
+                  "00000001000000000000000000000000f70da97812cb96acdf810712aa562db8",
+                  "dfa3dbef00000000000000000000000000000000000000000000000000000000",
+                  "0000000100000000000000000000000000000000000000000000000000000000",
+                  "0000000000000000000000000000000000000000000000000000000000000000",
+                  "0000000000000000000000000000000000000000000000000000000000000000"
+                ]
+              ],
+              [124, 1, []]
+            ]
+          }
+        ]
+      ],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "leftovers go to another address"
+      }
+    },
+    {
+      "fixture": "eth-native",
+      "name": "cleanup-woct-user",
+      "patches": [
+        [
+          ["input", "quote", "steps", 0, "items", 0, "data", "data"],
+          {
+            "$words": [
+              [
+                4,
+                6,
+                [
+                  "0000000000000000000000000000000000000000000000000000000000001140",
+                  "0000000000000000000000000000000000000000000000000000000000000005",
+                  "00000000000000000000000000000000000000000000000000000000000000a0",
+                  "0000000000000000000000000000000000000000000000000000000000000220",
+                  "0000000000000000000000000000000000000000000000000000000000000ac0",
+                  "0000000000000000000000000000000000000000000000000000000000000c20",
+                  "0000000000000000000000000000000000000000000000000000000000000e80"
+                ]
+              ],
+              [
+                121,
+                0,
+                [
+                  "000000000000000000000000b92fe925dc43a0ecde6c8b1a2709c170ec4fff4f",
+                  "0000000000000000000000000000000000000000000000000000000000000000",
+                  "0000000000000000000000000000000000000000000000000000000000000000",
+                  "0000000000000000000000000000000000000000000000000000000000000080",
+                  "0000000000000000000000000000000000000000000000000000000000000164",
+                  "9bb4371800000000000000000000000000000000000000000000000000000000",
+                  "0000008000000000000000000000000000000000000000000000000000000000",
+                  "000000c000000000000000000000000000000000000000000000000000000000",
+                  "0000010000000000000000000000000000000000000000000000000000000000",
+                  "0000014000000000000000000000000000000000000000000000000000000000",
+                  "000000010000000000000000000000004647e1fe715c9e23959022c2416c7186",
+                  "7f5a6e8000000000000000000000000000000000000000000000000000000000",
+                  "000000010000000000000000000000009858effd232b4033e47d90003d41ec34",
+                  "ecaeda9400000000000000000000000000000000000000000000000000000000",
+                  "0000000100000000000000000000000000000000000000000000000000000000",
+                  "0000000000000000000000000000000000000000000000000000000000000000",
+                  "0000000000000000000000000000000000000000000000000000000000000000"
+                ]
+              ],
+              [124, 1, []]
+            ]
+          }
+        ]
+      ],
+      "expect": { "ok": true }
+    },
+    {
+      "fixture": "eth-native",
+      "name": "cleanup-usdc-solver",
+      "patches": [
+        [
+          ["input", "quote", "steps", 0, "items", 0, "data", "data"],
+          {
+            "$words": [
+              [
+                4,
+                6,
+                [
+                  "0000000000000000000000000000000000000000000000000000000000001140",
+                  "0000000000000000000000000000000000000000000000000000000000000005",
+                  "00000000000000000000000000000000000000000000000000000000000000a0",
+                  "0000000000000000000000000000000000000000000000000000000000000220",
+                  "0000000000000000000000000000000000000000000000000000000000000ac0",
+                  "0000000000000000000000000000000000000000000000000000000000000c20",
+                  "0000000000000000000000000000000000000000000000000000000000000e80"
+                ]
+              ],
+              [
+                121,
+                0,
+                [
+                  "000000000000000000000000b92fe925dc43a0ecde6c8b1a2709c170ec4fff4f",
+                  "0000000000000000000000000000000000000000000000000000000000000000",
+                  "0000000000000000000000000000000000000000000000000000000000000000",
+                  "0000000000000000000000000000000000000000000000000000000000000080",
+                  "0000000000000000000000000000000000000000000000000000000000000164",
+                  "9bb4371800000000000000000000000000000000000000000000000000000000",
+                  "0000008000000000000000000000000000000000000000000000000000000000",
+                  "000000c000000000000000000000000000000000000000000000000000000000",
+                  "0000010000000000000000000000000000000000000000000000000000000000",
+                  "0000014000000000000000000000000000000000000000000000000000000000",
+                  "00000001000000000000000000000000a0b86991c6218b36c1d19d4a2e9eb0ce",
+                  "3606eb4800000000000000000000000000000000000000000000000000000000",
+                  "00000001000000000000000000000000f70da97812cb96acdf810712aa562db8",
+                  "dfa3dbef00000000000000000000000000000000000000000000000000000000",
+                  "0000000100000000000000000000000000000000000000000000000000000000",
+                  "0000000000000000000000000000000000000000000000000000000000000000",
+                  "0000000000000000000000000000000000000000000000000000000000000000"
+                ]
+              ],
+              [124, 1, []]
+            ]
+          }
+        ]
+      ],
+      "expect": { "ok": true }
+    },
+    {
+      "fixture": "eth-native",
+      "name": "cleanup-short-recipients",
+      "patches": [
+        [
+          ["input", "quote", "steps", 0, "items", 0, "data", "data"],
+          {
+            "$words": [
+              [
+                4,
+                6,
+                [
+                  "0000000000000000000000000000000000000000000000000000000000001180",
+                  "0000000000000000000000000000000000000000000000000000000000000005",
+                  "00000000000000000000000000000000000000000000000000000000000000a0",
+                  "0000000000000000000000000000000000000000000000000000000000000220",
+                  "0000000000000000000000000000000000000000000000000000000000000ac0",
+                  "0000000000000000000000000000000000000000000000000000000000000c20",
+                  "0000000000000000000000000000000000000000000000000000000000000e80"
+                ]
+              ],
+              [
+                121,
+                0,
+                [
+                  "000000000000000000000000b92fe925dc43a0ecde6c8b1a2709c170ec4fff4f",
+                  "0000000000000000000000000000000000000000000000000000000000000000",
+                  "0000000000000000000000000000000000000000000000000000000000000000",
+                  "0000000000000000000000000000000000000000000000000000000000000080",
+                  "00000000000000000000000000000000000000000000000000000000000001a4",
+                  "9bb4371800000000000000000000000000000000000000000000000000000000",
+                  "0000008000000000000000000000000000000000000000000000000000000000",
+                  "000000e000000000000000000000000000000000000000000000000000000000",
+                  "0000012000000000000000000000000000000000000000000000000000000000",
+                  "0000018000000000000000000000000000000000000000000000000000000000",
+                  "00000002000000000000000000000000a0b86991c6218b36c1d19d4a2e9eb0ce",
+                  "3606eb480000000000000000000000004647e1fe715c9e23959022c2416c7186",
+                  "7f5a6e8000000000000000000000000000000000000000000000000000000000",
+                  "00000001000000000000000000000000f70da97812cb96acdf810712aa562db8",
+                  "dfa3dbef00000000000000000000000000000000000000000000000000000000",
+                  "0000000200000000000000000000000000000000000000000000000000000000",
+                  "0000000000000000000000000000000000000000000000000000000000000000",
+                  "0000000000000000000000000000000000000000000000000000000000000000",
+                  "0000000000000000000000000000000000000000000000000000000000000000"
+                ]
+              ],
+              [124, 1, []]
+            ]
+          }
+        ]
+      ],
+      "expect": { "ok": false, "quoteCheckError": false }
+    },
+    {
+      "fixture": "eth-native",
+      "name": "router-unknown-call",
+      "patches": [
+        [
+          ["input", "quote", "steps", 0, "items", 0, "data", "data"],
+          {
+            "$words": [
+              [
+                4,
+                6,
+                [
+                  "0000000000000000000000000000000000000000000000000000000000000fe0",
+                  "0000000000000000000000000000000000000000000000000000000000000005",
+                  "00000000000000000000000000000000000000000000000000000000000000a0",
+                  "0000000000000000000000000000000000000000000000000000000000000220",
+                  "0000000000000000000000000000000000000000000000000000000000000ac0",
+                  "0000000000000000000000000000000000000000000000000000000000000c20",
+                  "0000000000000000000000000000000000000000000000000000000000000e80"
+                ]
+              ],
+              [
+                121,
+                0,
+                [
+                  "000000000000000000000000b92fe925dc43a0ecde6c8b1a2709c170ec4fff4f",
+                  "0000000000000000000000000000000000000000000000000000000000000000",
+                  "0000000000000000000000000000000000000000000000000000000000000000",
+                  "0000000000000000000000000000000000000000000000000000000000000080",
+                  "0000000000000000000000000000000000000000000000000000000000000004",
+                  "deadbeef00000000000000000000000000000000000000000000000000000000"
+                ]
+              ],
+              [124, 1, []]
+            ]
+          }
+        ]
+      ],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "an unexpected call to Relay's router"
+      }
+    },
+    {
+      "fixture": "eth-native",
+      "name": "transfer-attacker",
+      "patches": [
+        [
+          ["input", "quote", "steps", 0, "items", 0, "data", "data"],
+          {
+            "$words": [
+              [
+                4,
+                6,
+                [
+                  "0000000000000000000000000000000000000000000000000000000000001020",
+                  "0000000000000000000000000000000000000000000000000000000000000005",
+                  "00000000000000000000000000000000000000000000000000000000000000a0",
+                  "0000000000000000000000000000000000000000000000000000000000000220",
+                  "0000000000000000000000000000000000000000000000000000000000000ac0",
+                  "0000000000000000000000000000000000000000000000000000000000000c20",
+                  "0000000000000000000000000000000000000000000000000000000000000e80"
+                ]
+              ],
+              [
+                121,
+                0,
+                [
+                  "000000000000000000000000a0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+                  "0000000000000000000000000000000000000000000000000000000000000000",
+                  "0000000000000000000000000000000000000000000000000000000000000000",
+                  "0000000000000000000000000000000000000000000000000000000000000080",
+                  "0000000000000000000000000000000000000000000000000000000000000044",
+                  "a9059cbb00000000000000000000000011111111111111111111111111111111",
+                  "1111111100000000000000000000000000000000000000000000000000000000",
+                  "0000000100000000000000000000000000000000000000000000000000000000"
+                ]
+              ],
+              [124, 1, []]
+            ]
+          }
+        ]
+      ],
+      "expect": { "ok": false, "quoteCheckError": true, "message": "an unexpected token transfer" }
+    },
+    {
+      "fixture": "eth-native",
+      "name": "transfer-user",
+      "patches": [
+        [
+          ["input", "quote", "steps", 0, "items", 0, "data", "data"],
+          {
+            "$words": [
+              [
+                4,
+                6,
+                [
+                  "0000000000000000000000000000000000000000000000000000000000001020",
+                  "0000000000000000000000000000000000000000000000000000000000000005",
+                  "00000000000000000000000000000000000000000000000000000000000000a0",
+                  "0000000000000000000000000000000000000000000000000000000000000220",
+                  "0000000000000000000000000000000000000000000000000000000000000ac0",
+                  "0000000000000000000000000000000000000000000000000000000000000c20",
+                  "0000000000000000000000000000000000000000000000000000000000000e80"
+                ]
+              ],
+              [
+                121,
+                0,
+                [
+                  "000000000000000000000000a0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+                  "0000000000000000000000000000000000000000000000000000000000000000",
+                  "0000000000000000000000000000000000000000000000000000000000000000",
+                  "0000000000000000000000000000000000000000000000000000000000000080",
+                  "0000000000000000000000000000000000000000000000000000000000000044",
+                  "a9059cbb0000000000000000000000009858effd232b4033e47d90003d41ec34",
+                  "ecaeda9400000000000000000000000000000000000000000000000000000000",
+                  "0000000100000000000000000000000000000000000000000000000000000000"
+                ]
+              ],
+              [124, 1, []]
+            ]
+          }
+        ]
+      ],
+      "expect": { "ok": true }
+    },
+    {
+      "fixture": "eth-native",
+      "name": "transfer-from",
+      "patches": [
+        [
+          ["input", "quote", "steps", 0, "items", 0, "data", "data"],
+          {
+            "$words": [
+              [
+                4,
+                6,
+                [
+                  "0000000000000000000000000000000000000000000000000000000000001040",
+                  "0000000000000000000000000000000000000000000000000000000000000005",
+                  "00000000000000000000000000000000000000000000000000000000000000a0",
+                  "0000000000000000000000000000000000000000000000000000000000000220",
+                  "0000000000000000000000000000000000000000000000000000000000000ac0",
+                  "0000000000000000000000000000000000000000000000000000000000000c20",
+                  "0000000000000000000000000000000000000000000000000000000000000e80"
+                ]
+              ],
+              [
+                121,
+                0,
+                [
+                  "000000000000000000000000a0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+                  "0000000000000000000000000000000000000000000000000000000000000000",
+                  "0000000000000000000000000000000000000000000000000000000000000000",
+                  "0000000000000000000000000000000000000000000000000000000000000080",
+                  "0000000000000000000000000000000000000000000000000000000000000064",
+                  "23b872dd0000000000000000000000009858effd232b4033e47d90003d41ec34",
+                  "ecaeda9400000000000000000000000011111111111111111111111111111111",
+                  "1111111100000000000000000000000000000000000000000000000000000000",
+                  "0000000100000000000000000000000000000000000000000000000000000000"
+                ]
+              ],
+              [124, 1, []]
+            ]
+          }
+        ]
+      ],
+      "expect": { "ok": false, "quoteCheckError": true, "message": "an unexpected token transfer" }
+    },
+    {
+      "fixture": "eth-native",
+      "name": "transfer-truncated",
+      "patches": [
+        [
+          ["input", "quote", "steps", 0, "items", 0, "data", "data"],
+          {
+            "$words": [
+              [
+                4,
+                6,
+                [
+                  "0000000000000000000000000000000000000000000000000000000000000fe0",
+                  "0000000000000000000000000000000000000000000000000000000000000005",
+                  "00000000000000000000000000000000000000000000000000000000000000a0",
+                  "0000000000000000000000000000000000000000000000000000000000000220",
+                  "0000000000000000000000000000000000000000000000000000000000000ac0",
+                  "0000000000000000000000000000000000000000000000000000000000000c20",
+                  "0000000000000000000000000000000000000000000000000000000000000e80"
+                ]
+              ],
+              [
+                121,
+                0,
+                [
+                  "000000000000000000000000a0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+                  "0000000000000000000000000000000000000000000000000000000000000000",
+                  "0000000000000000000000000000000000000000000000000000000000000000",
+                  "0000000000000000000000000000000000000000000000000000000000000080",
+                  "0000000000000000000000000000000000000000000000000000000000000013",
+                  "a9059cbb00000000000000000000000011111100000000000000000000000000"
+                ]
+              ],
+              [124, 1, []]
+            ]
+          }
+        ]
+      ],
+      "expect": { "ok": false, "quoteCheckError": false }
+    },
+    {
+      "fixture": "eth-native",
+      "name": "woct-call",
+      "patches": [
+        [
+          ["input", "quote", "steps", 0, "items", 0, "data", "data"],
+          {
+            "$words": [
+              [
+                4,
+                6,
+                [
+                  "0000000000000000000000000000000000000000000000000000000000001020",
+                  "0000000000000000000000000000000000000000000000000000000000000005",
+                  "00000000000000000000000000000000000000000000000000000000000000a0",
+                  "0000000000000000000000000000000000000000000000000000000000000220",
+                  "0000000000000000000000000000000000000000000000000000000000000ac0",
+                  "0000000000000000000000000000000000000000000000000000000000000c20",
+                  "0000000000000000000000000000000000000000000000000000000000000e80"
+                ]
+              ],
+              [
+                121,
+                0,
+                [
+                  "0000000000000000000000004647e1fe715c9e23959022c2416c71867f5a6e80",
+                  "0000000000000000000000000000000000000000000000000000000000000000",
+                  "0000000000000000000000000000000000000000000000000000000000000000",
+                  "0000000000000000000000000000000000000000000000000000000000000080",
+                  "0000000000000000000000000000000000000000000000000000000000000044",
+                  "095ea7b300000000000000000000000011111111111111111111111111111111",
+                  "1111111100000000000000000000000000000000000000000000000000000000",
+                  "0000000100000000000000000000000000000000000000000000000000000000"
+                ]
+              ],
+              [124, 1, []]
+            ]
+          }
+        ]
+      ],
+      "expect": { "ok": false, "quoteCheckError": true, "message": "an unexpected wOCT movement" }
+    },
+    {
+      "fixture": "eth-native",
+      "name": "approval-proxy-call",
+      "patches": [
+        [
+          ["input", "quote", "steps", 0, "items", 0, "data", "data"],
+          {
+            "$words": [
+              [
+                4,
+                6,
+                [
+                  "0000000000000000000000000000000000000000000000000000000000000fc0",
+                  "0000000000000000000000000000000000000000000000000000000000000005",
+                  "00000000000000000000000000000000000000000000000000000000000000a0",
+                  "0000000000000000000000000000000000000000000000000000000000000220",
+                  "0000000000000000000000000000000000000000000000000000000000000ac0",
+                  "0000000000000000000000000000000000000000000000000000000000000c20",
+                  "0000000000000000000000000000000000000000000000000000000000000e80"
+                ]
+              ],
+              [
+                121,
+                0,
+                [
+                  "000000000000000000000000ccc88a9d1b4ed6b0eaba998850414b24f1c315be",
+                  "0000000000000000000000000000000000000000000000000000000000000000",
+                  "0000000000000000000000000000000000000000000000000000000000000000",
+                  "0000000000000000000000000000000000000000000000000000000000000080",
+                  "0000000000000000000000000000000000000000000000000000000000000000"
+                ]
+              ],
+              [124, 1, []]
+            ]
+          }
+        ]
+      ],
+      "expect": { "ok": false, "quoteCheckError": true, "message": "an unexpected wOCT movement" }
+    },
+    {
+      "fixture": "eth-native",
+      "name": "other-call-allowed-to-fail",
+      "patches": [
+        [
+          ["input", "quote", "steps", 0, "items", 0, "data", "data"],
+          {
+            "$words": [
+              [11, 0, ["0000000000000000000000000000000000000000000000000000000000000001"]],
+              [12, 1, []],
+              [124, 1, []]
+            ]
+          }
+        ]
+      ],
+      "expect": { "ok": false, "quoteCheckError": true, "message": "a call is allowed to fail" }
+    },
+    {
+      "fixture": "eth-native",
+      "name": "nft-recipient-dirty",
+      "patches": [
+        [
+          ["input", "quote", "steps", 0, "items", 0, "data", "data"],
+          {
+            "$words": [
+              [3, 1, ["ab00000000000000000000002222222222222222222222222222222222222222"]],
+              [124, 1, []]
+            ]
+          }
+        ]
+      ],
+      "expect": { "ok": true }
+    },
+    {
+      "fixture": "eth-native",
+      "name": "refund-dirty",
+      "patches": [
+        [
+          ["input", "quote", "steps", 0, "items", 0, "data", "data"],
+          {
+            "$words": [
+              [2, 0, ["ab00000000000000000000003333333333333333333333333333333333333333"]],
+              [3, 1, []],
+              [124, 1, []]
+            ]
+          }
+        ]
+      ],
+      "expect": { "ok": false, "quoteCheckError": false }
+    },
+    {
+      "fixture": "eth-native",
+      "name": "data-truncated",
+      "patches": [
+        [["input", "quote", "steps", 0, "items", 0, "data", "data"], { "$words": [[123, 2, []]] }]
+      ],
+      "expect": { "ok": false, "quoteCheckError": false }
+    },
+    {
+      "fixture": "eth-native",
+      "name": "other-selector",
+      "patches": [
+        [
+          ["input", "quote", "steps", 0, "items", 0, "data", "data"],
+          { "$words": [[0, 1, ["0xdeadbeef"]]] }
+        ]
+      ],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "an unexpected call to Relay's router"
+      }
+    },
+    {
+      "fixture": "eth-native",
+      "name": "value-above-max",
+      "patches": [
+        [["input", "quote", "steps", 0, "items", 0, "data", "value"], "10000000000000001"]
+      ],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "the transaction pays more than you entered"
+      }
+    },
+    {
+      "fixture": "eth-native",
+      "name": "value-zero",
+      "patches": [[["input", "quote", "steps", 0, "items", 0, "data", "value"], "0"]],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "the transaction pays more than you entered"
+      }
+    },
+    {
+      "fixture": "eth-native",
+      "name": "erc20-token-but-multicall",
+      "patches": [
+        [["input", "token", "address"], "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"],
+        [["input", "token", "symbol"], "USDC"],
+        [["input", "token", "name"], "USD Coin"],
+        [["input", "token", "decimals"], 6],
+        [
+          ["input", "token", "logo"],
+          "https://coin-images.coingecko.com/coins/images/6319/large/usdc.png?1696506694"
+        ]
+      ],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "an unexpected call to Relay's router"
+      }
+    },
+    { "fixture": "eth-usdc", "name": "ok", "patches": [], "expect": { "ok": true } },
+    {
+      "fixture": "eth-usdc",
+      "name": "tx-target",
+      "patches": [
+        [
+          ["input", "quote", "steps", 1, "items", 0, "data", "to"],
+          "0x1111111111111111111111111111111111111111"
+        ]
+      ],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "the payment does not go to Relay's router"
+      }
+    },
+    {
+      "fixture": "eth-usdc",
+      "name": "burn-recipient",
+      "patches": [
+        [
+          ["input", "quote", "steps", 1, "items", 0, "data", "data"],
+          {
+            "$words": [
+              [
+                253,
+                2,
+                [
+                  "0000002f6f63743855596f6b764d31445232517045564d376f434c764a4c5076",
+                  "4a717676764b6b3250765858367871455a624e00000000000000000000000000"
+                ]
+              ],
+              [278, 1, []]
+            ]
+          }
+        ]
+      ],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "the burn does not go to your Octra address"
+      }
+    },
+    {
+      "fixture": "eth-usdc",
+      "name": "confirmed-other-octra",
+      "patches": [[["input", "octraRecipient"], "oct8UYokvM1DR2QpEVM7oCLvJLPvJqvvvKk2PvXX6xqEZbN"]],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "the burn does not go to your Octra address"
+      }
+    },
+    {
+      "fixture": "eth-usdc",
+      "name": "burn-value",
+      "patches": [
+        [
+          ["input", "quote", "steps", 1, "items", 0, "data", "data"],
+          {
+            "$words": [
+              [247, 1, ["0000000000000000000000000000000000000000000000000000000000000001"]],
+              [278, 1, []]
+            ]
+          }
+        ]
+      ],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "the burn does not go to your Octra address"
+      }
+    },
+    {
+      "fixture": "eth-usdc",
+      "name": "burn-allow-failure",
+      "patches": [
+        [
+          ["input", "quote", "steps", 1, "items", 0, "data", "data"],
+          {
+            "$words": [
+              [246, 0, ["0000000000000000000000000000000000000000000000000000000000000001"]],
+              [247, 1, []],
+              [278, 1, []]
+            ]
+          }
+        ]
+      ],
+      "expect": { "ok": false, "quoteCheckError": true, "message": "a call is allowed to fail" }
+    },
+    {
+      "fixture": "eth-usdc",
+      "name": "burn-removed",
+      "patches": [
+        [
+          ["input", "quote", "steps", 1, "items", 0, "data", "data"],
+          {
+            "$words": [
+              [6, 1, ["00000000000000000000000000000000000000000000000000000000000020c0"]],
+              [
+                11,
+                6,
+                [
+                  "0000000000000000000000000000000000000000000000000000000000000004",
+                  "0000000000000000000000000000000000000000000000000000000000000080",
+                  "0000000000000000000000000000000000000000000000000000000000000180",
+                  "00000000000000000000000000000000000000000000000000000000000003e0",
+                  "0000000000000000000000000000000000000000000000000000000000001d00"
+                ]
+              ],
+              [245, 11, []],
+              [278, 1, []]
+            ]
+          }
+        ]
+      ],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "the transaction does not burn exactly once to your Octra address"
+      }
+    },
+    {
+      "fixture": "eth-usdc",
+      "name": "burn-twice",
+      "patches": [
+        [
+          ["input", "quote", "steps", 1, "items", 0, "data", "data"],
+          {
+            "$words": [
+              [6, 1, ["00000000000000000000000000000000000000000000000000000000000023c0"]],
+              [
+                11,
+                6,
+                [
+                  "0000000000000000000000000000000000000000000000000000000000000006",
+                  "00000000000000000000000000000000000000000000000000000000000000c0",
+                  "00000000000000000000000000000000000000000000000000000000000001c0",
+                  "0000000000000000000000000000000000000000000000000000000000000420",
+                  "0000000000000000000000000000000000000000000000000000000000001d40",
+                  "0000000000000000000000000000000000000000000000000000000000001ea0",
+                  "0000000000000000000000000000000000000000000000000000000000002100"
+                ]
+              ],
+              [
+                275,
+                0,
+                [
+                  "000000000000000000000000e7ed69b852fd2a1406080b26a37e8e04e7da4cae",
+                  "0000000000000000000000000000000000000000000000000000000000000000",
+                  "0000000000000000000000000000000000000000000000000000000000000000",
+                  "0000000000000000000000000000000000000000000000000000000000000080",
+                  "00000000000000000000000000000000000000000000000000000000000000a4",
+                  "e3e3aed000000000000000000000000000000000000000000000000000000000",
+                  "0000004000000000000000000000000000000000000000000000000000000000",
+                  "4f15efe800000000000000000000000000000000000000000000000000000000",
+                  "0000002f6f6374354d724e666a6958464e52444c77736f646e385a6d3968444b",
+                  "4e47415974336551444351353262537043487100000000000000000000000000",
+                  "0000000000000000000000000000000000000000000000000000000000000000"
+                ]
+              ],
+              [278, 1, []]
+            ]
+          }
+        ]
+      ],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "the transaction does not burn exactly once to your Octra address"
+      }
+    },
+    {
+      "fixture": "eth-usdc",
+      "name": "burn-to-other-bridge",
+      "patches": [
+        [
+          ["input", "quote", "steps", 1, "items", 0, "data", "data"],
+          {
+            "$words": [
+              [245, 1, ["0000000000000000000000001111111111111111111111111111111111111111"]],
+              [278, 1, []]
+            ]
+          }
+        ]
+      ],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "the transaction does not burn exactly once to your Octra address"
+      }
+    },
+    {
+      "fixture": "eth-usdc",
+      "name": "maxpay-lowered",
+      "patches": [[["input", "maxPayRaw"], "1000"]],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "an approval above what you entered"
+      }
+    },
+    {
+      "fixture": "eth-usdc",
+      "name": "refund-to-attacker",
+      "patches": [
+        [
+          ["input", "quote", "steps", 1, "items", 0, "data", "data"],
+          {
+            "$words": [
+              [4, 0, ["0000000000000000000000001111111111111111111111111111111111111111"]],
+              [5, 1, []],
+              [278, 1, []]
+            ]
+          }
+        ]
+      ],
+      "expect": { "ok": false, "quoteCheckError": true, "message": "refunds go to another address" }
+    },
+    {
+      "fixture": "eth-usdc",
+      "name": "refund-to-zero",
+      "patches": [
+        [
+          ["input", "quote", "steps", 1, "items", 0, "data", "data"],
+          {
+            "$words": [
+              [4, 0, ["0000000000000000000000000000000000000000000000000000000000000000"]],
+              [5, 1, []],
+              [278, 1, []]
+            ]
+          }
+        ]
+      ],
+      "expect": { "ok": false, "quoteCheckError": true, "message": "refunds go to another address" }
+    },
+    {
+      "fixture": "eth-usdc",
+      "name": "cleanup-native-attacker",
+      "patches": [
+        [
+          ["input", "quote", "steps", 1, "items", 0, "data", "data"],
+          {
+            "$words": [
+              [6, 1, ["00000000000000000000000000000000000000000000000000000000000023a0"]],
+              [
+                11,
+                6,
+                [
+                  "0000000000000000000000000000000000000000000000000000000000000006",
+                  "00000000000000000000000000000000000000000000000000000000000000c0",
+                  "00000000000000000000000000000000000000000000000000000000000001c0",
+                  "0000000000000000000000000000000000000000000000000000000000000420",
+                  "0000000000000000000000000000000000000000000000000000000000001d40",
+                  "0000000000000000000000000000000000000000000000000000000000001ea0",
+                  "0000000000000000000000000000000000000000000000000000000000002100"
+                ]
+              ],
+              [
+                275,
+                0,
+                [
+                  "000000000000000000000000b92fe925dc43a0ecde6c8b1a2709c170ec4fff4f",
+                  "0000000000000000000000000000000000000000000000000000000000000000",
+                  "0000000000000000000000000000000000000000000000000000000000000000",
+                  "0000000000000000000000000000000000000000000000000000000000000080",
+                  "0000000000000000000000000000000000000000000000000000000000000084",
+                  "a6bd8c9600000000000000000000000000000000000000000000000000000000",
+                  "0000000000000000000000000000000011111111111111111111111111111111",
+                  "1111111100000000000000000000000000000000000000000000000000000000",
+                  "0000006000000000000000000000000000000000000000000000000000000000",
+                  "0000000000000000000000000000000000000000000000000000000000000000"
+                ]
+              ],
+              [278, 1, []]
+            ]
+          }
+        ]
+      ],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "leftovers go to another address"
+      }
+    },
+    {
+      "fixture": "eth-usdc",
+      "name": "cleanup-native-solver",
+      "patches": [
+        [
+          ["input", "quote", "steps", 1, "items", 0, "data", "data"],
+          {
+            "$words": [
+              [6, 1, ["00000000000000000000000000000000000000000000000000000000000023a0"]],
+              [
+                11,
+                6,
+                [
+                  "0000000000000000000000000000000000000000000000000000000000000006",
+                  "00000000000000000000000000000000000000000000000000000000000000c0",
+                  "00000000000000000000000000000000000000000000000000000000000001c0",
+                  "0000000000000000000000000000000000000000000000000000000000000420",
+                  "0000000000000000000000000000000000000000000000000000000000001d40",
+                  "0000000000000000000000000000000000000000000000000000000000001ea0",
+                  "0000000000000000000000000000000000000000000000000000000000002100"
+                ]
+              ],
+              [
+                275,
+                0,
+                [
+                  "000000000000000000000000b92fe925dc43a0ecde6c8b1a2709c170ec4fff4f",
+                  "0000000000000000000000000000000000000000000000000000000000000000",
+                  "0000000000000000000000000000000000000000000000000000000000000000",
+                  "0000000000000000000000000000000000000000000000000000000000000080",
+                  "0000000000000000000000000000000000000000000000000000000000000084",
+                  "a6bd8c9600000000000000000000000000000000000000000000000000000000",
+                  "00000000000000000000000000000000f70da97812cb96acdf810712aa562db8",
+                  "dfa3dbef00000000000000000000000000000000000000000000000000000000",
+                  "0000006000000000000000000000000000000000000000000000000000000000",
+                  "0000000000000000000000000000000000000000000000000000000000000000"
+                ]
+              ],
+              [278, 1, []]
+            ]
+          }
+        ]
+      ],
+      "expect": { "ok": true }
+    },
+    {
+      "fixture": "eth-usdc",
+      "name": "cleanup-woct-solver",
+      "patches": [
+        [
+          ["input", "quote", "steps", 1, "items", 0, "data", "data"],
+          {
+            "$words": [
+              [6, 1, ["0000000000000000000000000000000000000000000000000000000000002480"]],
+              [
+                11,
+                6,
+                [
+                  "0000000000000000000000000000000000000000000000000000000000000006",
+                  "00000000000000000000000000000000000000000000000000000000000000c0",
+                  "00000000000000000000000000000000000000000000000000000000000001c0",
+                  "0000000000000000000000000000000000000000000000000000000000000420",
+                  "0000000000000000000000000000000000000000000000000000000000001d40",
+                  "0000000000000000000000000000000000000000000000000000000000001ea0",
+                  "0000000000000000000000000000000000000000000000000000000000002100"
+                ]
+              ],
+              [
+                275,
+                0,
+                [
+                  "000000000000000000000000b92fe925dc43a0ecde6c8b1a2709c170ec4fff4f",
+                  "0000000000000000000000000000000000000000000000000000000000000000",
+                  "0000000000000000000000000000000000000000000000000000000000000000",
+                  "0000000000000000000000000000000000000000000000000000000000000080",
+                  "0000000000000000000000000000000000000000000000000000000000000164",
+                  "9bb4371800000000000000000000000000000000000000000000000000000000",
+                  "0000008000000000000000000000000000000000000000000000000000000000",
+                  "000000c000000000000000000000000000000000000000000000000000000000",
+                  "0000010000000000000000000000000000000000000000000000000000000000",
+                  "0000014000000000000000000000000000000000000000000000000000000000",
+                  "000000010000000000000000000000004647e1fe715c9e23959022c2416c7186",
+                  "7f5a6e8000000000000000000000000000000000000000000000000000000000",
+                  "00000001000000000000000000000000f70da97812cb96acdf810712aa562db8",
+                  "dfa3dbef00000000000000000000000000000000000000000000000000000000",
+                  "0000000100000000000000000000000000000000000000000000000000000000",
+                  "0000000000000000000000000000000000000000000000000000000000000000",
+                  "0000000000000000000000000000000000000000000000000000000000000000"
+                ]
+              ],
+              [278, 1, []]
+            ]
+          }
+        ]
+      ],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "leftovers go to another address"
+      }
+    },
+    {
+      "fixture": "eth-usdc",
+      "name": "cleanup-woct-user",
+      "patches": [
+        [
+          ["input", "quote", "steps", 1, "items", 0, "data", "data"],
+          {
+            "$words": [
+              [6, 1, ["0000000000000000000000000000000000000000000000000000000000002480"]],
+              [
+                11,
+                6,
+                [
+                  "0000000000000000000000000000000000000000000000000000000000000006",
+                  "00000000000000000000000000000000000000000000000000000000000000c0",
+                  "00000000000000000000000000000000000000000000000000000000000001c0",
+                  "0000000000000000000000000000000000000000000000000000000000000420",
+                  "0000000000000000000000000000000000000000000000000000000000001d40",
+                  "0000000000000000000000000000000000000000000000000000000000001ea0",
+                  "0000000000000000000000000000000000000000000000000000000000002100"
+                ]
+              ],
+              [
+                275,
+                0,
+                [
+                  "000000000000000000000000b92fe925dc43a0ecde6c8b1a2709c170ec4fff4f",
+                  "0000000000000000000000000000000000000000000000000000000000000000",
+                  "0000000000000000000000000000000000000000000000000000000000000000",
+                  "0000000000000000000000000000000000000000000000000000000000000080",
+                  "0000000000000000000000000000000000000000000000000000000000000164",
+                  "9bb4371800000000000000000000000000000000000000000000000000000000",
+                  "0000008000000000000000000000000000000000000000000000000000000000",
+                  "000000c000000000000000000000000000000000000000000000000000000000",
+                  "0000010000000000000000000000000000000000000000000000000000000000",
+                  "0000014000000000000000000000000000000000000000000000000000000000",
+                  "000000010000000000000000000000004647e1fe715c9e23959022c2416c7186",
+                  "7f5a6e8000000000000000000000000000000000000000000000000000000000",
+                  "000000010000000000000000000000009858effd232b4033e47d90003d41ec34",
+                  "ecaeda9400000000000000000000000000000000000000000000000000000000",
+                  "0000000100000000000000000000000000000000000000000000000000000000",
+                  "0000000000000000000000000000000000000000000000000000000000000000",
+                  "0000000000000000000000000000000000000000000000000000000000000000"
+                ]
+              ],
+              [278, 1, []]
+            ]
+          }
+        ]
+      ],
+      "expect": { "ok": true }
+    },
+    {
+      "fixture": "eth-usdc",
+      "name": "cleanup-usdc-solver",
+      "patches": [
+        [
+          ["input", "quote", "steps", 1, "items", 0, "data", "data"],
+          {
+            "$words": [
+              [6, 1, ["0000000000000000000000000000000000000000000000000000000000002480"]],
+              [
+                11,
+                6,
+                [
+                  "0000000000000000000000000000000000000000000000000000000000000006",
+                  "00000000000000000000000000000000000000000000000000000000000000c0",
+                  "00000000000000000000000000000000000000000000000000000000000001c0",
+                  "0000000000000000000000000000000000000000000000000000000000000420",
+                  "0000000000000000000000000000000000000000000000000000000000001d40",
+                  "0000000000000000000000000000000000000000000000000000000000001ea0",
+                  "0000000000000000000000000000000000000000000000000000000000002100"
+                ]
+              ],
+              [
+                275,
+                0,
+                [
+                  "000000000000000000000000b92fe925dc43a0ecde6c8b1a2709c170ec4fff4f",
+                  "0000000000000000000000000000000000000000000000000000000000000000",
+                  "0000000000000000000000000000000000000000000000000000000000000000",
+                  "0000000000000000000000000000000000000000000000000000000000000080",
+                  "0000000000000000000000000000000000000000000000000000000000000164",
+                  "9bb4371800000000000000000000000000000000000000000000000000000000",
+                  "0000008000000000000000000000000000000000000000000000000000000000",
+                  "000000c000000000000000000000000000000000000000000000000000000000",
+                  "0000010000000000000000000000000000000000000000000000000000000000",
+                  "0000014000000000000000000000000000000000000000000000000000000000",
+                  "00000001000000000000000000000000a0b86991c6218b36c1d19d4a2e9eb0ce",
+                  "3606eb4800000000000000000000000000000000000000000000000000000000",
+                  "00000001000000000000000000000000f70da97812cb96acdf810712aa562db8",
+                  "dfa3dbef00000000000000000000000000000000000000000000000000000000",
+                  "0000000100000000000000000000000000000000000000000000000000000000",
+                  "0000000000000000000000000000000000000000000000000000000000000000",
+                  "0000000000000000000000000000000000000000000000000000000000000000"
+                ]
+              ],
+              [278, 1, []]
+            ]
+          }
+        ]
+      ],
+      "expect": { "ok": true }
+    },
+    {
+      "fixture": "eth-usdc",
+      "name": "cleanup-short-recipients",
+      "patches": [
+        [
+          ["input", "quote", "steps", 1, "items", 0, "data", "data"],
+          {
+            "$words": [
+              [6, 1, ["00000000000000000000000000000000000000000000000000000000000024c0"]],
+              [
+                11,
+                6,
+                [
+                  "0000000000000000000000000000000000000000000000000000000000000006",
+                  "00000000000000000000000000000000000000000000000000000000000000c0",
+                  "00000000000000000000000000000000000000000000000000000000000001c0",
+                  "0000000000000000000000000000000000000000000000000000000000000420",
+                  "0000000000000000000000000000000000000000000000000000000000001d40",
+                  "0000000000000000000000000000000000000000000000000000000000001ea0",
+                  "0000000000000000000000000000000000000000000000000000000000002100"
+                ]
+              ],
+              [
+                275,
+                0,
+                [
+                  "000000000000000000000000b92fe925dc43a0ecde6c8b1a2709c170ec4fff4f",
+                  "0000000000000000000000000000000000000000000000000000000000000000",
+                  "0000000000000000000000000000000000000000000000000000000000000000",
+                  "0000000000000000000000000000000000000000000000000000000000000080",
+                  "00000000000000000000000000000000000000000000000000000000000001a4",
+                  "9bb4371800000000000000000000000000000000000000000000000000000000",
+                  "0000008000000000000000000000000000000000000000000000000000000000",
+                  "000000e000000000000000000000000000000000000000000000000000000000",
+                  "0000012000000000000000000000000000000000000000000000000000000000",
+                  "0000018000000000000000000000000000000000000000000000000000000000",
+                  "00000002000000000000000000000000a0b86991c6218b36c1d19d4a2e9eb0ce",
+                  "3606eb480000000000000000000000004647e1fe715c9e23959022c2416c7186",
+                  "7f5a6e8000000000000000000000000000000000000000000000000000000000",
+                  "00000001000000000000000000000000f70da97812cb96acdf810712aa562db8",
+                  "dfa3dbef00000000000000000000000000000000000000000000000000000000",
+                  "0000000200000000000000000000000000000000000000000000000000000000",
+                  "0000000000000000000000000000000000000000000000000000000000000000",
+                  "0000000000000000000000000000000000000000000000000000000000000000",
+                  "0000000000000000000000000000000000000000000000000000000000000000"
+                ]
+              ],
+              [278, 1, []]
+            ]
+          }
+        ]
+      ],
+      "expect": { "ok": false, "quoteCheckError": false }
+    },
+    {
+      "fixture": "eth-usdc",
+      "name": "router-unknown-call",
+      "patches": [
+        [
+          ["input", "quote", "steps", 1, "items", 0, "data", "data"],
+          {
+            "$words": [
+              [6, 1, ["0000000000000000000000000000000000000000000000000000000000002320"]],
+              [
+                11,
+                6,
+                [
+                  "0000000000000000000000000000000000000000000000000000000000000006",
+                  "00000000000000000000000000000000000000000000000000000000000000c0",
+                  "00000000000000000000000000000000000000000000000000000000000001c0",
+                  "0000000000000000000000000000000000000000000000000000000000000420",
+                  "0000000000000000000000000000000000000000000000000000000000001d40",
+                  "0000000000000000000000000000000000000000000000000000000000001ea0",
+                  "0000000000000000000000000000000000000000000000000000000000002100"
+                ]
+              ],
+              [
+                275,
+                0,
+                [
+                  "000000000000000000000000b92fe925dc43a0ecde6c8b1a2709c170ec4fff4f",
+                  "0000000000000000000000000000000000000000000000000000000000000000",
+                  "0000000000000000000000000000000000000000000000000000000000000000",
+                  "0000000000000000000000000000000000000000000000000000000000000080",
+                  "0000000000000000000000000000000000000000000000000000000000000004",
+                  "deadbeef00000000000000000000000000000000000000000000000000000000"
+                ]
+              ],
+              [278, 1, []]
+            ]
+          }
+        ]
+      ],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "an unexpected call to Relay's router"
+      }
+    },
+    {
+      "fixture": "eth-usdc",
+      "name": "transfer-attacker",
+      "patches": [
+        [
+          ["input", "quote", "steps", 1, "items", 0, "data", "data"],
+          {
+            "$words": [
+              [6, 1, ["0000000000000000000000000000000000000000000000000000000000002360"]],
+              [
+                11,
+                6,
+                [
+                  "0000000000000000000000000000000000000000000000000000000000000006",
+                  "00000000000000000000000000000000000000000000000000000000000000c0",
+                  "00000000000000000000000000000000000000000000000000000000000001c0",
+                  "0000000000000000000000000000000000000000000000000000000000000420",
+                  "0000000000000000000000000000000000000000000000000000000000001d40",
+                  "0000000000000000000000000000000000000000000000000000000000001ea0",
+                  "0000000000000000000000000000000000000000000000000000000000002100"
+                ]
+              ],
+              [
+                275,
+                0,
+                [
+                  "000000000000000000000000a0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+                  "0000000000000000000000000000000000000000000000000000000000000000",
+                  "0000000000000000000000000000000000000000000000000000000000000000",
+                  "0000000000000000000000000000000000000000000000000000000000000080",
+                  "0000000000000000000000000000000000000000000000000000000000000044",
+                  "a9059cbb00000000000000000000000011111111111111111111111111111111",
+                  "1111111100000000000000000000000000000000000000000000000000000000",
+                  "0000000100000000000000000000000000000000000000000000000000000000"
+                ]
+              ],
+              [278, 1, []]
+            ]
+          }
+        ]
+      ],
+      "expect": { "ok": false, "quoteCheckError": true, "message": "an unexpected token transfer" }
+    },
+    {
+      "fixture": "eth-usdc",
+      "name": "transfer-user",
+      "patches": [
+        [
+          ["input", "quote", "steps", 1, "items", 0, "data", "data"],
+          {
+            "$words": [
+              [6, 1, ["0000000000000000000000000000000000000000000000000000000000002360"]],
+              [
+                11,
+                6,
+                [
+                  "0000000000000000000000000000000000000000000000000000000000000006",
+                  "00000000000000000000000000000000000000000000000000000000000000c0",
+                  "00000000000000000000000000000000000000000000000000000000000001c0",
+                  "0000000000000000000000000000000000000000000000000000000000000420",
+                  "0000000000000000000000000000000000000000000000000000000000001d40",
+                  "0000000000000000000000000000000000000000000000000000000000001ea0",
+                  "0000000000000000000000000000000000000000000000000000000000002100"
+                ]
+              ],
+              [
+                275,
+                0,
+                [
+                  "000000000000000000000000a0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+                  "0000000000000000000000000000000000000000000000000000000000000000",
+                  "0000000000000000000000000000000000000000000000000000000000000000",
+                  "0000000000000000000000000000000000000000000000000000000000000080",
+                  "0000000000000000000000000000000000000000000000000000000000000044",
+                  "a9059cbb0000000000000000000000009858effd232b4033e47d90003d41ec34",
+                  "ecaeda9400000000000000000000000000000000000000000000000000000000",
+                  "0000000100000000000000000000000000000000000000000000000000000000"
+                ]
+              ],
+              [278, 1, []]
+            ]
+          }
+        ]
+      ],
+      "expect": { "ok": true }
+    },
+    {
+      "fixture": "eth-usdc",
+      "name": "transfer-from",
+      "patches": [
+        [
+          ["input", "quote", "steps", 1, "items", 0, "data", "data"],
+          {
+            "$words": [
+              [6, 1, ["0000000000000000000000000000000000000000000000000000000000002380"]],
+              [
+                11,
+                6,
+                [
+                  "0000000000000000000000000000000000000000000000000000000000000006",
+                  "00000000000000000000000000000000000000000000000000000000000000c0",
+                  "00000000000000000000000000000000000000000000000000000000000001c0",
+                  "0000000000000000000000000000000000000000000000000000000000000420",
+                  "0000000000000000000000000000000000000000000000000000000000001d40",
+                  "0000000000000000000000000000000000000000000000000000000000001ea0",
+                  "0000000000000000000000000000000000000000000000000000000000002100"
+                ]
+              ],
+              [
+                275,
+                0,
+                [
+                  "000000000000000000000000a0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+                  "0000000000000000000000000000000000000000000000000000000000000000",
+                  "0000000000000000000000000000000000000000000000000000000000000000",
+                  "0000000000000000000000000000000000000000000000000000000000000080",
+                  "0000000000000000000000000000000000000000000000000000000000000064",
+                  "23b872dd0000000000000000000000009858effd232b4033e47d90003d41ec34",
+                  "ecaeda9400000000000000000000000011111111111111111111111111111111",
+                  "1111111100000000000000000000000000000000000000000000000000000000",
+                  "0000000100000000000000000000000000000000000000000000000000000000"
+                ]
+              ],
+              [278, 1, []]
+            ]
+          }
+        ]
+      ],
+      "expect": { "ok": false, "quoteCheckError": true, "message": "an unexpected token transfer" }
+    },
+    {
+      "fixture": "eth-usdc",
+      "name": "transfer-truncated",
+      "patches": [
+        [
+          ["input", "quote", "steps", 1, "items", 0, "data", "data"],
+          {
+            "$words": [
+              [6, 1, ["0000000000000000000000000000000000000000000000000000000000002320"]],
+              [
+                11,
+                6,
+                [
+                  "0000000000000000000000000000000000000000000000000000000000000006",
+                  "00000000000000000000000000000000000000000000000000000000000000c0",
+                  "00000000000000000000000000000000000000000000000000000000000001c0",
+                  "0000000000000000000000000000000000000000000000000000000000000420",
+                  "0000000000000000000000000000000000000000000000000000000000001d40",
+                  "0000000000000000000000000000000000000000000000000000000000001ea0",
+                  "0000000000000000000000000000000000000000000000000000000000002100"
+                ]
+              ],
+              [
+                275,
+                0,
+                [
+                  "000000000000000000000000a0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+                  "0000000000000000000000000000000000000000000000000000000000000000",
+                  "0000000000000000000000000000000000000000000000000000000000000000",
+                  "0000000000000000000000000000000000000000000000000000000000000080",
+                  "0000000000000000000000000000000000000000000000000000000000000013",
+                  "a9059cbb00000000000000000000000011111100000000000000000000000000"
+                ]
+              ],
+              [278, 1, []]
+            ]
+          }
+        ]
+      ],
+      "expect": { "ok": false, "quoteCheckError": false }
+    },
+    {
+      "fixture": "eth-usdc",
+      "name": "woct-call",
+      "patches": [
+        [
+          ["input", "quote", "steps", 1, "items", 0, "data", "data"],
+          {
+            "$words": [
+              [6, 1, ["0000000000000000000000000000000000000000000000000000000000002360"]],
+              [
+                11,
+                6,
+                [
+                  "0000000000000000000000000000000000000000000000000000000000000006",
+                  "00000000000000000000000000000000000000000000000000000000000000c0",
+                  "00000000000000000000000000000000000000000000000000000000000001c0",
+                  "0000000000000000000000000000000000000000000000000000000000000420",
+                  "0000000000000000000000000000000000000000000000000000000000001d40",
+                  "0000000000000000000000000000000000000000000000000000000000001ea0",
+                  "0000000000000000000000000000000000000000000000000000000000002100"
+                ]
+              ],
+              [
+                275,
+                0,
+                [
+                  "0000000000000000000000004647e1fe715c9e23959022c2416c71867f5a6e80",
+                  "0000000000000000000000000000000000000000000000000000000000000000",
+                  "0000000000000000000000000000000000000000000000000000000000000000",
+                  "0000000000000000000000000000000000000000000000000000000000000080",
+                  "0000000000000000000000000000000000000000000000000000000000000044",
+                  "095ea7b300000000000000000000000011111111111111111111111111111111",
+                  "1111111100000000000000000000000000000000000000000000000000000000",
+                  "0000000100000000000000000000000000000000000000000000000000000000"
+                ]
+              ],
+              [278, 1, []]
+            ]
+          }
+        ]
+      ],
+      "expect": { "ok": false, "quoteCheckError": true, "message": "an unexpected wOCT movement" }
+    },
+    {
+      "fixture": "eth-usdc",
+      "name": "approval-proxy-call",
+      "patches": [
+        [
+          ["input", "quote", "steps", 1, "items", 0, "data", "data"],
+          {
+            "$words": [
+              [6, 1, ["0000000000000000000000000000000000000000000000000000000000002300"]],
+              [
+                11,
+                6,
+                [
+                  "0000000000000000000000000000000000000000000000000000000000000006",
+                  "00000000000000000000000000000000000000000000000000000000000000c0",
+                  "00000000000000000000000000000000000000000000000000000000000001c0",
+                  "0000000000000000000000000000000000000000000000000000000000000420",
+                  "0000000000000000000000000000000000000000000000000000000000001d40",
+                  "0000000000000000000000000000000000000000000000000000000000001ea0",
+                  "0000000000000000000000000000000000000000000000000000000000002100"
+                ]
+              ],
+              [
+                275,
+                0,
+                [
+                  "000000000000000000000000ccc88a9d1b4ed6b0eaba998850414b24f1c315be",
+                  "0000000000000000000000000000000000000000000000000000000000000000",
+                  "0000000000000000000000000000000000000000000000000000000000000000",
+                  "0000000000000000000000000000000000000000000000000000000000000080",
+                  "0000000000000000000000000000000000000000000000000000000000000000"
+                ]
+              ],
+              [278, 1, []]
+            ]
+          }
+        ]
+      ],
+      "expect": { "ok": false, "quoteCheckError": true, "message": "an unexpected wOCT movement" }
+    },
+    {
+      "fixture": "eth-usdc",
+      "name": "other-call-allowed-to-fail",
+      "patches": [
+        [
+          ["input", "quote", "steps", 1, "items", 0, "data", "data"],
+          {
+            "$words": [
+              [18, 0, ["0000000000000000000000000000000000000000000000000000000000000001"]],
+              [19, 1, []],
+              [278, 1, []]
+            ]
+          }
+        ]
+      ],
+      "expect": { "ok": false, "quoteCheckError": true, "message": "a call is allowed to fail" }
+    },
+    {
+      "fixture": "eth-usdc",
+      "name": "nft-recipient-dirty",
+      "patches": [
+        [
+          ["input", "quote", "steps", 1, "items", 0, "data", "data"],
+          {
+            "$words": [
+              [5, 1, ["ab00000000000000000000002222222222222222222222222222222222222222"]],
+              [278, 1, []]
+            ]
+          }
+        ]
+      ],
+      "expect": { "ok": true }
+    },
+    {
+      "fixture": "eth-usdc",
+      "name": "refund-dirty",
+      "patches": [
+        [
+          ["input", "quote", "steps", 1, "items", 0, "data", "data"],
+          {
+            "$words": [
+              [4, 0, ["ab00000000000000000000003333333333333333333333333333333333333333"]],
+              [5, 1, []],
+              [278, 1, []]
+            ]
+          }
+        ]
+      ],
+      "expect": { "ok": false, "quoteCheckError": false }
+    },
+    {
+      "fixture": "eth-usdc",
+      "name": "data-truncated",
+      "patches": [
+        [["input", "quote", "steps", 1, "items", 0, "data", "data"], { "$words": [[277, 2, []]] }]
+      ],
+      "expect": { "ok": false, "quoteCheckError": false }
+    },
+    {
+      "fixture": "eth-usdc",
+      "name": "other-selector",
+      "patches": [
+        [
+          ["input", "quote", "steps", 1, "items", 0, "data", "data"],
+          { "$words": [[0, 1, ["0xdeadbeef"]]] }
+        ]
+      ],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "an unexpected call to Relay's approval proxy"
+      }
+    },
+    {
+      "fixture": "eth-usdc",
+      "name": "tokens-other",
+      "patches": [
+        [
+          ["input", "quote", "steps", 1, "items", 0, "data", "data"],
+          {
+            "$words": [
+              [8, 1, ["0000000000000000000000001111111111111111111111111111111111111111"]],
+              [278, 1, []]
+            ]
+          }
+        ]
+      ],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "the transaction takes another token"
+      }
+    },
+    {
+      "fixture": "eth-usdc",
+      "name": "tokens-two",
+      "patches": [
+        [
+          ["input", "quote", "steps", 1, "items", 0, "data", "data"],
+          {
+            "$words": [
+              [
+                2,
+                2,
+                [
+                  "0000000000000000000000000000000000000000000000000000000000000120",
+                  "0000000000000000000000000000000000000000000000000000000000000180"
+                ]
+              ],
+              [
+                6,
+                2,
+                [
+                  "0000000000000000000000000000000000000000000000000000000000002280",
+                  "0000000000000000000000000000000000000000000000000000000000000002",
+                  "000000000000000000000000a0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+                ]
+              ],
+              [
+                9,
+                0,
+                [
+                  "0000000000000000000000000000000000000000000000000000000000000002",
+                  "0000000000000000000000000000000000000000000000000000000002f8f0e2"
+                ]
+              ],
+              [10, 1, []],
+              [278, 1, []]
+            ]
+          }
+        ]
+      ],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "the transaction takes another token"
+      }
+    },
+    {
+      "fixture": "eth-usdc",
+      "name": "amount-above-max",
+      "patches": [
+        [
+          ["input", "quote", "steps", 1, "items", 0, "data", "data"],
+          {
+            "$words": [
+              [10, 1, ["0000000000000000000000000000000000000000000000000000000002faf081"]],
+              [278, 1, []]
+            ]
+          }
+        ]
+      ],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "the transaction takes more than you entered"
+      }
+    },
+    {
+      "fixture": "eth-usdc",
+      "name": "proxy-with-value",
+      "patches": [[["input", "quote", "steps", 1, "items", 0, "data", "value"], "1"]],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "an unexpected call to Relay's approval proxy"
+      }
+    },
+    {
+      "fixture": "eth-usdc",
+      "name": "native-token-but-proxy",
+      "patches": [
+        [["input", "token", "address"], "0x0000000000000000000000000000000000000000"],
+        [["input", "token", "symbol"], "ETH"],
+        [["input", "token", "name"], "Ether"],
+        [["input", "token", "decimals"], 18],
+        [["input", "token", "logo"], null]
+      ],
+      "expect": { "ok": false, "quoteCheckError": true, "message": "an approval for another token" }
+    },
+    {
+      "fixture": "eth-usdc",
+      "name": "approve-spender",
+      "patches": [
+        [
+          ["input", "quote", "steps", 0, "items", 0, "data", "data"],
+          "0x095ea7b300000000000000000000000011111111111111111111111111111111111111110000000000000000000000000000000000000000000000000000000002faf080"
+        ]
+      ],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "an approval for a contract that is not Relay's"
+      }
+    },
+    {
+      "fixture": "eth-usdc",
+      "name": "approve-proxy-spender",
+      "patches": [
+        [
+          ["input", "quote", "steps", 0, "items", 0, "data", "data"],
+          "0x095ea7b3000000000000000000000000ccc88a9d1b4ed6b0eaba998850414b24f1c315be0000000000000000000000000000000000000000000000000000000002faf080"
+        ]
+      ],
+      "expect": { "ok": true }
+    },
+    {
+      "fixture": "eth-usdc",
+      "name": "approve-above-max",
+      "patches": [
+        [
+          ["input", "quote", "steps", 0, "items", 0, "data", "data"],
+          "0x095ea7b30000000000000000000000004cd00e387622c35bddb9b4c962c136462338bc310000000000000000000000000000000000000000000000000000000002faf081"
+        ]
+      ],
+      "expect": {
+        "ok": false,
+        "quoteCheckError": true,
+        "message": "an approval above what you entered"
+      }
+    },
+    {
+      "fixture": "eth-usdc",
+      "name": "approve-value",
+      "patches": [[["input", "quote", "steps", 0, "items", 0, "data", "value"], "1"]],
+      "expect": { "ok": false, "quoteCheckError": true, "message": "an approval that sends coins" }
+    },
+    {
+      "fixture": "eth-usdc",
+      "name": "approve-other-token",
+      "patches": [
+        [
+          ["input", "quote", "steps", 0, "items", 0, "data", "to"],
+          "0x1111111111111111111111111111111111111111"
+        ]
+      ],
+      "expect": { "ok": false, "quoteCheckError": true, "message": "an approval for another token" }
+    },
+    {
+      "fixture": "eth-usdc",
+      "name": "approve-is-transfer",
+      "patches": [
+        [
+          ["input", "quote", "steps", 0, "items", 0, "data", "data"],
+          "0xa9059cbb00000000000000000000000011111111111111111111111111111111111111110000000000000000000000000000000000000000000000000000000000000001"
+        ]
+      ],
+      "expect": { "ok": false, "quoteCheckError": true, "message": "an unexpected token call" }
+    }
+  ]
+}

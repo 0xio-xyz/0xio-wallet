@@ -1,0 +1,210 @@
+{
+  "_note": "Recorded 2026-10-09 from https://devnet.octrascan.io/rpc (read-only). Colonies devnet test set, wallet oct2qyup.",
+  "contract": "octEYrJrypHj2xndM39PokSMM5gGoxEEncKB8k9qGFyhrym",
+  "rendererCircle": "octBqsZH2c1GBnBrYhUJPJHdmLuT8YMPXFpEKsPKqEYYYfi",
+  "metadataCircle": "octGsV8bztVuWtMuhAgcrccxx8pS19tMbyqennJp3xegmaK",
+  "wallet": "oct2qyupyPfAof4kJ8LcTdN7fyQkLxiKhfemLCz94NNoxio",
+  "rpc": {
+    "token_uri_30": {
+      "jsonrpc": "2.0",
+      "result": {
+        "result": "oct://octGsV8bztVuWtMuhAgcrccxx8pS19tMbyqennJp3xegmaK/36.json"
+      },
+      "id": 1
+    },
+    "token_uri_40": {
+      "jsonrpc": "2.0",
+      "result": {
+        "result": "data:application/json;utf8,{\"name\":\"Colonies #40\",\"description\":\"A colony composed by burning two. Its ancestry is its seed.\",\"attributes\":[{\"trait_type\":\"Generation\",\"value\":1}],\"image\":\"oct://octBqsZH2c1GBnBrYhUJPJHdmLuT8YMPXFpEKsPKqEYYYfi/index.html?seed=%28C-80a629c97c%2BC-9f083c0661%29%23d28c83f10647a548&contract=octEYrJrypHj2xndM39PokSMM5gGoxEEncKB8k9qGFyhrym&token=40&rpc=https%3A%2F%2Fdevnet.octrascan.io%2Frpc&st=gen:1,held:26936,moves:1,feeds:0,nectar:0,burned_pct:94,fed:0,mkt:36,mkt_at:1633749,grail:0,sealed:0,epoch:1658454\",\"animation_url\":\"oct://octBqsZH2c1GBnBrYhUJPJHdmLuT8YMPXFpEKsPKqEYYYfi/index.html?seed=%28C-80a629c97c%2BC-9f083c0661%29%23d28c83f10647a548&contract=octEYrJrypHj2xndM39PokSMM5gGoxEEncKB8k9qGFyhrym&token=40&rpc=https%3A%2F%2Fdevnet.octrascan.io%2Frpc&st=gen:1,held:26936,moves:1,feeds:0,nectar:0,burned_pct:94,fed:0,mkt:36,mkt_at:1633749,grail:0,sealed:0,epoch:1658454\"}"
+      },
+      "id": 1
+    },
+    "token_uri_20_burned": {
+      "jsonrpc": "2.0",
+      "error": {
+        "code": -32000,
+        "message": "execution reverted"
+      },
+      "id": 1
+    },
+    "owner_of_20_burned": {
+      "jsonrpc": "2.0",
+      "error": {
+        "code": -32000,
+        "message": "execution reverted"
+      },
+      "id": 1
+    },
+    "owner_of_30": {
+      "jsonrpc": "2.0",
+      "result": {
+        "result": "oct2qyupyPfAof4kJ8LcTdN7fyQkLxiKhfemLCz94NNoxio"
+      },
+      "id": 1
+    },
+    "balance_of": {
+      "jsonrpc": "2.0",
+      "result": {
+        "result": "2"
+      },
+      "id": 1
+    },
+    "get_name": {
+      "jsonrpc": "2.0",
+      "result": {
+        "result": "Colonies"
+      },
+      "id": 1
+    },
+    "get_total_supply": {
+      "jsonrpc": "2.0",
+      "result": {
+        "result": "4"
+      },
+      "id": 1
+    },
+    "owners_page_0_50": {
+      "jsonrpc": "2.0",
+      "result": {
+        "result": "-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,oct2qyupyPfAof4kJ8LcTdN7fyQkLxiKhfemLCz94NNoxio,-,-,-,-,-,-,-,-,-,oct2qyupyPfAof4kJ8LcTdN7fyQkLxiKhfemLCz94NNoxio,-,-,-,-,-,-,-,-,-"
+      },
+      "id": 1
+    },
+    "view_busy": {
+      "jsonrpc": "2.0",
+      "error": {
+        "code": -32005,
+        "message": "Program view busy"
+      },
+      "id": 1
+    },
+    "tokens_by_address": {
+      "jsonrpc": "2.0",
+      "result": {
+        "address": "oct2qyupyPfAof4kJ8LcTdN7fyQkLxiKhfemLCz94NNoxio",
+        "tokens": [
+          {
+            "address": "oct2anqvVd5ciBGzqtVZK5pKZehbrQgPnDcw7pnWnCNSWkK",
+            "name": "Geodesics",
+            "symbol": "GDSC",
+            "total_supply": "8",
+            "balance": "1",
+            "balance_kind": "plain",
+            "balance_is_encrypted": false,
+            "decimals": "0",
+            "owner": "octEwb4krH6vW3Pr23hps9r8pTZ78dKpdpdmiY612FynidH"
+          }
+        ],
+        "count": 1,
+        "offset": 0,
+        "next_offset": 1,
+        "limited": true
+      },
+      "id": 1
+    },
+    "circle_asset_meta_36": {
+      "jsonrpc": "2.0",
+      "result": {
+        "circle_id": "octGsV8bztVuWtMuhAgcrccxx8pS19tMbyqennJp3xegmaK",
+        "canonical_path": "/36.json",
+        "content_type": "application/json",
+        "encoding": "identity",
+        "size_bytes": "2761",
+        "blob_hash": "c466945b36d29150d7a15c3b244f776b1c0caa9759fb4cb8f2fc74a0167eabce",
+        "body_b64": "eyJuYW1lIjoiQ29sb25pZXMgTm8uIDM3IiwiZGVzY3JpcHRpb24iOiJBIGxpdmluZyBhbnQgY29sb255LiBUaG91c2FuZHMgb2Ygd29ya2VycyBydW4gYnkgYSB0cmFpbmVkIGJyYWluIGhhdWwgcmVhbCBncmFpbnMgb2YgcGlnbWVudCBhbmQgYnVpbGQgdGhpcyBmaWd1cmUgdGhlbXNlbHZlcy4gVHdvIGNvbG9uaWVzIGNhbiBiZSBidXJuZWQgdG8gY29tcG9zZSBvbmUuIiwiaW1hZ2UiOiJvY3Q6Ly9vY3RCcXNaSDJjMUdCbkJyWWhVSlBKSGRtTHVUOFlNUFhGcEVLc1BLcUVZWVlmaS9pbmRleC5odG1sP3NlZWQ9Qy00ODViMDkyMzBjJmNvbnRyYWN0PW9jdEVZckpyeXBIajJ4bmRNMzlQb2tTTU01Z0dveEVFbmNLQjhrOXFHRnlocnltJmFydD0zNiZycGM9aHR0cHMlM0ElMkYlMkZkZXZuZXQub2N0cmFzY2FuLmlvJTJGcnBjIiwiYW5pbWF0aW9uX3VybCI6Im9jdDovL29jdEJxc1pIMmMxR0JuQnJZaFVKUEpIZG1MdVQ4WU1QWEZwRUtzUEtxRVlZWWZpL2luZGV4Lmh0bWw/c2VlZD1DLTQ4NWIwOTIzMGMmY29udHJhY3Q9b2N0RVlySnJ5cEhqMnhuZE0zOVBva1NNTTVnR294RUVuY0tCOGs5cUdGeWhyeW0mYXJ0PTM2JnJwYz1odHRwcyUzQSUyRiUyRmRldm5ldC5vY3RyYXNjYW4uaW8lMkZycGMiLCJleHRlcm5hbF91cmwiOiJvY3Q6Ly9vY3RCcXNaSDJjMUdCbkJyWWhVSlBKSGRtTHVUOFlNUFhGcEVLc1BLcUVZWVlmaS9pbmRleC5odG1sP3NlZWQ9Qy00ODViMDkyMzBjJmNvbnRyYWN0PW9jdEVZckpyeXBIajJ4bmRNMzlQb2tTTU01Z0dveEVFbmNLQjhrOXFHRnlocnltJmFydD0zNiZycGM9aHR0cHMlM0ElMkYlMkZkZXZuZXQub2N0cmFzY2FuLmlvJTJGcnBjIiwiYXJ0X2luZGV4IjozNiwic2VlZCI6IkMtNDg1YjA5MjMwYyIsInJhcml0eSI6eyJncmFkZSI6ImNvbW1vbiIsIm9uZV9pbiI6NzI1fSwicGFsZXR0ZV9zd2F0Y2giOlsiIzFhMjYyMiIsIiNmM2ZmZmEiLCIjZTBmZmYxIiwiI2NkZmZlOSIsIiNiN2ZmZGMiLCIjYTNmZmRlIiwiIzkyZmZjOSIsIiM4MWZmY2YiLCIjNzFmZmM5IiwiIzY0ZmZjNiIsIiM1M2Y1YmMiLCIjZTZmYWYzIiwiI2Y5ZmZmYyIsIiNhMmViY2IiLCIjOWI1YjNlIiwiIzE0MTQxNiIsIiNjZmZhZTYiLCIjN2JjNWE1IiwiI2EzZDJiYyIsIiNjNGQ2Y2QiLCIjOTNkY2JjIiwiIzIyMjQyNSIsIiM1ZDgzNzMiLCIjMmIzNTMyIiwiIzQzNDQ0NSIsIiM0YzMxMjciLCIjM2M1MzRhIiwiI2VjZmFmNCIsIiM2MjY0NjQiLCIjM2MyOTIyIiwiIzhiNTMzOSIsIiM2MzNkMmQiLCIjN2I0YTM1IiwiIzUyNTQ1NCIsIiM3ZGIzOWMiLCIjOWI5ZDlkIiwiIzg2OGE4OSIsIiM0YTY0NTkiLCIjZGRlYmU0IiwiIzMzNDQzZSJdLCJhdHRyaWJ1dGVzIjpbeyJ0cmFpdF90eXBlIjoiR3JhZGUiLCJ2YWx1ZSI6IkNvbW1vbiJ9LHsidHJhaXRfdHlwZSI6Ikhvb2QiLCJ2YWx1ZSI6IlNlYWZvYW0ifSx7InRyYWl0X3R5cGUiOiJIb29kaWUiLCJ2YWx1ZSI6IkljZSBCbHVlIn0seyJ0cmFpdF90eXBlIjoiRXllIFJpbmciLCJ2YWx1ZSI6IldoaXRlIn0seyJ0cmFpdF90eXBlIjoiU2tpbiIsInZhbHVlIjoiQnJvd24ifSx7InRyYWl0X3R5cGUiOiJFeHByZXNzaW9uIiwidmFsdWUiOiJTdGFyZ2F6aW5nIn0seyJ0cmFpdF90eXBlIjoiUG9zZSIsInZhbHVlIjoiRnJvbnQifSx7InRyYWl0X3R5cGUiOiJCYWNrZ3JvdW5kIiwidmFsdWUiOiJQYXN0ZWwifSx7InRyYWl0X3R5cGUiOiJIZWFkd2VhciIsInZhbHVlIjoiTm9uZSJ9LHsidHJhaXRfdHlwZSI6IkV5ZXdlYXIiLCJ2YWx1ZSI6Ik5vbmUifSx7InRyYWl0X3R5cGUiOiJNb3V0aCIsInZhbHVlIjoiTm9uZSJ9LHsidHJhaXRfdHlwZSI6IkJhY2siLCJ2YWx1ZSI6Ik5vbmUifSx7InRyYWl0X3R5cGUiOiJIYW5kcyIsInZhbHVlIjoiTm9uZSJ9LHsidHJhaXRfdHlwZSI6Ikl0ZW0iLCJ2YWx1ZSI6Ik5vbmUifSx7InRyYWl0X3R5cGUiOiJNYXJrIiwidmFsdWUiOiJOb25lIn0seyJ0cmFpdF90eXBlIjoiUGFsZXR0ZSIsInZhbHVlIjoiTWludCBGcm9zdCJ9LHsidHJhaXRfdHlwZSI6IlRlbXBlcmFtZW50IiwidmFsdWUiOiJTY2F0dGVyZWQifSx7InRyYWl0X3R5cGUiOiJUZW1wZXIiLCJ2YWx1ZSI6IkluZHVzdHJpb3VzIn0seyJ0cmFpdF90eXBlIjoiU3ltbWV0cnkiLCJ2YWx1ZSI6IjItZm9sZCJ9LHsidHJhaXRfdHlwZSI6Ikdyb3VuZCIsInZhbHVlIjoiU29vdCJ9LHsidHJhaXRfdHlwZSI6IkFzc2VtYmx5IiwidmFsdWUiOiJTZXJwZW50aW5lIn0seyJ0cmFpdF90eXBlIjoiSW5kdXN0cnkiLCJ2YWx1ZSI6NywiZGlzcGxheV90eXBlIjoiYm9vc3RfcGVyY2VudGFnZSJ9LHsidHJhaXRfdHlwZSI6IlBhdGllbmNlIiwidmFsdWUiOjM0LCJkaXNwbGF5X3R5cGUiOiJib29zdF9wZXJjZW50YWdlIn0seyJ0cmFpdF90eXBlIjoiRXhwbG9yYXRpb24iLCJ2YWx1ZSI6MTIsImRpc3BsYXlfdHlwZSI6ImJvb3N0X3BlcmNlbnRhZ2UifSx7InRyYWl0X3R5cGUiOiJDb2hlc2lvbiIsInZhbHVlIjoyLCJkaXNwbGF5X3R5cGUiOiJib29zdF9wZXJjZW50YWdlIn0seyJ0cmFpdF90eXBlIjoiRGVjaXNpdmVuZXNzIiwidmFsdWUiOjQ3LCJkaXNwbGF5X3R5cGUiOiJib29zdF9wZXJjZW50YWdlIn0seyJ0cmFpdF90eXBlIjoiR2VuZXJhdGlvbiIsInZhbHVlIjowLCJkaXNwbGF5X3R5cGUiOiJudW1iZXIifSx7InRyYWl0X3R5cGUiOiJHcmFpbnMiLCJ2YWx1ZSI6MTQxNjgsImRpc3BsYXlfdHlwZSI6Im51bWJlciJ9LHsidHJhaXRfdHlwZSI6IldvcmtlcnMiLCJ2YWx1ZSI6MjAxMSwiZGlzcGxheV90eXBlIjoibnVtYmVyIn1dfQ=="
+      },
+      "id": 1
+    }
+  },
+  "abiMethods": [
+    "mint",
+    "mint_many",
+    "commit_reveal",
+    "reveal",
+    "merge",
+    "feed",
+    "release",
+    "claim_legacy",
+    "claim_final",
+    "set_price_feed",
+    "set_price_method",
+    "set_milestone",
+    "settle_circulars",
+    "set_bear_floor",
+    "lock_price_feed",
+    "sync_market",
+    "set_merge_fee",
+    "lock_merge_fee",
+    "transfer",
+    "approve",
+    "transfer_from",
+    "set_provenance",
+    "lock_provenance",
+    "open_merge",
+    "set_renderer_circle",
+    "set_metadata_circle",
+    "set_royalty_recip",
+    "set_mint_price",
+    "lock_mint_price",
+    "sweep_proceeds",
+    "transfer_ownership",
+    "owner_of",
+    "balance_of",
+    "seed_of",
+    "gen_of",
+    "lineage_of",
+    "child_of_token",
+    "animation_url_of",
+    "owners_page",
+    "token_of_art",
+    "token_uri",
+    "minted_by_wallet",
+    "get_approved",
+    "royalty_info",
+    "creator_of",
+    "supply_info",
+    "state_of",
+    "milestone_info",
+    "legacy_of_token",
+    "legacy_info",
+    "grail_info",
+    "bear_info",
+    "get_merge_fee",
+    "is_released",
+    "get_holder_count",
+    "get_price_feed",
+    "market_info",
+    "nectar_info",
+    "locks_info",
+    "proceeds_info",
+    "reveal_strings",
+    "reveal_info",
+    "get_name",
+    "get_symbol",
+    "decimals",
+    "get_total_supply",
+    "get_max_supply",
+    "get_max_per_wallet",
+    "get_mint_price",
+    "is_merge_open",
+    "is_revealed",
+    "get_owner",
+    "get_renderer_circle",
+    "get_metadata_circle",
+    "get_royalty_recip",
+    "get_royalty_bps",
+    "get_provenance",
+    "owner_of_call",
+    "balance_of_call",
+    "seed_of_call",
+    "get_total_supply_call"
+  ],
+  "renderer": {
+    "size_bytes": "328781",
+    "readsQueryWith": "new URLSearchParams(location.search)",
+    "defaultRpc": "https://octra.network/rpc",
+    "fetch": "fetch(rpcUrl,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({jsonrpc:'2.0',id:1,method:'contract_call',params:[contract,method,args,null]})})",
+    "views": ["token_of_art", "seed_of", "state_of"],
+    "refreshMs": 300000
+  }
+}

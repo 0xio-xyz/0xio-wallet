@@ -1,0 +1,12 @@
+dist
+node_modules
+package-lock.json
+*.md
+# Generated WASM glue files
+src/wasm/pvac_rs.js
+src/wasm/pvac_rs.d.ts
+src/wasm/pvac_rs_bg.wasm.d.ts
+# Kept byte-identical with 0xio-app
+src/lib/walletArt.ts
+# Shared test vectors, kept byte-identical with every client
+src/__tests__/fixtures/rpc-retry-vectors.json

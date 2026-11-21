@@ -1,0 +1,328 @@
+{
+  "outRaw": "631679937",
+  "quote": {
+    "requestId": "0x179209706123e77a6416a337fe1aa9d91565ba3e3ece6487ec1764d796c2b0ce",
+    "steps": [
+      {
+        "id": "deposit",
+        "action": "Confirm transaction in your wallet",
+        "description": "Depositing funds to the relayer to execute the swap for wOCT",
+        "kind": "transaction",
+        "items": [
+          {
+            "status": "incomplete",
+            "data": {
+              "from": "0x9858EfFD232B4033E47d90003D41EC34EcaEda94",
+              "to": "0x4cd00e387622c35bddb9b4c962c136462338bc31",
+              "data": "0x49290c1c0000000000000000000000009858effd232b4033e47d90003d41ec34ecaeda944ce3eb4e0a2b93f472eb84df73696458e1582cedfb65bb6cdea993548abc1903",
+              "value": "9983810170223651",
+              "chainId": 8453,
+              "gas": "32697",
+              "maxFeePerGas": "6500000",
+              "maxPriorityFeePerGas": "1000000"
+            },
+            "check": {
+              "endpoint": "/intents/status?requestId=0x179209706123e77a6416a337fe1aa9d91565ba3e3ece6487ec1764d796c2b0ce",
+              "method": "GET"
+            }
+          }
+        ],
+        "requestId": "0x179209706123e77a6416a337fe1aa9d91565ba3e3ece6487ec1764d796c2b0ce",
+        "depositAddress": ""
+      }
+    ],
+    "fees": {
+      "gas": {
+        "currency": {
+          "chainId": 8453,
+          "address": "0x0000000000000000000000000000000000000000",
+          "symbol": "ETH",
+          "name": "Ether",
+          "decimals": 18,
+          "metadata": { "logoURI": "https://assets.relay.link/icons/1/light.png", "verified": true }
+        },
+        "amount": "214948915751",
+        "amountFormatted": "0.000000214948915751",
+        "amountUsd": "0.000528",
+        "minimumAmount": "214948915751"
+      },
+      "relayer": {
+        "currency": {
+          "chainId": 8453,
+          "address": "0x0000000000000000000000000000000000000000",
+          "symbol": "ETH",
+          "name": "Ether",
+          "decimals": 18,
+          "metadata": { "logoURI": "https://assets.relay.link/icons/1/light.png", "verified": true }
+        },
+        "amount": "269067220040715",
+        "amountFormatted": "0.000269067220040715",
+        "amountUsd": "0.660687",
+        "minimumAmount": "269067220040715"
+      },
+      "relayerGas": {
+        "currency": {
+          "chainId": 8453,
+          "address": "0x0000000000000000000000000000000000000000",
+          "symbol": "ETH",
+          "name": "Ether",
+          "decimals": 18,
+          "metadata": { "logoURI": "https://assets.relay.link/icons/1/light.png", "verified": true }
+        },
+        "amount": "244448346000000",
+        "amountFormatted": "0.000244448346",
+        "amountUsd": "0.600236",
+        "minimumAmount": "244448346000000"
+      },
+      "relayerService": {
+        "currency": {
+          "chainId": 8453,
+          "address": "0x0000000000000000000000000000000000000000",
+          "symbol": "ETH",
+          "name": "Ether",
+          "decimals": 18,
+          "metadata": { "logoURI": "https://assets.relay.link/icons/1/light.png", "verified": true }
+        },
+        "amount": "24618874040715",
+        "amountFormatted": "0.000024618874040715",
+        "amountUsd": "0.060451",
+        "minimumAmount": "24618874040715"
+      },
+      "app": {
+        "currency": {
+          "chainId": 8453,
+          "address": "0x0000000000000000000000000000000000000000",
+          "symbol": "ETH",
+          "name": "Ether",
+          "decimals": 18,
+          "metadata": { "logoURI": "https://assets.relay.link/icons/1/light.png", "verified": true }
+        },
+        "amount": "24226291646341",
+        "amountFormatted": "0.000024226291646341",
+        "amountUsd": "0.059487",
+        "minimumAmount": "24226291646341"
+      },
+      "subsidized": {
+        "currency": {
+          "chainId": 8453,
+          "address": "0x0000000000000000000000000000000000000000",
+          "symbol": "ETH",
+          "name": "Ether",
+          "decimals": 18,
+          "metadata": { "logoURI": "https://assets.relay.link/icons/1/light.png", "verified": true }
+        },
+        "amount": "0",
+        "amountFormatted": "0.0",
+        "amountUsd": "0",
+        "minimumAmount": "0"
+      }
+    },
+    "details": {
+      "operation": "swap",
+      "sender": "0x9858EfFD232B4033E47d90003D41EC34EcaEda94",
+      "recipient": "0x9858EfFD232B4033E47d90003D41EC34EcaEda94",
+      "currencyIn": {
+        "currency": {
+          "chainId": 8453,
+          "address": "0x0000000000000000000000000000000000000000",
+          "symbol": "ETH",
+          "name": "Ether",
+          "decimals": 18,
+          "metadata": { "logoURI": "https://assets.relay.link/icons/1/light.png", "verified": true }
+        },
+        "amount": "9983810170223651",
+        "amountFormatted": "0.009983810170223651",
+        "amountUsd": "24.514967",
+        "minimumAmount": "9983810170223651"
+      },
+      "currencyOut": {
+        "currency": {
+          "chainId": 1,
+          "address": "0x4647e1fe715c9e23959022c2416c71867f5a6e80",
+          "symbol": "wOCT",
+          "name": "Wrapped OCT",
+          "decimals": 6,
+          "metadata": {
+            "logoURI": "https://coin-images.coingecko.com/coins/images/71026/large/octra.png?1765330700",
+            "verified": false
+          }
+        },
+        "amount": "631679937",
+        "amountFormatted": "631.679937",
+        "amountUsd": "23.295724",
+        "minimumAmount": "631679937"
+      },
+      "refundCurrency": {
+        "currency": {
+          "chainId": 8453,
+          "address": "0x0000000000000000000000000000000000000000",
+          "symbol": "ETH",
+          "name": "Ether",
+          "decimals": 18,
+          "metadata": { "logoURI": "https://assets.relay.link/icons/1/light.png", "verified": true }
+        },
+        "amount": "9983810170223651",
+        "amountFormatted": "0.009983810170223651",
+        "amountUsd": "24.514967",
+        "minimumAmount": "9983810170223651"
+      },
+      "totalImpact": { "usd": "-1.219243", "percent": "-4.97" },
+      "swapImpact": { "usd": "-0.499069", "percent": "-2.04" },
+      "expandedPriceImpact": {
+        "swap": { "usd": "-0.503828" },
+        "execution": { "usd": "-0.620236" },
+        "relay": { "usd": "-0.035692" },
+        "app": { "usd": "-0.059487" },
+        "sponsored": { "usd": "0" }
+      },
+      "rate": "63270.427445021174",
+      "slippageTolerance": {
+        "total": "200",
+        "origin": { "usd": "0.000000", "value": "0", "percent": "0.00" },
+        "destination": { "usd": "0.000000", "value": "0", "percent": "0.00" }
+      },
+      "timeEstimate": 3,
+      "userBalance": "0",
+      "isFixedRate": false,
+      "route": {
+        "origin": {
+          "inputCurrency": {
+            "currency": {
+              "chainId": 8453,
+              "address": "0x0000000000000000000000000000000000000000",
+              "symbol": "ETH",
+              "name": "Ether",
+              "decimals": 18,
+              "metadata": {
+                "logoURI": "https://assets.relay.link/icons/1/light.png",
+                "verified": true
+              }
+            },
+            "amount": "9983810170223651",
+            "amountFormatted": "0.009983810170223651",
+            "amountUsd": "24.514967",
+            "minimumAmount": "9983810170223651"
+          },
+          "outputCurrency": {
+            "currency": {
+              "chainId": 8453,
+              "address": "0x0000000000000000000000000000000000000000",
+              "symbol": "ETH",
+              "name": "Ether",
+              "decimals": 18,
+              "metadata": {
+                "logoURI": "https://assets.relay.link/icons/1/light.png",
+                "verified": true
+              }
+            },
+            "amount": "9983810170223651",
+            "amountFormatted": "0.009983810170223651",
+            "amountUsd": "24.514967",
+            "minimumAmount": "9983810170223651"
+          },
+          "router": "relay"
+        },
+        "destination": {
+          "inputCurrency": {
+            "currency": {
+              "chainId": 1,
+              "address": "0x0000000000000000000000000000000000000000",
+              "symbol": "ETH",
+              "name": "Ether",
+              "decimals": 18,
+              "metadata": {
+                "logoURI": "https://assets.relay.link/icons/1/light.png",
+                "verified": true
+              }
+            },
+            "amount": "9690516658536595",
+            "amountFormatted": "0.009690516658536595",
+            "amountUsd": "23.794793",
+            "minimumAmount": "9690516658536595"
+          },
+          "outputCurrency": {
+            "currency": {
+              "chainId": 1,
+              "address": "0x4647e1fe715c9e23959022c2416c71867f5a6e80",
+              "symbol": "wOCT",
+              "name": "Wrapped OCT",
+              "decimals": 6,
+              "metadata": {
+                "logoURI": "https://coin-images.coingecko.com/coins/images/71026/large/octra.png?1765330700",
+                "verified": false
+              }
+            },
+            "amount": "631679937",
+            "amountFormatted": "631.679937",
+            "amountUsd": "23.295724",
+            "minimumAmount": "631679937"
+          },
+          "router": "0x"
+        }
+      }
+    },
+    "protocol": {
+      "v2": {
+        "orderId": "0x4ce3eb4e0a2b93f472eb84df73696458e1582cedfb65bb6cdea993548abc1903",
+        "hubType": "onchain",
+        "orderData": {
+          "version": "v1",
+          "solverChainId": "base",
+          "solver": "0xf70da97812cb96acdf810712aa562db8dfa3dbef",
+          "salt": "0x9bbbef376bb4725b55a047a01e57f0f07c6fc22c5bc0aa94e813379e91e44886",
+          "inputs": [
+            {
+              "payment": {
+                "chainId": "base",
+                "currency": "0x0000000000000000000000000000000000000000",
+                "amount": "9983810170223651",
+                "weight": "1"
+              },
+              "refunds": [
+                {
+                  "chainId": "base",
+                  "recipient": "0x9858EfFD232B4033E47d90003D41EC34EcaEda94",
+                  "currency": "0x0000000000000000000000000000000000000000",
+                  "minimumAmount": "0",
+                  "deadline": 1792701861,
+                  "extraData": "0x000000000000000000000000b92fe925dc43a0ecde6c8b1a2709c170ec4fff4f"
+                },
+                {
+                  "chainId": "ethereum",
+                  "recipient": "0x9858EfFD232B4033E47d90003D41EC34EcaEda94",
+                  "currency": "0x0000000000000000000000000000000000000000",
+                  "minimumAmount": "0",
+                  "deadline": 1792701861,
+                  "extraData": "0x000000000000000000000000b92fe925dc43a0ecde6c8b1a2709c170ec4fff4f"
+                }
+              ]
+            }
+          ],
+          "output": {
+            "chainId": "ethereum",
+            "payments": [
+              {
+                "recipient": "0xb92fe925dc43a0ecde6c8b1a2709c170ec4fff4f",
+                "currency": "0x4647e1fe715c9e23959022c2416c71867f5a6e80",
+                "minimumAmount": "631679937",
+                "expectedAmount": "631679937"
+              }
+            ],
+            "calls": [
+              "0x000000000000000000000000e7ed69b852fd2a1406080b26a37e8e04e7da4cae00000000000000000000000000000000000000000000000000000000000000600000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000a4e3e3aed000000000000000000000000000000000000000000000000000000000000000400000000000000000000000000000000000000000000000000000000025a6abc1000000000000000000000000000000000000000000000000000000000000002f6f6374354d724e666a6958464e52444c77736f646e385a6d3968444b4e474159743365514443513532625370434871000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+            ],
+            "deadline": 1792701861,
+            "extraData": "0x000000000000000000000000b92fe925dc43a0ecde6c8b1a2709c170ec4fff4f"
+          },
+          "fees": []
+        },
+        "paymentDetails": {
+          "chainId": "base",
+          "depository": "0x4cd00e387622c35bddb9b4c962c136462338bc31",
+          "currency": "0x0000000000000000000000000000000000000000",
+          "amount": "9983810170223651"
+        }
+      }
+    }
+  }
+}

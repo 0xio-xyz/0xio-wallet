@@ -1,0 +1,92 @@
+{
+  "source": "octra-labs/webcli a9a6ce6 (2026-11-19) lib/rpc_retry.hpp, lib/rpc_io.hpp, lib/rpc_gate.hpp",
+  "constants": {
+    "retryWindowSeconds": 25,
+    "retryAfterCapSeconds": 5,
+    "pauseSpread": 0.2,
+    "pausesSeconds": [0.25, 0.5, 1, 2, 4],
+    "stateChangedCode": -32012,
+    "slots": 4,
+    "pollSlots": 2,
+    "gateMaxRequestSeconds": 60
+  },
+  "writes": [
+    "octra_submit", "octra_submitBatch", "staging_remove", "octra_registerPublicKey", "octra_registerPvacPubkey",
+    "octra_privateTransfer", "octra_circleComputeSubmit", "contract_verify", "octra_programVerify",
+    "contract_saveAbi", "octra_programSaveAbi"
+  ],
+  "classify": [
+    {"name": "connect failed", "link": "unopened", "fault": "network", "unsent": true},
+    {"name": "tls certificate rejected", "link": "untrusted", "fault": "none", "unsent": true},
+    {"name": "connection reset after send", "link": "broken", "fault": "network", "unsent": false},
+    {"name": "read timeout", "link": "expired", "fault": "network", "unsent": false},
+    {"name": "plain success", "link": "answered", "status": 200, "body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"result\":{}}", "fault": "none", "unsent": false},
+    {"name": "429 without capacity text", "link": "answered", "status": 429, "body": "", "fault": "capacity", "unsent": false},
+    {"name": "429 with capacity error (id null)", "link": "answered", "status": 429, "body": "{\"jsonrpc\":\"2.0\",\"id\":null,\"error\":{\"code\":-32005,\"message\":\"RPC Capacity reached\"}}", "fault": "capacity", "unsent": true},
+    {"name": "503", "link": "answered", "status": 503, "body": "", "fault": "capacity", "unsent": false},
+    {"name": "503 with capacity error", "link": "answered", "status": 503, "body": "{\"jsonrpc\":\"2.0\",\"id\":null,\"error\":{\"code\":-32005,\"message\":\"capacity\"}}", "fault": "capacity", "unsent": false},
+    {"name": "502 gateway", "link": "answered", "status": 502, "body": "", "fault": "network", "unsent": false},
+    {"name": "504 gateway", "link": "answered", "status": 504, "body": "", "fault": "network", "unsent": false},
+    {"name": "408", "link": "answered", "status": 408, "body": "", "fault": "network", "unsent": false},
+    {"name": "425", "link": "answered", "status": 425, "body": "", "fault": "network", "unsent": false},
+    {"name": "522 cloudflare", "link": "answered", "status": 522, "body": "", "fault": "network", "unsent": false},
+    {"name": "500 is not retried", "link": "answered", "status": 500, "body": "", "fault": "none", "unsent": false},
+    {"name": "200 capacity error with id null", "link": "answered", "status": 200, "body": "{\"jsonrpc\":\"2.0\",\"id\":null,\"error\":{\"code\":-32005,\"message\":\"Capacity\"}}", "fault": "capacity", "unsent": false},
+    {"name": "200 capacity text but id set is a normal error", "link": "answered", "status": 200, "body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32005,\"message\":\"capacity\"}}", "fault": "none", "unsent": false},
+    {"name": "200 state changed during read", "link": "answered", "status": 200, "body": "{\"jsonrpc\":\"2.0\",\"id\":7,\"error\":{\"code\":-32012,\"message\":\"committed state changed during read\"}}", "fault": "state", "unsent": false},
+    {"name": "200 state changed with id null is not state", "link": "answered", "status": 200, "body": "{\"jsonrpc\":\"2.0\",\"id\":null,\"error\":{\"code\":-32012,\"message\":\"x\"}}", "fault": "none", "unsent": false},
+    {"name": "200 other json-rpc error", "link": "answered", "status": 200, "body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"error\":{\"code\":-32602,\"message\":\"invalid params\"}}", "fault": "none", "unsent": false}
+  ],
+  "repeat": [
+    {"fault": "none", "unsent": false, "write": false, "repeat": false},
+    {"fault": "network", "unsent": false, "write": false, "repeat": true},
+    {"fault": "network", "unsent": false, "write": true, "repeat": false},
+    {"fault": "network", "unsent": true, "write": true, "repeat": true},
+    {"fault": "capacity", "unsent": true, "write": true, "repeat": true},
+    {"fault": "capacity", "unsent": false, "write": true, "repeat": false},
+    {"fault": "state", "unsent": false, "write": false, "repeat": true},
+    {"fault": "state", "unsent": false, "write": true, "repeat": false}
+  ],
+  "pause": [
+    {"attempt": 1, "retryAfter": null, "draw": 0, "seconds": 0.25},
+    {"attempt": 1, "retryAfter": null, "draw": 1, "seconds": 0.3},
+    {"attempt": 2, "retryAfter": null, "draw": 0.5, "seconds": 0.55},
+    {"attempt": 3, "retryAfter": null, "draw": 0, "seconds": 1},
+    {"attempt": 5, "retryAfter": null, "draw": 0, "seconds": 4},
+    {"attempt": 9, "retryAfter": null, "draw": 0, "seconds": 4},
+    {"attempt": 0, "retryAfter": null, "draw": 0, "seconds": 0.25},
+    {"attempt": 1, "retryAfter": 2, "draw": 0, "seconds": 2},
+    {"attempt": 1, "retryAfter": 30, "draw": 0, "seconds": 5},
+    {"attempt": 1, "retryAfter": 30, "draw": 1, "seconds": 6},
+    {"attempt": 2, "retryAfter": 3, "draw": 0.5, "seconds": 3.3}
+  ],
+  "retryAfterHeader": [
+    {"header": "3", "value": 3},
+    {"header": "0", "value": null},
+    {"header": "", "value": null},
+    {"header": "-1", "value": null},
+    {"header": "1.5", "value": null},
+    {"header": "Wed, 21 Oct 2026 07:28:00 GMT", "value": null},
+    {"header": "86400", "value": 86400},
+    {"header": "86401", "value": null}
+  ],
+  "window": [
+    {"requestSeconds": 10, "windowSeconds": 10},
+    {"requestSeconds": 25, "windowSeconds": 25},
+    {"requestSeconds": 120, "windowSeconds": 25}
+  ],
+  "gateRoom": [
+    {"busy": 0, "polls": 0, "usersWaiting": 0, "lane": "poll", "room": true},
+    {"busy": 2, "polls": 2, "usersWaiting": 0, "lane": "poll", "room": false},
+    {"busy": 1, "polls": 1, "usersWaiting": 1, "lane": "poll", "room": false},
+    {"busy": 3, "polls": 2, "usersWaiting": 1, "lane": "user", "room": true},
+    {"busy": 4, "polls": 0, "usersWaiting": 0, "lane": "user", "room": false}
+  ],
+  "claimOutput": [
+    {"name": "claimed 0 is unspent", "reply": {"ok": true, "claimed": 0}, "state": "unspent"},
+    {"name": "claimed 1 is spent", "reply": {"ok": true, "claimed": 1}, "state": "spent"},
+    {"name": "missing claimed is unknown", "reply": {"ok": true}, "state": "unknown"},
+    {"name": "claimed not an integer is unknown", "reply": {"ok": true, "claimed": "0"}, "state": "unknown"},
+    {"name": "rpc failure is unknown", "reply": {"ok": false}, "state": "unknown"}
+  ]
+}

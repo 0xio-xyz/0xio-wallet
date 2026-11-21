@@ -1,0 +1,255 @@
+/* Self-owned entrance animations.
+ *
+ * This project is Tailwind v4 with NO tailwindcss-animate plugin installed, so `animate-in`,
+ * `fade-in`, `zoom-in-*`, and `slide-in-from-*` produce no CSS on their own - every element
+ * using them pops in instantly. These rules revive them without adding a dependency (wallet
+ * policy: keep deps minimal). DOM classes may carry the `!` important suffix (e.g. `animate-in!`),
+ * so each selector matches both the plain token and the `!`-suffixed token via [class~=...].
+ */
+
+@keyframes tw-enter {
+  from {
+    opacity: var(--tw-enter-opacity, 1);
+    transform: translate3d(var(--tw-enter-tx, 0), var(--tw-enter-ty, 0), 0)
+      scale(var(--tw-enter-scale, 1));
+  }
+}
+
+[class~='animate-in'],
+[class~='animate-in!'] {
+  /* Reset the enter vars per element so an inherited value (these custom props inherit) from a
+     parent's fade-in/zoom-in can't leak onto a child. The specific classes below override these
+     on the same element via source order. */
+  --tw-enter-opacity: 1;
+  --tw-enter-tx: 0;
+  --tw-enter-ty: 0;
+  --tw-enter-scale: 1;
+  animation-name: tw-enter;
+  animation-duration: var(--tw-anim-duration, 200ms);
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  /* backwards (not both): fill the `from` state before start to avoid a pre-flash, but do NOT keep
+     a forwards fill afterwards - that would pin transform and override a drag's inline transform. */
+  animation-fill-mode: backwards;
+}
+
+[class~='fade-in'],
+[class~='fade-in!'] {
+  --tw-enter-opacity: 0;
+}
+
+[class~='zoom-in-95'],
+[class~='zoom-in-95!'] {
+  --tw-enter-scale: 0.95;
+}
+[class~='zoom-in-50'],
+[class~='zoom-in-50!'] {
+  --tw-enter-scale: 0.5;
+}
+
+[class~='slide-in-from-bottom-2'],
+[class~='slide-in-from-bottom-2!'] {
+  --tw-enter-ty: 0.5rem;
+}
+/* Full slide-up for bottom sheets: starts one sheet-height below its resting position. */
+[class~='slide-in-from-bottom-full'],
+[class~='slide-in-from-bottom-full!'] {
+  --tw-enter-ty: 100%;
+}
+
+/* duration-* also feeds the animation duration when combined with animate-in (Tailwind's core
+ * duration-* only sets transition-duration; this adds the animation side without conflict). */
+[class~='duration-150'],
+[class~='duration-150!'] {
+  --tw-anim-duration: 150ms;
+}
+[class~='duration-200'],
+[class~='duration-200!'] {
+  --tw-anim-duration: 200ms;
+}
+[class~='duration-300'],
+[class~='duration-300!'] {
+  --tw-anim-duration: 300ms;
+}
+[class~='duration-500'],
+[class~='duration-500!'] {
+  --tw-anim-duration: 500ms;
+}
+
+/* Standalone named helpers used in a few screens. */
+@keyframes tw-fade-in {
+  from {
+    opacity: 0;
+  }
+}
+[class~='animate-fade-in'],
+[class~='animate-fade-in!'] {
+  animation: tw-fade-in 220ms ease-out both;
+}
+
+@keyframes tw-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+[class~='animate-spin-slow'],
+[class~='animate-spin-slow!'] {
+  animation: tw-spin 3s linear infinite;
+}
+[class~='animate-spin'],
+[class~='animate-spin!'] {
+  animation: tw-spin 1s linear infinite;
+}
+
+/* Exit counterparts. Entrances above are one-shot on mount; an exit has to be driven by state
+ * (render the closing class, then unmount when the animation ends) - see useExitAnimation. */
+@keyframes tw-exit {
+  to {
+    opacity: var(--tw-exit-opacity, 1);
+    transform: translate3d(var(--tw-exit-tx, 0), var(--tw-exit-ty, 0), 0)
+      scale(var(--tw-exit-scale, 1));
+  }
+}
+
+[class~='animate-out'],
+[class~='animate-out!'] {
+  --tw-exit-opacity: 1;
+  --tw-exit-tx: 0;
+  --tw-exit-ty: 0;
+  --tw-exit-scale: 1;
+  animation-name: tw-exit;
+  animation-duration: var(--tw-anim-duration, 200ms);
+  animation-timing-function: cubic-bezier(0.4, 0, 1, 1);
+  /* forwards: hold the exited state until the component unmounts, so there is no snap-back. */
+  animation-fill-mode: forwards;
+}
+
+[class~='fade-out'],
+[class~='fade-out!'] {
+  --tw-exit-opacity: 0;
+}
+
+[class~='slide-out-to-bottom-2'],
+[class~='slide-out-to-bottom-2!'] {
+  --tw-exit-ty: 0.5rem;
+}
+
+[class~='slide-out-to-bottom-10'],
+[class~='slide-out-to-bottom-10!'] {
+  --tw-exit-ty: 2.5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [class~='animate-in'],
+  [class~='animate-in!'],
+  [class~='animate-out'],
+  [class~='animate-out!'],
+  [class~='animate-fade-in'],
+  [class~='animate-fade-in!'] {
+    animation: none !important;
+  }
+}
+
+/* Onboarding steps: content that runs past the bottom fades out, so a short popup shows there is more. */
+.flow-body {
+  mask-image: linear-gradient(to bottom, #000 calc(100% - 20px), transparent);
+}
+
+/* Onboarding steps: the content crossfades in place, never slides. */
+@keyframes step-xfade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+.step-xfade .flow-body {
+  animation: step-xfade-in 200ms ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .step-xfade .flow-body {
+    animation: none;
+  }
+}
+
+/* Pages inside one sheet: forward slides in from the right, back from the left; reduced motion fades. */
+@keyframes sheet-page-from-right {
+  from {
+    opacity: 0;
+    transform: translateX(28px);
+  }
+}
+
+@keyframes sheet-page-from-left {
+  from {
+    opacity: 0;
+    transform: translateX(-28px);
+  }
+}
+
+.sheet-page-push {
+  animation: sheet-page-from-right 240ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sheet-page-pop {
+  animation: sheet-page-from-left 240ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sheet-page-push,
+  .sheet-page-pop {
+    animation: tw-fade-in 200ms ease-out;
+  }
+}
+
+@keyframes skeleton-pulse {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.skeleton {
+  display: inline-block;
+  vertical-align: middle;
+  background: var(--bg-2);
+  border-radius: 6px;
+  animation: skeleton-pulse 1200ms ease-out infinite alternate;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skeleton {
+    animation: none;
+  }
+}
+
+@keyframes name-dot {
+  50% {
+    opacity: 0.3;
+  }
+}
+.name-dots {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  height: 16px;
+}
+.name-dots i {
+  width: 5px;
+  height: 5px;
+  border-radius: 3px;
+  background: var(--fg-2);
+  animation: name-dot 1.2s ease-out infinite;
+}
+.name-dots i:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.name-dots i:nth-child(3) {
+  animation-delay: 0.4s;
+}
+@media (prefers-reduced-motion: reduce) {
+  .name-dots i {
+    animation: none;
+  }
+}
