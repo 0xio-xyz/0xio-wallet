@@ -4,7 +4,7 @@ Everyone taking part follows the [code of conduct](CODE_OF_CONDUCT.md).
 
 ## License and sign-off
 
-0xio Wallet is GPL-3.0-only. By submitting a contribution you agree it is licensed under GPL-3.0-only and that you have the right to submit it. Sign off every commit with `git commit -s` to certify the [Developer Certificate of Origin](https://developercertificate.org).
+0xio Wallet is MIT licensed. By submitting a contribution you agree it is licensed under MIT and that you have the right to submit it. Sign off every commit with `git commit -s` to certify the [Developer Certificate of Origin](https://developercertificate.org).
 
 ## Building
 

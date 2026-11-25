@@ -2,10 +2,6 @@
 
 ## v3.0.7 - unreleased
 
-### Security
-
-- A swap lock is refused when the current epoch cannot be read, instead of signing with a built-in fallback epoch.
-
 ### Fixed
 
 - Transaction detail shows a token amount with the token's own decimals and symbol, and no amount when the contract is not a token.
@@ -17,6 +13,8 @@
 ### Changed
 
 - Service files grouped by domain, comments and dead code trimmed; no behaviour change.
+- Cross-chain swap removed; the solver is retired.
+- Licensed under MIT; the privacy engine credit now carries the upstream BSD 3-Clause notice.
 
 ## v3.0.6 - 2026-11-20
 
