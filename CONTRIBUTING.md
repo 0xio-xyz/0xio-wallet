@@ -14,7 +14,7 @@ npm run build          # Chrome  -> dist/
 npm run build:firefox  # Firefox -> dist-firefox/
 ```
 
-The privacy engine (PVAC WASM) is prebuilt into `public/` and `src/wasm/` from the [pvac-rs](https://github.com/0xio-xyz/pvac-rs) repo. To rebuild it, follow pvac-rs - the threaded (Chrome) build needs a nightly Rust toolchain; the non-threaded (Firefox) build does not.
+The privacy engine (PVAC WASM) ships prebuilt in `public/` and `src/wasm/`. It is a Rust port of the PVAC engine in Octra Labs' [webcli](https://github.com/octra-labs/webcli).
 
 ## Before opening a PR
 

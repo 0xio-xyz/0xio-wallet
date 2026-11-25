@@ -33,7 +33,7 @@ Popup UI (React 18)          Service Worker (MV3)       Content Script
 
 Three-layer Manifest V3 design: the popup is ephemeral, the service worker is persistent and owns all network I/O, and the content script injects the provider for dApp connectivity. Heavy PVAC proof work runs off the main thread in Web Workers (and, when installed, the optional [0xio Desktop](https://github.com/0xio-xyz) native accelerator). A paired 0xio Desktop can also sign for sites: the extension relays their Octra requests to the menu bar wallet.
 
-The privacy engine is a Rust crate ([`pvac-rs`](https://github.com/0xio-xyz/pvac-rs)) compiled to WebAssembly and bundled in `public/`.
+The privacy engine is a Rust port of the PVAC engine in Octra Labs' [webcli](https://github.com/octra-labs/webcli), compiled to WebAssembly and bundled in `public/`.
 
 ## Build
 
@@ -49,7 +49,7 @@ Load unpacked: Chrome -> `chrome://extensions` (Developer Mode) -> "Load unpacke
 
 The wallet needs no API keys: the hosted 0xio services serve wallet reads without one, limited per IP.
 
-To rebuild the PVAC WASM from source, see [`pvac-rs`](https://github.com/0xio-xyz/pvac-rs); the build scripts strip local paths and copy the artifacts into `public/` and `src/wasm/`.
+The PVAC WASM ships prebuilt in `public/` and `src/wasm/`.
 
 ## Security model
 
