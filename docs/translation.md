@@ -37,5 +37,4 @@ The wallet ships in English, Bahasa Indonesia, Simplified Chinese, Japanese and 
 ## Writing rules
 
 - Sentence case. No taglines or helper text; errors and changing status only.
-- No em or en dashes, middots or checkmarks. No comma or middot as a separator in labels.
 - Keep product and token names as they are (0xio, Octra, OCT, wOCT).
