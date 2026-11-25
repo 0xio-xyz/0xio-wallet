@@ -8,7 +8,6 @@ import { TransactionQueue } from 'src/background/services/txQueue';
 import { enrichTokenTransfers, type TransferDeps } from 'src/services/tokens/tokenTransfers';
 import { listNft, cancelListing } from 'src/features/wallet/nft/xpectrum/tx';
 import { waitForReceipt } from 'src/features/wallet/nft/xpectrum/confirm';
-import { getCurrentEpoch } from 'src/features/transactions/swap/swapLock';
 import { useReviewScope } from 'src/hooks/transactions/useReviewScope';
 import type { TransactionHistoryItem } from 'src/types/transaction';
 
@@ -182,33 +181,6 @@ describe('NFT receipt polling', () => {
     const rec = await waitForReceipt('h1', scope, { intervalMs: 50, timeoutMs: 1000 });
     expect(rec.status).toBe('switched');
     expect(rpc).toHaveBeenCalledTimes(1);
-  });
-});
-
-describe('swap epoch read', () => {
-  it('reads on the lock scope and refuses a read that lands after a switch', async () => {
-    const scope = await captureTxScope(A, 'mainnet');
-    const rpc = vi
-      .spyOn(networkService, 'jsonRpcCall')
-      .mockResolvedValue({ transactions: [{ epoch: 700 }] });
-    await expect(getCurrentEpoch(scope)).resolves.toBe(700);
-    expect(rpc).toHaveBeenCalledWith('octra_recentTransactions', [1], true, scope);
-
-    rpc.mockImplementation(async () => {
-      local.set(NET, 'devnet');
-      return { transactions: [{ epoch: 9 }] };
-    });
-    await expect(getCurrentEpoch(scope)).rejects.toBeInstanceOf(TxScopeError);
-  });
-
-  it('refuses to guess when the epoch cannot be read', async () => {
-    const scope = await captureTxScope(A, 'mainnet');
-    const rpc = vi.spyOn(networkService, 'jsonRpcCall').mockRejectedValue(new Error('down'));
-    await expect(getCurrentEpoch(scope)).rejects.toThrow('epoch');
-    rpc.mockResolvedValue({ transactions: [] });
-    await expect(getCurrentEpoch(scope)).rejects.toThrow('epoch');
-    rpc.mockResolvedValue({ transactions: [{ epoch: '701' }] });
-    await expect(getCurrentEpoch(scope)).resolves.toBe(701);
   });
 });
 

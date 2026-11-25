@@ -2,16 +2,7 @@ import { evmNetworksFor } from 'src/services/evm/networks';
 
 type Translate = (key: string, options?: Record<string, unknown>) => string;
 
-export type ArgLabel =
-  | 'recipient'
-  | 'amount'
-  | 'expires'
-  | 'asset'
-  | 'toNetwork'
-  | 'minReceived'
-  | 'swapId'
-  | 'payoutHash'
-  | 'amountSent';
+export type ArgLabel = 'recipient' | 'amount' | 'expires' | 'asset' | 'toNetwork' | 'minReceived';
 
 const LABEL_WORDS: Record<ArgLabel, string> = {
   recipient: 'Recipient',
@@ -20,9 +11,6 @@ const LABEL_WORDS: Record<ArgLabel, string> = {
   asset: 'Asset',
   toNetwork: 'To network',
   minReceived: 'Minimum received',
-  swapId: 'Swap ID',
-  payoutHash: 'Payout hash',
-  amountSent: 'Amount sent',
 };
 
 export type ArgKind = 'address' | 'chain' | 'amount' | 'expiry' | 'epoch' | 'asset' | 'text';
@@ -134,63 +122,11 @@ export interface ArgSpec {
   onlyWhenUnread?: boolean;
 }
 
-export type KnownCalls = 'swapVault' | 'octBridge';
+export type KnownCalls = 'octBridge';
 
 const OCT = { decimals: 6, symbol: 'OCT' };
-const swapId: ArgSpec = { index: 0, name: 'intent_hash', label: 'swapId' };
-const oneSwap = [swapId];
 
 const KNOWN_CALLS: Record<KnownCalls, Record<string, ArgSpec[]>> = {
-  swapVault: {
-    lock: [
-      { index: 1, name: 'dest_chain', label: 'toNetwork', kind: 'chain' },
-      { index: 2, name: 'dest_addr', label: 'recipient', kind: 'address' },
-      {
-        index: 4,
-        name: 'min_receive',
-        label: 'minReceived',
-        kind: 'amount',
-        unit: { assetArg: 5, decimals: { ETH: 18 } },
-      },
-      { index: 5, name: 'dest_token', label: 'asset', kind: 'asset', onlyWhenUnread: true },
-      { index: 3, name: 'expiry', label: 'expires', kind: 'epoch' },
-      swapId,
-    ],
-    fill: [
-      swapId,
-      { index: 1, name: 'dest_tx_hash', label: 'payoutHash' },
-      { index: 2, name: 'amount_sent', label: 'amountSent', kind: 'amount' },
-    ],
-    update_fill: [
-      swapId,
-      { index: 1, name: 'new_dest_tx_hash', label: 'payoutHash' },
-      { index: 2, name: 'new_amount', label: 'amountSent', kind: 'amount' },
-    ],
-    attest: oneSwap,
-    settle: oneSwap,
-    refund: oneSwap,
-    refund_stale_fill: oneSwap,
-    slash: oneSwap,
-    emergency_refund: oneSwap,
-    get_swap: oneSwap,
-    is_hash_used: oneSwap,
-    withdraw_bond: [{ index: 0, name: 'amount', kind: 'amount', unit: OCT }],
-    set_treasury: [{ index: 0, name: 'new_treasury', kind: 'address' }],
-    set_oracle: [{ index: 0, name: 'new_oracle', kind: 'address' }],
-    set_solver: [{ index: 0, name: 'new_solver', kind: 'address' }],
-    transfer_ownership: [{ index: 0, name: 'new_owner', kind: 'address' }],
-    set_paused: [{ index: 0, name: 'is_paused' }],
-    set_limits: [
-      { index: 0, name: 'new_min', kind: 'amount', unit: OCT },
-      { index: 1, name: 'new_max', kind: 'amount', unit: OCT },
-    ],
-    set_min_bond: [{ index: 0, name: 'new_min_bond', kind: 'amount', unit: OCT }],
-    set_min_fee: [{ index: 0, name: 'new_min_fee', kind: 'amount', unit: OCT }],
-    set_fee: [{ index: 0, name: 'new_fee_bps' }],
-    set_challenge_window: [{ index: 0, name: 'epochs' }],
-    set_fill_timeout: [{ index: 0, name: 'epochs' }],
-    set_max_expiry: [{ index: 0, name: 'delta' }],
-  },
   octBridge: {
     lock_to_eth: [{ index: 0, name: 'eth_recipient', label: 'recipient', kind: 'address' }],
     unlock_trusted: [

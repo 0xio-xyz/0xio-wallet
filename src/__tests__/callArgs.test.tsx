@@ -65,7 +65,7 @@ beforeEach(() => {
 
 describe('argument labels', () => {
   it('reads parameter names as sentence case with the wallet words for known meanings', () => {
-    expect(argLabel('swap_id', t)).toBe('Swap ID');
+    expect(argLabel('order_id', t)).toBe('Order ID');
     expect(argLabel('tokenId', t)).toBe('Token ID');
     expect(argLabel('new_owner', t)).toBe('New owner');
     expect(argLabel('_feeBps', t)).toBe('Fee BPS');
@@ -92,66 +92,18 @@ describe('argument labels', () => {
   });
 });
 
-describe('SwapVault and bridge calls', () => {
-  it('reads a lock as the swap it is, in the order a person checks it', () => {
-    const known = knownOctraContract('devnet', VAULT);
-    const specs = knownCallArgs(known?.calls, 'lock');
-    const { rows, args } = octraArgRows(LOCK_ARGS, specs, null, t);
-    expect(rows.map((r) => [r.label, r.value])).toEqual([
-      ['To network', 'Sepolia'],
-      ['Recipient', '0xc68f177A…02F69a78'],
-      ['Minimum received', '0.000151 ETH'],
-      ['Expires', 'Epoch 1559940'],
-      ['Swap ID', 'swap_1b60d…22b987de'],
-    ]);
-    expect(rows[1].copy).toBe(DEST);
-    expect(rows[4].copy).toBe(LOCK_ARGS[0]);
-    expect(args).toEqual([
-      { index: 0, name: 'intent_hash', label: 'Swap ID', type: 'string', value: LOCK_ARGS[0] },
-      {
-        index: 1,
-        name: 'dest_chain',
-        label: 'To network',
-        type: 'string',
-        value: 'sepolia',
-        friendly: 'Sepolia',
-      },
-      { index: 2, name: 'dest_addr', label: 'Recipient', type: 'address', value: DEST },
-      {
-        index: 3,
-        name: 'expiry',
-        label: 'Expires',
-        type: 'string',
-        value: '1559940',
-        friendly: 'Epoch 1559940',
-      },
-      {
-        index: 4,
-        name: 'min_receive',
-        label: 'Minimum received',
-        type: 'string',
-        value: '151749169604113',
-        friendly: '0.000151 ETH',
-      },
-      { index: 5, name: 'dest_token', label: 'Asset', type: 'string', value: 'ETH' },
-    ]);
-  });
-
-  it('keeps an amount raw with its asset when the asset has no known unit', () => {
-    const specs = knownCallArgs('swapVault', 'lock');
-    const args = [...LOCK_ARGS.slice(0, 5), 'USDC'];
-    const rows = octraArgRows(args, specs, null, t).rows;
-    expect(rows.find((r) => r.label === 'Minimum received')?.value).toBe('151749169604113');
-    expect(rows.find((r) => r.label === 'Asset')?.value).toBe('USDC');
-  });
-
-  it('reads an older four argument lock without inventing the rest', () => {
-    const rows = octraArgRows(LOCK_ARGS.slice(0, 4), knownCallArgs('swapVault', 'lock'), null, t);
-    expect(rows.rows.map((r) => r.label)).toEqual([
+describe('known Octra calls', () => {
+  it('reads a past vault lock by its parameter names', () => {
+    expect(knownCallArgs(knownOctraContract('devnet', VAULT)?.calls, 'lock')).toBeNull();
+    const names = ['intent_hash', 'dest_chain', 'dest_addr', 'expiry', 'min_receive', 'dest_token'];
+    const { rows } = octraArgRows(LOCK_ARGS, null, names, t);
+    expect(rows.map((r) => r.label)).toEqual([
+      'Intent hash',
       'To network',
       'Recipient',
       'Expires',
-      'Swap ID',
+      'Minimum received',
+      'Asset',
     ]);
   });
 

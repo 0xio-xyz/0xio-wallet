@@ -51,10 +51,9 @@ describe('custom network resolution', () => {
   it('offers no 0xio-hosted feature and no proxy on a custom node', () => {
     syncCustomNetworks([node()]);
     const caps = networkCapabilities(ID);
-    expect([caps.proxy, caps.market, caps.swap, caps.bridge]).toEqual([false, false, false, false]);
+    expect([caps.proxy, caps.market, caps.bridge]).toEqual([false, false, false]);
     expect(caps.tokenListTag).toBeUndefined();
     expect(networkCapabilities('mainnet').proxy).toBe(true);
-    expect(networkCapabilities('devnet').swap).toBe(true);
   });
 
   it('reads history from the custom node alone, never the built-ins', () => {

@@ -195,21 +195,18 @@ const OCTRA_CONTRACTS: readonly KnownOctraContract[] = [
     address: 'octHqBuw3TGsgeGpu6GiumRTjQwc8VCRAo1ANhy5zL4ZVPc',
     name: 'SwapVault',
     swapVault: true,
-    calls: 'swapVault',
   },
   {
     network: 'devnet',
     address: 'octDowmrJ3Ks8gSDk1rSzyNgPwDpUoHv2VhhnxC5shNKFMB',
     name: 'SwapVault',
     swapVault: true,
-    calls: 'swapVault',
   },
   {
     network: 'devnet',
     address: 'oct46XYBqQt7yxZUSnBCqqKrsY8CxismrsMEANi8YLaBioe',
     name: 'SwapVault',
     swapVault: true,
-    calls: 'swapVault',
   },
 ];
 

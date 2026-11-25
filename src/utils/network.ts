@@ -8,7 +8,6 @@ export interface NetworkCapabilities {
   proxy: boolean;
   privacy: boolean;
   market: boolean;
-  swap: boolean;
   bridge: boolean;
   tokenListTag?: 'octra-mainnet' | 'octra-devnet';
 }
@@ -19,7 +18,6 @@ export function networkCapabilities(id: NetworkId): NetworkCapabilities {
       proxy: false,
       privacy: getNetworkConfig(id).supports_privacy,
       market: false,
-      swap: false,
       bridge: false,
       tokenListTag: undefined,
     };
@@ -29,7 +27,6 @@ export function networkCapabilities(id: NetworkId): NetworkCapabilities {
     proxy: true,
     privacy: getNetworkConfig(id).supports_privacy,
     market: true,
-    swap: devnet,
     bridge: !devnet,
     tokenListTag: devnet ? 'octra-devnet' : 'octra-mainnet',
   };

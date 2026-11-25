@@ -43,7 +43,6 @@ const HistoryScreen = lazyScreen(() => import('src/features/transactions/screens
 const PrivacyScreen = lazyScreen(() => import('src/features/privacy/screens/PrivacyScreen'));
 const BridgeScreen = lazyScreen(() => import('src/features/bridge/screens/BridgeScreen'));
 const ClaimScreen = lazyScreen(() => import('src/features/bridge/screens/ClaimScreen'));
-const SwapScreen = lazyScreen(() => import('src/features/transactions/screens/SwapScreen'));
 const SecurityBackupScreen = lazyScreen(
   () => import('src/features/settings/screens/SecurityBackupScreen')
 );
@@ -116,7 +115,6 @@ const HIDE_HEADER_PATHS = new Set([
   '/settings/evm',
   '/settings/networks',
   '/settings/tokens-nfts',
-  '/swap',
   '/tx',
 ]);
 
@@ -472,7 +470,6 @@ const AppLayout = () => {
               />
               <Route path="/approve-message/:approvalId" element={<MessageApprovalScreen />} />
               <Route path="/evm-approval/:approvalId" element={<EvmApprovalScreen />} />
-              <Route path="/swap" element={<SwapScreen />} />
               <Route path="/tx" element={<TxDetailScreen />} />
             </Routes>
           </div>
