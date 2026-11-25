@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1192 650" width="1192" height="650" role="img" aria-labelledby="t d">
+  <title id="t">0xio Wallet extension contexts</title>
+  <desc id="d">In the web page, the page provider (window.octra, window.wallet0xio and window.ethereum, used by a dApp or by @0xio/sdk) talks to the content script over a private port. The content script talks to the background service worker with runtime messages. The service worker opens review windows in the popup, which answers with the decision and signed transactions. The popup sends PVAC proof jobs to the offscreen document, or to a paired 0xio Desktop over 0xio-pair-v1. The service worker relays sites that sign on 0xio Desktop (0xio-site-relay-v1). The popup and the service worker both call Octra nodes and 0xio services over JSON-RPC.</desc>
+  <defs>
+    <marker id="ma" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="ah" d="M0 0 L10 5 L0 10 Z"/></marker>
+    <marker id="mn" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="nh" d="M0 0 L10 5 L0 10 Z"/></marker>
+    <style>
+      .bg { fill: #ffffff; }
+      .z { fill: #f3f5f8; }
+      .zx { fill: #eef0fd; }
+      .box { fill: #ffffff; }
+      .zt { font: 600 13px -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; fill: #59636e; letter-spacing: 0.2px; }
+      .mk { fill: #0000db; }
+      .h { font: 600 15px -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; fill: #1f2328; }
+      .b { font: 400 13.5px -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; fill: #424a53; }
+      .m { font: 400 12.5px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; fill: #0000db; }
+      .ea { stroke: #0000db; stroke-width: 1.75; fill: none; }
+      .en { stroke: #6e7781; stroke-width: 1.5; fill: none; stroke-dasharray: 5 4; }
+      .ah { fill: #0000db; }
+      .nh { fill: #6e7781; }
+      .pa { fill: #0000db; }
+      .pn { fill: #e6e9ee; }
+      .ta { font: 600 12px -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; fill: #ffffff; }
+      .tn { font: 600 12px -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; fill: #424a53; }
+      .lg { font: 400 12.5px -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; fill: #59636e; }
+      @media (prefers-color-scheme: dark) {
+        .bg { fill: #0d1117; }
+        .z { fill: #121820; }
+        .zx { fill: #141b33; }
+        .box { fill: #161b22; }
+        .zt { fill: #9198a1; }
+        .mk { fill: #5b7cff; }
+        .h { fill: #e6edf3; }
+        .b { fill: #b7bfc8; }
+        .m { fill: #7d97ff; }
+        .ea { stroke: #5b7cff; }
+        .en { stroke: #8b949e; }
+        .ah { fill: #5b7cff; }
+        .nh { fill: #8b949e; }
+        .pa { fill: #3d5cf0; }
+        .pn { fill: #262d36; }
+        .tn { fill: #c9d1d9; }
+        .lg { fill: #9198a1; }
+      }
+    </style>
+  </defs>
+  <rect class="bg" x="0" y="0" width="1192" height="650" rx="14"/>
+  <rect class="z" x="16" y="208" width="290" height="384" rx="16"/>
+  <text class="zt" x="36" y="236">Web page</text>
+  <rect class="zx" x="426" y="16" width="290" height="576" rx="16"/>
+  <g transform="translate(444,29) scale(0.2)"><path class="mk" fill-rule="evenodd" d="M 30 14 H 70 A 12 12 0 0 1 82 26 V 41 C 82 45.95 85.96 50 94 50 C 85.96 50 82 54.05 82 59 V 74 A 12 12 0 0 1 70 86 H 30 A 12 12 0 0 1 18 74 V 59 C 18 54.05 14.04 50 6 50 C 14.04 50 18 45.95 18 41 V 26 A 12 12 0 0 1 30 14 Z M 46.5533 74.2718 L 64.5533 30.2718 A 6 6 0 0 0 61.2718 22.4467 A 6 6 0 0 0 53.4467 25.7282 L 35.4467 69.7282 A 6 6 0 0 0 38.7282 77.5533 A 6 6 0 0 0 46.5533 74.2718 Z"/></g>
+  <text class="zt" x="468" y="44">0xio Wallet extension</text>
+  <rect class="z" x="836" y="208" width="320" height="384" rx="16"/>
+  <text class="zt" x="856" y="236">Outside</text>
+  <rect class="box" x="36" y="252" width="250" height="128" rx="12"/>
+  <text class="h" x="56" y="284">Page provider</text>
+  <text class="m" x="56" y="306">src/content/injected.ts</text>
+  <text class="b" x="56" y="330">window.octra</text>
+  <text class="b" x="56" y="349">window.wallet0xio</text>
+  <text class="b" x="56" y="368">window.ethereum (EIP-6963)</text>
+  <rect class="box" x="36" y="444" width="250" height="128" rx="12"/>
+  <text class="h" x="56" y="476">Content script</text>
+  <text class="m" x="56" y="498">src/content/index.ts</text>
+  <text class="b" x="56" y="522">isolated world</text>
+  <text class="b" x="56" y="541">blocks internal message types</text>
+  <text class="b" x="56" y="560">rate limits each page</text>
+  <rect class="box" x="446" y="60" width="250" height="128" rx="12"/>
+  <text class="h" x="466" y="92">Offscreen document</text>
+  <text class="m" x="466" y="114">public/pvac-offscreen.html</text>
+  <text class="b" x="466" y="138">Chrome only</text>
+  <text class="b" x="466" y="157">PVAC WASM in web workers</text>
+  <rect class="box" x="446" y="252" width="250" height="128" rx="12"/>
+  <text class="h" x="466" y="284">Popup and review windows</text>
+  <text class="m" x="466" y="306">index.html</text>
+  <text class="b" x="466" y="330">React 18 screens</text>
+  <text class="b" x="466" y="349">site reviews by approval id</text>
+  <text class="b" x="466" y="368">signs only after a review</text>
+  <rect class="box" x="446" y="444" width="250" height="128" rx="12"/>
+  <text class="h" x="466" y="476">Background service worker</text>
+  <text class="m" x="466" y="498">src/background/</text>
+  <text class="b" x="466" y="522">Octra and EVM site handlers</text>
+  <text class="b" x="466" y="541">permissions and approvals</text>
+  <text class="b" x="466" y="560">tx queue and pending checks</text>
+  <rect class="box" x="856" y="252" width="250" height="128" rx="12"/>
+  <text class="h" x="876" y="284">0xio Desktop (optional)</text>
+  <text class="m" x="876" y="306">ws://127.0.0.1:19345</text>
+  <text class="b" x="876" y="330">native PVAC engine</text>
+  <text class="b" x="876" y="349">menu bar wallet for sites</text>
+  <text class="b" x="876" y="368">paired over 0xio-pair-v1</text>
+  <rect class="box" x="856" y="444" width="250" height="128" rx="12"/>
+  <text class="h" x="876" y="476">Nodes and services</text>
+  <text class="m" x="876" y="498">src/services/network/</text>
+  <text class="b" x="876" y="522">Octra mainnet and devnet</text>
+  <text class="b" x="876" y="541">0xio oracle and rpc-proxy</text>
+  <text class="b" x="876" y="560">EVM network RPCs</text>
+  <path class="ea" d="M 161 382 L 161 442" marker-start="url(#ma)" marker-end="url(#ma)"/>
+  <path class="ea" d="M 288 508 L 444 508" marker-start="url(#ma)" marker-end="url(#ma)"/>
+  <path class="ea" d="M 571 442 L 571 382" marker-start="url(#ma)" marker-end="url(#ma)"/>
+  <path class="ea" d="M 571 250 L 571 190" marker-start="url(#ma)" marker-end="url(#ma)"/>
+  <path class="en" d="M 698 316 L 854 316" marker-start="url(#mn)" marker-end="url(#mn)"/>
+  <path class="en" d="M 698 524 L 854 524" marker-start="url(#mn)" marker-end="url(#mn)"/>
+  <path class="en" d="M 698 466 L 726 466 Q 736 466 736 456 L 736 422 Q 736 412 746 412 L 1011 412 Q 1021 412 1021 402 L 1021 382" marker-start="url(#mn)" marker-end="url(#mn)"/>
+  <path class="en" d="M 698 274 L 726 274 Q 736 274 736 264 L 736 144 Q 736 134 746 134 L 1126 134 Q 1136 134 1136 144 L 1136 482 Q 1136 492 1126 492 L 1108 492" marker-start="url(#mn)" marker-end="url(#mn)"/>
+  <rect class="pa" x="113" y="401" width="96" height="22" rx="11"/>
+  <text class="ta" x="161" y="416" text-anchor="middle">private port</text>
+  <rect class="pa" x="305" y="497" width="122" height="22" rx="11"/>
+  <text class="ta" x="366" y="512" text-anchor="middle">runtime messages</text>
+  <rect class="pa" x="494" y="401" width="154" height="22" rx="11"/>
+  <text class="ta" x="571" y="416" text-anchor="middle">reviews and signed tx</text>
+  <rect class="pa" x="529.5" y="209" width="83" height="22" rx="11"/>
+  <text class="ta" x="571" y="224" text-anchor="middle">proof jobs</text>
+  <rect class="pn" x="731" y="305" width="90" height="22" rx="11"/>
+  <text class="tn" x="776" y="320" text-anchor="middle">PVAC proofs</text>
+  <rect class="pn" x="741" y="513" width="70" height="22" rx="11"/>
+  <text class="tn" x="776" y="528" text-anchor="middle">JSON-RPC</text>
+  <rect class="pn" x="846.5" y="401" width="83" height="22" rx="11"/>
+  <text class="tn" x="888" y="416" text-anchor="middle">site relay</text>
+  <rect class="pn" x="901" y="123" width="70" height="22" rx="11"/>
+  <text class="tn" x="936" y="138" text-anchor="middle">JSON-RPC</text>
+  <path class="ea" d="M 36 620 L 72 620" marker-end="url(#ma)"/>
+  <text class="lg" x="82" y="624">messages inside the wallet</text>
+  <path class="en" d="M 296 620 L 332 620" marker-end="url(#mn)"/>
+  <text class="lg" x="342" y="624">network calls and the desktop link</text>
+</svg>

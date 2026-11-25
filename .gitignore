@@ -45,7 +45,8 @@ output
 !SECURITY.md
 !CHANGELOG.md
 !THIRD_PARTY_NOTICES.md
-docs/
+!CODE_OF_CONDUCT.md
+!docs/*.md
 
 
 # AMO packaging output (web-ext build)

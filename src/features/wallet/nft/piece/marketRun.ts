@@ -227,7 +227,7 @@ export async function runCancel(args: MarketArgs & { listing: Listing }): Promis
 }
 
 /**
- * Sends with the collection's own transfer, read from its ABI: SNS-1 transfer(to, id), single-token
+ * Sends with the collection's own transfer, read from its ABI: XSN-1 transfer(to, id), single-token
  * transfer_to(to), or ERC721-style safe_transfer_from(from, to, id). A listed piece sits with the
  * market, where a transfer would revert and still cost the fee, so that is refused first.
  */
