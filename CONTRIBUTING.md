@@ -25,8 +25,6 @@ npm run format:check
 npm test
 ```
 
-Match the surrounding code. A few house rules that aren't obvious:
+Match the surrounding code. A few 0xio rules that aren't obvious:
 
 - Direct `useEffect` in components is avoided - use `useMountEffect`, or tag a genuinely unavoidable effect with `// effect:audited - <reason>`.
-- Server state goes through React Query, not hand-rolled fetch-in-effect.
-- Comments explain *why*, not *what*.
